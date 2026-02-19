@@ -162,12 +162,47 @@ def read_study_summary(run_path: Path, run_data: dict) -> dict:
     summary_rel = run_data.get("artifacts", {}).get("summary", "analysis/summary.json")
     summary_path = run_path / summary_rel
     if not summary_path.exists():
-        return {}
+        # Fallback: try summary.json directly
+        summary_path = run_path / "summary.json"
+        if not summary_path.exists():
+            return {}
     data = read_json(summary_path)
 
     # Extract significant pairwise comparisons
+    # Handle both field naming conventions
     pairwise = data.get("pairwise_tests", [])
-    significant = [p for p in pairwise if p.get("bonferroni_sig")]
+    significant = [
+        p for p in pairwise
+        if p.get("bonferroni_sig") or p.get("significant_bonferroni")
+    ]
+
+    # Normalize pairwise entries to a common format
+    for p in pairwise:
+        # Ensure "comparison" field exists
+        if "comparison" not in p and "group_1" in p and "group_2" in p:
+            p["comparison"] = f"{p['group_1']} vs {p['group_2']}"
+        # Normalize bonferroni_sig
+        if "bonferroni_sig" not in p and "significant_bonferroni" in p:
+            p["bonferroni_sig"] = p["significant_bonferroni"]
+        # Normalize p_value
+        if "p_value" not in p and "t_p" in p:
+            p["p_value"] = p["t_p"]
+
+    # Handle both "descriptive" and "descriptive_stats" keys
+    descriptive = data.get("descriptive") or data.get("descriptive_stats") or {}
+
+    # If descriptive is a list (e.g. memori study), convert to dict keyed by index
+    if isinstance(descriptive, list):
+        desc_dict = {}
+        for i, entry in enumerate(descriptive):
+            # Try to build a meaningful key from the entry
+            key_parts = []
+            for k in ("tax_rate", "circuit_breaker", "label", "config", "group"):
+                if k in entry:
+                    key_parts.append(str(entry[k]))
+            key = "|".join(key_parts) if key_parts else str(i)
+            desc_dict[key] = entry
+        descriptive = desc_dict
 
     return {
         "scenario": data.get("scenario"),
@@ -175,7 +210,7 @@ def read_study_summary(run_path: Path, run_data: dict) -> dict:
         "values": data.get("values", []),
         "seeds_per_config": data.get("seeds_per_config"),
         "total_runs": data.get("total_runs"),
-        "descriptive": data.get("descriptive", {}),
+        "descriptive": descriptive,
         "pairwise_tests": pairwise,
         "significant_pairwise": significant,
     }
@@ -188,7 +223,16 @@ def read_single_summary(run_path: Path, run_data: dict) -> dict:
         return {}
     data = read_json(history_path)
 
-    # Extract final epoch snapshot
+    # Handle list-format history (e.g. concordia sweeps: list of run dicts)
+    if isinstance(data, list):
+        return {
+            "simulation_id": data[0].get("label", "unknown") if data else "unknown",
+            "n_runs": len(data),
+            "final_welfare": data[-1].get("mean_welfare") if data else None,
+            "final_toxicity": data[-1].get("mean_toxicity") if data else None,
+        }
+
+    # Standard dict-format history
     snapshots = data.get("epoch_snapshots", [])
     final = snapshots[-1] if snapshots else {}
 
@@ -276,7 +320,7 @@ def generate_title(run_data: dict, summary: dict, exp_type: str) -> str:
         return f"red-team evaluation scores {score_str} ({grade}) against baseline governance"
 
     elif exp_type == "study":
-        param = summary.get("parameter", slug)
+        param = summary.get("parameter") or slug
         n_sig = len(summary.get("significant_pairwise", []))
         total = summary.get("total_runs", "?")
         return f"{param.replace('_', ' ')} study ({total} runs) finds {n_sig} significant pairwise differences"
@@ -312,7 +356,7 @@ def generate_description(run_data: dict, summary: dict, exp_type: str) -> str:
         desc = f"Red-team evaluation: {attacks} attacks tested, grade {grade}"
 
     elif exp_type == "study":
-        param = summary.get("parameter", slug)
+        param = summary.get("parameter") or slug
         values = summary.get("values", [])
         desc = f"Multi-condition study of {param} ({len(values)} levels, {total} total runs)"
 
@@ -521,21 +565,28 @@ def generate_study_note(run_id: str, run_data: dict, summary: dict, claims: list
     provenance = run_data.get("provenance", {})
     artifacts = run_data.get("artifacts", {})
 
-    param = summary.get("parameter", "unknown")
+    param = summary.get("parameter") or "unknown"
     values = summary.get("values", [])
     descriptive = summary.get("descriptive", {})
 
     # Descriptive stats table
     desc_rows = []
-    metrics = ["welfare_mean", "welfare_std", "toxicity_mean", "acceptance_mean"]
+    metrics = ["welfare_mean", "welfare_std", "toxicity_mean", "toxicity_std", "acceptance_mean"]
     if descriptive:
         header_vals = list(descriptive.keys())
-        desc_rows.append("| Metric | " + " | ".join(str(v) for v in header_vals) + " |")
+        # Truncate headers if too many columns
+        if len(header_vals) > 8:
+            header_vals = header_vals[:8]
+        desc_rows.append("| Metric | " + " | ".join(str(v)[:20] for v in header_vals) + " |")
         desc_rows.append("|--------|" + "|".join("-----" for _ in header_vals) + "|")
         for metric in metrics:
             row = f"| {metric} |"
             for val in header_vals:
-                cell = descriptive.get(str(val), {}).get(metric, "—")
+                entry = descriptive.get(str(val), {})
+                if isinstance(entry, dict):
+                    cell = entry.get(metric, "—")
+                else:
+                    cell = "—"
                 if isinstance(cell, float):
                     row += f" {cell:.3f} |"
                 else:

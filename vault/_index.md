@@ -38,7 +38,7 @@ Named vulnerability and attack patterns from red-team evaluations.
 
 One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
-- `vault/experiments/` — 112 runs indexed
+- `vault/experiments/` — 110 experiment notes synthesized from 112 runs
 
 ## Sweeps
 

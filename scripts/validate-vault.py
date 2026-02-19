@@ -173,6 +173,7 @@ def validate_index() -> list[str]:
     index_text = index_path.read_text(encoding="utf-8")
 
     # Check that all claim files are referenced in the index
+    # Claims are curated and must be individually listed
     claims_dir = VAULT_DIR / "claims"
     if claims_dir.exists():
         for claim_path in sorted(claims_dir.glob("*.md")):
@@ -180,13 +181,21 @@ def validate_index() -> list[str]:
             if claim_name not in index_text:
                 errors.append(f"Claim '{claim_name}' not referenced in _index.md")
 
-    # Check that all experiment notes are referenced
+    # For experiments, a directory-level reference is sufficient
+    # (listing 100+ auto-generated notes individually is not useful)
     exp_dir = VAULT_DIR / "experiments"
-    if exp_dir.exists():
-        for exp_path in sorted(exp_dir.glob("*.md")):
-            exp_name = exp_path.stem
-            if exp_name not in index_text:
-                errors.append(f"Experiment '{exp_name}' not referenced in _index.md")
+    if exp_dir.exists() and list(exp_dir.glob("*.md")):
+        if "vault/experiments/" not in index_text and "experiments/" not in index_text:
+            errors.append("Experiments directory not referenced in _index.md")
+
+    # Check governance, topology, and other curated directories
+    for subdir in ["governance", "topologies"]:
+        dir_path = VAULT_DIR / subdir
+        if not dir_path.exists():
+            continue
+        for md in sorted(dir_path.glob("*.md")):
+            if md.stem not in index_text:
+                errors.append(f"Note '{md.stem}' ({subdir}) not referenced in _index.md")
 
     print(f"Index consistency: {len(errors)} errors")
     return errors
