@@ -1,0 +1,23 @@
+run_id: _tmp_test
+slug: _tmp_test
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/baseline_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- untagged

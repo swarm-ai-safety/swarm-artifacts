@@ -1,0 +1,27 @@
+run_id: 20260213-231532_phylogeny_demo_seed7
+slug: phylogeny_demo_seed7
+created_utc: '2026-02-13T23:15:32+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 7
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/phylogeny_demo_epochs.csv
+  plots:
+  - path: plots/phylogeny.html
+    description: ''
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- phylogeny
+- seed-7

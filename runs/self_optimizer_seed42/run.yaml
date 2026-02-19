@@ -1,0 +1,23 @@
+run_id: self_optimizer_seed42
+slug: self_optimizer_seed42
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 42
+results:
+  status: completed
+artifacts:
+  scripts:
+  - plot_self_optimizer.py
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- seed-42

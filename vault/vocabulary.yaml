@@ -1,0 +1,64 @@
+# SWARM Research OS — Vocabulary mapping
+# Maps arscontexta universal terms → SWARM domain terms.
+# Extends the research preset with multi-agent safety vocabulary.
+
+vocabulary:
+  note: claim
+  reduce: extract findings
+  reflect: cross-link evidence
+  verify: validate provenance
+  reweave: update prior claims
+  moc: topic map
+  description_field: claim summary
+  topics_footer: research areas
+  inbox: new runs
+  pipeline: synthesis pipeline
+  wiki_link: evidence link
+  thinking_notes: claims
+  archive: processed runs
+  self_space: research identity
+  orient: load run context
+  persist: commit to vault
+
+  # SWARM-specific extensions
+  experiment: experiment
+  sweep: parameter sweep
+  redteam: adversarial evaluation
+  governance: governance mechanism
+  topology: network topology
+  failure: failure pattern
+  calibration: hyperparameter calibration
+  canary: regression canary
+  drift: behavioral drift
+  claim_card: claim card
+  run_yaml: run metadata envelope
+  provenance: provenance chain
+
+folders:
+  notes: vault
+  inbox: runs
+  archive: runs
+  experiments: vault/experiments
+  claims: vault/claims
+  governance: vault/governance
+  topologies: vault/topologies
+  failures: vault/failures
+  methods: vault/methods
+  sweeps: vault/sweeps
+
+templates:
+  base_note: claim-card.md
+  experiment: experiment-note.md
+  claim: claim-card.md
+  governance: governance-note.md
+  topology: topology-note.md
+  failure: failure-note.md
+  sweep: sweep-summary.md
+  method: method-note.md
+  moc: _index.md
+
+skills:
+  reduce: /reduce
+  reflect: /reflect
+  verify: /verify
+  reweave: /reweave

@@ -1,0 +1,29 @@
+run_id: 20260214-014153_tau_k_calibration
+slug: tau_k_calibration
+created_utc: '2026-02-14T01:41:53+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: calibration
+  scenario_ref: unknown
+  seeds:
+  - 101
+  - 202
+  - 303
+  - 404
+  - 505
+results:
+  status: completed
+artifacts:
+  summary: summary.json
+  epoch_csvs:
+  - runs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- tau
+- calibration

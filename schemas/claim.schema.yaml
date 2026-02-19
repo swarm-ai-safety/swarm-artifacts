@@ -1,0 +1,127 @@
+# JSON Schema for claim card YAML frontmatter
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SWARM Claim Card
+description: >
+  Schema for the YAML frontmatter of a claim card in vault/claims/.
+  Claims are the atoms of scientific memory — each one links a finding
+  to its evidence, boundary conditions, and confidence level.
+type: object
+
+required:
+  - description
+  - type
+  - status
+  - confidence
+  - domain
+  - evidence
+  - created
+
+properties:
+
+  description:
+    type: string
+    maxLength: 200
+    description: "One-line summary of the claim. Must add info beyond filename."
+
+  type:
+    type: string
+    const: claim
+
+  status:
+    type: string
+    enum: [active, weakened, superseded, retracted]
+    description: >
+      active: supported by current evidence.
+      weakened: contradicted by newer evidence but not fully refuted.
+      superseded: replaced by a more precise claim.
+      retracted: evidence was flawed or irreproducible.
+
+  confidence:
+    type: string
+    enum: [high, medium, low, contested]
+    description: >
+      high: Bonferroni-significant, replicated across seeds/configs.
+      medium: nominally significant or single-sweep support.
+      low: suggestive but underpowered or unreplicated.
+      contested: conflicting evidence from different runs.
+
+  domain:
+    type: string
+    enum:
+      - governance
+      - topology
+      - agent-behavior
+      - decision-theory
+      - collusion
+      - memory
+      - market
+      - calibration
+      - methodology
+
+  evidence:
+    type: object
+    required: [supporting]
+    properties:
+      supporting:
+        type: array
+        items:
+          type: object
+          required: [run]
+          properties:
+            run:
+              type: string
+              description: "run_id of the supporting run"
+            metric:
+              type: string
+            detail:
+              type: string
+              description: "Effect size, p-value, N, correction method"
+        minItems: 1
+      weakening:
+        type: array
+        items:
+          type: object
+          required: [run]
+          properties:
+            run:
+              type: string
+            metric:
+              type: string
+            detail:
+              type: string
+      boundary_conditions:
+        type: array
+        items:
+          type: string
+        description: "Known limits of generalizability"
+
+  sensitivity:
+    type: object
+    additionalProperties:
+      type: string
+    description: "How sensitive the claim is to each dimension (topology, agent_count, etc.)"
+
+  supersedes:
+    type: array
+    items:
+      type: string
+    description: "Claim IDs this claim replaces"
+
+  superseded_by:
+    type: array
+    items:
+      type: string
+    description: "Claim IDs that replace this claim"
+
+  related_claims:
+    type: array
+    items:
+      type: string
+
+  created:
+    type: string
+    format: date
+
+  updated:
+    type: string
+    format: date

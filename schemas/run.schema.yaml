@@ -1,0 +1,204 @@
+# JSON Schema for run.yaml — the metadata envelope for every SWARM run
+# Validate with: python -c "import yaml, jsonschema; ..."
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SWARM Run Metadata
+description: Metadata envelope for a single SWARM experiment run or sweep.
+type: object
+
+required:
+  - run_id
+  - slug
+  - created_utc
+  - provenance
+  - experiment
+  - results
+  - artifacts
+  - tags
+
+properties:
+
+  # -- identity --
+  run_id:
+    type: string
+    pattern: "^[0-9]{8}-?[0-9]{0,6}_?.+$"
+    description: "Folder name. Preferred format: YYYYMMDD-HHMMSS_<slug>"
+
+  slug:
+    type: string
+    description: "Human-readable short name"
+
+  created_utc:
+    type: string
+    format: date-time
+    description: "ISO 8601 UTC timestamp of run start"
+
+  # -- provenance --
+  provenance:
+    type: object
+    required: [swarm_version, git_sha, git_dirty]
+    properties:
+      swarm_version:
+        type: string
+        description: "Semver of SWARM framework"
+      git_sha:
+        type: string
+        pattern: "^[0-9a-f]{7,40}$|^unknown$"
+        description: "Git commit hash of SWARM repo at run time"
+      git_dirty:
+        type: boolean
+        description: "True if working tree had uncommitted changes"
+      python_version:
+        type: string
+      platform:
+        type: string
+        description: "e.g. darwin-arm64, linux-x86_64"
+      command:
+        type: string
+        description: "The CLI command that produced this run"
+
+  # -- experiment design --
+  experiment:
+    type: object
+    required: [type, scenario_ref, seeds]
+    properties:
+      type:
+        type: string
+        enum: [single, sweep, redteam, study, calibration]
+      hypothesis:
+        type: string
+        description: "Free-text hypothesis or research question"
+      scenario_ref:
+        type: string
+        description: "Path to the scenario YAML (relative to repo root)"
+      scenario_sha256:
+        type: string
+        pattern: "^[0-9a-f]{64}$"
+        description: "SHA-256 of the frozen scenario file"
+      swept_parameters:
+        type: object
+        additionalProperties:
+          type: array
+        description: "Parameter name → list of values swept"
+      seeds:
+        type: array
+        items:
+          type: integer
+        minItems: 1
+      total_runs:
+        type: integer
+        minimum: 1
+      epochs_per_run:
+        type: integer
+        minimum: 1
+      steps_per_epoch:
+        type: integer
+        minimum: 1
+
+  # -- results --
+  results:
+    type: object
+    required: [status]
+    properties:
+      status:
+        type: string
+        enum: [completed, failed, partial]
+      wall_time_seconds:
+        type: number
+      primary_metric:
+        type: string
+      primary_result:
+        type: string
+        description: "One-sentence finding"
+      significant_findings:
+        type: integer
+      total_hypotheses_tested:
+        type: integer
+      p_hacking_audit:
+        type: object
+        properties:
+          pre_registered:
+            type: boolean
+          bonferroni_significant:
+            type: integer
+          holm_bonferroni_significant:
+            type: integer
+
+  # -- artifacts manifest --
+  artifacts:
+    type: object
+    required: [summary]
+    properties:
+      summary:
+        type: string
+        description: "Path to summary.json relative to run folder"
+      sweep_csv:
+        type: string
+      epoch_csvs:
+        type: array
+        items:
+          type: string
+      traces:
+        type: array
+        items:
+          type: string
+      plots:
+        type: array
+        items:
+          type: object
+          properties:
+            path:
+              type: string
+            description:
+              type: string
+      scripts:
+        type: array
+        items:
+          type: string
+      external:
+        type: array
+        items:
+          type: object
+          required: [path, sha256, size_bytes, storage]
+          properties:
+            path:
+              type: string
+            sha256:
+              type: string
+              pattern: "^[0-9a-f]{64}$"
+            size_bytes:
+              type: integer
+            storage:
+              type: string
+              description: "e.g. gh-release:v0.14.2-runs, s3://bucket/key"
+
+  # -- links --
+  links:
+    type: object
+    properties:
+      parent_runs:
+        type: array
+        items:
+          type: string
+      child_runs:
+        type: array
+        items:
+          type: string
+      claims:
+        type: array
+        items:
+          type: string
+        description: "Claim IDs this run supports or weakens"
+      paper:
+        type: string
+      pr:
+        type: [integer, "null"]
+      issue:
+        type: [integer, "null"]
+
+  # -- tags --
+  tags:
+    type: array
+    items:
+      type: string
+    minItems: 1
+    description: "Searchable tags for indexing and filtering"

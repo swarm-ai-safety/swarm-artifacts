@@ -1,0 +1,15 @@
+# SWARM Research OS — Extraction categories
+# What arscontexta's /reduce skill should extract from SWARM run artifacts.
+
+extraction_categories:
+  - claims                    # testable propositions with evidence
+  - evidence                  # statistical results, effect sizes, p-values
+  - boundary-conditions       # limits of generalizability
+  - governance-effects        # how governance mechanisms change outcomes
+  - topology-effects          # how network structure changes outcomes
+  - failure-patterns          # named vulnerability and attack patterns
+  - contradictions            # results that conflict with existing claims
+  - open-questions            # gaps that need investigation
+  - phase-transitions         # parameter thresholds where behavior changes qualitatively
+  - mechanism-interactions    # synergies and antagonisms between governance levers
+  - methodology-notes         # statistical methods, experimental design lessons

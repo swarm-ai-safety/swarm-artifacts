@@ -1,0 +1,26 @@
+run_id: 20260208-220218_adversarial_redteam_v3_seed42
+slug: adversarial_redteam_v3_seed42
+created_utc: '2026-02-08T22:02:18+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: runs/20260208-220218_adversarial_redteam_v3_seed42/scenario.yaml
+  seeds:
+  - 42
+  scenario_sha256: 24604b8f907e39b9b2957240cd5c814158696165c459f72579ef73257c2a65e8
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/adversarial_redteam_v3_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- redteam
+- adversarial
+- seed-42

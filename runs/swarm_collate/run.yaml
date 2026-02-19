@@ -1,0 +1,30 @@
+run_id: swarm_collate
+slug: swarm_collate
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  summary: track_a_20260210_044024/summary.json
+  epoch_csvs:
+  - track_a_20260210_034234/reputation_drift.csv
+  - track_a_20260210_040154/reputation_drift.csv
+  - track_a_20260210_040658/reputation_drift.csv
+  - track_a_20260210_044024/reputation_drift.csv
+  plots:
+  - path: track_a_20260210_034234/paper.html
+    description: ''
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- untagged

@@ -1,0 +1,23 @@
+run_id: 20260210-002525_redteam_baseline
+slug: redteam_baseline
+created_utc: '2026-02-10T00:25:25+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: redteam
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  summary: report.json
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- baseline
+- redteam

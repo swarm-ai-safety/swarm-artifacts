@@ -1,0 +1,25 @@
+run_id: 20260210-211803_rlm_recursive_collusion_seed999
+slug: rlm_recursive_collusion_seed999
+created_utc: '2026-02-10T21:18:03+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 999
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/rlm_recursive_collusion_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- rlm
+- collusion
+- seed-999

@@ -1,0 +1,35 @@
+run_id: 20260211-004234_analysis_ldt_cooperation
+slug: analysis_ldt_cooperation
+created_utc: '2026-02-11T00:42:34+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 42
+  - 7
+  - 123
+  - 256
+  - 999
+  - 2024
+  - 314
+  - 577
+  - 1337
+  - 8080
+results:
+  status: completed
+artifacts:
+  summary: summary.json
+  epoch_csvs:
+  - per_agent_payoffs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- ldt
+- cooperation
+- analysis

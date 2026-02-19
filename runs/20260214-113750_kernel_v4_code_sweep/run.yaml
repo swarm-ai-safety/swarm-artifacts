@@ -1,0 +1,27 @@
+run_id: 20260214-113750_kernel_v4_code_sweep
+slug: kernel_v4_code_sweep
+created_utc: '2026-02-14T11:37:50+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: unknown
+  seeds:
+  - 0
+  total_runs: 40
+results:
+  status: completed
+  total_hypotheses_tested: 0
+  significant_findings: 0
+artifacts:
+  summary: summary.json
+  sweep_csv: sweep_results.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- sweep
+- kernel

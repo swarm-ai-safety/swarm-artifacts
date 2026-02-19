@@ -1,0 +1,23 @@
+run_id: 20260210-005952_redteam_strict_governance
+slug: redteam_strict_governance
+created_utc: '2026-02-10T00:59:52+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: redteam
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  summary: report.json
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- redteam
+- governance

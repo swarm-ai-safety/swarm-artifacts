@@ -1,0 +1,24 @@
+run_id: 20260210-225330_rlm_memory_as_power_seed42
+slug: rlm_memory_as_power_seed42
+created_utc: '2026-02-10T22:53:30+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 42
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/rlm_memory_as_power_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- rlm
+- seed-42

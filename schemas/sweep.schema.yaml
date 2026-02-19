@@ -1,0 +1,106 @@
+# JSON Schema for sweep summary JSON output
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SWARM Sweep Summary
+description: >
+  Schema for summary.json produced by parameter sweep runs.
+  Contains pairwise statistical comparisons with multiple-testing corrections.
+type: object
+
+required:
+  - total_runs
+  - swept_parameters
+  - results
+
+properties:
+
+  csv:
+    type: string
+    description: "Path to the sweep results CSV"
+
+  total_runs:
+    type: integer
+    minimum: 2
+
+  total_hypotheses:
+    type: integer
+    minimum: 1
+
+  n_bonferroni_significant:
+    type: integer
+
+  n_bh_significant:
+    type: integer
+
+  swept_parameters:
+    type: object
+    additionalProperties:
+      type: array
+    description: "Parameter name → list of values tested"
+
+  results:
+    type: array
+    items:
+      type: object
+      required: [parameter, metric, value_1, value_2, n_1, n_2, mean_1, mean_2]
+      properties:
+        parameter:
+          type: string
+        metric:
+          type: string
+        value_1: {}
+        value_2: {}
+        n_1:
+          type: integer
+          minimum: 1
+        n_2:
+          type: integer
+          minimum: 1
+        mean_1:
+          type: number
+        mean_2:
+          type: number
+        sd_1:
+          type: number
+        sd_2:
+          type: number
+        t_stat:
+          type: number
+        t_p:
+          type: number
+        u_stat:
+          type: number
+        u_p:
+          type: number
+        cohens_d:
+          type: number
+        effect_class:
+          type: string
+          enum: [negligible, small, medium, large]
+        bootstrap_diff_lo:
+          type: number
+        bootstrap_diff_hi:
+          type: number
+        bonferroni_sig:
+          type: boolean
+        bh_sig:
+          type: boolean
+
+  p_hacking_audit:
+    type: object
+    properties:
+      total_hypotheses:
+        type: integer
+      pre_registered:
+        type: boolean
+      nominally_significant:
+        type: integer
+      bonferroni_significant:
+        type: integer
+      holm_bonferroni_significant:
+        type: integer
+
+  improvements_over_v1:
+    type: array
+    items:
+      type: string
+    description: "Optional notes on what changed from a prior version of this sweep"

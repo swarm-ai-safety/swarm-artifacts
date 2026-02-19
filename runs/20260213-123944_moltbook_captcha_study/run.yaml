@@ -1,0 +1,42 @@
+run_id: 20260213-123944_moltbook_captcha_study
+slug: moltbook_captcha_study
+created_utc: '2026-02-13T12:39:44+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: unknown
+  seeds:
+  - 0
+  swept_parameters:
+    governance.moltbook_challenge_difficulty:
+    - 0.0
+    - 0.25
+    - 0.5
+    - 0.75
+    - 1.0
+    governance.collusion_penalty_multiplier:
+    - 0.0
+    - 0.5
+    - 1.0
+    - 2.0
+  total_runs: 200
+results:
+  status: completed
+  total_hypotheses_tested: 112
+  significant_findings: 0
+artifacts:
+  summary: summary.json
+  sweep_csv: sweep_results.csv
+  scripts:
+  - analyze.py
+  - generate_plots.py
+  - run_sweep.py
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- study

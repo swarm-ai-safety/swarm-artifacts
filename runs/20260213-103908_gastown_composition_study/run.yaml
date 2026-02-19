@@ -1,0 +1,26 @@
+run_id: 20260213-103908_gastown_composition_study
+slug: gastown_composition_study
+created_utc: '2026-02-13T10:39:08+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/aggregated_results.csv
+  - csv/results.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- gastown
+- composition
+- study

@@ -1,0 +1,43 @@
+run_id: 20260213-202050_baseline_governance_v2
+slug: baseline_governance_v2
+created_utc: '2026-02-13T20:20:50+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: unknown
+  seeds:
+  - 0
+  swept_parameters:
+    governance.transaction_tax_rate:
+    - 0.0
+    - 0.025
+    - 0.05
+    - 0.075
+    - 0.1
+    - 0.125
+    - 0.15
+    governance.circuit_breaker_enabled:
+    - false
+    - true
+  total_runs: 700
+results:
+  status: completed
+  total_hypotheses_tested: 132
+  significant_findings: 18
+artifacts:
+  summary: summary.json
+  sweep_csv: sweep_results.csv
+  scripts:
+  - analyze.py
+  - generate_plots.py
+  - run_sweep.py
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- baseline
+- governance

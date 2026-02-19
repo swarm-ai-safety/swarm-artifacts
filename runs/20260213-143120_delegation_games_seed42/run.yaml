@@ -1,0 +1,24 @@
+run_id: 20260213-143120_delegation_games_seed42
+slug: delegation_games_seed42
+created_utc: '2026-02-13T14:31:20+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 42
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/delegation_games_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- delegation
+- seed-42

@@ -1,0 +1,23 @@
+run_id: 20260213-143607_delegation_games_sweep
+slug: delegation_games_sweep
+created_utc: '2026-02-13T14:36:07+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  sweep_csv: delegation_games_sweep.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- sweep
+- delegation

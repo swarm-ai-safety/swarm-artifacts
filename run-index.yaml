@@ -1,0 +1,822 @@
+generated_utc: '2026-02-19T02:23:39.698286+00:00'
+total_runs: 112
+runs:
+- id: 20260208-214018_baseline_seed42
+  type: single
+  tags:
+  - baseline
+  - seed-42
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-214230_redteam_baseline
+  type: redteam
+  tags:
+  - baseline
+  - redteam
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-214307_adversarial_redteam_seed42
+  type: single
+  tags:
+  - redteam
+  - adversarial
+  - seed-42
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-214455_sweep_thresholds
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-214603_adversarial_redteam_optimized_seed42
+  type: single
+  tags:
+  - redteam
+  - adversarial
+  - seed-42
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-215009_sweep_freeze_duration
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-215712_adversarial_redteam_v2_seed42
+  type: single
+  tags:
+  - redteam
+  - adversarial
+  - seed-42
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-215902_sweep_reputation_decay
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-08'
+  status: completed
+- id: 20260208-220218_adversarial_redteam_v3_seed42
+  type: single
+  tags:
+  - redteam
+  - adversarial
+  - seed-42
+  date: '2026-02-08'
+  status: completed
+- id: 20260209-174740_redteam
+  type: redteam
+  tags:
+  - redteam
+  date: '2026-02-09'
+  status: completed
+- id: 20260210-002013_baseline_seed42
+  type: single
+  tags:
+  - baseline
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-002525_redteam_baseline
+  type: redteam
+  tags:
+  - baseline
+  - redteam
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-002820_strict_governance_seed42
+  type: single
+  tags:
+  - governance
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-003409_strict_governance_seed42
+  type: single
+  tags:
+  - governance
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-004916_baseline_seed42
+  type: single
+  tags:
+  - baseline
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-005255_strict_governance_seed42
+  type: single
+  tags:
+  - governance
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-005442_redteam_strict_governance
+  type: redteam
+  tags:
+  - redteam
+  - governance
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-005755_redteam_strict_governance
+  type: redteam
+  tags:
+  - redteam
+  - governance
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-005755_strict_governance_seed42
+  type: single
+  tags:
+  - governance
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-005952_redteam_strict_governance
+  type: redteam
+  tags:
+  - redteam
+  - governance
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-005952_strict_governance_seed42
+  type: single
+  tags:
+  - governance
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211305_sweep
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211721_rlm_recursive_collusion_seed42
+  type: single
+  tags:
+  - rlm
+  - collusion
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211753_rlm_recursive_collusion_seed7
+  type: single
+  tags:
+  - rlm
+  - collusion
+  - seed-7
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211757_rlm_recursive_collusion_seed123
+  type: single
+  tags:
+  - rlm
+  - collusion
+  - seed-123
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211800_rlm_recursive_collusion_seed256
+  type: single
+  tags:
+  - rlm
+  - collusion
+  - seed-256
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211803_rlm_recursive_collusion_seed999
+  type: single
+  tags:
+  - rlm
+  - collusion
+  - seed-999
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211851_rlm_memory_as_power_seed42
+  type: single
+  tags:
+  - rlm
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-211958_rlm_memory_as_power_seed7
+  type: single
+  tags:
+  - rlm
+  - seed-7
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212001_rlm_memory_as_power_seed123
+  type: single
+  tags:
+  - rlm
+  - seed-123
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212004_rlm_memory_as_power_seed256
+  type: single
+  tags:
+  - rlm
+  - seed-256
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212007_rlm_memory_as_power_seed999
+  type: single
+  tags:
+  - rlm
+  - seed-999
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212010_rlm_memory_as_power_seed2024
+  type: single
+  tags:
+  - rlm
+  - seed-2024
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212013_rlm_memory_as_power_seed314
+  type: single
+  tags:
+  - rlm
+  - seed-314
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212016_rlm_memory_as_power_seed577
+  type: single
+  tags:
+  - rlm
+  - seed-577
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212019_rlm_memory_as_power_seed1337
+  type: single
+  tags:
+  - rlm
+  - seed-1337
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212022_rlm_memory_as_power_seed8080
+  type: single
+  tags:
+  - rlm
+  - seed-8080
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212120_rlm_collusion_sweep
+  type: sweep
+  tags:
+  - sweep
+  - rlm
+  - collusion
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-212323_rlm_collusion_sweep_10seeds
+  type: sweep
+  tags:
+  - sweep
+  - rlm
+  - collusion
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-213833_collusion_governance
+  type: sweep
+  tags:
+  - governance
+  - collusion
+  date: '2026-02-10'
+  status: completed
+  total_runs: 80
+- id: 20260210-215826_analysis_rlm_governance_lag
+  type: single
+  tags:
+  - governance
+  - rlm
+  - analysis
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-215826_analysis_rlm_memory_as_power
+  type: single
+  tags:
+  - rlm
+  - analysis
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-215826_analysis_rlm_recursive_collusion
+  type: single
+  tags:
+  - rlm
+  - collusion
+  - analysis
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-220048_kernel_governance
+  type: sweep
+  tags:
+  - governance
+  - kernel
+  date: '2026-02-10'
+  status: completed
+  total_runs: 80
+- id: 20260210-222725_kernel_market_baseline_seed42
+  type: single
+  tags:
+  - baseline
+  - kernel
+  - market
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-223119_kernel_market_v2
+  type: sweep
+  tags:
+  - kernel
+  - market
+  date: '2026-02-10'
+  status: completed
+  total_runs: 80
+- id: 20260210-224358_kernel_market_sweep
+  type: sweep
+  tags:
+  - sweep
+  - kernel
+  - market
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-225121_rlm_recursive_collusion_seed42
+  type: single
+  tags:
+  - rlm
+  - collusion
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-225330_rlm_memory_as_power_seed42
+  type: single
+  tags:
+  - rlm
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-235049_kernel_market_audit_rate
+  type: sweep
+  tags:
+  - kernel
+  - market
+  date: '2026-02-10'
+  status: completed
+  total_runs: 60
+- id: 20260210-235816_rlm_governance_lag_seed42
+  type: single
+  tags:
+  - governance
+  - rlm
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260210-235847_kernel_market_baseline_seed42
+  type: single
+  tags:
+  - baseline
+  - kernel
+  - market
+  - seed-42
+  date: '2026-02-10'
+  status: completed
+- id: 20260211-000149_kernel_market_governance_comparison
+  type: sweep
+  tags:
+  - governance
+  - kernel
+  - market
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-002843_ldt_composition_study
+  type: study
+  tags:
+  - ldt
+  - composition
+  - study
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-003414_ldt_composition_study
+  type: study
+  tags:
+  - ldt
+  - composition
+  - study
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-003727_reproduce_2602_00035
+  type: single
+  tags:
+  - reproduce
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-004007_ldt_cooperation_seed42
+  type: single
+  tags:
+  - ldt
+  - cooperation
+  - seed-42
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-004234_analysis_ldt_cooperation
+  type: single
+  tags:
+  - ldt
+  - cooperation
+  - analysis
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-004649_reproduce_2602_00035
+  type: single
+  tags:
+  - reproduce
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-011020_ldt_composition_study
+  type: study
+  tags:
+  - ldt
+  - composition
+  - study
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-011507_concordia_sweep
+  type: single
+  tags:
+  - sweep
+  - concordia
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-012350_concordia_sweep
+  type: single
+  tags:
+  - sweep
+  - concordia
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-215617_ldt_composition_study
+  type: study
+  tags:
+  - ldt
+  - composition
+  - study
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-222902_reproduce_2602_00035
+  type: single
+  tags:
+  - reproduce
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-223213_kernel_market_v3_seed42
+  type: single
+  tags:
+  - kernel
+  - market
+  - seed-42
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-223640_sweep
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-225057_pi_bridge_sweep
+  type: sweep
+  tags:
+  - sweep
+  - pi
+  - bridge
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-232940_gastown_composition_study
+  type: study
+  tags:
+  - gastown
+  - composition
+  - study
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-232952_gastown_composition_study
+  type: study
+  tags:
+  - gastown
+  - composition
+  - study
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-233528_pi_claude_live
+  type: single
+  tags:
+  - pi
+  - claude
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-234038_pi_claude_live
+  type: single
+  tags:
+  - pi
+  - claude
+  date: '2026-02-11'
+  status: completed
+- id: 20260211-235047_pi_claude_live
+  type: single
+  tags:
+  - pi
+  - claude
+  date: '2026-02-11'
+  status: completed
+- id: 20260212-001857_pi_bridge_claude_study
+  type: study
+  tags:
+  - pi
+  - bridge
+  - claude
+  - study
+  date: '2026-02-12'
+  status: completed
+- id: 20260212-012511_sweep
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-12'
+  status: completed
+- id: 20260212-015027_sweep
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-12'
+  status: completed
+- id: 20260212-225641_ldt_cooperation_seed42
+  type: single
+  tags:
+  - ldt
+  - cooperation
+  - seed-42
+  date: '2026-02-12'
+  status: completed
+- id: 20260212-230038_sweep
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-12'
+  status: completed
+- id: 20260212-231123_redteam
+  type: redteam
+  tags:
+  - redteam
+  date: '2026-02-12'
+  status: completed
+- id: 20260212-231859_ldt_acausality_study
+  type: study
+  tags:
+  - ldt
+  - acausality
+  - study
+  date: '2026-02-12'
+  status: completed
+  total_runs: 30
+- id: 20260213-003757_ldt_large_population_study
+  type: study
+  tags:
+  - ldt
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 30
+- id: 20260213-003804_ldt_modeling_adversary_study
+  type: study
+  tags:
+  - ldt
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 30
+- id: 20260213-003812_ldt_low_prior_study
+  type: study
+  tags:
+  - ldt
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 30
+- id: 20260213-003819_ldt_short_horizon_study
+  type: study
+  tags:
+  - ldt
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 30
+- id: 20260213-005951_gastown_composition_study
+  type: study
+  tags:
+  - gastown
+  - composition
+  - study
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-013951_ldt_decision_theory_study
+  type: study
+  tags:
+  - ldt
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 30
+- id: 20260213-101646_ldt_large_pop_dt_study
+  type: study
+  tags:
+  - ldt
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 30
+- id: 20260213-103908_gastown_composition_study
+  type: study
+  tags:
+  - gastown
+  - composition
+  - study
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-103914_gastown_composition_study
+  type: study
+  tags:
+  - gastown
+  - composition
+  - study
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-120237_sweep
+  type: sweep
+  tags:
+  - sweep
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-123944_moltbook_captcha_study
+  type: study
+  tags:
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 200
+- id: 20260213-143120_delegation_games_seed42
+  type: single
+  tags:
+  - delegation
+  - seed-42
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-143607_delegation_games_sweep
+  type: sweep
+  tags:
+  - sweep
+  - delegation
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-143751_delegation_games_study
+  type: study
+  tags:
+  - delegation
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 80
+- id: 20260213-151729_redteam
+  type: redteam
+  tags:
+  - redteam
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-165419_gastown_composition_study
+  type: study
+  tags:
+  - gastown
+  - composition
+  - study
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-165430_gastown_composition_study
+  type: study
+  tags:
+  - gastown
+  - composition
+  - study
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-173805_baseline_governance
+  type: sweep
+  tags:
+  - baseline
+  - governance
+  date: '2026-02-13'
+  status: completed
+  total_runs: 80
+- id: 20260213-202050_baseline_governance_v2
+  type: sweep
+  tags:
+  - baseline
+  - governance
+  date: '2026-02-13'
+  status: completed
+  total_runs: 700
+- id: 20260213-204503_agent_lab_research_safety_study
+  type: study
+  tags:
+  - study
+  date: '2026-02-13'
+  status: completed
+  total_runs: 160
+- id: 20260213-221500_collusion_tax_effect
+  type: sweep
+  tags:
+  - collusion
+  date: '2026-02-13'
+  status: completed
+  total_runs: 160
+- id: 20260213-231532_phylogeny_demo_seed7
+  type: single
+  tags:
+  - phylogeny
+  - seed-7
+  date: '2026-02-13'
+  status: completed
+- id: 20260213-234651_phylogeny_demo_seed7
+  type: single
+  tags:
+  - phylogeny
+  - seed-7
+  date: '2026-02-13'
+  status: completed
+- id: 20260214-014153_tau_k_calibration
+  type: calibration
+  tags:
+  - tau
+  - calibration
+  date: '2026-02-14'
+  status: completed
+- id: 20260214-020518_tau_k_calibration
+  type: calibration
+  tags:
+  - tau
+  - calibration
+  date: '2026-02-14'
+  status: completed
+- id: 20260214-094622_redteam
+  type: redteam
+  tags:
+  - redteam
+  date: '2026-02-14'
+  status: completed
+- id: 20260214-113750_kernel_v4_code_sweep
+  type: sweep
+  tags:
+  - sweep
+  - kernel
+  date: '2026-02-14'
+  status: completed
+  total_runs: 40
+- id: 20260217_memori_study
+  type: study
+  tags:
+  - memori
+  - study
+  date: '2026-02-17'
+  status: completed
+  total_runs: 30
+- id: _tmp_test
+  type: single
+  tags:
+  - untagged
+  date: unknown
+  status: completed
+- id: _tmp_test2
+  type: single
+  tags:
+  - untagged
+  date: unknown
+  status: completed
+- id: agent_tree_demo
+  type: single
+  tags:
+  - untagged
+  date: unknown
+  status: completed
+- id: self_optimizer_seed42
+  type: single
+  tags:
+  - seed-42
+  date: unknown
+  status: completed
+- id: swarm_collate
+  type: single
+  tags:
+  - untagged
+  date: unknown
+  status: completed

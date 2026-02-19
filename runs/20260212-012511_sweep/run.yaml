@@ -1,0 +1,22 @@
+run_id: 20260212-012511_sweep
+slug: sweep
+created_utc: '2026-02-12T01:25:11+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  sweep_csv: csv/sweep_results.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- sweep

@@ -1,0 +1,25 @@
+run_id: 20260212-225641_ldt_cooperation_seed42
+slug: ldt_cooperation_seed42
+created_utc: '2026-02-12T22:56:41+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 42
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/ldt_cooperation_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- ldt
+- cooperation
+- seed-42

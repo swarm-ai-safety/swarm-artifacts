@@ -1,0 +1,21 @@
+run_id: agent_tree_demo
+slug: agent_tree_demo
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts: {}
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- untagged

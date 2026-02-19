@@ -1,0 +1,27 @@
+run_id: 20260213-101646_ldt_large_pop_dt_study
+slug: ldt_large_pop_dt_study
+created_utc: '2026-02-13T10:16:46+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: unknown
+  seeds:
+  - 0
+  total_runs: 30
+results:
+  status: completed
+  total_hypotheses_tested: 0
+  significant_findings: 0
+artifacts:
+  summary: analysis/summary.json
+  sweep_csv: sweep_results.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- ldt
+- study

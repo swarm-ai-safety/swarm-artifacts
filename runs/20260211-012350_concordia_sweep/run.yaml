@@ -1,0 +1,25 @@
+run_id: 20260211-012350_concordia_sweep
+slug: concordia_sweep
+created_utc: '2026-02-11T01:23:50+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/epochs.csv
+  - csv/summary.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- sweep
+- concordia

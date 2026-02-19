@@ -1,0 +1,24 @@
+run_id: 20260210-005755_strict_governance_seed42
+slug: strict_governance_seed42
+created_utc: '2026-02-10T00:57:55+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 42
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/strict_governance_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- governance
+- seed-42

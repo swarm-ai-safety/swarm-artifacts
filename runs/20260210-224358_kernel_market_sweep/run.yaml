@@ -1,0 +1,24 @@
+run_id: 20260210-224358_kernel_market_sweep
+slug: kernel_market_sweep
+created_utc: '2026-02-10T22:43:58+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  sweep_csv: kernel_market_sweep.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- sweep
+- kernel
+- market
