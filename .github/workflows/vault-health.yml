@@ -1,0 +1,123 @@
+# SWARM Research OS — Vault health check
+#
+# Weekly audit of vault integrity: claim confidence, stale notes,
+# missing evidence, broken wiki-links.
+
+name: Vault health
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # Monday 6 AM UTC
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "vault/**"
+
+jobs:
+  health-check:
+    name: Vault health audit
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml jsonschema
+
+      - name: Audit vault health
+        id: audit
+        run: python scripts/vault-health.py --json > health-report.json
+
+      - name: Generate dashboard
+        id: dashboard
+        run: |
+          python -c "
+          import json, sys
+          report = json.load(open('health-report.json'))
+
+          # Claims summary
+          claims = report.get('claims', {})
+          total = claims.get('total', 0)
+          active = claims.get('active', 0)
+          weakened = claims.get('weakened', 0)
+          high = claims.get('high_confidence', 0)
+          stale = claims.get('stale', 0)
+
+          # Evidence integrity
+          evidence = report.get('evidence', {})
+          broken_refs = evidence.get('broken_run_refs', [])
+
+          # Wiki-links
+          links = report.get('wiki_links', {})
+          broken_links = links.get('broken', [])
+
+          # Index
+          index = report.get('index', {})
+          orphaned = index.get('orphaned_notes', [])
+
+          errors = len(broken_refs) + len(broken_links) + len(orphaned)
+          warnings = stale + weakened
+
+          with open('$GITHUB_OUTPUT', 'a') as f:
+              f.write(f'errors={errors}\n')
+              f.write(f'warnings={warnings}\n')
+              f.write(f'total_claims={total}\n')
+
+          # Build summary
+          summary = f'''## Vault Health Dashboard
+
+          **Date**: $(date -u +%Y-%m-%d)
+
+          ### Claims
+          | Metric | Count |
+          |--------|-------|
+          | Total claims | {total} |
+          | Active | {active} |
+          | Weakened | {weakened} |
+          | High confidence | {high} |
+          | Stale (>30 days) | {stale} |
+
+          ### Integrity
+          | Check | Status |
+          |-------|--------|
+          | Broken run references | {len(broken_refs)} |
+          | Broken wiki-links | {len(broken_links)} |
+          | Orphaned notes | {len(orphaned)} |
+          '''
+
+          if broken_refs:
+              summary += '\n#### Broken run references\n'
+              for ref in broken_refs:
+                  summary += f\"- \`{ref['claim']}\`: references non-existent run \`{ref['run_id']}\`\n\"
+
+          if broken_links:
+              summary += '\n#### Broken wiki-links\n'
+              for link in broken_links:
+                  summary += f\"- \`{link['file']}\`: \`[[{link['target']}]]\` not found\n\"
+
+          with open('dashboard.md', 'w') as f:
+              f.write(summary)
+          "
+
+      - name: Post summary
+        if: always()
+        run: cat dashboard.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create issue if errors found
+        if: steps.dashboard.outputs.errors != '0' && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Vault health: ${{ steps.dashboard.outputs.errors }} integrity error(s)" \
+            --body-file dashboard.md \
+            --label "vault-health,automated"
+
+      - name: Fail on errors
+        if: steps.dashboard.outputs.errors != '0'
+        run: |
+          echo "::error::Vault has ${{ steps.dashboard.outputs.errors }} integrity errors"
+          exit 1

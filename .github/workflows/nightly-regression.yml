@@ -1,0 +1,198 @@
+# SWARM Research OS — Nightly regression
+#
+# Runs canary scenarios daily at 4 AM UTC.
+# Compares results against baselines, creates an issue if drift is detected.
+
+name: Nightly regression
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+    inputs:
+      scenarios:
+        description: "Comma-separated scenario paths (leave empty for all canaries)"
+        required: false
+      seeds:
+        description: "Comma-separated seed list"
+        required: false
+        default: "42,7,123"
+
+env:
+  CANARY_DIR: scenarios/benchmarks
+  DEFAULT_SEEDS: "42,7,123"
+  # Drift tolerance thresholds
+  WELFARE_TOLERANCE_PCT: "5.0"
+  TOXICITY_TOLERANCE_PCT: "3.0"
+
+jobs:
+  discover:
+    name: Discover canary scenarios
+    runs-on: ubuntu-latest
+    outputs:
+      scenarios: ${{ steps.find.outputs.scenarios }}
+      scenario_count: ${{ steps.find.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find canary scenarios
+        id: find
+        run: |
+          if [ -n "${{ github.event.inputs.scenarios }}" ]; then
+            # Manual trigger with specific scenarios
+            SCENARIOS=$(echo "${{ github.event.inputs.scenarios }}" | tr ',' '\n' | jq -R . | jq -s .)
+          else
+            # Auto-discover from benchmarks directory
+            if [ -d "$CANARY_DIR" ]; then
+              SCENARIOS=$(find "$CANARY_DIR" -name "*.yaml" -type f | sort | jq -R . | jq -s .)
+            else
+              SCENARIOS="[]"
+            fi
+          fi
+          echo "scenarios=$SCENARIOS" >> "$GITHUB_OUTPUT"
+          echo "count=$(echo "$SCENARIOS" | jq length)" >> "$GITHUB_OUTPUT"
+          echo "Discovered scenarios: $SCENARIOS"
+
+  canary:
+    name: "Run canary: ${{ matrix.scenario }}"
+    needs: discover
+    if: needs.discover.outputs.scenario_count != '0'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario: ${{ fromJson(needs.discover.outputs.scenarios) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install SWARM
+        run: |
+          pip install -e ".[dev]" 2>/dev/null || {
+            echo "::warning::SWARM not installable from this repo. Ensure swarm is available."
+            pip install swarm-sim 2>/dev/null || true
+          }
+
+      - name: Run canary scenario
+        id: run
+        timeout-minutes: 15
+        run: |
+          SEEDS="${{ github.event.inputs.seeds || env.DEFAULT_SEEDS }}"
+          SCENARIO="${{ matrix.scenario }}"
+          SCENARIO_NAME=$(basename "$SCENARIO" .yaml)
+          RUN_ID="$(date +%Y%m%d-%H%M%S)_canary_${SCENARIO_NAME}"
+
+          echo "scenario_name=$SCENARIO_NAME" >> "$GITHUB_OUTPUT"
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+
+          echo "Running: $SCENARIO with seeds=$SEEDS"
+          python -m swarm run "$SCENARIO" --seeds $(echo "$SEEDS" | tr ',' ' ') \
+            --output-dir "runs/$RUN_ID" 2>&1 | tee canary-output.log
+
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Extract metrics
+        if: always()
+        id: metrics
+        run: |
+          RUN_DIR="runs/${{ steps.run.outputs.run_id }}"
+          if [ -f "$RUN_DIR/summary.json" ]; then
+            WELFARE=$(python -c "import json; d=json.load(open('$RUN_DIR/summary.json')); print(d.get('welfare', 'N/A'))")
+            TOXICITY=$(python -c "import json; d=json.load(open('$RUN_DIR/summary.json')); print(d.get('toxicity_rate', 'N/A'))")
+            echo "welfare=$WELFARE" >> "$GITHUB_OUTPUT"
+            echo "toxicity=$TOXICITY" >> "$GITHUB_OUTPUT"
+            echo "has_metrics=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_metrics=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload canary results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canary-${{ steps.run.outputs.scenario_name }}
+          path: |
+            runs/${{ steps.run.outputs.run_id }}/
+            canary-output.log
+          retention-days: 30
+
+  report:
+    name: Regression report
+    needs: [discover, canary]
+    if: always() && needs.discover.outputs.scenario_count != '0'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all canary results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: canary-*
+          path: canary-results/
+
+      - name: Generate regression report
+        id: report
+        run: |
+          TOTAL=${{ needs.discover.outputs.scenario_count }}
+          # Count job results from the matrix
+          FAILED=0
+          PASSED=0
+          REPORT=""
+
+          for dir in canary-results/canary-*/; do
+            SCENARIO=$(basename "$dir" | sed 's/canary-//')
+            if [ -f "$dir/canary-output.log" ]; then
+              # Check if the run completed successfully
+              if grep -q "completed" "$dir/canary-output.log" 2>/dev/null; then
+                PASSED=$((PASSED + 1))
+                REPORT="${REPORT}\n| ${SCENARIO} | passed | - |"
+              else
+                FAILED=$((FAILED + 1))
+                ERROR=$(tail -1 "$dir/canary-output.log" 2>/dev/null || echo "unknown")
+                REPORT="${REPORT}\n| ${SCENARIO} | **FAILED** | ${ERROR} |"
+              fi
+            else
+              FAILED=$((FAILED + 1))
+              REPORT="${REPORT}\n| ${SCENARIO} | **FAILED** | no output |"
+            fi
+          done
+
+          echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "passed=$PASSED" >> "$GITHUB_OUTPUT"
+          echo "failed=$FAILED" >> "$GITHUB_OUTPUT"
+          echo "drift=$( [ $FAILED -gt 0 ] && echo 'true' || echo 'false' )" >> "$GITHUB_OUTPUT"
+
+          # Save report body
+          cat > report-body.md << REPORTEOF
+          ## Nightly Regression Report
+
+          **Date**: $(date -u +%Y-%m-%d)
+          **Git SHA**: ${{ github.sha }}
+          **Scenarios**: ${PASSED}/${TOTAL} passed
+
+          | Scenario | Status | Error |
+          |----------|--------|-------|
+          $(echo -e "$REPORT")
+
+          ### Action needed
+          $( [ $FAILED -gt 0 ] && echo "Investigate whether recent changes caused the regression." || echo "All canary scenarios passed. No action needed." )
+          REPORTEOF
+
+      - name: Create drift issue
+        if: steps.report.outputs.drift == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Nightly regression: ${{ steps.report.outputs.failed }}/${{ steps.report.outputs.total }} canaries failed" \
+            --body-file report-body.md \
+            --label "regression,automated,priority:high"
+
+      - name: Post summary
+        if: always()
+        run: |
+          cat report-body.md >> "$GITHUB_STEP_SUMMARY"

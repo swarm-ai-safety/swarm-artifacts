@@ -1,0 +1,76 @@
+# SWARM Research OS — Post-merge benchmark
+#
+# When a PR adds new scenarios, run them through the benchmark suite
+# to establish baselines.
+
+name: Post-merge benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scenarios/**/*.yaml"
+
+jobs:
+  detect:
+    name: Detect new scenarios
+    runs-on: ubuntu-latest
+    outputs:
+      scenarios: ${{ steps.diff.outputs.scenarios }}
+      has_new: ${{ steps.diff.outputs.has_new }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find new/modified scenarios
+        id: diff
+        run: |
+          NEW_SCENARIOS=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'scenarios/**/*.yaml' | jq -R . | jq -s .)
+          COUNT=$(echo "$NEW_SCENARIOS" | jq length)
+          echo "scenarios=$NEW_SCENARIOS" >> "$GITHUB_OUTPUT"
+          echo "has_new=$( [ $COUNT -gt 0 ] && echo 'true' || echo 'false' )" >> "$GITHUB_OUTPUT"
+          echo "Found $COUNT new/modified scenarios"
+
+  benchmark:
+    name: "Benchmark: ${{ matrix.scenario }}"
+    needs: detect
+    if: needs.detect.outputs.has_new == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario: ${{ fromJson(needs.detect.outputs.scenarios) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install SWARM
+        run: |
+          pip install -e ".[dev]" 2>/dev/null || {
+            pip install swarm-sim 2>/dev/null || true
+          }
+
+      - name: Run benchmark
+        timeout-minutes: 30
+        run: |
+          SCENARIO="${{ matrix.scenario }}"
+          SCENARIO_NAME=$(basename "$SCENARIO" .yaml)
+          RUN_ID="$(date +%Y%m%d-%H%M%S)_benchmark_${SCENARIO_NAME}"
+
+          echo "Benchmarking: $SCENARIO"
+          python -m swarm run "$SCENARIO" --seeds 42 7 123 \
+            --output-dir "runs/$RUN_ID" 2>&1 | tee benchmark.log
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-${{ matrix.scenario }}
+          path: |
+            runs/
+            benchmark.log
+          retention-days: 90

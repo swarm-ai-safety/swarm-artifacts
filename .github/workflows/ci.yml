@@ -1,0 +1,83 @@
+# SWARM Research OS — CI
+#
+# Runs on every PR and push to main.
+# Validates schemas, typechecks the Inngest pipeline, and checks vault health.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ── Typecheck Inngest pipeline ────────────────────────────────────────
+  typecheck:
+    name: Typecheck Inngest
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: inngest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: inngest/package-lock.json
+      - run: npm ci
+      - run: npx tsc --noEmit
+
+  # ── Validate run.yaml schemas ─────────────────────────────────────────
+  validate-runs:
+    name: Validate run.yaml schemas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml jsonschema
+      - name: Validate all runs
+        run: python scripts/validate-run.py --all
+
+  # ── Validate vault notes ──────────────────────────────────────────────
+  validate-vault:
+    name: Validate vault notes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml jsonschema
+      - name: Validate claim cards
+        run: python scripts/validate-vault.py --claims
+      - name: Validate experiment notes
+        run: python scripts/validate-vault.py --experiments
+      - name: Check index consistency
+        run: python scripts/validate-vault.py --index
+
+  # ── Check run index is up to date ────────────────────────────────────
+  check-index:
+    name: Check run index
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pyyaml
+      - name: Rebuild index and diff
+        run: |
+          cp run-index.yaml run-index.yaml.bak
+          python scripts/index-runs.py
+          diff run-index.yaml.bak run-index.yaml || {
+            echo "::error::run-index.yaml is out of date. Run 'python scripts/index-runs.py' and commit."
+            exit 1
+          }
