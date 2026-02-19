@@ -1,0 +1,237 @@
+# JSON Schema for summary.json — run output
+# Three variants: single run, sweep, and redteam (discriminated by presence of fields)
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SWARM Run Summary
+description: >
+  Schema for summary.json output. Supports three variants:
+  single run metrics, sweep statistical results, and redteam vulnerability reports.
+
+oneOf:
+  - $ref: "#/$defs/single_run"
+  - $ref: "#/$defs/sweep_summary"
+  - $ref: "#/$defs/redteam_summary"
+
+$defs:
+
+  # ── Single run summary ──────────────────────────────────────────────
+  single_run:
+    type: object
+    required: [seed, n_epochs, steps_per_epoch, welfare]
+    properties:
+      simulation_id:
+        type: string
+      seed:
+        type: integer
+      n_epochs:
+        type: integer
+        minimum: 1
+      steps_per_epoch:
+        type: integer
+        minimum: 1
+      n_agents:
+        type: integer
+        minimum: 1
+
+      # aggregate metrics
+      welfare:
+        type: number
+      toxicity_rate:
+        type: number
+        minimum: 0
+        maximum: 1
+      acceptance_rate:
+        type: number
+        minimum: 0
+        maximum: 1
+      quality_gap:
+        type: number
+        description: "E[p|accepted] - E[p|rejected]; negative = adverse selection"
+      gini_coefficient:
+        type: number
+        minimum: 0
+        maximum: 1
+
+      # per-agent-type breakdown
+      agent_type_metrics:
+        type: object
+        additionalProperties:
+          type: object
+          properties:
+            avg_payoff:
+              type: number
+            avg_reputation:
+              type: number
+              minimum: 0
+              maximum: 1
+
+      # governance telemetry
+      governance_events:
+        type: object
+        properties:
+          freezes:
+            type: integer
+            minimum: 0
+          audits:
+            type: integer
+            minimum: 0
+          collusion_flags:
+            type: integer
+            minimum: 0
+          tax_collected:
+            type: number
+            minimum: 0
+
+      # final network state
+      network_final:
+        type: object
+        properties:
+          n_edges:
+            type: integer
+            minimum: 0
+          avg_degree:
+            type: number
+          avg_clustering:
+            type: number
+            minimum: 0
+            maximum: 1
+          n_components:
+            type: integer
+            minimum: 1
+
+  # ── Sweep summary ───────────────────────────────────────────────────
+  sweep_summary:
+    type: object
+    required: [total_runs, swept_parameters, results]
+    properties:
+      total_runs:
+        type: integer
+        minimum: 2
+      total_hypotheses:
+        type: integer
+        minimum: 1
+      swept_parameters:
+        type: object
+        additionalProperties:
+          type: array
+      results:
+        type: array
+        items:
+          type: object
+          required: [parameter, metric, value_1, value_2, n_1, n_2, mean_1, mean_2]
+          properties:
+            parameter:
+              type: string
+            metric:
+              type: string
+            value_1: {}
+            value_2: {}
+            n_1:
+              type: integer
+              minimum: 1
+            n_2:
+              type: integer
+              minimum: 1
+            mean_1:
+              type: number
+            mean_2:
+              type: number
+            sd_1:
+              type: number
+            sd_2:
+              type: number
+            t_stat:
+              type: number
+            t_p:
+              type: number
+            u_stat:
+              type: number
+            u_p:
+              type: number
+            cohens_d:
+              type: number
+            effect_class:
+              type: string
+              enum: [negligible, small, medium, large]
+            bootstrap_diff_lo:
+              type: number
+            bootstrap_diff_hi:
+              type: number
+            bonferroni_sig:
+              type: boolean
+            bh_sig:
+              type: boolean
+      p_hacking_audit:
+        type: object
+        properties:
+          total_hypotheses:
+            type: integer
+          pre_registered:
+            type: boolean
+          nominally_significant:
+            type: integer
+          bonferroni_significant:
+            type: integer
+          holm_bonferroni_significant:
+            type: integer
+
+  # ── Redteam summary ─────────────────────────────────────────────────
+  redteam_summary:
+    type: object
+    required: [attacks_tested, robustness_score, grade, vulnerabilities]
+    properties:
+      governance_config:
+        type: object
+      evaluated_at:
+        type: string
+        format: date-time
+      attacks_tested:
+        type: integer
+        minimum: 1
+      attacks_successful:
+        type: integer
+        minimum: 0
+      attacks_prevented:
+        type: integer
+        minimum: 0
+      overall_evasion_rate:
+        type: number
+        minimum: 0
+        maximum: 1
+      overall_detection_latency:
+        type: number
+        minimum: 0
+      total_damage_allowed:
+        type: number
+        minimum: 0
+      robustness_score:
+        type: number
+        minimum: 0
+        maximum: 1
+      grade:
+        type: string
+        enum: [A, B, C, D, F]
+      vulnerabilities:
+        type: array
+        items:
+          type: object
+          required: [vulnerability_id, severity, description]
+          properties:
+            vulnerability_id:
+              type: string
+            severity:
+              type: string
+              enum: [critical, high, medium, low]
+            description:
+              type: string
+            attack_vector:
+              type: string
+              enum: [exploitation, coordination, evasion, amplification, resource_drain]
+            affected_lever:
+              type: string
+            exploitation_difficulty:
+              type: string
+              enum: [trivial, easy, moderate, hard]
+            potential_damage:
+              type: number
+            mitigation:
+              type: string

@@ -1,0 +1,217 @@
+# JSON Schema for scenario YAML — experiment input definition
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SWARM Scenario
+description: >
+  Schema for scenario YAML files that define experiment inputs.
+  Each run folder contains a frozen (fully-resolved) copy.
+type: object
+
+required:
+  - scenario_id
+  - description
+  - agents
+  - simulation
+
+properties:
+
+  scenario_id:
+    type: string
+    pattern: "^[a-z0-9_]+$"
+    description: "Unique identifier (lowercase, underscores)"
+
+  description:
+    type: string
+    description: "What this scenario tests"
+
+  motif:
+    type: string
+    description: "Research theme (e.g. coordination_test, regulatory_study)"
+
+  # -- agent composition --
+  agents:
+    type: array
+    items:
+      type: object
+      required: [type, count]
+      properties:
+        type:
+          type: string
+          enum:
+            - honest
+            - opportunistic
+            - deceptive
+            - adversarial
+            - adaptive_adversary
+            - random
+          description: "Agent behavioral type"
+        count:
+          type: integer
+          minimum: 1
+    minItems: 1
+
+  # -- governance knobs --
+  governance:
+    type: object
+    properties:
+      transaction_tax_rate:
+        type: number
+        minimum: 0
+        maximum: 1
+      transaction_tax_split:
+        type: number
+        minimum: 0
+        maximum: 1
+      reputation_decay_rate:
+        type: number
+        minimum: 0
+        maximum: 1
+      vote_normalization_enabled:
+        type: boolean
+      max_vote_weight_per_agent:
+        type: number
+      bandwidth_cap:
+        type: integer
+        minimum: 1
+      staking_enabled:
+        type: boolean
+      min_stake_to_participate:
+        type: number
+        minimum: 0
+      stake_slash_rate:
+        type: number
+        minimum: 0
+        maximum: 1
+      circuit_breaker_enabled:
+        type: boolean
+      freeze_threshold_toxicity:
+        type: number
+        minimum: 0
+        maximum: 1
+      freeze_threshold_violations:
+        type: integer
+        minimum: 1
+      freeze_duration_epochs:
+        type: integer
+        minimum: 1
+      collusion_detection_enabled:
+        type: boolean
+      audit_enabled:
+        type: boolean
+      audit_probability:
+        type: number
+        minimum: 0
+        maximum: 1
+      audit_penalty_multiplier:
+        type: number
+        minimum: 0
+      audit_threshold_p:
+        type: number
+        minimum: 0
+        maximum: 1
+    additionalProperties: true
+
+  # -- network topology --
+  network:
+    type: object
+    properties:
+      topology:
+        type: string
+        enum: [ring, random, small_world, complete, star, scale_free]
+      params:
+        type: object
+        additionalProperties: true
+      dynamic:
+        type: boolean
+
+  # -- simulation parameters --
+  simulation:
+    type: object
+    required: [n_epochs, steps_per_epoch]
+    properties:
+      n_epochs:
+        type: integer
+        minimum: 1
+      steps_per_epoch:
+        type: integer
+        minimum: 1
+      seed:
+        type: integer
+
+  # -- rate limits --
+  rate_limits:
+    type: object
+    properties:
+      posts_per_epoch:
+        type: integer
+        minimum: 0
+      interactions_per_step:
+        type: integer
+        minimum: 0
+      votes_per_epoch:
+        type: integer
+        minimum: 0
+      tasks_per_epoch:
+        type: integer
+        minimum: 0
+
+  # -- payoff function --
+  payoff:
+    type: object
+    properties:
+      s_plus:
+        type: number
+        description: "Surplus from beneficial interaction"
+      s_minus:
+        type: number
+        description: "Surplus from harmful interaction"
+      h:
+        type: number
+        description: "Harm externality magnitude"
+      theta:
+        type: number
+        minimum: 0
+        maximum: 1
+        description: "Surplus share to initiator"
+      rho_a:
+        type: number
+        minimum: 0
+        maximum: 1
+        description: "Externality internalization for initiator"
+      rho_b:
+        type: number
+        minimum: 0
+        maximum: 1
+        description: "Externality internalization for responder"
+      w_rep:
+        type: number
+        description: "Weight of reputation in payoff"
+
+  # -- success criteria --
+  success_criteria:
+    type: object
+    properties:
+      min_epochs:
+        type: integer
+        minimum: 1
+      min_agents:
+        type: integer
+        minimum: 1
+      toxicity_threshold:
+        type: number
+        minimum: 0
+        maximum: 1
+      max_avg_toxicity:
+        type: number
+        minimum: 0
+        maximum: 1
+      min_total_welfare:
+        type: number
+
+  # -- output paths --
+  outputs:
+    type: object
+    properties:
+      event_log:
+        type: string
+      metrics_csv:
+        type: string
