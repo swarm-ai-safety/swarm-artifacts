@@ -1,0 +1,39 @@
+# SWARM Research OS — Inngest Pipeline
+#
+# Usage:
+#   docker compose up        # start Inngest dev server + app
+#   docker compose up -d     # start in background
+#   docker compose logs -f   # follow logs
+
+services:
+  # Inngest Dev Server — provides the dashboard and event routing
+  inngest:
+    image: inngest/inngest:latest
+    ports:
+      - "8288:8288"   # Inngest dashboard
+    environment:
+      - INNGEST_DEV=1
+      - INNGEST_EVENT_API_URL=http://inngest:8288
+    command: ["inngest", "dev", "-u", "http://app:3000/api/inngest"]
+
+  # SWARM Research OS App — Express server serving Inngest functions
+  app:
+    build:
+      context: .
+      dockerfile: inngest/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - INNGEST_DEV=1
+      - INNGEST_BASE_URL=http://inngest:8288
+      - SWARM_ARTIFACTS_ROOT=/repo
+    volumes:
+      - ./runs:/repo/runs
+      - ./vault:/repo/vault
+      - ./schemas:/repo/schemas
+      - ./scripts:/repo/scripts
+      - ./scenarios:/repo/scenarios
+      - ./run-index.yaml:/repo/run-index.yaml
+    depends_on:
+      - inngest

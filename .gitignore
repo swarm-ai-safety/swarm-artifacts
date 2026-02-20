@@ -1,2 +1,39 @@
+# SWARM Research OS .gitignore
+
+# ── Heavy/regenerable run artifacts ─────────────────────────────────────
+runs/*/traces/
+runs/*/*.parquet
+runs/*/*.jsonl
+runs/*/plots/*.png
+runs/*/plots/*.html
+
+# ── Temporary/scratch runs ──────────────────────────────────────────────
+runs/_tmp_*
+
+# ── Python ──────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# ── Node / Inngest ─────────────────────────────────────────────────────
 node_modules/
-inngest/dist/
+inngest/node_modules/
+.inngest/
+
+# ── Environment ─────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── OS ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ─────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
