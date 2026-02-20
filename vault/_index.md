@@ -111,3 +111,4 @@ Schema-enforced templates for all note types:
 - `vault/templates/method-note.md`
 
 <!-- topics: index, vault, research-os -->
+<!-- vault-to-dolt: auto-synced via post-commit hook -->
