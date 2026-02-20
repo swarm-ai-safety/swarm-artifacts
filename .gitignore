@@ -37,3 +37,14 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# ── Obsidian workspace (vault/.obsidian is tracked; root .obsidian is not)
+/.obsidian/
+
+# ── Scratch files ──────────────────────────────────────────────────────
+Untitled*.canvas
+Untitled*.md
+*.canvas
+graph_view.png
+2026-02-19.md
+Lean formalization.md
