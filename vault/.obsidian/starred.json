@@ -6,6 +6,7 @@
     {"type": "file", "title": "Experiments Dashboard", "path": "dashboards/experiments-dashboard.md"},
     {"type": "file", "title": "Sweeps Dashboard", "path": "dashboards/sweeps-dashboard.md"},
     {"type": "file", "title": "Failures Dashboard", "path": "dashboards/failures-dashboard.md"},
-    {"type": "file", "title": "Vault Stats", "path": "dashboards/stats.md"}
+    {"type": "file", "title": "Vault Stats", "path": "dashboards/stats.md"},
+    {"type": "file", "title": "Suggestions", "path": "dashboards/suggestions.md"}
   ]
 }

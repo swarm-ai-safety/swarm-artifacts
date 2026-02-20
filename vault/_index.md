@@ -17,6 +17,7 @@ Interactive Dataview-powered dashboards (requires [Dataview plugin](https://gith
 - [[governance-dashboard]] — Governance mechanisms with linked claims
 - [[evidence-trail]] — Traces evidence chains: claim → run → experiment
 - [[stats]] — Vault-wide statistics and health metrics
+- [[suggestions]] — Research gaps, stale claims, next experiments to run
 
 ## Claims
 
