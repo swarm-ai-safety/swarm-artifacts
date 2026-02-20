@@ -1,20 +1,87 @@
 ---
-description: Full governance stacks impose larger welfare costs than toxicity reduction benefits at all adversarial levels
-  tested
+description: Full governance stacks impose larger welfare costs than toxicity reduction
+  benefits at all adversarial levels tested
 type: claim
 status: active
-confidence: medium
+confidence: high
 domain: governance
 evidence:
   supporting:
   - run: 20260211-232952_gastown_composition_study
     metric: welfare
     detail: Welfare penalty at 0% adversarial = -215.9 (58% reduction), N=42
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
   weakening: []
   boundary_conditions:
   - GasTown workspace, 7 agents, 30 epochs, full governance stack
 sensitivity:
-  topology: Tested on GasTown small-world only; unknown whether hub-and-spoke or ring topologies amplify or dampen the cost
+  topology: Tested on GasTown small-world only; unknown whether hub-and-spoke or ring
+    topologies amplify or dampen the cost
   agent_count: 7 agents; cost-per-agent may scale non-linearly with larger populations
 supersedes: []
 superseded_by: []
@@ -22,7 +89,7 @@ related_claims:
 - claim-tax-welfare-tradeoff
 - claim-quality-gate-dominates
 created: 2026-02-19
-updated: 2026-02-19
+updated: '2026-02-19'
 aliases:
 - governance-cost-paradox
 - full-governance-stacks-impose-larger-welfare
@@ -49,5 +116,33 @@ The full governance stack — comprising transaction taxes, circuit breakers, co
 - Does the paradox hold under partial governance stacks (e.g., tax + quality gate only)?
 - Is there a population threshold above which governance overhead amortizes?
 - How does the welfare penalty interact with redistribution mechanisms?
+
+
+## Lifecycle audit
+
+**2026-02-19** — automated claim-lifecycle audit:
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Upgraded confidence: medium -> high
 
 <!-- topics: governance, welfare, cost-benefit, gastown -->

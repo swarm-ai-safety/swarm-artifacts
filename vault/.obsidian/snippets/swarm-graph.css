@@ -1,0 +1,115 @@
+/*
+ * SWARM Research OS — Obsidian Graph View Colors
+ *
+ * Enable: Settings → Appearance → CSS Snippets → swarm-graph
+ *
+ * Nodes are colored by cssclass assigned via obsidian-metadata.py.
+ * Graph view groups should be configured to match these classes.
+ */
+
+/* ── Claims ── */
+.claim .graph-view .node {
+  fill: #e74c3c;
+}
+.claim-high .graph-view .node {
+  fill: #c0392b;
+  stroke: #e74c3c;
+  stroke-width: 2px;
+}
+.claim-medium .graph-view .node {
+  fill: #e67e22;
+}
+.claim-low .graph-view .node {
+  fill: #f39c12;
+}
+.claim-contested .graph-view .node {
+  fill: #8e44ad;
+  stroke: #e74c3c;
+  stroke-width: 2px;
+  stroke-dasharray: 4 2;
+}
+
+/* ── Experiments ── */
+.experiment .graph-view .node {
+  fill: #3498db;
+}
+.experiment-sweep .graph-view .node {
+  fill: #2980b9;
+}
+.experiment-redteam .graph-view .node {
+  fill: #e74c3c;
+  opacity: 0.7;
+}
+.experiment-study .graph-view .node {
+  fill: #2471a3;
+}
+.experiment-single .graph-view .node {
+  fill: #5dade2;
+}
+.experiment-calibration .graph-view .node {
+  fill: #85c1e9;
+}
+
+/* ── Sweep summaries ── */
+.sweep-summary .graph-view .node {
+  fill: #27ae60;
+  stroke: #2ecc71;
+  stroke-width: 1.5px;
+}
+
+/* ── Governance mechanisms ── */
+.governance .graph-view .node {
+  fill: #e67e22;
+  stroke: #f39c12;
+  stroke-width: 1.5px;
+}
+
+/* ── Topologies ── */
+.topology .graph-view .node {
+  fill: #9b59b6;
+}
+
+/* ── Failure patterns ── */
+.failure .graph-view .node {
+  fill: #e74c3c;
+  stroke: #c0392b;
+  stroke-width: 2px;
+}
+
+/* ── Methods ── */
+.method .graph-view .node {
+  fill: #95a5a6;
+  stroke: #7f8c8d;
+  stroke-width: 1px;
+}
+
+/* ── MOC / Index ── */
+.moc .graph-view .node {
+  fill: #2c3e50;
+  stroke: #ecf0f1;
+  stroke-width: 2px;
+}
+
+/* ── Tag pills in note headers ── */
+.tag {
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.85em;
+}
+
+/* Confidence badge colors in reading view */
+.claim-high .metadata-property[data-property="confidence"] .metadata-property-value {
+  color: #27ae60;
+  font-weight: bold;
+}
+.claim-medium .metadata-property[data-property="confidence"] .metadata-property-value {
+  color: #f39c12;
+  font-weight: bold;
+}
+.claim-low .metadata-property[data-property="confidence"] .metadata-property-value {
+  color: #e74c3c;
+}
+.claim-contested .metadata-property[data-property="confidence"] .metadata-property-value {
+  color: #8e44ad;
+  font-weight: bold;
+}

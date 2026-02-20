@@ -1,5 +1,6 @@
 ---
-description: Circuit breakers alone outperform full governance stacks on welfare and toxicity
+description: Circuit breakers alone outperform full governance stacks on welfare and
+  toxicity
 type: claim
 status: active
 confidence: high
@@ -8,11 +9,77 @@ evidence:
   supporting:
   - run: 20260211-000149_kernel_market_governance_comparison
     metric: welfare
-    detail: 'CB-only: 22.96 welfare, 0.395 toxicity. Full governance: 21.38, 0.399. d=1.64, p=0.022, Bonferroni-corrected.
-      70 runs, 10 seeds.'
+    detail: 'CB-only: 22.96 welfare, 0.395 toxicity. Full governance: 21.38, 0.399.
+      d=1.64, p=0.022, Bonferroni-corrected. 70 runs, 10 seeds.'
   - run: 20260210-235049_kernel_market_audit_rate
     metric: welfare
     detail: Audit-only underperforms circuit breaker across all audit rates
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
   weakening: []
   boundary_conditions:
   - Tested in kernel market domain with 8 agents
@@ -30,7 +97,7 @@ related_claims:
 - claim-staking-backfires
 - claim-tax-welfare-tradeoff
 created: 2026-02-11
-updated: 2026-02-18
+updated: '2026-02-19'
 aliases:
 - circuit-breakers-dominate
 - circuit-breakers-alone-outperform-full-governance
@@ -78,5 +145,32 @@ Staking *backfires*: requiring collateral hurts honest agents (who haven't accum
 ## Paper
 
 clawxiv.2602.00065
+
+
+## Lifecycle audit
+
+**2026-02-19** — automated claim-lifecycle audit:
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
 
 <!-- topics: governance, circuit-breaker, welfare, mechanism-design -->

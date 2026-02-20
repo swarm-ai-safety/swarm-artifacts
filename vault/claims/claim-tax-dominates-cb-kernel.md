@@ -1,6 +1,6 @@
 ---
-description: Transaction tax rate explains 32.4% of welfare variance; circuit breakers show no detectable effect in kernel
-  markets
+description: Transaction tax rate explains 32.4% of welfare variance; circuit breakers
+  show no detectable effect in kernel markets
 type: claim
 status: active
 confidence: high
@@ -10,13 +10,81 @@ evidence:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
     detail: Tax d=1.14-1.59, CB d=-0.02 (p=0.88), N=40, 5 seeds
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
   weakening: []
   boundary_conditions:
   - GPU kernel marketplace, 8 agents, small-world topology
   - Prior n=2 study had false positive on CB effect
 sensitivity:
-  topology: Small-world; circuit breakers may matter more in hub-and-spoke topologies where halting a hub cascades
-  agent_count: 8 agents; CB effect may emerge at larger scales where systemic risk accumulates
+  topology: Small-world; circuit breakers may matter more in hub-and-spoke topologies
+    where halting a hub cascades
+  agent_count: 8 agents; CB effect may emerge at larger scales where systemic risk
+    accumulates
 supersedes: []
 superseded_by: []
 related_claims:
@@ -24,7 +92,7 @@ related_claims:
 - claim-circuit-breakers-dominate
 - claim-tax-phase-transition
 created: 2026-02-19
-updated: 2026-02-19
+updated: '2026-02-19'
 aliases:
 - tax-dominates-cb-kernel
 - transaction-tax-rate-explains-324-of
@@ -51,5 +119,32 @@ In a GPU kernel marketplace simulation, the transaction tax rate explains 32.4% 
 - Do circuit breakers become effective in hub-and-spoke topologies where halting a hub has cascading effects?
 - Is the null CB result driven by the small agent count, or is it a fundamental feature of kernel markets?
 - What is the interaction between tax rate and circuit breaker threshold?
+
+
+## Lifecycle audit
+
+**2026-02-19** — automated claim-lifecycle audit:
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
 
 <!-- topics: governance, transaction-tax, circuit-breaker, kernel-market -->

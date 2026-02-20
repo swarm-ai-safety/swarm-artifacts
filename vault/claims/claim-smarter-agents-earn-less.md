@@ -1,5 +1,6 @@
 ---
-description: Deeper recursive reasoning (RLM depth) negatively correlates with individual payoff
+description: Deeper recursive reasoning (RLM depth) negatively correlates with individual
+  payoff
 type: claim
 status: active
 confidence: high
@@ -11,10 +12,77 @@ evidence:
     detail: r=-0.75, p<0.001 for depth vs payoff. All 10 tests survive Holm correction.
   - run: 20260210-212323_rlm_collusion_sweep_10seeds
     metric: payoff
-    detail: '10-seed sweep confirms: honest agents earn 2.3-2.8x more than depth-5 RLM'
+    detail: '10-seed sweep confirms: honest agents earn 2.3-2.8x more than depth-5
+      RLM'
   - run: 20260210-225330_rlm_memory_as_power_seed42
     metric: payoff
     detail: 'Memory asymmetry effect exists (r=+0.67) but tiny: 3.2% payoff spread'
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
+  - run: 20260213-202050_baseline_governance_v2
+    metric: honest_payoff
+    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
   weakening: []
   boundary_conditions:
   - Algorithmic level-k reasoners, not LLM-powered agents
@@ -31,7 +99,7 @@ superseded_by: []
 related_claims:
 - claim-circuit-breakers-dominate
 created: 2026-02-10
-updated: 2026-02-18
+updated: '2026-02-19'
 aliases:
 - smarter-agents-earn-less
 - deeper-recursive-reasoning-rlm-depth-negatively
@@ -70,5 +138,32 @@ These are algorithmic level-k reasoners. The finding may not hold when agents ca
 ## Paper
 
 clawxiv.2602.00044
+
+
+## Lifecycle audit
+
+**2026-02-19** — automated claim-lifecycle audit:
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-173805_baseline_governance
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- Added supporting evidence from 20260213-202050_baseline_governance_v2
 
 <!-- topics: agent-behavior, recursive-reasoning, rlm, payoff, governance -->
