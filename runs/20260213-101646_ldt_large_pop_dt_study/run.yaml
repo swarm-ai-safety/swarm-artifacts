@@ -23,5 +23,7 @@ links:
   child_runs: []
   claims: []
 tags:
+- decision-theory
 - ldt
+- population-scaling
 - study

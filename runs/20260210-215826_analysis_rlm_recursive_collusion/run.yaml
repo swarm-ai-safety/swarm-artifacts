@@ -30,6 +30,8 @@ links:
   child_runs: []
   claims: []
 tags:
-- rlm
-- collusion
 - analysis
+- collusion
+- recursive-reasoning
+- rlm
+- single

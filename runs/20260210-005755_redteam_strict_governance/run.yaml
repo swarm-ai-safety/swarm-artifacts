@@ -19,5 +19,6 @@ links:
   child_runs: []
   claims: []
 tags:
-- redteam
+- attack-coordination
 - governance
+- redteam

@@ -19,4 +19,9 @@ links:
   child_runs: []
   claims: []
 tags:
+- attack-coordination
+- attack-evasion
+- attack-exploitation
+- attack-information
+- attack-resource
 - redteam

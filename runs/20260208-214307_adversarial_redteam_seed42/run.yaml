@@ -20,6 +20,7 @@ links:
   child_runs: []
   claims: []
 tags:
-- redteam
 - adversarial
+- redteam
 - seed-42
+- single

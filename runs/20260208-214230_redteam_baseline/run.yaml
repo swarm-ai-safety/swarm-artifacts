@@ -19,5 +19,8 @@ links:
   child_runs: []
   claims: []
 tags:
+- attack-coordination
+- attack-evasion
+- attack-exploitation
 - baseline
 - redteam
