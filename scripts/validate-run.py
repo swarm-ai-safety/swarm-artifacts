@@ -16,6 +16,7 @@ Usage:
 """
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -116,7 +117,25 @@ def validate_run(run_path: Path) -> list[str]:
         if not (run_path / script).exists():
             errors.append(f"artifacts.scripts references missing: {script}")
 
-    # ── 5. Structural: at least one output ────────────────────────────
+    # ── 5. Content-addressing: verify SHA-256 of external artifacts ──
+    for ext in artifacts.get("external", []):
+        ext_path = run_path / ext.get("path", "")
+        expected_sha = ext.get("sha256", "")
+        if ext_path.exists() and expected_sha:
+            h = hashlib.sha256()
+            with open(ext_path, "rb") as f:
+                for chunk in iter(lambda: f.read(8192), b""):
+                    h.update(chunk)
+            actual_sha = h.hexdigest()
+            if actual_sha != expected_sha:
+                errors.append(
+                    f"artifacts.external SHA-256 mismatch for {ext.get('path')}: "
+                    f"expected {expected_sha[:16]}..., got {actual_sha[:16]}..."
+                )
+        elif not ext_path.exists() and not ext.get("storage"):
+            errors.append(f"artifacts.external missing with no storage ref: {ext.get('path')}")
+
+    # ── 6. Structural: at least one output ────────────────────────────
     has_output = (
         (run_path / "summary.json").exists()
         or (run_path / "report.json").exists()
