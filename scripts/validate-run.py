@@ -45,14 +45,15 @@ def load_schema(name: str) -> dict:
     return _schema_cache[name]
 
 
-def validate_run(run_path: Path) -> list[str]:
-    """Validate a run folder. Returns list of error messages."""
+def validate_run(run_path: Path) -> tuple[list[str], list[str]]:
+    """Validate a run folder. Returns (errors, warnings)."""
     errors = []
+    warnings = []
 
     # ── 1. run.yaml must exist ────────────────────────────────────────
     run_yaml_path = run_path / "run.yaml"
     if not run_yaml_path.exists():
-        return [f"Missing run.yaml in {run_path.name}"]
+        return [f"Missing run.yaml in {run_path.name}"], []
 
     with open(run_yaml_path) as f:
         run_data = yaml.safe_load(f)
@@ -141,11 +142,13 @@ def validate_run(run_path: Path) -> list[str]:
         or (run_path / "report.json").exists()
         or (run_path / "analysis" / "summary.json").exists()
         or (run_path / "csv").is_dir()
+        or (run_path / "history.json").exists()
+        or (run_path / "recommendation.json").exists()
     )
     if not has_output:
-        errors.append("No output found (need summary.json, report.json, or csv/)")
+        warnings.append("No output found (need summary.json, report.json, history.json, or csv/)")
 
-    return errors
+    return errors, warnings
 
 
 def main():
@@ -161,26 +164,34 @@ def main():
 
     targets = []
     if args.all:
-        targets = sorted(p for p in RUNS_DIR.iterdir() if p.is_dir())
+        targets = sorted(p for p in RUNS_DIR.iterdir() if p.is_dir() and not p.name.startswith("_"))
     else:
         targets = [Path(args.path)]
 
     total_errors = 0
+    total_warnings = 0
     clean = 0
     for run_path in targets:
-        errors = validate_run(run_path)
+        errors, warnings = validate_run(run_path)
         if errors:
             print(f"\n{run_path.name}: {len(errors)} error(s)")
             for e in errors:
                 print(f"  - {e}")
             total_errors += len(errors)
+        elif warnings:
+            if not args.quiet:
+                print(f"  {run_path.name}: OK ({len(warnings)} warning(s))")
+                for w in warnings:
+                    print(f"    WARN: {w}")
+            total_warnings += len(warnings)
+            clean += 1
         else:
             clean += 1
             if not args.quiet:
                 print(f"  {run_path.name}: OK")
 
     print(f"\n{'=' * 40}")
-    print(f"Validated {len(targets)} runs: {clean} clean, {len(targets) - clean} with errors ({total_errors} total)")
+    print(f"Validated {len(targets)} runs: {clean} clean, {len(targets) - clean} with errors ({total_errors} total, {total_warnings} warnings)")
     sys.exit(1 if total_errors > 0 else 0)
 
 

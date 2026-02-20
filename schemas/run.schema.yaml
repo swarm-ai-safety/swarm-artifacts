@@ -20,8 +20,8 @@ properties:
   # -- identity --
   run_id:
     type: string
-    pattern: "^[0-9]{8}-?[0-9]{0,6}_?.+$"
-    description: "Folder name. Preferred format: YYYYMMDD-HHMMSS_<slug>"
+    pattern: "^([0-9]{8}-?[0-9]{0,6}_?.+|[a-z][a-z0-9_]+)$"
+    description: "Folder name. Preferred format: YYYYMMDD-HHMMSS_<slug>. Legacy: lowercase slug."
 
   slug:
     type: string
@@ -75,10 +75,15 @@ properties:
         pattern: "^[0-9a-f]{64}$"
         description: "SHA-256 of the frozen scenario file"
       swept_parameters:
-        type: object
-        additionalProperties:
-          type: array
-        description: "Parameter name → list of values swept"
+        oneOf:
+          - type: object
+            additionalProperties:
+              type: array
+            description: "Parameter name → list of values swept"
+          - type: array
+            items:
+              type: string
+            description: "List of parameter names (legacy format)"
       seeds:
         type: array
         items:
