@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "path:vault",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -8,49 +8,49 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:claims",
+      "query": "path:vault/claims",
       "color": {
         "a": 1,
         "rgb": 15158332
       }
     },
     {
-      "query": "path:experiments",
+      "query": "path:vault/experiments",
       "color": {
         "a": 1,
         "rgb": 3447003
       }
     },
     {
-      "query": "path:sweeps",
+      "query": "path:vault/sweeps",
       "color": {
         "a": 1,
         "rgb": 2600544
       }
     },
     {
-      "query": "path:governance",
+      "query": "path:vault/governance",
       "color": {
         "a": 1,
         "rgb": 15105570
       }
     },
     {
-      "query": "path:failures",
+      "query": "path:vault/failures",
       "color": {
         "a": 1,
         "rgb": 15158332
       }
     },
     {
-      "query": "path:topologies",
+      "query": "path:vault/topologies",
       "color": {
         "a": 1,
         "rgb": 10181046
       }
     },
     {
-      "query": "path:methods",
+      "query": "path:vault/methods",
       "color": {
         "a": 1,
         "rgb": 9807270
@@ -61,6 +61,13 @@
       "color": {
         "a": 1,
         "rgb": 2899536
+      }
+    },
+    {
+      "query": "path:vault/dashboards",
+      "color": {
+        "a": 1,
+        "rgb": 1752220
       }
     }
   ],
