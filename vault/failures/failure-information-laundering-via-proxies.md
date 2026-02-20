@@ -69,7 +69,7 @@ Key findings:
 
 - Can provenance tracking scale to large swarms without prohibitive computational overhead?
 - How do we distinguish legitimate delegation from malicious proxy use?
-- Does the [[recursive spawn]] mechanism create natural proxy chains that adversaries could exploit?
+- Does the recursive spawn mechanism create natural proxy chains that adversaries could exploit?
 - What fraction of proxies are "unwitting" (manipulated into harmful actions) versus "willing" (colluding with the adversary)?
 
 <!-- topics: information, attribution, proxy, redteam, obfuscation, governance-evasion -->

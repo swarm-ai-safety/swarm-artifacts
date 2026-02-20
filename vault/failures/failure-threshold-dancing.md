@@ -69,7 +69,7 @@ Key findings:
 
 - What is the optimal ratio of threshold randomization range that balances false positives against adversary learning?
 - Can cumulative harm tracking be formalized as a CUSUM (cumulative sum control chart) mechanism?
-- How does threshold dancing interact with [[collusion ring mutual boosting|failure-collusion-ring-mutual-boosting]] when multiple threshold dancers coordinate?
-- Does the [[tau-k calibration|20260214-014153_tau_k_calibration]] provide insights on optimal threshold dynamics?
+- How does threshold dancing interact with [[failure-collusion-ring-mutual-boosting]] when multiple threshold dancers coordinate?
+- Does the [[20260214-014153_tau_k_calibration]] provide insights on optimal threshold dynamics?
 
 <!-- topics: evasion, circuit-breaker, threshold, redteam, adaptive-adversary, governance-evasion -->

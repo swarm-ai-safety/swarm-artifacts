@@ -52,7 +52,7 @@ This attack is particularly dangerous because it succeeded even with collusion d
 Key findings:
 - Without collusion detection: 100% success rate, damage 78.7-97.2
 - With collusion detection: mixed results. Detection fires by epoch 5, reducing damage to ~20, but the attack still succeeds in some configurations because accumulated payoffs before detection meet the threshold.
-- The [[collusion governance study|20260210-213833_collusion_governance]] confirmed that transaction tax has a statistically significant effect on collusion welfare (p < 0.001, d = 1.33 for 0% vs 15% tax).
+- The [[20260210-213833_collusion_governance]] confirmed that transaction tax has a statistically significant effect on collusion welfare (p < 0.001, d = 1.33 for 0% vs 15% tax).
 
 ## Affected governance mechanisms
 
@@ -63,7 +63,7 @@ Key findings:
 ## Mitigation strategies
 
 - Enable collusion detection (reduces damage from ~97 to ~20, a 79% reduction).
-- Apply higher transaction tax rates (15% tax significantly reduces collusion welfare per the [[collusion governance study|20260210-213833_collusion_governance]]).
+- Apply higher transaction tax rates (15% tax significantly reduces collusion welfare per the [[20260210-213833_collusion_governance]]).
 - Reduce collusion detection latency below 5 epochs to limit early-phase accumulation.
 - Consider **interaction diversity requirements**: penalize agents whose transaction graph is too concentrated on a small set of counterparties.
 

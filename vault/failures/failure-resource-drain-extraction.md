@@ -68,6 +68,6 @@ Key findings:
 
 - What is the minimum transaction tax rate that prevents resource drain without overly penalizing legitimate high-volume participants?
 - Does staking create barriers to entry that reduce ecosystem diversity?
-- How does resource drain interact with [[reputation farming|failure-reputation-farming-exploit]] when the drainer first builds enough reputation to access premium resource pools?
+- How does resource drain interact with [[failure-reputation-farming-exploit]] when the drainer first builds enough reputation to access premium resource pools?
 
 <!-- topics: resource, extraction, free-rider, redteam, commons, governance-evasion -->

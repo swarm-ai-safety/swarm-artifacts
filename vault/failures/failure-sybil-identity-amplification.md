@@ -72,6 +72,6 @@ Recommendations from red-team reports:
 - Can a proof-of-unique-identity mechanism (economic or cryptographic) be integrated without excluding legitimate new participants?
 - What is the minimum sybil multiplier (number of identities) needed to exceed governance thresholds?
 - Would random coalition audits that check for correlated voting patterns across seemingly independent agents catch this pattern?
-- Does the [[recursive spawn]] mechanism exacerbate sybil risk by providing a legitimate pathway for identity multiplication?
+- Does the recursive spawn mechanism exacerbate sybil risk by providing a legitimate pathway for identity multiplication?
 
 <!-- topics: sybil, coordination, identity, vote-manipulation, redteam, governance-evasion -->
