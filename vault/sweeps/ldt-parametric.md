@@ -1,10 +1,22 @@
 ---
-description: "Parametric studies of LDT scenario variants across multiple dimensions"
+description: Parametric studies of LDT scenario variants across multiple dimensions
 type: sweep-summary
 status: active
-parameter: "multiple LDT parameters"
+parameter: multiple LDT parameters
 created: 2026-02-12
 updated: 2026-02-19
+aliases:
+- multiple LDT parameters
+- ldt-parametric
+cssclasses:
+- sweep-summary
+tags:
+- ldt
+- decision-theory
+- parametric
+- robustness
+- sweep-series
+graph-group: sweep
 ---
 
 ## Runs in this sweep

@@ -5,6 +5,16 @@ status: completed
 run_id: 20260210-235816_rlm_governance_lag_seed42
 experiment_type: single
 created: '2026-02-10'
+aliases:
+- 20260210-235816_rlm_governance_lag_seed42
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- governance
+- rlm
+- seed-42
+graph-group: experiment
 ---
 
 # single-run baseline with welfare=58.6 (rlm governance lag seed42)

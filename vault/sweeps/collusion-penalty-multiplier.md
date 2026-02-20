@@ -1,10 +1,21 @@
 ---
-description: "Runs exploring collusion penalty sensitivity and tax interaction"
+description: Runs exploring collusion penalty sensitivity and tax interaction
 type: sweep-summary
 status: active
-parameter: "governance.collusion_penalty_multiplier"
+parameter: governance.collusion_penalty_multiplier
 created: 2026-02-13
 updated: 2026-02-19
+aliases:
+- governance.collusion_penalty_multiplier
+- collusion-penalty-multiplier
+cssclasses:
+- sweep-summary
+tags:
+- governance
+- collusion
+- penalty
+- sweep-series
+graph-group: sweep
 ---
 
 ## Runs in this sweep

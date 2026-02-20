@@ -5,6 +5,16 @@ status: completed
 run_id: 20260210-211803_rlm_recursive_collusion_seed999
 experiment_type: single
 created: '2026-02-10'
+aliases:
+- 20260210-211803_rlm_recursive_collusion_seed999
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- rlm
+- collusion
+- seed-999
+graph-group: experiment
 ---
 
 # single-run baseline with welfare=130.7 (rlm recursive collusion seed999)

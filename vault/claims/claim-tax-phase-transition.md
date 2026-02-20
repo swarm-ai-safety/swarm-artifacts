@@ -1,28 +1,40 @@
 ---
-description: "Welfare decline under transaction tax is non-linear with phase transition between 5-10% tax rate"
+description: Welfare decline under transaction tax is non-linear with phase transition between 5-10% tax rate
 type: claim
 status: active
 confidence: high
 domain: governance
 evidence:
   supporting:
-    - run: "20260213-202050_baseline_governance_v2"
-      metric: "welfare"
-      detail: "0-5% tax: 3% decline; 5-10%: 14% decline; 10-15%: flat. d=1.18, N=700, Bonferroni-corrected"
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: '0-5% tax: 3% decline; 5-10%: 14% decline; 10-15%: flat. d=1.18, N=700, Bonferroni-corrected'
   weakening: []
   boundary_conditions:
-    - "Small-world topology k=4 p=0.15, 8 agents, tax range 0-15%"
-    - "No redistribution modeled"
+  - Small-world topology k=4 p=0.15, 8 agents, tax range 0-15%
+  - No redistribution modeled
 sensitivity:
-  topology: "Small-world k=4 p=0.15; phase transition point may shift under different clustering coefficients"
-  agent_count: "8 agents; transition sharpness may change with population size"
+  topology: Small-world k=4 p=0.15; phase transition point may shift under different clustering coefficients
+  agent_count: 8 agents; transition sharpness may change with population size
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-tax-welfare-tradeoff
-  - claim-tax-dominates-cb-kernel
+- claim-tax-welfare-tradeoff
+- claim-tax-dominates-cb-kernel
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- tax-phase-transition
+- welfare-decline-under-transaction-tax-is
+cssclasses:
+- claim
+- claim-high
+tags:
+- governance
+- transaction-tax
+- phase-transition
+- welfare
+graph-group: claim
 ---
 
 ## Tax Phase Transition

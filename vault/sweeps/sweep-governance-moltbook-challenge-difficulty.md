@@ -11,6 +11,16 @@ values_tested:
 - '1.0'
 created: '2026-02-13'
 updated: '2026-02-19'
+aliases:
+- governance.moltbook_challenge_difficulty
+- sweep-governance-moltbook-challenge-difficulty
+cssclasses:
+- sweep-summary
+tags:
+- collusion-penalty-multiplier
+- moltbook-challenge-difficulty
+- study
+graph-group: sweep
 ---
 
 # moltbook challenge difficulty sweep series shows no significant effects across 1 independent runs

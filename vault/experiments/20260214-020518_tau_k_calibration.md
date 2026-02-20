@@ -5,6 +5,15 @@ status: completed
 run_id: 20260214-020518_tau_k_calibration
 experiment_type: calibration
 created: '2026-02-14'
+aliases:
+- 20260214-020518_tau_k_calibration
+cssclasses:
+- experiment
+- experiment-calibration
+tags:
+- tau
+- calibration
+graph-group: experiment
 ---
 
 # calibration of tau k calibration

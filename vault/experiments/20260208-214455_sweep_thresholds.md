@@ -1,11 +1,18 @@
 ---
-description: 'sweep_thresholds: None-run sweep of parameters, 0 Bonferroni-significant
-  findings'
+description: 'sweep_thresholds: None-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260208-214455_sweep_thresholds
 experiment_type: sweep
 created: '2026-02-08'
+aliases:
+- 20260208-214455_sweep_thresholds
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- sweep
+graph-group: experiment
 ---
 
 # sweep thresholds sweep (? runs) finds 0 Bonferroni-significant effects across sweep_thresholds

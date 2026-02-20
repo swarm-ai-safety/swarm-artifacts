@@ -1,26 +1,38 @@
 ---
-description: "Quality-based promotion gate blocks 100% of poisoned content from reaching higher memory tiers"
+description: Quality-based promotion gate blocks 100% of poisoned content from reaching higher memory tiers
 type: claim
 status: active
 confidence: low
 domain: memory
 evidence:
   supporting:
-    - run: "20260211-232952_gastown_composition_study"
-      metric: "tier_poisoning_rate"
-      detail: "Ephemeral tier 50.7% poisoned, tier 2+ 0.0% poisoned, single seed"
+  - run: 20260211-232952_gastown_composition_study
+    metric: tier_poisoning_rate
+    detail: Ephemeral tier 50.7% poisoned, tier 2+ 0.0% poisoned, single seed
   weakening: []
   boundary_conditions:
-    - "20 epochs, 9 agents, quality threshold p>=0.5, single seed=42"
+  - 20 epochs, 9 agents, quality threshold p>=0.5, single seed=42
 sensitivity:
-  topology: "Not directly topology-dependent; promotion gate operates on per-item quality scores"
-  agent_count: "9 agents; adversarial saturation may overwhelm the gate at higher ratios"
+  topology: Not directly topology-dependent; promotion gate operates on per-item quality scores
+  agent_count: 9 agents; adversarial saturation may overwhelm the gate at higher ratios
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-quality-gate-dominates
+- claim-quality-gate-dominates
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- memory-promotion-gate
+- quality-based-promotion-gate-blocks-100-of
+cssclasses:
+- claim
+- claim-low
+tags:
+- memory
+- governance
+- poisoning
+- promotion-gate
+graph-group: claim
 ---
 
 ## Memory Promotion Gate

@@ -1,11 +1,20 @@
 ---
-description: Multi-condition study of gastown_composition_study (0 levels, None total
-  runs)
+description: Multi-condition study of gastown_composition_study (0 levels, None total runs)
 type: experiment
 status: completed
 run_id: 20260213-165419_gastown_composition_study
 experiment_type: study
 created: '2026-02-13'
+aliases:
+- 20260213-165419_gastown_composition_study
+cssclasses:
+- experiment
+- experiment-study
+tags:
+- gastown
+- composition
+- study
+graph-group: experiment
 ---
 
 # gastown composition study study (? runs) finds 0 significant pairwise differences

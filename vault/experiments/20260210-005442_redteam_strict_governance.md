@@ -5,6 +5,15 @@ status: completed
 run_id: 20260210-005442_redteam_strict_governance
 experiment_type: redteam
 created: '2026-02-10'
+aliases:
+- 20260210-005442_redteam_strict_governance
+cssclasses:
+- experiment
+- experiment-redteam
+tags:
+- redteam
+- governance
+graph-group: experiment
 ---
 
 # red-team evaluation scores 59% (F) against baseline governance

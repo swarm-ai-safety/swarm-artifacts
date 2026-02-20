@@ -1,11 +1,19 @@
 ---
-description: 'kernel_governance: 80-run sweep of parameters, 0 Bonferroni-significant
-  findings'
+description: 'kernel_governance: 80-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260210-220048_kernel_governance
 experiment_type: sweep
 created: '2026-02-10'
+aliases:
+- 20260210-220048_kernel_governance
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- governance
+- kernel
+graph-group: experiment
 ---
 
 # kernel governance sweep (80 runs) finds 0 Bonferroni-significant effects across kernel_governance

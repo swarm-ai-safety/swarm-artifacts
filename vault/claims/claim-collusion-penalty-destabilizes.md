@@ -1,26 +1,39 @@
 ---
-description: "Collusion penalty multiplier above 1.5x increases toxicity (d=-1.12, p<0.0001) with no welfare benefit"
+description: Collusion penalty multiplier above 1.5x increases toxicity (d=-1.12, p<0.0001) with no welfare benefit
 type: claim
 status: active
 confidence: medium
 domain: collusion
 evidence:
   supporting:
-    - run: "20260213-221500_collusion_tax_effect"
-      metric: "toxicity"
-      detail: "2.0x penalty toxicity 0.342 vs 0.334 at 0.5x, d=-1.12, p<0.0001, N=160"
+  - run: 20260213-221500_collusion_tax_effect
+    metric: toxicity
+    detail: 2.0x penalty toxicity 0.342 vs 0.334 at 0.5x, d=-1.12, p<0.0001, N=160
   weakening: []
   boundary_conditions:
-    - "12 RLM agents at depths 1/3/5, 30 epochs, collusion detection enabled"
+  - 12 RLM agents at depths 1/3/5, 30 epochs, collusion detection enabled
 sensitivity:
-  topology: "Tested on default topology; penalty effects may differ under ring or complete graphs where collusion channels are structurally constrained"
-  agent_count: "12 agents; penalty calibration may need adjustment for larger populations with more potential collusion pairs"
+  topology: Tested on default topology; penalty effects may differ under ring or complete graphs where collusion channels
+    are structurally constrained
+  agent_count: 12 agents; penalty calibration may need adjustment for larger populations with more potential collusion pairs
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-tax-welfare-tradeoff
+- claim-tax-welfare-tradeoff
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- collusion-penalty-destabilizes
+- collusion-penalty-multiplier-above-15x-increases
+cssclasses:
+- claim
+- claim-medium
+tags:
+- governance
+- collusion
+- penalty
+- toxicity
+graph-group: claim
 ---
 
 ## Collusion Penalty Destabilization

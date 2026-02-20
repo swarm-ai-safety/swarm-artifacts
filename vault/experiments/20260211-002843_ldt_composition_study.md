@@ -1,11 +1,20 @@
 ---
-description: Multi-condition study of ldt_composition_study (0 levels, None total
-  runs)
+description: Multi-condition study of ldt_composition_study (0 levels, None total runs)
 type: experiment
 status: completed
 run_id: 20260211-002843_ldt_composition_study
 experiment_type: study
 created: '2026-02-11'
+aliases:
+- 20260211-002843_ldt_composition_study
+cssclasses:
+- experiment
+- experiment-study
+tags:
+- ldt
+- composition
+- study
+graph-group: experiment
 ---
 
 # ldt composition study study (? runs) finds 0 significant pairwise differences

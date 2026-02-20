@@ -5,6 +5,16 @@ status: completed
 run_id: 20260208-215712_adversarial_redteam_v2_seed42
 experiment_type: single
 created: '2026-02-08'
+aliases:
+- 20260208-215712_adversarial_redteam_v2_seed42
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- redteam
+- adversarial
+- seed-42
+graph-group: experiment
 ---
 
 # single-run baseline with welfare=0.0 (adversarial redteam v2 seed42)

@@ -1,27 +1,40 @@
 ---
-description: "Full governance stacks impose larger welfare costs than toxicity reduction benefits at all adversarial levels tested"
+description: Full governance stacks impose larger welfare costs than toxicity reduction benefits at all adversarial levels
+  tested
 type: claim
 status: active
 confidence: medium
 domain: governance
 evidence:
   supporting:
-    - run: "20260211-232952_gastown_composition_study"
-      metric: "welfare"
-      detail: "Welfare penalty at 0% adversarial = -215.9 (58% reduction), N=42"
+  - run: 20260211-232952_gastown_composition_study
+    metric: welfare
+    detail: Welfare penalty at 0% adversarial = -215.9 (58% reduction), N=42
   weakening: []
   boundary_conditions:
-    - "GasTown workspace, 7 agents, 30 epochs, full governance stack"
+  - GasTown workspace, 7 agents, 30 epochs, full governance stack
 sensitivity:
-  topology: "Tested on GasTown small-world only; unknown whether hub-and-spoke or ring topologies amplify or dampen the cost"
-  agent_count: "7 agents; cost-per-agent may scale non-linearly with larger populations"
+  topology: Tested on GasTown small-world only; unknown whether hub-and-spoke or ring topologies amplify or dampen the cost
+  agent_count: 7 agents; cost-per-agent may scale non-linearly with larger populations
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-tax-welfare-tradeoff
-  - claim-quality-gate-dominates
+- claim-tax-welfare-tradeoff
+- claim-quality-gate-dominates
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- governance-cost-paradox
+- full-governance-stacks-impose-larger-welfare
+cssclasses:
+- claim
+- claim-medium
+tags:
+- governance
+- welfare
+- cost-benefit
+- gastown
+graph-group: claim
 ---
 
 ## Governance Cost Paradox

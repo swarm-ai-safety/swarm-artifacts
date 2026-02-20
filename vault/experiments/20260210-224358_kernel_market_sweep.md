@@ -1,11 +1,20 @@
 ---
-description: 'kernel_market_sweep: None-run sweep of parameters, 0 Bonferroni-significant
-  findings'
+description: 'kernel_market_sweep: None-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260210-224358_kernel_market_sweep
 experiment_type: sweep
 created: '2026-02-10'
+aliases:
+- 20260210-224358_kernel_market_sweep
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- sweep
+- kernel
+- market
+graph-group: experiment
 ---
 
 # kernel market sweep sweep (? runs) finds 0 Bonferroni-significant effects across kernel_market_sweep

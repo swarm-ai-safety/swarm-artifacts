@@ -1,29 +1,42 @@
 ---
-description: "Transaction tax rate explains 32.4% of welfare variance; circuit breakers show no detectable effect in kernel markets"
+description: Transaction tax rate explains 32.4% of welfare variance; circuit breakers show no detectable effect in kernel
+  markets
 type: claim
 status: active
 confidence: high
 domain: governance
 evidence:
   supporting:
-    - run: "20260214-113750_kernel_v4_code_sweep"
-      metric: "welfare"
-      detail: "Tax d=1.14-1.59, CB d=-0.02 (p=0.88), N=40, 5 seeds"
+  - run: 20260214-113750_kernel_v4_code_sweep
+    metric: welfare
+    detail: Tax d=1.14-1.59, CB d=-0.02 (p=0.88), N=40, 5 seeds
   weakening: []
   boundary_conditions:
-    - "GPU kernel marketplace, 8 agents, small-world topology"
-    - "Prior n=2 study had false positive on CB effect"
+  - GPU kernel marketplace, 8 agents, small-world topology
+  - Prior n=2 study had false positive on CB effect
 sensitivity:
-  topology: "Small-world; circuit breakers may matter more in hub-and-spoke topologies where halting a hub cascades"
-  agent_count: "8 agents; CB effect may emerge at larger scales where systemic risk accumulates"
+  topology: Small-world; circuit breakers may matter more in hub-and-spoke topologies where halting a hub cascades
+  agent_count: 8 agents; CB effect may emerge at larger scales where systemic risk accumulates
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-tax-welfare-tradeoff
-  - claim-circuit-breakers-dominate
-  - claim-tax-phase-transition
+- claim-tax-welfare-tradeoff
+- claim-circuit-breakers-dominate
+- claim-tax-phase-transition
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- tax-dominates-cb-kernel
+- transaction-tax-rate-explains-324-of
+cssclasses:
+- claim
+- claim-high
+tags:
+- governance
+- transaction-tax
+- circuit-breaker
+- kernel-market
+graph-group: claim
 ---
 
 ## Tax Dominates Circuit Breakers in Kernel Markets

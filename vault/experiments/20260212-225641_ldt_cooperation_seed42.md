@@ -5,6 +5,16 @@ status: completed
 run_id: 20260212-225641_ldt_cooperation_seed42
 experiment_type: single
 created: '2026-02-12'
+aliases:
+- 20260212-225641_ldt_cooperation_seed42
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- ldt
+- cooperation
+- seed-42
+graph-group: experiment
 ---
 
 # single-run baseline with welfare=14.1 (ldt cooperation seed42)

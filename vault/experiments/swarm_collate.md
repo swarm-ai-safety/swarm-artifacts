@@ -5,6 +5,14 @@ status: completed
 run_id: swarm_collate
 experiment_type: single
 created: '2026-02-18'
+aliases:
+- swarm_collate
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- untagged
+graph-group: experiment
 ---
 
 # single-run baseline (swarm collate)

@@ -1,11 +1,20 @@
 ---
-description: 'kernel_market_governance_comparison: None-run sweep of parameters, 0
-  Bonferroni-significant findings'
+description: 'kernel_market_governance_comparison: None-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260211-000149_kernel_market_governance_comparison
 experiment_type: sweep
 created: '2026-02-11'
+aliases:
+- 20260211-000149_kernel_market_governance_comparison
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- governance
+- kernel
+- market
+graph-group: experiment
 ---
 
 # kernel market governance comparison sweep (? runs) finds 0 Bonferroni-significant effects across kernel_market_governance_comparison

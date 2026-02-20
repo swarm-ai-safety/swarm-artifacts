@@ -1,11 +1,19 @@
 ---
-description: 'delegation_games_sweep: None-run sweep of parameters, 0 Bonferroni-significant
-  findings'
+description: 'delegation_games_sweep: None-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260213-143607_delegation_games_sweep
 experiment_type: sweep
 created: '2026-02-13'
+aliases:
+- 20260213-143607_delegation_games_sweep
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- sweep
+- delegation
+graph-group: experiment
 ---
 
 # delegation games sweep sweep (? runs) finds 0 Bonferroni-significant effects across delegation_games_sweep

@@ -5,6 +5,15 @@ status: completed
 run_id: 20260213-231532_phylogeny_demo_seed7
 experiment_type: single
 created: '2026-02-13'
+aliases:
+- 20260213-231532_phylogeny_demo_seed7
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- phylogeny
+- seed-7
+graph-group: experiment
 ---
 
 # single-run baseline with welfare=39.5 (phylogeny demo seed7)

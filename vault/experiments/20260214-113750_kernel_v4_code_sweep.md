@@ -1,11 +1,19 @@
 ---
-description: 'kernel_v4_code_sweep: 40-run sweep of parameters, 0 Bonferroni-significant
-  findings'
+description: 'kernel_v4_code_sweep: 40-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260214-113750_kernel_v4_code_sweep
 experiment_type: sweep
 created: '2026-02-14'
+aliases:
+- 20260214-113750_kernel_v4_code_sweep
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- sweep
+- kernel
+graph-group: experiment
 ---
 
 # kernel v4 code sweep sweep (40 runs) finds 0 Bonferroni-significant effects across kernel_v4_code_sweep

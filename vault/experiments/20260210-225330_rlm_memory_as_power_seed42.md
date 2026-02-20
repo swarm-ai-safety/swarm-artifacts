@@ -5,6 +5,15 @@ status: completed
 run_id: 20260210-225330_rlm_memory_as_power_seed42
 experiment_type: single
 created: '2026-02-10'
+aliases:
+- 20260210-225330_rlm_memory_as_power_seed42
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- rlm
+- seed-42
+graph-group: experiment
 ---
 
 # single-run baseline with welfare=91.3 (rlm memory as power seed42)

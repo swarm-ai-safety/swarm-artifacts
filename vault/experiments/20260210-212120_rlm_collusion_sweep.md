@@ -1,11 +1,20 @@
 ---
-description: 'rlm_collusion_sweep: None-run sweep of parameters, 0 Bonferroni-significant
-  findings'
+description: 'rlm_collusion_sweep: None-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260210-212120_rlm_collusion_sweep
 experiment_type: sweep
 created: '2026-02-10'
+aliases:
+- 20260210-212120_rlm_collusion_sweep
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- sweep
+- rlm
+- collusion
+graph-group: experiment
 ---
 
 # rlm collusion sweep sweep (? runs) finds 0 Bonferroni-significant effects across rlm_collusion_sweep

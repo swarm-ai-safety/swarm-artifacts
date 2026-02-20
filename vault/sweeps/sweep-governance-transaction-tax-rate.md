@@ -14,6 +14,29 @@ values_tested:
 - '0.15'
 created: '2026-02-13'
 updated: '2026-02-19'
+aliases:
+- governance.transaction_tax_rate
+- sweep-governance-transaction-tax-rate
+cssclasses:
+- sweep-summary
+tags:
+- baseline
+- circuit-breaker
+- circuit-breaker-enabled
+- collusion
+- collusion-detection
+- collusion-detection-enabled
+- collusion-penalty-multiplier
+- governance
+- payoff
+- quality
+- study
+- sweep
+- toxicity
+- transaction-tax
+- transaction-tax-rate
+- welfare
+graph-group: sweep
 ---
 
 # transaction tax rate sweep series shows significant effects across 4 independent runs

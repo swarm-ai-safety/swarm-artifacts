@@ -1,11 +1,20 @@
 ---
-description: 'baseline_governance_v2: 700-run sweep of transaction_tax_rate, circuit_breaker_enabled,
-  18 Bonferroni-significant findings'
+description: 'baseline_governance_v2: 700-run sweep of transaction_tax_rate, circuit_breaker_enabled, 18 Bonferroni-significant
+  findings'
 type: experiment
 status: completed
 run_id: 20260213-202050_baseline_governance_v2
 experiment_type: sweep
 created: '2026-02-13'
+aliases:
+- 20260213-202050_baseline_governance_v2
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- baseline
+- governance
+graph-group: experiment
 ---
 
 # baseline governance v2 sweep (700 runs) finds 18 Bonferroni-significant effects across transaction_tax_rate, circuit_breaker_enabled

@@ -1,10 +1,20 @@
 ---
-description: "All runs exploring transaction tax sensitivity across governance configs"
+description: All runs exploring transaction tax sensitivity across governance configs
 type: sweep-summary
 status: active
-parameter: "governance.transaction_tax_rate"
+parameter: governance.transaction_tax_rate
 created: 2026-02-10
 updated: 2026-02-19
+aliases:
+- governance.transaction_tax_rate
+- transaction-tax-rate
+cssclasses:
+- sweep-summary
+tags:
+- governance
+- transaction-tax
+- sweep-series
+graph-group: sweep
 ---
 
 ## Runs in this sweep

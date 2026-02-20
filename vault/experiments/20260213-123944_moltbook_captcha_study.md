@@ -1,11 +1,18 @@
 ---
-description: Multi-condition study of moltbook_captcha_study (0 levels, 200 total
-  runs)
+description: Multi-condition study of moltbook_captcha_study (0 levels, 200 total runs)
 type: experiment
 status: completed
 run_id: 20260213-123944_moltbook_captcha_study
 experiment_type: study
 created: '2026-02-13'
+aliases:
+- 20260213-123944_moltbook_captcha_study
+cssclasses:
+- experiment
+- experiment-study
+tags:
+- study
+graph-group: experiment
 ---
 
 # moltbook captcha study study (200 runs) finds 0 significant pairwise differences

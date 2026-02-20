@@ -1,27 +1,39 @@
 ---
-description: "Collusive agents accumulate 137x less wealth than honest agents under behavioral monitoring"
+description: Collusive agents accumulate 137x less wealth than honest agents under behavioral monitoring
 type: claim
 status: active
 confidence: high
 domain: collusion
 evidence:
   supporting:
-    - run: "20260213-221500_collusion_tax_effect"
-      metric: "final_wealth"
-      detail: "Collusive 3.4±1.2 vs honest 467.3±186.9, d=3.51, p<0.001, N=10 seeds, Bonferroni-corrected"
+  - run: 20260213-221500_collusion_tax_effect
+    metric: final_wealth
+    detail: Collusive 3.4±1.2 vs honest 467.3±186.9, d=3.51, p<0.001, N=10 seeds, Bonferroni-corrected
   weakening: []
   boundary_conditions:
-    - "GTB 15x15 gridworld, 14 agents, heuristic tax planner"
-    - "Similarity threshold 0.70 for collusion detection"
+  - GTB 15x15 gridworld, 14 agents, heuristic tax planner
+  - Similarity threshold 0.70 for collusion detection
 sensitivity:
-  topology: "15x15 gridworld with spatial proximity; results may differ in non-spatial interaction graphs"
-  agent_count: "14 agents; collusion detection difficulty scales with agent count"
+  topology: 15x15 gridworld with spatial proximity; results may differ in non-spatial interaction graphs
+  agent_count: 14 agents; collusion detection difficulty scales with agent count
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-collusion-penalty-destabilizes
+- claim-collusion-penalty-destabilizes
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- collusion-wealth-destruction
+- collusive-agents-accumulate-137x-less-wealth
+cssclasses:
+- claim
+- claim-high
+tags:
+- collusion
+- agent-behavior
+- wealth
+- monitoring
+graph-group: claim
 ---
 
 ## Collusion Wealth Destruction

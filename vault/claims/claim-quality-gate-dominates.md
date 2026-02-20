@@ -1,28 +1,41 @@
 ---
-description: "Deterministic quality gate (reject p<0.5) achieves comparable safety to full governance while preserving welfare"
+description: Deterministic quality gate (reject p<0.5) achieves comparable safety to full governance while preserving welfare
 type: claim
 status: active
 confidence: medium
 domain: governance
 evidence:
   supporting:
-    - run: "20260211-232952_gastown_composition_study"
-      metric: "welfare, toxicity"
-      detail: "Refinery regime preserves near-ungoverned welfare with comparable toxicity reduction, N=63"
+  - run: 20260211-232952_gastown_composition_study
+    metric: welfare, toxicity
+    detail: Refinery regime preserves near-ungoverned welfare with comparable toxicity reduction, N=63
   weakening: []
   boundary_conditions:
-    - "GasTown workspace, 7 agents, 30 epochs"
-    - "Zero friction on accepted interactions"
+  - GasTown workspace, 7 agents, 30 epochs
+  - Zero friction on accepted interactions
 sensitivity:
-  topology: "Tested on GasTown small-world; gate effectiveness may vary on denser topologies where agents have more interaction partners"
-  agent_count: "7 agents; gate false-rejection rate may matter more at scale"
+  topology: Tested on GasTown small-world; gate effectiveness may vary on denser topologies where agents have more interaction
+    partners
+  agent_count: 7 agents; gate false-rejection rate may matter more at scale
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-governance-cost-paradox
-  - claim-circuit-breakers-dominate
+- claim-governance-cost-paradox
+- claim-circuit-breakers-dominate
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- quality-gate-dominates
+- deterministic-quality-gate-reject-p05-achieves
+cssclasses:
+- claim
+- claim-medium
+tags:
+- governance
+- quality-gate
+- welfare
+- refinery
+graph-group: claim
 ---
 
 ## Quality Gate Dominates Full Governance

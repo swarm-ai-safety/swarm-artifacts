@@ -1,11 +1,18 @@
 ---
-description: 'sweep_reputation_decay: None-run sweep of parameters, 0 Bonferroni-significant
-  findings'
+description: 'sweep_reputation_decay: None-run sweep of parameters, 0 Bonferroni-significant findings'
 type: experiment
 status: completed
 run_id: 20260208-215902_sweep_reputation_decay
 experiment_type: sweep
 created: '2026-02-08'
+aliases:
+- 20260208-215902_sweep_reputation_decay
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- sweep
+graph-group: experiment
 ---
 
 # sweep reputation decay sweep (? runs) finds 0 Bonferroni-significant effects across sweep_reputation_decay

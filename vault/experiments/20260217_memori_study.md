@@ -5,6 +5,15 @@ status: completed
 run_id: 20260217_memori_study
 experiment_type: study
 created: '2026-02-17'
+aliases:
+- 20260217_memori_study
+cssclasses:
+- experiment
+- experiment-study
+tags:
+- memori
+- study
+graph-group: experiment
 ---
 
 # memori study study (30 runs) finds 0 significant pairwise differences

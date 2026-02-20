@@ -5,6 +5,15 @@ status: completed
 run_id: 20260213-143751_delegation_games_study
 experiment_type: study
 created: '2026-02-13'
+aliases:
+- 20260213-143751_delegation_games_study
+cssclasses:
+- experiment
+- experiment-study
+tags:
+- delegation
+- study
+graph-group: experiment
 ---
 
 # delegation games study study (80 runs) finds 0 significant pairwise differences

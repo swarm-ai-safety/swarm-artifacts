@@ -1,11 +1,19 @@
 ---
-description: 'collusion_tax_effect: 160-run sweep of transaction_tax_rate, collusion_penalty_multiplier,
-  21 Bonferroni-significant findings'
+description: 'collusion_tax_effect: 160-run sweep of transaction_tax_rate, collusion_penalty_multiplier, 21 Bonferroni-significant
+  findings'
 type: experiment
 status: completed
 run_id: 20260213-221500_collusion_tax_effect
 experiment_type: sweep
 created: '2026-02-13'
+aliases:
+- 20260213-221500_collusion_tax_effect
+cssclasses:
+- experiment
+- experiment-sweep
+tags:
+- collusion
+graph-group: experiment
 ---
 
 # collusion tax effect sweep (160 runs) finds 21 Bonferroni-significant effects across transaction_tax_rate, collusion_penalty_multiplier

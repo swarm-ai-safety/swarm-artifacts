@@ -1,25 +1,28 @@
 ---
-description: "Freezes agents exceeding toxicity or violation thresholds, the single most effective governance lever"
+description: Freezes agents exceeding toxicity or violation thresholds, the single most effective governance lever
 type: governance
 status: active
 mechanism: circuit-breaker
-
 parameters:
-  - name: freeze_threshold_toxicity
-    type: float
-    default: 0.6
-    range: "0.0–1.0, lower = more aggressive"
-  - name: freeze_threshold_violations
-    type: int
-    default: 3
-    range: "1–10, lower = more aggressive"
-  - name: freeze_duration_epochs
-    type: int
-    default: 3
-    range: "1–10, longer = harsher"
-
+- name: freeze_threshold_toxicity
+  type: float
+  default: 0.6
+  range: 0.0–1.0, lower = more aggressive
+- name: freeze_threshold_violations
+  type: int
+  default: 3
+  range: 1–10, lower = more aggressive
+- name: freeze_duration_epochs
+  type: int
+  default: 3
+  range: 1–10, longer = harsher
 created: 2026-02-11
 updated: 2026-02-18
+aliases:
+- circuit-breaker
+cssclasses:
+- governance
+graph-group: governance
 ---
 
 # circuit breakers alone outperform full governance stacks

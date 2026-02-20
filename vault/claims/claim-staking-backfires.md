@@ -1,34 +1,37 @@
 ---
-description: "Staking requirement hurts honest agents more than adversarial agents, reducing system welfare"
+description: Staking requirement hurts honest agents more than adversarial agents, reducing system welfare
 type: claim
 status: active
 confidence: medium
 domain: governance
-
 evidence:
   supporting:
-    - run: "20260211-000149_kernel_market_governance_comparison"
-      metric: "welfare"
-      detail: "Staking-only: welfare 10.65 vs no-governance 12.70. Honest agents lose disproportionately."
+  - run: 20260211-000149_kernel_market_governance_comparison
+    metric: welfare
+    detail: 'Staking-only: welfare 10.65 vs no-governance 12.70. Honest agents lose disproportionately.'
   weakening: []
   boundary_conditions:
-    - "Tested in kernel market domain with 8 agents"
-    - "Small-world topology (k=4, p=0.15)"
-    - "Fixed stake amount (min_stake_to_participate=10.0)"
-    - "Single run comparison within 7-regime sweep"
-
+  - Tested in kernel market domain with 8 agents
+  - Small-world topology (k=4, p=0.15)
+  - Fixed stake amount (min_stake_to_participate=10.0)
+  - Single run comparison within 7-regime sweep
 sensitivity:
-  topology: "untested beyond small_world"
-  stake_amount: "only tested at default (10.0)"
-  agent_wealth_distribution: "uniform starting conditions only"
-
+  topology: untested beyond small_world
+  stake_amount: only tested at default (10.0)
+  agent_wealth_distribution: uniform starting conditions only
 supersedes: []
 superseded_by: []
 related_claims:
-  - "claim-circuit-breakers-dominate"
-
+- claim-circuit-breakers-dominate
 created: 2026-02-11
 updated: 2026-02-18
+aliases:
+- staking-backfires
+- staking-requirement-hurts-honest-agents-more
+cssclasses:
+- claim
+- claim-medium
+graph-group: claim
 ---
 
 # staking requirement hurts honest agents more than adversarial agents

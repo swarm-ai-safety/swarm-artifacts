@@ -1,21 +1,24 @@
 ---
-description: "Levies a percentage tax on transactions, redistributed to the commons or agents"
+description: Levies a percentage tax on transactions, redistributed to the commons or agents
 type: governance
 status: active
 mechanism: transaction-tax
-
 parameters:
-  - name: transaction_tax_rate
-    type: float
-    default: 0.05
-    range: "0.0–0.20, higher = more redistribution"
-  - name: transaction_tax_split
-    type: float
-    default: 0.5
-    range: "0.0–1.0, fraction going to commons vs. agents"
-
+- name: transaction_tax_rate
+  type: float
+  default: 0.05
+  range: 0.0–0.20, higher = more redistribution
+- name: transaction_tax_split
+  type: float
+  default: 0.5
+  range: 0.0–1.0, fraction going to commons vs. agents
 created: 2026-02-10
 updated: 2026-02-18
+aliases:
+- transaction-tax
+cssclasses:
+- governance
+graph-group: governance
 ---
 
 # transaction tax above 5% significantly reduces welfare with large effect size

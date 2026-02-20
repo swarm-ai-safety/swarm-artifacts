@@ -1,10 +1,21 @@
 ---
-description: "Seed robustness testing for RLM recursive collusion scenario"
+description: Seed robustness testing for RLM recursive collusion scenario
 type: sweep-summary
 status: active
-parameter: "simulation.seed"
+parameter: simulation.seed
 created: 2026-02-10
 updated: 2026-02-19
+aliases:
+- simulation.seed
+- rlm-recursive-collusion
+cssclasses:
+- sweep-summary
+tags:
+- rlm
+- collusion
+- seed-robustness
+- sweep-series
+graph-group: sweep
 ---
 
 ## Runs in this sweep

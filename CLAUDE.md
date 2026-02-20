@@ -56,16 +56,28 @@ These rules apply to ALL vault notes. Never violate them:
 ## Key scripts
 
 ```bash
-python scripts/backfill-run-yaml.py        # Generate run.yaml for existing runs
-python scripts/index-runs.py               # Rebuild run-index.yaml
-python scripts/validate-run.py --all       # Validate run schemas
-python scripts/validate-vault.py --all     # Validate vault notes
-python scripts/vault-health.py             # Comprehensive vault audit
-python scripts/generate-note.py <run_id>   # Synthesize experiment note
-python scripts/generate-note.py --all      # Synthesize all unsynthesized runs
-python scripts/diff-runs.py <a> <b>        # Compare two runs
-python scripts/emit-event.py <run_id>      # Emit Inngest event
-python scripts/enrich-tags.py              # Enrich run tags from content
+# Validation
+python scripts/validate-run.py --all          # Validate run schemas
+python scripts/validate-vault.py --all        # Validate vault notes
+python scripts/vault-health.py                # Comprehensive vault audit
+
+# Synthesis
+python scripts/backfill-run-yaml.py           # Generate run.yaml for existing runs
+python scripts/generate-note.py --all         # Synthesize experiment notes
+python scripts/generate-sweep-notes.py        # Generate sweep summaries
+
+# Enrichment
+python scripts/enrich-tags.py                 # Mine semantic tags from run content
+python scripts/obsidian-metadata.py           # Add Obsidian graph metadata
+
+# Analysis
+python scripts/claim-lifecycle.py             # Audit claim evidence and status
+python scripts/cross-correlate.py             # Detect parameter interactions
+python scripts/diff-runs.py <a> <b>           # Compare two runs
+
+# Indexing & events
+python scripts/index-runs.py                  # Rebuild run-index.yaml
+python scripts/emit-event.py <run_id>         # Emit Inngest event
 ```
 
 ## Working with claims

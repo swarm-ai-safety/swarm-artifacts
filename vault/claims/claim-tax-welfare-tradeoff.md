@@ -1,38 +1,41 @@
 ---
-description: "Transaction tax above 5% significantly reduces welfare with large effect size (d=1.18)"
+description: Transaction tax above 5% significantly reduces welfare with large effect size (d=1.18)
 type: claim
 status: active
 confidence: high
 domain: governance
-
 evidence:
   supporting:
-    - run: "20260213-202050_baseline_governance_v2"
-      metric: "welfare"
-      detail: "d=1.18, p<1e-14, N=700, 50 seeds, Bonferroni-corrected"
-    - run: "20260213-173805_baseline_governance"
-      metric: "welfare"
-      detail: "d=0.95, p<0.001, N=280, 10 seeds, Bonferroni-corrected"
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: d=1.18, p<1e-14, N=700, 50 seeds, Bonferroni-corrected
+  - run: 20260213-173805_baseline_governance
+    metric: welfare
+    detail: d=0.95, p<0.001, N=280, 10 seeds, Bonferroni-corrected
   weakening: []
   boundary_conditions:
-    - "Tested in small-world topology (k=4, p=0.15)"
-    - "8 agents (4 honest, 2 adversarial, 2 adaptive)"
-    - "Tax range 0–15%"
-    - "Does not model redistribution effects on agent strategy"
-
+  - Tested in small-world topology (k=4, p=0.15)
+  - 8 agents (4 honest, 2 adversarial, 2 adaptive)
+  - Tax range 0–15%
+  - Does not model redistribution effects on agent strategy
 sensitivity:
-  topology: "untested beyond small_world"
-  agent_count: "untested beyond 8"
-  governance_interaction: "circuit breakers partially compensate at tax >= 0.075"
-
+  topology: untested beyond small_world
+  agent_count: untested beyond 8
+  governance_interaction: circuit breakers partially compensate at tax >= 0.075
 supersedes: []
 superseded_by: []
 related_claims:
-  - "claim-circuit-breakers-dominate"
-  - "claim-staking-backfires"
-
+- claim-circuit-breakers-dominate
+- claim-staking-backfires
 created: 2026-02-13
 updated: 2026-02-18
+aliases:
+- tax-welfare-tradeoff
+- transaction-tax-above-5-significantly-reduces
+cssclasses:
+- claim
+- claim-high
+graph-group: claim
 ---
 
 # transaction tax above 5% significantly reduces aggregate welfare

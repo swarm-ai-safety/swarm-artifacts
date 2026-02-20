@@ -1,10 +1,22 @@
 ---
-description: "Composition studies exploring adversarial fraction sensitivity in GasTown workspaces"
+description: Composition studies exploring adversarial fraction sensitivity in GasTown workspaces
 type: sweep-summary
 status: active
-parameter: "agents.adversarial_fraction"
+parameter: agents.adversarial_fraction
 created: 2026-02-11
 updated: 2026-02-19
+aliases:
+- agents.adversarial_fraction
+- gastown-composition
+cssclasses:
+- sweep-summary
+tags:
+- governance
+- gastown
+- composition
+- adversarial-fraction
+- sweep-series
+graph-group: sweep
 ---
 
 ## Runs in this sweep

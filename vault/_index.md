@@ -50,9 +50,15 @@ One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
 ## Sweeps
 
-Cross-run aggregations tracking convergence of parameter explorations.
+Cross-run aggregations tracking convergence of parameter explorations. 7 sweep series.
 
-- `vault/sweeps/` — sweep series summaries
+- [[transaction-tax-rate]] — Tax rate sweep series across multiple runs
+- [[collusion-penalty-multiplier]] — Collusion penalty sensitivity and tax interaction
+- [[sweep-governance-transaction-tax-rate]] — Transaction tax rate shows significant effects across 4 runs
+- [[sweep-governance-moltbook-challenge-difficulty]] — CAPTCHA difficulty sweep
+- [[gastown-composition]] — GasTown adversarial composition sweeps
+- [[ldt-parametric]] — LDT cooperation parameter sweeps
+- [[rlm-recursive-collusion]] — RLM recursive reasoning sweeps
 
 ## Methods
 

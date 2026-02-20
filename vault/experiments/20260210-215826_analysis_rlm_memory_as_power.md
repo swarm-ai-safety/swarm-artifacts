@@ -5,6 +5,15 @@ status: completed
 run_id: 20260210-215826_analysis_rlm_memory_as_power
 experiment_type: single
 created: '2026-02-10'
+aliases:
+- 20260210-215826_analysis_rlm_memory_as_power
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- rlm
+- analysis
+graph-group: experiment
 ---
 
 # single-run baseline (analysis rlm memory as power)

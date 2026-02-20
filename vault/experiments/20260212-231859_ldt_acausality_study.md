@@ -5,6 +5,16 @@ status: completed
 run_id: 20260212-231859_ldt_acausality_study
 experiment_type: study
 created: '2026-02-12'
+aliases:
+- 20260212-231859_ldt_acausality_study
+cssclasses:
+- experiment
+- experiment-study
+tags:
+- ldt
+- acausality
+- study
+graph-group: experiment
 ---
 
 # acausality depth study (30 runs) finds 0 significant pairwise differences

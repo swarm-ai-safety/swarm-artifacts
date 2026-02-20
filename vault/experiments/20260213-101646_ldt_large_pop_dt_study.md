@@ -5,6 +5,15 @@ status: completed
 run_id: 20260213-101646_ldt_large_pop_dt_study
 experiment_type: study
 created: '2026-02-13'
+aliases:
+- 20260213-101646_ldt_large_pop_dt_study
+cssclasses:
+- experiment
+- experiment-study
+tags:
+- ldt
+- study
+graph-group: experiment
 ---
 
 # decision theory study (30 runs) finds 0 significant pairwise differences

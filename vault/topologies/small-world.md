@@ -1,17 +1,20 @@
 ---
-description: "Watts-Strogatz small-world network balancing local clustering with short path lengths"
+description: Watts-Strogatz small-world network balancing local clustering with short path lengths
 type: topology
 status: active
 topology: small-world
-
 properties:
   avg_degree: 4
   clustering: 0.42
   diameter: 3
   dynamic: true
-
 created: 2026-02-08
 updated: 2026-02-18
+aliases:
+- small-world
+cssclasses:
+- topology
+graph-group: topology
 ---
 
 # small-world topology is the default testbed for SWARM governance experiments

@@ -5,6 +5,14 @@ status: completed
 run_id: self_optimizer_seed42
 experiment_type: single
 created: '2026-02-18'
+aliases:
+- self_optimizer_seed42
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- seed-42
+graph-group: experiment
 ---
 
 # single-run baseline (self optimizer seed42)

@@ -5,6 +5,16 @@ status: completed
 run_id: 20260210-215826_analysis_rlm_recursive_collusion
 experiment_type: single
 created: '2026-02-10'
+aliases:
+- 20260210-215826_analysis_rlm_recursive_collusion
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- rlm
+- collusion
+- analysis
+graph-group: experiment
 ---
 
 # single-run baseline (analysis rlm recursive collusion)

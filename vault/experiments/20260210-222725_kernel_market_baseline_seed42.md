@@ -5,6 +5,17 @@ status: completed
 run_id: 20260210-222725_kernel_market_baseline_seed42
 experiment_type: single
 created: '2026-02-10'
+aliases:
+- 20260210-222725_kernel_market_baseline_seed42
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- baseline
+- kernel
+- market
+- seed-42
+graph-group: experiment
 ---
 
 # single-run baseline with welfare=2.2 (kernel market baseline seed42)

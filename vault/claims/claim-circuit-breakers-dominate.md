@@ -1,39 +1,48 @@
 ---
-description: "Circuit breakers alone outperform full governance stacks on welfare and toxicity"
+description: Circuit breakers alone outperform full governance stacks on welfare and toxicity
 type: claim
 status: active
 confidence: high
 domain: governance
-
 evidence:
   supporting:
-    - run: "20260211-000149_kernel_market_governance_comparison"
-      metric: "welfare"
-      detail: "CB-only: 22.96 welfare, 0.395 toxicity. Full governance: 21.38, 0.399. d=1.64, p=0.022, Bonferroni-corrected. 70 runs, 10 seeds."
-    - run: "20260210-235049_kernel_market_audit_rate"
-      metric: "welfare"
-      detail: "Audit-only underperforms circuit breaker across all audit rates"
+  - run: 20260211-000149_kernel_market_governance_comparison
+    metric: welfare
+    detail: 'CB-only: 22.96 welfare, 0.395 toxicity. Full governance: 21.38, 0.399. d=1.64, p=0.022, Bonferroni-corrected.
+      70 runs, 10 seeds.'
+  - run: 20260210-235049_kernel_market_audit_rate
+    metric: welfare
+    detail: Audit-only underperforms circuit breaker across all audit rates
   weakening: []
   boundary_conditions:
-    - "Tested in kernel market domain with 8 agents"
-    - "Small-world topology (k=4, p=0.15)"
-    - "Adversarial fraction: 25% (2/8)"
-    - "Untested with threshold-dancing adversaries"
-
+  - Tested in kernel market domain with 8 agents
+  - Small-world topology (k=4, p=0.15)
+  - 'Adversarial fraction: 25% (2/8)'
+  - Untested with threshold-dancing adversaries
 sensitivity:
-  topology: "untested beyond small_world"
-  agent_count: "untested beyond 8"
-  adversarial_fraction: "untested beyond 25%"
-  agent_sophistication: "tested with algorithmic agents only, not LLM-powered"
-
+  topology: untested beyond small_world
+  agent_count: untested beyond 8
+  adversarial_fraction: untested beyond 25%
+  agent_sophistication: tested with algorithmic agents only, not LLM-powered
 supersedes: []
 superseded_by: []
 related_claims:
-  - "claim-staking-backfires"
-  - "claim-tax-welfare-tradeoff"
-
+- claim-staking-backfires
+- claim-tax-welfare-tradeoff
 created: 2026-02-11
 updated: 2026-02-18
+aliases:
+- circuit-breakers-dominate
+- circuit-breakers-alone-outperform-full-governance
+cssclasses:
+- claim
+- claim-high
+tags:
+- governance
+- circuit-breaker
+- welfare
+- mechanism-design
+graph-group: claim
 ---
 
 Circuit breakers alone produce better welfare and toxicity outcomes than full governance stacks combining taxes, audits, staking, and reputation.

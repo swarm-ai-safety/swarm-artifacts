@@ -5,6 +5,14 @@ status: completed
 run_id: agent_tree_demo
 experiment_type: single
 created: '2026-02-18'
+aliases:
+- agent_tree_demo
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- untagged
+graph-group: experiment
 ---
 
 # single-run baseline (agent tree demo)

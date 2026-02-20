@@ -5,6 +5,16 @@ status: completed
 run_id: 20260211-004234_analysis_ldt_cooperation
 experiment_type: single
 created: '2026-02-11'
+aliases:
+- 20260211-004234_analysis_ldt_cooperation
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- ldt
+- cooperation
+- analysis
+graph-group: experiment
 ---
 
 # single-run baseline (analysis ldt cooperation)

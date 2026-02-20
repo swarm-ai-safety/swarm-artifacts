@@ -1,27 +1,39 @@
 ---
-description: "RLHF-trained Claude models produce identical cooperative behavior across adversarial system prompts"
+description: RLHF-trained Claude models produce identical cooperative behavior across adversarial system prompts
 type: claim
 status: active
 confidence: low
 domain: agent-behavior
 evidence:
   supporting:
-    - run: "20260211-234038_pi_claude_live"
-      metric: "toxicity"
-      detail: "Haiku toxicity 0.186 across default/safety/adversarial personas, N=18 episodes, 180 API calls"
+  - run: 20260211-234038_pi_claude_live
+    metric: toxicity
+    detail: Haiku toxicity 0.186 across default/safety/adversarial personas, N=18 episodes, 180 API calls
   weakening: []
   boundary_conditions:
-    - "Haiku 4.5 and Sonnet 4.5 only"
-    - "Heuristic text scorer, single seed"
+  - Haiku 4.5 and Sonnet 4.5 only
+  - Heuristic text scorer, single seed
 sensitivity:
-  topology: "Not topology-dependent; tested on default interaction structure"
-  agent_count: "Small episode count (N=18); larger samples needed to detect subtle persona effects"
+  topology: Not topology-dependent; tested on default interaction structure
+  agent_count: Small episode count (N=18); larger samples needed to detect subtle persona effects
 supersedes: []
 superseded_by: []
 related_claims:
-  - claim-smarter-agents-earn-less
+- claim-smarter-agents-earn-less
 created: 2026-02-19
 updated: 2026-02-19
+aliases:
+- rlhf-persona-invariant
+- rlhf-trained-claude-models-produce-identical-cooperative
+cssclasses:
+- claim
+- claim-low
+tags:
+- agent-behavior
+- rlhf
+- persona
+- alignment
+graph-group: claim
 ---
 
 ## RLHF Persona Invariance

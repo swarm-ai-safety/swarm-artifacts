@@ -5,6 +5,15 @@ status: completed
 run_id: 20260208-214230_redteam_baseline
 experiment_type: redteam
 created: '2026-02-08'
+aliases:
+- 20260208-214230_redteam_baseline
+cssclasses:
+- experiment
+- experiment-redteam
+tags:
+- baseline
+- redteam
+graph-group: experiment
 ---
 
 # red-team evaluation scores 45% (F) against baseline governance

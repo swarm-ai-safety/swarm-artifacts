@@ -5,6 +5,16 @@ status: completed
 run_id: 20260210-215826_analysis_rlm_governance_lag
 experiment_type: single
 created: '2026-02-10'
+aliases:
+- 20260210-215826_analysis_rlm_governance_lag
+cssclasses:
+- experiment
+- experiment-single
+tags:
+- governance
+- rlm
+- analysis
+graph-group: experiment
 ---
 
 # single-run baseline (analysis rlm governance lag)
