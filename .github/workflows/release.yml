@@ -1,0 +1,262 @@
+name: Vault Milestone Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "vault/**"
+      - "runs/**"
+
+permissions:
+  contents: write
+
+jobs:
+  check-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history for tag comparison
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      # ── Count current vault artifacts ──────────────────────────────
+      - name: Count vault artifacts
+        id: counts
+        run: |
+          count_md() {
+            local dir="$1"
+            if [ -d "$dir" ]; then
+              find "$dir" -maxdepth 1 -name '*.md' ! -name '_index.md' | wc -l | tr -d ' '
+            else
+              echo 0
+            fi
+          }
+
+          count_dirs() {
+            local dir="$1"
+            if [ -d "$dir" ]; then
+              find "$dir" -mindepth 1 -maxdepth 1 -type d ! -name '_*' ! -name '.*' | wc -l | tr -d ' '
+            else
+              echo 0
+            fi
+          }
+
+          CLAIMS=$(count_md vault/claims)
+          EXPERIMENTS=$(count_md vault/experiments)
+          RUNS=$(count_dirs runs)
+          FAILURES=$(count_md vault/failures)
+          GOVERNANCE=$(count_md vault/governance)
+          METHODS=$(count_md vault/methods)
+          SWEEPS=$(count_md vault/sweeps)
+
+          # Count high-confidence claims
+          HIGH_CONF=0
+          if [ -d vault/claims ]; then
+            for f in vault/claims/*.md; do
+              [ -f "$f" ] || continue
+              if grep -q 'confidence:.*high' "$f" 2>/dev/null; then
+                HIGH_CONF=$((HIGH_CONF + 1))
+              fi
+            done
+          fi
+
+          echo "claims=$CLAIMS" >> "$GITHUB_OUTPUT"
+          echo "experiments=$EXPERIMENTS" >> "$GITHUB_OUTPUT"
+          echo "runs=$RUNS" >> "$GITHUB_OUTPUT"
+          echo "failures=$FAILURES" >> "$GITHUB_OUTPUT"
+          echo "governance=$GOVERNANCE" >> "$GITHUB_OUTPUT"
+          echo "methods=$METHODS" >> "$GITHUB_OUTPUT"
+          echo "sweeps=$SWEEPS" >> "$GITHUB_OUTPUT"
+          echo "high_conf=$HIGH_CONF" >> "$GITHUB_OUTPUT"
+
+          echo "### Current counts"
+          echo "Claims: $CLAIMS (high confidence: $HIGH_CONF)"
+          echo "Experiments: $EXPERIMENTS"
+          echo "Runs: $RUNS"
+          echo "Failures: $FAILURES"
+
+      # ── Get previous release counts ────────────────────────────────
+      - name: Get previous release counts
+        id: prev
+        run: |
+          LAST_TAG=$(git tag --list 'v0.*' --sort=-version:refname | head -n1)
+          if [ -z "$LAST_TAG" ]; then
+            echo "prev_claims=0" >> "$GITHUB_OUTPUT"
+            echo "prev_experiments=0" >> "$GITHUB_OUTPUT"
+            echo "prev_runs=0" >> "$GITHUB_OUTPUT"
+            echo "last_tag=" >> "$GITHUB_OUTPUT"
+            echo "No previous release tag found — using 0 baselines."
+          else
+            echo "last_tag=$LAST_TAG" >> "$GITHUB_OUTPUT"
+            echo "Previous release: $LAST_TAG"
+
+            # Parse counts from the tag version string v0.{claims}.{experiments}
+            PREV_CLAIMS=$(echo "$LAST_TAG" | sed 's/v0\.\([0-9]*\)\.\([0-9]*\)/\1/')
+            PREV_EXPERIMENTS=$(echo "$LAST_TAG" | sed 's/v0\.\([0-9]*\)\.\([0-9]*\)/\2/')
+
+            # For runs, count at the tagged commit
+            PREV_RUNS=$(git ls-tree --name-only "$LAST_TAG" runs/ 2>/dev/null | grep -v '^_' | wc -l | tr -d ' ')
+
+            echo "prev_claims=$PREV_CLAIMS" >> "$GITHUB_OUTPUT"
+            echo "prev_experiments=$PREV_EXPERIMENTS" >> "$GITHUB_OUTPUT"
+            echo "prev_runs=$PREV_RUNS" >> "$GITHUB_OUTPUT"
+
+            echo "Previous: claims=$PREV_CLAIMS experiments=$PREV_EXPERIMENTS runs=$PREV_RUNS"
+          fi
+
+      # ── Check milestone thresholds ─────────────────────────────────
+      - name: Check milestones
+        id: milestone
+        run: |
+          CLAIMS=${{ steps.counts.outputs.claims }}
+          EXPERIMENTS=${{ steps.counts.outputs.experiments }}
+          RUNS=${{ steps.counts.outputs.runs }}
+          PREV_CLAIMS=${{ steps.prev.outputs.prev_claims }}
+          PREV_EXPERIMENTS=${{ steps.prev.outputs.prev_experiments }}
+          PREV_RUNS=${{ steps.prev.outputs.prev_runs }}
+
+          # Check if a threshold boundary was crossed.
+          # crossed(current, previous, interval) returns true if
+          # floor(current/interval) > floor(previous/interval)
+          crossed() {
+            local cur=$1 prev=$2 interval=$3
+            local cur_bucket=$((cur / interval))
+            local prev_bucket=$((prev / interval))
+            [ "$cur_bucket" -gt "$prev_bucket" ]
+          }
+
+          SHOULD_RELEASE=false
+          REASONS=""
+
+          if crossed "$CLAIMS" "$PREV_CLAIMS" 5; then
+            SHOULD_RELEASE=true
+            REASONS="${REASONS}- Claims milestone: $PREV_CLAIMS -> $CLAIMS (every 5)\n"
+          fi
+
+          if crossed "$EXPERIMENTS" "$PREV_EXPERIMENTS" 25; then
+            SHOULD_RELEASE=true
+            REASONS="${REASONS}- Experiments milestone: $PREV_EXPERIMENTS -> $EXPERIMENTS (every 25)\n"
+          fi
+
+          if crossed "$RUNS" "$PREV_RUNS" 50; then
+            SHOULD_RELEASE=true
+            REASONS="${REASONS}- Runs milestone: $PREV_RUNS -> $RUNS (every 50)\n"
+          fi
+
+          echo "should_release=$SHOULD_RELEASE" >> "$GITHUB_OUTPUT"
+          echo "reasons<<EOF" >> "$GITHUB_OUTPUT"
+          echo -e "$REASONS" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+          if [ "$SHOULD_RELEASE" = "true" ]; then
+            echo "### Milestone crossed!"
+            echo -e "$REASONS"
+          else
+            echo "No milestone crossed. Skipping release."
+          fi
+
+      # ── Generate release notes ─────────────────────────────────────
+      - name: Generate release notes
+        if: steps.milestone.outputs.should_release == 'true'
+        id: notes
+        run: |
+          CLAIMS=${{ steps.counts.outputs.claims }}
+          EXPERIMENTS=${{ steps.counts.outputs.experiments }}
+          RUNS=${{ steps.counts.outputs.runs }}
+          FAILURES=${{ steps.counts.outputs.failures }}
+          GOVERNANCE=${{ steps.counts.outputs.governance }}
+          METHODS=${{ steps.counts.outputs.methods }}
+          SWEEPS=${{ steps.counts.outputs.sweeps }}
+          HIGH_CONF=${{ steps.counts.outputs.high_conf }}
+          LAST_TAG="${{ steps.prev.outputs.last_tag }}"
+
+          VERSION="v0.${CLAIMS}.${EXPERIMENTS}"
+
+          # Build the body
+          BODY="## Vault Statistics
+          - Claims: ${CLAIMS} (${HIGH_CONF} high confidence)
+          - Experiment notes: ${EXPERIMENTS}
+          - Runs indexed: ${RUNS}
+          - Failure patterns: ${FAILURES}
+          - Governance mechanisms: ${GOVERNANCE}
+          - Method notes: ${METHODS}
+          - Sweep summaries: ${SWEEPS}
+
+          ## Milestone triggers
+          ${{ steps.milestone.outputs.reasons }}
+          ## Changes since last release"
+
+          # Try vault-digest.py for a detailed diff
+          if [ -f scripts/vault-digest.py ]; then
+            if [ -n "$LAST_TAG" ]; then
+              DIGEST=$(python scripts/vault-digest.py "$LAST_TAG" HEAD 2>/dev/null || true)
+            else
+              DIGEST=$(python scripts/vault-digest.py 2>/dev/null || true)
+            fi
+            if [ -n "$DIGEST" ]; then
+              BODY="${BODY}
+
+          ${DIGEST}"
+            else
+              BODY="${BODY}
+
+          _vault-digest.py produced no output; showing simple summary._"
+            fi
+          else
+            # Fallback: simple git-based summary
+            if [ -n "$LAST_TAG" ]; then
+              CHANGED=$(git diff --stat "${LAST_TAG}..HEAD" -- vault/ runs/ | tail -1)
+              NEW_FILES=$(git diff --name-only --diff-filter=A "${LAST_TAG}..HEAD" -- vault/ | head -20)
+            else
+              CHANGED="Initial release"
+              NEW_FILES=$(git ls-files vault/ | head -20)
+            fi
+            BODY="${BODY}
+
+          \`\`\`
+          ${CHANGED}
+          \`\`\`
+
+          <details><summary>New vault files</summary>
+
+          \`\`\`
+          ${NEW_FILES}
+          \`\`\`
+          </details>"
+          fi
+
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+          # Write body to a temp file to avoid quoting issues
+          echo "$BODY" > /tmp/release-body.md
+
+      # ── Create GitHub release ──────────────────────────────────────
+      - name: Create release
+        if: steps.milestone.outputs.should_release == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ steps.notes.outputs.version }}"
+
+          # Avoid duplicate tags
+          if git rev-parse "$VERSION" >/dev/null 2>&1; then
+            echo "Tag $VERSION already exists. Appending build number."
+            BUILD=$(date +%Y%m%d%H%M%S)
+            VERSION="${VERSION}+${BUILD}"
+          fi
+
+          git tag "$VERSION"
+          git push origin "$VERSION"
+
+          gh release create "$VERSION" \
+            --title "Vault $VERSION" \
+            --notes-file /tmp/release-body.md \
+            --latest

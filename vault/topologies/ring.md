@@ -1,12 +1,13 @@
 ---
-description: Cycle graph where each agent connects only to immediate neighbors, maximizing path length and isolating local clusters
+description: Cycle graph where each agent connects only to immediate neighbors, maximizing path length and isolating local
+  clusters
 type: topology
 status: active
 topology: ring
 properties:
   avg_degree: 2
   clustering: 0.0
-  diameter: "n/2"
+  diameter: n/2
   dynamic: false
 parameters:
   n: 8
@@ -21,6 +22,8 @@ tags:
 - topology
 - information-flow
 - governance
+- ring
+- network-structure
 created: 2026-02-19
 updated: 2026-02-19
 ---

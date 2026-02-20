@@ -1,19 +1,19 @@
 ---
-description: "Barab\xE1si-Albert preferential attachment network with power-law degree distribution and influential hub agents"
+description: Barabási-Albert preferential attachment network with power-law degree distribution and influential hub agents
 type: topology
 status: active
 topology: scale-free
 properties:
-  avg_degree: "2m"
-  clustering: "~0.1 (low)"
-  diameter: "O(log n / log log n)"
+  avg_degree: 2m
+  clustering: ~0.1 (low)
+  diameter: O(log n / log log n)
   dynamic: false
 parameters:
   n: 8
   m: 2
 aliases:
 - scale-free
-- "barab\xE1si-albert"
+- barabási-albert
 - BA-graph
 - power-law
 cssclasses:
@@ -24,6 +24,9 @@ tags:
 - information-flow
 - governance
 - hub-and-spoke
+- scale-free
+- power-law
+- network-structure
 created: 2026-02-19
 updated: 2026-02-19
 ---

@@ -4,7 +4,7 @@ type: topology
 status: active
 topology: complete
 properties:
-  avg_degree: "n-1"
+  avg_degree: n-1
   clustering: 1.0
   diameter: 1
   dynamic: false
@@ -22,6 +22,8 @@ tags:
 - topology
 - information-flow
 - governance
+- complete-graph
+- network-structure
 created: 2026-02-19
 updated: 2026-02-19
 ---

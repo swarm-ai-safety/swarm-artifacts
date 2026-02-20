@@ -74,6 +74,13 @@ python scripts/obsidian-metadata.py           # Add Obsidian graph metadata
 python scripts/claim-lifecycle.py             # Audit claim evidence and status
 python scripts/cross-correlate.py             # Detect parameter interactions
 python scripts/diff-runs.py <a> <b>           # Compare two runs
+python scripts/claim-graph.py                 # Generate claim dependency graph
+python scripts/run-provenance.py              # Detect run lineage chains
+
+# Search & reporting
+python scripts/vault-search.py "query"        # Search vault by keyword/tag/type
+python scripts/vault-stats.py                 # Vault statistics summary
+python scripts/vault-digest.py HEAD~5..HEAD   # Changelog between commits
 
 # Indexing & events
 python scripts/index-runs.py                  # Rebuild run-index.yaml

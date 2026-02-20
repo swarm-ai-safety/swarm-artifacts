@@ -1,19 +1,20 @@
 ---
-description: "Erd\u0151s-R\xE9nyi random graph with uniform edge probability, providing a null model for topology-dependent governance effects"
+description: Erdős-Rényi random graph with uniform edge probability, providing a null model for topology-dependent governance
+  effects
 type: topology
 status: active
 topology: random
 properties:
-  avg_degree: "p(n-1)"
-  clustering: "p"
-  diameter: "O(log n)"
+  avg_degree: p(n-1)
+  clustering: p
+  diameter: O(log n)
   dynamic: false
 parameters:
   n: 8
   p: 0.5
 aliases:
 - random-graph
-- "erd\u0151s-r\xE9nyi"
+- erdős-rényi
 - ER-graph
 - G(n,p)
 cssclasses:
@@ -24,6 +25,8 @@ tags:
 - information-flow
 - governance
 - null-model
+- random-graph
+- network-structure
 created: 2026-02-19
 updated: 2026-02-19
 ---
