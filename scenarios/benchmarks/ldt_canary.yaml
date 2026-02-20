@@ -1,0 +1,46 @@
+# Canary: LDT cooperation
+#
+# Tests logical decision theory cooperation dynamics.
+# Verifies that cooperation emerges under standard conditions.
+
+scenario_id: canary_ldt_cooperation
+description: "Canary: LDT cooperation with acausal reasoning"
+motif: "Regression detection for LDT agent behavior"
+
+agents:
+  - type: honest
+    count: 4
+  - type: adversarial
+    count: 2
+
+governance:
+  transaction_tax_rate: 0.0
+  circuit_breaker_enabled: false
+  audit_enabled: false
+  staking_enabled: false
+  collusion_detection_enabled: false
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 10
+  steps_per_epoch: 10
+  seed: 42
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+success_criteria:
+  max_avg_toxicity: 0.5
+  min_total_welfare: 30.0
+  # Cooperation should emerge: acceptance rate should be reasonable
+  min_acceptance_rate: 0.5

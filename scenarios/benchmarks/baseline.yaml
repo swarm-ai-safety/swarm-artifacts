@@ -1,0 +1,45 @@
+# Canary: Baseline
+#
+# Minimal scenario with no governance. Used as a control for
+# regression detection. Should complete in <2 minutes.
+
+scenario_id: canary_baseline
+description: "Canary baseline: no governance, honest + adversarial agents"
+motif: "Regression detection baseline"
+
+agents:
+  - type: honest
+    count: 4
+  - type: adversarial
+    count: 2
+
+governance:
+  transaction_tax_rate: 0.0
+  circuit_breaker_enabled: false
+  audit_enabled: false
+  staking_enabled: false
+  collusion_detection_enabled: false
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 10
+  steps_per_epoch: 10
+  seed: 42
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+success_criteria:
+  # Baseline expectations (no governance = higher toxicity is OK)
+  max_avg_toxicity: 0.6
+  min_total_welfare: 20.0

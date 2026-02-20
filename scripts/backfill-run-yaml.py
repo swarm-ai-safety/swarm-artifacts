@@ -187,14 +187,38 @@ def build_run_yaml(run_path: Path) -> dict:
     # Extract swept parameters
     swept = summary.get("swept_parameters", {})
 
+    # Extract epochs/steps from single-run summaries or scenario.yaml
+    epochs_per_run = summary.get("n_epochs")
+    steps_per_epoch = summary.get("steps_per_epoch")
+    if not epochs_per_run:
+        scenario_path = run_path / "scenario.yaml"
+        if scenario_path.exists():
+            try:
+                with open(scenario_path) as f:
+                    sc = yaml.safe_load(f) or {}
+                sim = sc.get("simulation", {})
+                epochs_per_run = epochs_per_run or sim.get("n_epochs")
+                steps_per_epoch = steps_per_epoch or sim.get("steps_per_epoch")
+                if not seeds:
+                    s = sim.get("seed")
+                    if s is not None:
+                        seeds = [s]
+            except (yaml.YAMLError, OSError):
+                pass
+
     # Build results
     results = {"status": "completed"}
+    if "welfare" in summary:
+        results["primary_metric"] = "welfare"
+        results["primary_result"] = f"welfare={summary['welfare']:.2f}"
     if "total_runs" in summary:
         results["total_hypotheses_tested"] = summary.get("total_hypotheses", 0)
         results["significant_findings"] = summary.get("n_bonferroni_significant", 0)
     if "robustness_score" in summary:
         results["primary_metric"] = "robustness_score"
         results["primary_result"] = f"Grade: {summary.get('grade', '?')}, score: {summary.get('robustness_score', '?')}"
+    if "wall_time_seconds" in summary:
+        results["wall_time_seconds"] = summary["wall_time_seconds"]
 
     # Scenario ref
     scenario_ref = None
@@ -234,6 +258,10 @@ def build_run_yaml(run_path: Path) -> dict:
     total = summary.get("total_runs")
     if total:
         run_yaml["experiment"]["total_runs"] = total
+    if epochs_per_run:
+        run_yaml["experiment"]["epochs_per_run"] = epochs_per_run
+    if steps_per_epoch:
+        run_yaml["experiment"]["steps_per_epoch"] = steps_per_epoch
 
     return run_yaml
 

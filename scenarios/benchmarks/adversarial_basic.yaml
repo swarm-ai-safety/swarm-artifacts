@@ -1,0 +1,46 @@
+# Canary: Basic adversarial
+#
+# Tests that adversarial agents behave as expected under no governance.
+# Verifies the adversarial agent implementation hasn't regressed.
+
+scenario_id: canary_adversarial_basic
+description: "Canary: adversarial agent behavior without governance"
+motif: "Regression detection for adversarial agents"
+
+agents:
+  - type: honest
+    count: 3
+  - type: adversarial
+    count: 3
+
+governance:
+  transaction_tax_rate: 0.0
+  circuit_breaker_enabled: false
+  audit_enabled: false
+  staking_enabled: false
+  collusion_detection_enabled: false
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 10
+  steps_per_epoch: 10
+  seed: 42
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+success_criteria:
+  # With 50% adversarial agents, toxicity should be elevated
+  min_avg_toxicity: 0.2       # adversaries should cause SOME toxicity
+  max_avg_toxicity: 0.8       # but not complete system collapse
+  min_total_welfare: 10.0     # system should still function

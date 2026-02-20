@@ -2,9 +2,17 @@
 """
 Validate a SWARM run folder against the Research OS schemas.
 
+Checks:
+  1. run.yaml against run.schema.yaml (required)
+  2. scenario.yaml against scenario.schema.yaml (if present)
+  3. summary.json against summary.schema.yaml (if present, all variants)
+  4. Artifact manifest: all referenced files exist on disk
+  5. Structural: at least one output (summary.json, csv/, report.json)
+
 Usage:
     python scripts/validate-run.py runs/20260213-202050_baseline_governance_v2
     python scripts/validate-run.py --all
+    python scripts/validate-run.py --all --quiet
 """
 
 import argparse
@@ -24,24 +32,27 @@ except ImportError:
 SCHEMAS_DIR = Path(__file__).parent.parent / "schemas"
 RUNS_DIR = Path(__file__).parent.parent / "runs"
 
+_schema_cache: dict[str, dict] = {}
+
 
 def load_schema(name: str) -> dict:
-    """Load a YAML schema file."""
-    path = SCHEMAS_DIR / name
-    with open(path) as f:
-        return yaml.safe_load(f)
+    """Load a YAML schema file (cached)."""
+    if name not in _schema_cache:
+        path = SCHEMAS_DIR / name
+        with open(path) as f:
+            _schema_cache[name] = yaml.safe_load(f)
+    return _schema_cache[name]
 
 
 def validate_run(run_path: Path) -> list[str]:
     """Validate a run folder. Returns list of error messages."""
     errors = []
 
-    # Check run.yaml exists
+    # ── 1. run.yaml must exist ────────────────────────────────────────
     run_yaml_path = run_path / "run.yaml"
     if not run_yaml_path.exists():
         return [f"Missing run.yaml in {run_path.name}"]
 
-    # Load and validate run.yaml
     with open(run_yaml_path) as f:
         run_data = yaml.safe_load(f)
 
@@ -51,21 +62,41 @@ def validate_run(run_path: Path) -> list[str]:
     except jsonschema.ValidationError as e:
         errors.append(f"run.yaml: {e.message} (at {list(e.absolute_path)})")
 
-    # Validate summary.json against sweep schema if it's a sweep
-    if run_data.get("experiment", {}).get("type") == "sweep":
-        summary_path = run_path / "summary.json"
-        if summary_path.exists():
-            with open(summary_path) as f:
-                try:
-                    summary_data = json.load(f)
-                    sweep_schema = load_schema("sweep.schema.yaml")
-                    jsonschema.validate(summary_data, sweep_schema)
-                except json.JSONDecodeError as e:
-                    errors.append(f"summary.json: invalid JSON: {e}")
-                except jsonschema.ValidationError as e:
-                    errors.append(f"summary.json: {e.message} (at {list(e.absolute_path)})")
+    # ── 2. scenario.yaml validation ───────────────────────────────────
+    scenario_path = run_path / "scenario.yaml"
+    if scenario_path.exists():
+        try:
+            with open(scenario_path) as f:
+                scenario_data = yaml.safe_load(f)
+            scenario_schema = load_schema("scenario.schema.yaml")
+            jsonschema.validate(scenario_data, scenario_schema)
+        except yaml.YAMLError as e:
+            errors.append(f"scenario.yaml: invalid YAML: {e}")
+        except jsonschema.ValidationError as e:
+            errors.append(f"scenario.yaml: {e.message} (at {list(e.absolute_path)})")
+    elif run_data.get("experiment", {}).get("scenario_ref") == "unknown":
+        errors.append("No scenario.yaml and scenario_ref is 'unknown'")
 
-    # Check that listed artifacts actually exist
+    # ── 3. summary.json validation (all variants) ─────────────────────
+    summary_path = run_path / "summary.json"
+    if not summary_path.exists():
+        # Try report.json for redteam runs
+        summary_path = run_path / "report.json"
+    if not summary_path.exists():
+        summary_path = run_path / "analysis" / "summary.json"
+
+    if summary_path.exists():
+        try:
+            with open(summary_path) as f:
+                summary_data = json.load(f)
+            summary_schema = load_schema("summary.schema.yaml")
+            jsonschema.validate(summary_data, summary_schema)
+        except json.JSONDecodeError as e:
+            errors.append(f"{summary_path.name}: invalid JSON: {e}")
+        except jsonschema.ValidationError as e:
+            errors.append(f"{summary_path.name}: {e.message} (at {list(e.absolute_path)})")
+
+    # ── 4. Artifact manifest: referenced files must exist ─────────────
     artifacts = run_data.get("artifacts", {})
     for key in ["summary", "sweep_csv"]:
         val = artifacts.get(key)
@@ -74,7 +105,26 @@ def validate_run(run_path: Path) -> list[str]:
 
     for csv_path in artifacts.get("epoch_csvs", []):
         if not (run_path / csv_path).exists():
-            errors.append(f"artifacts.epoch_csvs references missing file: {csv_path}")
+            errors.append(f"artifacts.epoch_csvs references missing: {csv_path}")
+
+    for plot in artifacts.get("plots", []):
+        p = plot.get("path") if isinstance(plot, dict) else plot
+        if p and not (run_path / p).exists():
+            errors.append(f"artifacts.plots references missing: {p}")
+
+    for script in artifacts.get("scripts", []):
+        if not (run_path / script).exists():
+            errors.append(f"artifacts.scripts references missing: {script}")
+
+    # ── 5. Structural: at least one output ────────────────────────────
+    has_output = (
+        (run_path / "summary.json").exists()
+        or (run_path / "report.json").exists()
+        or (run_path / "analysis" / "summary.json").exists()
+        or (run_path / "csv").is_dir()
+    )
+    if not has_output:
+        errors.append("No output found (need summary.json, report.json, or csv/)")
 
     return errors
 
@@ -83,6 +133,7 @@ def main():
     parser = argparse.ArgumentParser(description="Validate SWARM run folders")
     parser.add_argument("path", nargs="?", help="Path to a specific run folder")
     parser.add_argument("--all", action="store_true", help="Validate all runs")
+    parser.add_argument("--quiet", "-q", action="store_true", help="Only show errors")
     args = parser.parse_args()
 
     if not args.path and not args.all:
@@ -96,6 +147,7 @@ def main():
         targets = [Path(args.path)]
 
     total_errors = 0
+    clean = 0
     for run_path in targets:
         errors = validate_run(run_path)
         if errors:
@@ -104,10 +156,12 @@ def main():
                 print(f"  - {e}")
             total_errors += len(errors)
         else:
-            print(f"  {run_path.name}: OK")
+            clean += 1
+            if not args.quiet:
+                print(f"  {run_path.name}: OK")
 
     print(f"\n{'=' * 40}")
-    print(f"Validated {len(targets)} runs, {total_errors} total errors")
+    print(f"Validated {len(targets)} runs: {clean} clean, {len(targets) - clean} with errors ({total_errors} total)")
     sys.exit(1 if total_errors > 0 else 0)
 
 
