@@ -13,7 +13,7 @@ created: 2026-02-19
 TABLE WITHOUT ID
   type AS "Type",
   length(rows) AS "Count"
-FROM ""
+FROM "vault"
 WHERE type
 GROUP BY type
 SORT length(rows) DESC
@@ -24,7 +24,7 @@ SORT length(rows) DESC
 TABLE WITHOUT ID
   tag AS "Tag",
   length(rows) AS "Used In"
-FROM ""
+FROM "vault"
 FLATTEN tags AS tag
 WHERE tag
 GROUP BY tag
@@ -38,7 +38,7 @@ TABLE WITHOUT ID
   file.link AS "Note",
   type AS "Type",
   file.folder AS "Folder"
-FROM ""
+FROM "vault"
 WHERE length(file.inlinks) = 0 AND length(file.outlinks) = 0
   AND !contains(file.path, "templates")
   AND !contains(file.path, "dashboards")
@@ -51,7 +51,7 @@ TABLE WITHOUT ID
   file.link AS "Note",
   type AS "Type",
   updated AS "Updated"
-FROM ""
+FROM "vault"
 WHERE updated
 SORT updated DESC
 LIMIT 15

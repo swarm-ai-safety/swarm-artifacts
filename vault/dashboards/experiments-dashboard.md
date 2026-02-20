@@ -16,7 +16,7 @@ TABLE WITHOUT ID
   file.link AS "Experiment",
   description AS "Description",
   tags AS "Tags"
-FROM "experiments"
+FROM "vault/experiments"
 WHERE contains(cssclasses, "experiment-sweep")
 SORT file.name DESC
 LIMIT 20
@@ -28,7 +28,7 @@ TABLE WITHOUT ID
   file.link AS "Experiment",
   description AS "Description",
   tags AS "Tags"
-FROM "experiments"
+FROM "vault/experiments"
 WHERE contains(cssclasses, "experiment-study")
 SORT file.name DESC
 LIMIT 20
@@ -40,7 +40,7 @@ TABLE WITHOUT ID
   file.link AS "Experiment",
   description AS "Description",
   tags AS "Tags"
-FROM "experiments"
+FROM "vault/experiments"
 WHERE contains(cssclasses, "experiment-redteam")
 SORT file.name DESC
 LIMIT 20
@@ -52,7 +52,7 @@ TABLE WITHOUT ID
   file.link AS "Experiment",
   description AS "Description",
   tags AS "Tags"
-FROM "experiments"
+FROM "vault/experiments"
 WHERE contains(cssclasses, "experiment-single")
 SORT file.name DESC
 LIMIT 20
@@ -64,7 +64,7 @@ TABLE WITHOUT ID
   file.link AS "Experiment",
   type AS "Type",
   created AS "Date"
-FROM "experiments"
+FROM "vault/experiments"
 SORT created DESC
 LIMIT 20
 ```
@@ -74,7 +74,7 @@ LIMIT 20
 TABLE WITHOUT ID
   tag AS "Tag",
   length(rows) AS "Count"
-FROM "experiments"
+FROM "vault/experiments"
 FLATTEN tags AS tag
 GROUP BY tag
 SORT length(rows) DESC

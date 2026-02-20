@@ -17,7 +17,7 @@ TABLE WITHOUT ID
   confidence AS "Confidence",
   length(evidence.supporting) AS "# Runs",
   map(evidence.supporting, (e) => e.run) AS "Run IDs"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND evidence.supporting
 SORT choice(confidence, "high", 0, choice(confidence, "medium", 1, 2)) ASC
 ```
@@ -28,7 +28,7 @@ TABLE WITHOUT ID
   file.link AS "Claim",
   confidence AS "Confidence",
   domain AS "Domain"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND (!evidence.supporting OR length(evidence.supporting) = 0)
 ```
 
@@ -37,7 +37,7 @@ WHERE type = "claim" AND (!evidence.supporting OR length(evidence.supporting) = 
 TABLE WITHOUT ID
   file.link AS "Claim",
   evidence.boundary_conditions AS "Known Limits"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND evidence.boundary_conditions
 ```
 
@@ -46,6 +46,6 @@ WHERE type = "claim" AND evidence.boundary_conditions
 TABLE WITHOUT ID
   file.link AS "Method",
   length(file.inlinks) AS "Referenced By"
-FROM "methods"
+FROM "vault/methods"
 SORT length(file.inlinks) DESC
 ```

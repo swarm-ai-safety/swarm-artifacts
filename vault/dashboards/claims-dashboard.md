@@ -17,7 +17,7 @@ TABLE WITHOUT ID
   domain AS "Domain",
   status AS "Status",
   evidence.supporting.length AS "Evidence"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND confidence = "high" AND status = "active"
 SORT file.name ASC
 ```
@@ -29,7 +29,7 @@ TABLE WITHOUT ID
   domain AS "Domain",
   status AS "Status",
   evidence.supporting.length AS "Evidence"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND confidence = "medium" AND status = "active"
 SORT file.name ASC
 ```
@@ -41,7 +41,7 @@ TABLE WITHOUT ID
   domain AS "Domain",
   status AS "Status",
   evidence.supporting.length AS "Evidence"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND confidence = "low" AND status = "active"
 SORT file.name ASC
 ```
@@ -51,7 +51,7 @@ SORT file.name ASC
 TABLE WITHOUT ID
   domain AS "Domain",
   length(rows) AS "Count"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
 GROUP BY domain
 SORT length(rows) DESC
@@ -63,7 +63,7 @@ TABLE WITHOUT ID
   file.link AS "Claim",
   confidence AS "Confidence",
   domain AS "Domain"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND (status = "weakened" OR confidence = "contested")
 SORT file.name ASC
 ```

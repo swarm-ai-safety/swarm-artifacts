@@ -22,7 +22,7 @@ TABLE WITHOUT ID
   confidence AS "Confidence",
   domain AS "Domain",
   length(evidence.supporting) AS "Runs"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
   AND status = "active"
   AND (!evidence.supporting OR length(evidence.supporting) < 2)
@@ -43,7 +43,7 @@ TABLE WITHOUT ID
   confidence AS "Confidence",
   updated AS "Last Updated",
   domain AS "Domain"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
   AND status = "active"
   AND updated
@@ -63,7 +63,7 @@ Claims that document boundary conditions — each is a candidate for a targeted 
 TABLE WITHOUT ID
   file.link AS "Claim",
   evidence.boundary_conditions AS "Known Limits"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
   AND status = "active"
   AND evidence.boundary_conditions
@@ -84,7 +84,7 @@ TABLE WITHOUT ID
   file.link AS "Experiment",
   experiment_type AS "Type",
   created AS "Date"
-FROM "experiments"
+FROM "vault/experiments"
 WHERE type = "experiment"
   AND length(file.inlinks) = 0
 SORT created DESC
@@ -105,7 +105,7 @@ TABLE WITHOUT ID
   domain AS "Domain",
   length(evidence.supporting) AS "Supporting Runs",
   length(evidence.weakening) AS "Weakening Runs"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
   AND status = "active"
   AND confidence = "low"
@@ -126,7 +126,7 @@ TABLE WITHOUT ID
   file.link AS "Claim",
   confidence AS "Confidence",
   description AS "Finding"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
   AND domain = "governance"
   AND status = "active"
@@ -139,7 +139,7 @@ TABLE WITHOUT ID
   file.link AS "Claim",
   confidence AS "Confidence",
   description AS "Finding"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
   AND domain = "collusion"
   AND status = "active"
@@ -160,7 +160,7 @@ TABLE WITHOUT ID
   confidence AS "Confidence",
   status AS "Status",
   length(evidence.weakening) AS "Weakening Runs"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim"
   AND (status = "weakened" OR confidence = "contested"
     OR (evidence.weakening AND length(evidence.weakening) > 0))
@@ -180,7 +180,7 @@ TABLE WITHOUT ID
   file.link AS "Note",
   type AS "Type",
   file.folder AS "Folder"
-FROM ""
+FROM "vault"
 WHERE length(file.inlinks) = 0
   AND length(file.outlinks) = 0
   AND type != "dashboard"
@@ -201,7 +201,7 @@ TABLE WITHOUT ID
   file.link AS "Sweep",
   parameter AS "Parameter",
   status AS "Status"
-FROM "sweeps"
+FROM "vault/sweeps"
 WHERE type = "sweep-summary"
   AND length(file.inlinks) = 0
 SORT file.name ASC
@@ -220,7 +220,7 @@ TABLE WITHOUT ID
   file.link AS "Pattern",
   severity AS "Severity",
   status AS "Status"
-FROM "failures"
+FROM "vault/failures"
 WHERE type = "failure-pattern"
   AND status = "active"
   AND (severity = "critical" OR severity = "high")

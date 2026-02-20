@@ -14,7 +14,7 @@ TABLE WITHOUT ID
   file.link AS "Mechanism",
   status AS "Status",
   description AS "Description"
-FROM "governance"
+FROM "vault/governance"
 SORT file.name ASC
 ```
 
@@ -24,7 +24,7 @@ TABLE WITHOUT ID
   file.link AS "Claim",
   confidence AS "Confidence",
   status AS "Status"
-FROM "claims"
+FROM "vault/claims"
 WHERE type = "claim" AND domain = "governance"
 SORT choice(confidence, "high", 0, choice(confidence, "medium", 1, 2)) ASC
 ```
@@ -34,7 +34,7 @@ SORT choice(confidence, "high", 0, choice(confidence, "medium", 1, 2)) ASC
 TABLE WITHOUT ID
   file.link AS "Pattern",
   severity AS "Severity"
-FROM "failures"
+FROM "vault/failures"
 WHERE type = "failure-pattern" AND contains(tags, "governance")
 SORT file.name ASC
 ```

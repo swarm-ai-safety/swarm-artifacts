@@ -15,7 +15,7 @@ TABLE WITHOUT ID
   parameter AS "Parameter",
   status AS "Status",
   description AS "Summary"
-FROM "sweeps"
+FROM "vault/sweeps"
 WHERE type = "sweep-summary"
 SORT file.name ASC
 ```
@@ -26,7 +26,7 @@ TABLE WITHOUT ID
   file.link AS "Sweep",
   parameter AS "Parameter",
   values_tested AS "Values Tested"
-FROM "sweeps"
+FROM "vault/sweeps"
 WHERE type = "sweep-summary" AND status = "active"
 SORT file.name ASC
 ```
@@ -37,7 +37,7 @@ TABLE WITHOUT ID
   file.link AS "Sweep",
   parameter AS "Parameter",
   description AS "Finding"
-FROM "sweeps"
+FROM "vault/sweeps"
 WHERE type = "sweep-summary" AND contains(parameter, "governance")
 SORT file.name ASC
 ```

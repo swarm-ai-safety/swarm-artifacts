@@ -15,7 +15,7 @@ TABLE WITHOUT ID
   severity AS "Severity",
   status AS "Status",
   description AS "Description"
-FROM "failures"
+FROM "vault/failures"
 WHERE type = "failure-pattern"
 SORT choice(severity, "critical", 0, choice(severity, "high", 1, choice(severity, "medium", 2, 3))) ASC
 ```
@@ -23,7 +23,7 @@ SORT choice(severity, "critical", 0, choice(severity, "high", 1, choice(severity
 ## Critical Vulnerabilities
 ```dataview
 LIST description
-FROM "failures"
+FROM "vault/failures"
 WHERE type = "failure-pattern" AND severity = "critical"
 ```
 
@@ -32,7 +32,7 @@ WHERE type = "failure-pattern" AND severity = "critical"
 TABLE WITHOUT ID
   status AS "Status",
   length(rows) AS "Count"
-FROM "failures"
+FROM "vault/failures"
 WHERE type = "failure-pattern"
 GROUP BY status
 ```
