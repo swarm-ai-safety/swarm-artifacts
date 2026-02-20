@@ -6,7 +6,7 @@ confidence: low
 domain: memory
 evidence:
   supporting:
-    - run: "memory_tiers_summary"
+    - run: "20260211-232952_gastown_composition_study"
       metric: "tier_poisoning_rate"
       detail: "Ephemeral tier 50.7% poisoned, tier 2+ 0.0% poisoned, single seed"
   weakening: []

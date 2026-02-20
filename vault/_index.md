@@ -12,8 +12,16 @@ Active findings from SWARM experiments, each linked to run evidence.
 
 - [[claim-circuit-breakers-dominate]] — Circuit breakers alone outperform full governance stacks (high confidence)
 - [[claim-tax-welfare-tradeoff]] — Transaction tax above 5% significantly reduces welfare (high confidence)
+- [[claim-tax-phase-transition]] — Non-linear welfare decline with phase transition at 5-10% tax rate (high confidence)
+- [[claim-tax-dominates-cb-kernel]] — Tax explains 32.4% welfare variance; CB null in kernel markets (high confidence)
+- [[claim-collusion-wealth-destruction]] — Collusive agents accumulate 137x less wealth under monitoring (high confidence)
 - [[claim-smarter-agents-earn-less]] — Deeper recursive reasoning hurts individual payoff (high confidence)
+- [[claim-governance-cost-paradox]] — Full governance stacks cost more welfare than they save in safety (medium confidence)
+- [[claim-quality-gate-dominates]] — Simple quality gate matches full governance safety at lower cost (medium confidence)
 - [[claim-staking-backfires]] — Staking requirement hurts honest agents more than adversarial (medium confidence)
+- [[claim-collusion-penalty-destabilizes]] — Penalty multiplier >1.5x paradoxically increases toxicity (medium confidence)
+- [[claim-rlhf-persona-invariant]] — RLHF models show identical cooperation across adversarial prompts (low confidence)
+- [[claim-memory-promotion-gate]] — Quality gate blocks 100% poisoned content from higher tiers (low confidence)
 
 ## Governance Mechanisms
 

@@ -6,7 +6,7 @@ confidence: high
 domain: governance
 evidence:
   supporting:
-    - run: "20260212-015027_kernel_market_v4_code"
+    - run: "20260214-113750_kernel_v4_code_sweep"
       metric: "welfare"
       detail: "Tax d=1.14-1.59, CB d=-0.02 (p=0.88), N=40, 5 seeds"
   weakening: []

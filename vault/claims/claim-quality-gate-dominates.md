@@ -6,7 +6,7 @@ confidence: medium
 domain: governance
 evidence:
   supporting:
-    - run: "20260211-232952_gastown_governance_cost"
+    - run: "20260211-232952_gastown_composition_study"
       metric: "welfare, toxicity"
       detail: "Refinery regime preserves near-ungoverned welfare with comparable toxicity reduction, N=63"
   weakening: []

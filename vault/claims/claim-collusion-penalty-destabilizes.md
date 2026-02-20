@@ -6,7 +6,7 @@ confidence: medium
 domain: collusion
 evidence:
   supporting:
-    - run: "20260213_collusion_tax_effect"
+    - run: "20260213-221500_collusion_tax_effect"
       metric: "toxicity"
       detail: "2.0x penalty toxicity 0.342 vs 0.334 at 0.5x, d=-1.12, p<0.0001, N=160"
   weakening: []
