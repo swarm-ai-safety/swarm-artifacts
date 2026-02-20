@@ -52,7 +52,7 @@ def build_entry(run_path: Path) -> dict:
     if total:
         entry["total_runs"] = total
     swept = exp.get("swept_parameters", {})
-    if swept:
+    if swept and isinstance(swept, dict):
         n_configs = 1
         for vals in swept.values():
             if isinstance(vals, list):

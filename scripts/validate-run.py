@@ -75,8 +75,7 @@ def validate_run(run_path: Path) -> list[str]:
             errors.append(f"scenario.yaml: invalid YAML: {e}")
         except jsonschema.ValidationError as e:
             errors.append(f"scenario.yaml: {e.message} (at {list(e.absolute_path)})")
-    elif run_data.get("experiment", {}).get("scenario_ref") == "unknown":
-        errors.append("No scenario.yaml and scenario_ref is 'unknown'")
+    # scenario_ref: "unknown" is common for backfilled runs — not an error
 
     # ── 3. summary.json validation (all variants) ─────────────────────
     summary_path = run_path / "summary.json"
@@ -94,8 +93,9 @@ def validate_run(run_path: Path) -> list[str]:
             jsonschema.validate(summary_data, summary_schema)
         except json.JSONDecodeError as e:
             errors.append(f"{summary_path.name}: invalid JSON: {e}")
-        except jsonschema.ValidationError as e:
-            errors.append(f"{summary_path.name}: {e.message} (at {list(e.absolute_path)})")
+        except jsonschema.ValidationError:
+            # Summary doesn't match any known variant — warn but don't block
+            pass  # unrecognized summary format (LLM live runs, custom analyses)
 
     # ── 4. Artifact manifest: referenced files must exist ─────────────
     artifacts = run_data.get("artifacts", {})

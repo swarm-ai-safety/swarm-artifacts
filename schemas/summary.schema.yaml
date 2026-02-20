@@ -1,15 +1,17 @@
 # JSON Schema for summary.json — run output
-# Three variants: single run, sweep, and redteam (discriminated by presence of fields)
+# Four variants: single run, sweep, redteam, and study (discriminated by presence of fields)
 $schema: "https://json-schema.org/draft/2020-12/schema"
 title: SWARM Run Summary
 description: >
-  Schema for summary.json output. Supports three variants:
-  single run metrics, sweep statistical results, and redteam vulnerability reports.
+  Schema for summary.json output. Supports four variants:
+  single run metrics, sweep statistical results, redteam vulnerability reports,
+  and multi-condition study summaries.
 
 oneOf:
   - $ref: "#/$defs/single_run"
   - $ref: "#/$defs/sweep_summary"
   - $ref: "#/$defs/redteam_summary"
+  - $ref: "#/$defs/study_summary"
 
 $defs:
 
@@ -235,3 +237,60 @@ $defs:
               type: number
             mitigation:
               type: string
+
+  # ── Study summary ──────────────────────────────────────────────────
+  study_summary:
+    type: object
+    required: [study, total_runs, pairwise_tests]
+    properties:
+      study:
+        type: string
+        description: "Study name or identifier"
+      scenario:
+        type: string
+      parameter:
+        type: string
+        description: "Primary parameter being studied"
+      values:
+        type: array
+        description: "Parameter levels tested"
+      configurations:
+        type: integer
+        minimum: 1
+      seeds_per_config:
+        type: integer
+        minimum: 1
+      total_runs:
+        type: integer
+        minimum: 2
+      epochs_per_run:
+        type: integer
+        minimum: 1
+      steps_per_epoch:
+        type: integer
+        minimum: 1
+      hypothesis_tests:
+        type: integer
+      significant_bonferroni:
+        type: integer
+      significant_holm:
+        type: integer
+      descriptive_stats:
+        type: array
+        items:
+          type: object
+          additionalProperties: true
+      descriptive:
+        type: object
+        additionalProperties: true
+        description: "Alternative dict-keyed descriptive stats (key=condition)"
+      pairwise_tests:
+        type: array
+        items:
+          type: object
+          additionalProperties: true
+      bonferroni_survivors:
+        type: array
+      p_hacking_audit:
+        type: object
+        additionalProperties: true

@@ -126,7 +126,6 @@ properties:
   # -- artifacts manifest --
   artifacts:
     type: object
-    required: [summary]
     properties:
       summary:
         type: string
