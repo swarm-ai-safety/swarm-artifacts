@@ -1,0 +1,11 @@
+{
+  "items": [
+    {"type": "file", "title": "Knowledge Vault Index", "path": "_index.md"},
+    {"type": "file", "title": "Claims Dashboard", "path": "dashboards/claims-dashboard.md"},
+    {"type": "file", "title": "Evidence Trail", "path": "dashboards/evidence-trail.md"},
+    {"type": "file", "title": "Experiments Dashboard", "path": "dashboards/experiments-dashboard.md"},
+    {"type": "file", "title": "Sweeps Dashboard", "path": "dashboards/sweeps-dashboard.md"},
+    {"type": "file", "title": "Failures Dashboard", "path": "dashboards/failures-dashboard.md"},
+    {"type": "file", "title": "Vault Stats", "path": "dashboards/stats.md"}
+  ]
+}

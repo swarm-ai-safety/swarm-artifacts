@@ -1,0 +1,114 @@
+{
+  "main": {
+    "id": "main",
+    "type": "split",
+    "children": [
+      {
+        "id": "left",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "index",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_index.md",
+                "mode": "preview"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "left-sidebar",
+    "type": "split",
+    "children": [
+      {
+        "id": "left-tabs",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "file-explorer",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer"
+            }
+          },
+          {
+            "id": "search",
+            "type": "leaf",
+            "state": {
+              "type": "search"
+            }
+          },
+          {
+            "id": "starred",
+            "type": "leaf",
+            "state": {
+              "type": "starred"
+            }
+          }
+        ],
+        "currentTab": 0
+      }
+    ],
+    "direction": "horizontal",
+    "width": 250,
+    "collapsed": false
+  },
+  "right": {
+    "id": "right-sidebar",
+    "type": "split",
+    "children": [
+      {
+        "id": "right-tabs",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "backlink",
+            "type": "leaf",
+            "state": {
+              "type": "backlink"
+            }
+          },
+          {
+            "id": "outgoing-link",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link"
+            }
+          },
+          {
+            "id": "tag-pane",
+            "type": "leaf",
+            "state": {
+              "type": "tag"
+            }
+          },
+          {
+            "id": "outline",
+            "type": "leaf",
+            "state": {
+              "type": "outline"
+            }
+          }
+        ],
+        "currentTab": 0
+      }
+    ],
+    "direction": "horizontal",
+    "width": 250,
+    "collapsed": false
+  },
+  "active": "index",
+  "lastOpenFiles": [
+    "_index.md",
+    "dashboards/claims-dashboard.md",
+    "dashboards/evidence-trail.md",
+    "dashboards/experiments-dashboard.md"
+  ]
+}

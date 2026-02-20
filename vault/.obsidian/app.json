@@ -1,0 +1,18 @@
+{
+  "strictLineBreaks": false,
+  "showFrontmatter": true,
+  "livePreview": true,
+  "readableLineLength": true,
+  "showLineNumber": false,
+  "defaultViewMode": "preview",
+  "foldHeading": true,
+  "foldIndent": true,
+  "useTab": false,
+  "tabSize": 2,
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "./",
+  "showUnsupportedFiles": false
+}

@@ -6,6 +6,18 @@ created: 2026-02-18
 
 # SWARM Research OS — Knowledge Vault
 
+## Dashboards
+
+Interactive Dataview-powered dashboards (requires [Dataview plugin](https://github.com/blacksmithgu/obsidian-dataview)):
+
+- [[claims-dashboard]] — Claims by confidence, domain, and evidence status
+- [[experiments-dashboard]] — Experiment notes by type and tag
+- [[sweeps-dashboard]] — Parameter sweep series and convergence
+- [[failures-dashboard]] — Vulnerability patterns by severity
+- [[governance-dashboard]] — Governance mechanisms with linked claims
+- [[evidence-trail]] — Traces evidence chains: claim → run → experiment
+- [[stats]] — Vault-wide statistics and health metrics
+
 ## Claims
 
 Active findings from SWARM experiments, each linked to run evidence.
@@ -39,6 +51,9 @@ Notes on individual governance levers: how they work, their parameters, evidence
 Network structure notes: how topology shapes agent behavior and governance effectiveness.
 
 - [[small-world]] — Watts-Strogatz default testbed (k=4, p=0.15)
+- [[complete-graph]] — Fully connected topology
+- [[random-graph]] — Erdos-Renyi random graph
+- [[scale-free]] — Barabasi-Albert preferential attachment
 
 ## Failure Patterns
 

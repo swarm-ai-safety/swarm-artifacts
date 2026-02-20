@@ -1,0 +1,7 @@
+{
+  "accentColor": "#3498db",
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "swarm-graph"
+  ]
+}

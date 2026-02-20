@@ -1,11 +1,16 @@
 /*
- * SWARM Research OS — Obsidian Graph View Colors
+ * SWARM Research OS — Obsidian Theme Customizations
  *
- * Enable: Settings → Appearance → CSS Snippets → swarm-graph
+ * Enable: Settings -> Appearance -> CSS Snippets -> swarm-graph
  *
- * Nodes are colored by cssclass assigned via obsidian-metadata.py.
- * Graph view groups should be configured to match these classes.
+ * Covers: graph view node colors, confidence badges,
+ * dashboard table styling, severity indicators.
  */
+
+/* ══════════════════════════════════════════
+   Graph View — Node colors by cssclass
+   (Graph groups configured in graph.json)
+   ══════════════════════════════════════════ */
 
 /* ── Claims ── */
 .claim .graph-view .node {
@@ -90,14 +95,25 @@
   stroke-width: 2px;
 }
 
-/* ── Tag pills in note headers ── */
+/* ── Dashboards ── */
+.dashboard .graph-view .node {
+  fill: #1abc9c;
+  stroke: #16a085;
+  stroke-width: 1.5px;
+}
+
+/* ══════════════════════════════════════════
+   Frontmatter Property Badges
+   ══════════════════════════════════════════ */
+
+/* Tag pills */
 .tag {
   border-radius: 4px;
   padding: 1px 6px;
   font-size: 0.85em;
 }
 
-/* Confidence badge colors in reading view */
+/* Confidence badges in reading view */
 .claim-high .metadata-property[data-property="confidence"] .metadata-property-value {
   color: #27ae60;
   font-weight: bold;
@@ -112,4 +128,54 @@
 .claim-contested .metadata-property[data-property="confidence"] .metadata-property-value {
   color: #8e44ad;
   font-weight: bold;
+}
+
+/* Status badges */
+.metadata-property[data-property="status"] .metadata-property-value {
+  font-weight: 500;
+}
+
+/* Severity badges for failure patterns */
+.failure .metadata-property[data-property="severity"][data-value="critical"] .metadata-property-value {
+  color: #e74c3c;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.failure .metadata-property[data-property="severity"][data-value="high"] .metadata-property-value {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+/* ══════════════════════════════════════════
+   Dashboard Styling
+   ══════════════════════════════════════════ */
+
+/* Dataview tables in dashboard pages */
+.dashboard .dataview.table-view-table {
+  font-size: 0.9em;
+}
+
+.dashboard .dataview.table-view-table th {
+  background: var(--background-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.5px;
+}
+
+.dashboard .dataview.table-view-table tr:hover {
+  background: var(--background-secondary-alt);
+}
+
+/* Dashboard heading styling */
+.dashboard h2 {
+  border-bottom: 2px solid var(--interactive-accent);
+  padding-bottom: 4px;
+  margin-top: 2em;
+}
+
+.dashboard h3 {
+  color: var(--text-muted);
+  font-size: 1em;
+  margin-top: 1.5em;
 }
