@@ -1,0 +1,32 @@
+run_id: contract_screening_seed42
+slug: contract_screening_seed42
+created_utc: '2026-02-21T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: contract_screening
+  seeds:
+  - 42
+  governance_config:
+    staking: true
+    audit: true
+    transaction_tax: 0.02
+    reputation_decay: 0.95
+    bandwidth_cap: 10
+    circuit_breaker: true
+results:
+  status: completed
+artifacts:
+  summary: contract_screening_events.jsonl
+  config: contract_screening.yaml
+links:
+  parent_runs: []
+  child_runs:
+  - contract_screening_sweep
+  claims: []
+tags:
+- contract-screening
+- screening-equilibrium
