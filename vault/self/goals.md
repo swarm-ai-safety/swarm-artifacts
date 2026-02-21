@@ -8,7 +8,7 @@ type: moc
 ## Active Threads
 
 - **50 claims** (48 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
-- **Confidence distribution:** 7 high, 14 medium, 29 low (tax-cb-interact downgraded medium→low; tax-penalty-interaction upgraded low→medium; welfare-non-normality and opportunistic-variance weakened)
+- **Confidence distribution:** 7 high, 15 medium, 28 low (tax-cb-interact downgraded medium→low; tax-penalty-interaction upgraded low→medium; net zero change; welfare-non-normality and opportunistic-variance weakened)
 - **Pipeline queue:** 89/89 completed, 0 pending — all 112 runs processed
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
