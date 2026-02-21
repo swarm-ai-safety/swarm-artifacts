@@ -34,6 +34,6 @@ Single sweep with 160 runs (10 seeds per combination). Key findings:
 ## Phase transition surface
 
 Destabilization threshold at penalty multiplier ~1.5x. Below this, penalties are absorbed; above, system destabilizes.
-Tax-penalty interaction is weak (no significant interaction term).
+Tax-penalty interaction is weak (no significant interaction term in marginal analysis), though [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] notes possible super-additive toxicity at extreme combinations. [[claim-collusion-penalty-has-no-economic-effect]] confirms zero economic effect across all tested levels. [[claim-tax-and-penalty-effects-are-orthogonal]] formalizes the clean partition.
 
 <!-- topics: governance, collusion, penalty, sweep-series -->

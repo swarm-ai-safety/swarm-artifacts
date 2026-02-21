@@ -38,5 +38,8 @@ The tax-welfare effect is robust across all runs and domains:
 Tax threshold for significant welfare loss: ~5% (below this, effect negligible).
 Sharp phase transition between 5-10% where small increment causes disproportionate welfare collapse.
 Circuit breakers partially compensate above 7.5% in baseline topology but show null effect in kernel markets.
+Tax disproportionately affects RLM agents (d=6.02 vs d=2.87 for honest agents) — see [[claim-tax-disproportionately-punishes-rlm-agents]].
+High tax also increases toxicity by 0.6pp (d=-0.86) — see [[claim-high-tax-increases-toxicity]].
+Welfare distributions are non-normal at extreme tax rates (0% and 10%) — see [[claim-welfare-non-normality-at-extreme-tax]].
 
 <!-- topics: governance, transaction-tax, sweep-series -->

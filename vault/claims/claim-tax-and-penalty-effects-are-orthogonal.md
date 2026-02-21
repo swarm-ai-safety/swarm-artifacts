@@ -26,6 +26,9 @@ related_claims:
 - claim-collusion-penalty-has-no-economic-effect
 - claim-tax-disproportionately-punishes-rlm-agents
 - claim-high-tax-increases-toxicity
+- claim-tax-penalty-interaction-on-toxicity-uncharacterized
+- claim-governance-cost-paradox
+- claim-quality-gate-dominates
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -55,11 +58,11 @@ The [[20260213-221500_collusion_tax_effect]] factorial sweep (4 tax rates x 4 pe
 
 Tax rate explains all detected economic variance. Penalty multiplier explains all detected toxicity variance (excluding the smaller tax-toxicity effect). Neither parameter has significant effects in the other's primary domain. Quality gap shows no response to either parameter.
 
-This orthogonality means governance designers can tune economic outcomes (via tax) and safety outcomes (via penalty) independently — but given that both mechanisms produce negative side effects at high levels ([[claim-tax-welfare-tradeoff]], [[claim-collusion-penalty-destabilizes]]), the optimal configuration may be low values of both.
+This orthogonality means governance designers can tune economic outcomes (via tax) and safety outcomes (via penalty) independently — but given that both mechanisms produce negative side effects at high levels ([[claim-tax-welfare-tradeoff]], [[claim-collusion-penalty-destabilizes]]), the optimal configuration may be low values of both. The clean partition is grounded by [[claim-collusion-penalty-has-no-economic-effect]], which establishes the penalty's economic null result, and by [[claim-tax-disproportionately-punishes-rlm-agents]], which shows tax's economic effects are agent-type-specific but purely economic. However, [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] raises a tension: the orthogonality may break at extreme parameter combinations where tax-induced and penalty-induced toxicity compound super-additively.
 
 ## Mechanism
 
-Tax operates on transaction economics — it extracts resources proportionally and reduces net payoffs. Penalty operates on behavioral detection — it identifies and punishes collusive patterns. These mechanisms target different aspects of agent behavior (economic vs strategic), explaining why their effects do not interact.
+Tax operates on transaction economics — it extracts resources proportionally and reduces net payoffs. Penalty operates on behavioral detection — it identifies and punishes collusive patterns. These mechanisms target different aspects of agent behavior (economic vs strategic), explaining why their effects do not interact. This mechanistic separation validates the [[factorial-sweep]] design: because the parameters are orthogonal, main effects can be interpreted without conditioning on the other parameter's level. The orthogonality also implies that [[claim-quality-gate-dominates]] can be evaluated independently of collusion penalty settings.
 
 ## Boundary conditions
 
@@ -77,5 +80,8 @@ Tax operates on transaction economics — it extracts resources proportionally a
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
+- [[collusion-penalty-multiplier]]
 
 <!-- topics: governance, transaction-tax, collusion, interaction, factorial -->

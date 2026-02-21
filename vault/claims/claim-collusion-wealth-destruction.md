@@ -20,6 +20,7 @@ supersedes: []
 superseded_by: []
 related_claims:
 - claim-collusion-penalty-destabilizes
+- claim-collusion-penalty-has-no-economic-effect
 created: 2026-02-19
 updated: 2026-02-19
 aliases:

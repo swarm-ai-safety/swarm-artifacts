@@ -88,6 +88,9 @@ The AI Economist GTB study ([[20260213-221500_collusion_tax_effect]]) demonstrat
 However, the penalty multiplier must be carefully calibrated. Sweeping collusion_penalty_multiplier from 0.5x to 2.0x across 160 runs showed that multipliers above 1.5x *increase* toxicity (d=-1.12, p<0.0001) with no compensating welfare benefit, because agents shift to individually toxic but non-collusive strategies.
 
 - [[claim-collusion-penalty-destabilizes]] — penalty above 1.5x destabilizes (medium confidence)
+- [[claim-collusion-penalty-has-no-economic-effect]] — penalty has zero detectable effect on welfare or payoffs (medium confidence)
+- [[claim-tax-and-penalty-effects-are-orthogonal]] — penalty effects are orthogonal to tax effects (medium confidence)
+- [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] — possible super-additive toxicity at extreme tax + penalty (low confidence)
 - [[20260213-123944_moltbook_captcha_study]] — also swept collusion_penalty_multiplier
 
 The recursive collusion experiments ([[20260210-211721_rlm_recursive_collusion_seed42]], [[20260210-211753_rlm_recursive_collusion_seed7]], [[20260210-211800_rlm_recursive_collusion_seed256]], [[20260210-211803_rlm_recursive_collusion_seed999]]) tested multi-seed collusion dynamics, and the collusion governance run ([[20260210-213833_collusion_governance]]) evaluated detection within a governance stack.

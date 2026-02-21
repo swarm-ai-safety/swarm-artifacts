@@ -23,6 +23,9 @@ superseded_by: []
 related_claims:
 - claim-tax-phase-transition
 - claim-tax-welfare-tradeoff
+- claim-tax-disproportionately-punishes-rlm-agents
+- claim-tax-penalty-interaction-on-toxicity-uncharacterized
+- claim-collusion-penalty-destabilizes
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -54,18 +57,21 @@ In the [[20260213-221500_collusion_tax_effect]] sweep, Shapiro-Wilk normality te
 
 The most extreme non-normality occurs at 10% tax (W=0.87), suggesting the welfare distribution may be bimodal or heavy-tailed. This pattern is consistent with ecosystem bifurcation — some simulation runs collapse into a low-cooperation regime while others maintain moderate cooperation, producing a mixture distribution rather than a single normal.
 
-This has methodological implications: the parametric tests used throughout the collusion_tax_effect analysis assume normality. The [[claim-tax-phase-transition]] findings may understate the true complexity of the welfare response to taxation.
+This has methodological implications: the parametric tests used throughout the collusion_tax_effect analysis assume normality. The [[claim-tax-phase-transition]] findings may understate the true complexity of the welfare response to taxation. If the bimodality reflects heterogeneous agent-type responses, this connects to [[claim-tax-disproportionately-punishes-rlm-agents]] — the two modes may correspond to ecosystems where RLM agents collapse versus those where they survive. The normality violations also affect the effect-size estimates underlying [[claim-tax-welfare-tradeoff]], which reports Cohen's d under an implicit normality assumption.
 
 ## Open questions
 
 - Plot kernel density estimates for each tax level to visually assess bimodality
 - Run non-parametric alternatives (Mann-Whitney U) and compare with parametric results
-- Does the non-normality correlate with specific penalty levels (interaction effect)?
+- Does the non-normality correlate with specific penalty levels (interaction effect)? This connects to [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] — the extreme cell (tax=10%, penalty=2.0x) may show the strongest non-normality
 - If bifurcation is real, can initial conditions predict which regime a run enters?
+- The non-normality at 0% tax is unexpected — [[claim-collusion-penalty-destabilizes]] may explain this if penalty variation alone creates bimodal welfare distributions even without tax
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
 
 <!-- topics: governance, transaction-tax, methodology, distributional, open-question -->

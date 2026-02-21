@@ -21,6 +21,11 @@ superseded_by: []
 related_claims:
 - claim-tax-welfare-tradeoff
 - claim-rlhf-persona-invariant
+- claim-collusion-penalty-has-no-economic-effect
+- claim-tax-and-penalty-effects-are-orthogonal
+- claim-high-tax-increases-toxicity
+- claim-tax-penalty-interaction-on-toxicity-uncharacterized
+- claim-welfare-non-normality-at-extreme-tax
 created: 2026-02-19
 updated: 2026-02-19
 aliases:

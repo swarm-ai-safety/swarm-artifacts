@@ -35,6 +35,12 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-collusion-penalty-destabilizes]] — Penalty multiplier >1.5x paradoxically increases toxicity (medium confidence)
 - [[claim-rlhf-persona-invariant]] — RLHF models show identical cooperation across adversarial prompts (low confidence)
 - [[claim-memory-promotion-gate]] — Quality gate blocks 100% poisoned content from higher tiers (low confidence)
+- [[claim-tax-disproportionately-punishes-rlm-agents]] — Tax reduces RLM payoff 2x more severely than honest payoff (high confidence)
+- [[claim-high-tax-increases-toxicity]] — High tax increases toxicity rate by 0.6pp (medium confidence)
+- [[claim-collusion-penalty-has-no-economic-effect]] — Penalty multiplier has no significant effect on welfare or payoffs (medium confidence)
+- [[claim-tax-and-penalty-effects-are-orthogonal]] — Tax dominates economics, penalty dominates toxicity, no interaction (medium confidence)
+- [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] — Combined high tax + high penalty toxicity may be super-additive (low confidence)
+- [[claim-welfare-non-normality-at-extreme-tax]] — Welfare distributions non-normal at extreme tax rates (low confidence)
 
 ## Governance Mechanisms
 

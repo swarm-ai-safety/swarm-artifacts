@@ -45,6 +45,9 @@ The baseline governance v2 sweep (700 runs, 50 seeds, 7 tax levels) showed that 
 
 - **With circuit breaker**: circuit breakers partially compensate for welfare loss at high tax rates. Enabling CB at tax >= 0.075 recovers some welfare.
 - **With staking**: compound negative effect — both extract resources from honest agents.
+- **With collusion penalty**: [[claim-tax-and-penalty-effects-are-orthogonal]] — tax and penalty effects are independent in marginal analysis. Tax dominates economics, penalty dominates toxicity. However, [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] suggests possible super-additive toxicity at extreme combinations.
+- **Agent-type differential**: [[claim-tax-disproportionately-punishes-rlm-agents]] — tax reduces RLM agent payoff 2x more severely than honest agent payoff (d=6.02 vs d=2.87).
+- **Toxicity side effect**: [[claim-high-tax-increases-toxicity]] — 10% tax increases toxicity by 0.6pp (d=-0.86), making tax a dual-cost mechanism.
 
 ## Known failure modes
 

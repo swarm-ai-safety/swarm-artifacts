@@ -89,6 +89,10 @@ related_claims:
 - claim-tax-welfare-tradeoff
 - claim-quality-gate-dominates
 - claim-memory-promotion-gate
+- claim-tax-disproportionately-punishes-rlm-agents
+- claim-high-tax-increases-toxicity
+- claim-collusion-penalty-has-no-economic-effect
+- claim-tax-and-penalty-effects-are-orthogonal
 created: 2026-02-19
 updated: '2026-02-19'
 aliases:

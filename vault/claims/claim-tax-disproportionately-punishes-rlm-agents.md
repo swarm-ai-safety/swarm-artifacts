@@ -28,6 +28,10 @@ related_claims:
 - claim-tax-phase-transition
 - claim-smarter-agents-earn-less
 - claim-collusion-penalty-destabilizes
+- claim-staking-backfires
+- claim-governance-cost-paradox
+- claim-welfare-non-normality-at-extreme-tax
+- claim-tax-and-penalty-effects-are-orthogonal
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -49,7 +53,7 @@ graph-group: claim
 
 In the [[20260213-221500_collusion_tax_effect]] sweep (160 runs, 4 tax rates x 4 collusion penalty levels x 10 seeds), transaction tax at 10% vs 0% produces a dramatically larger effect on RLM agents (d=6.02) than on honest agents (d=2.87). The absolute payoff gap is already enormous at baseline — honest agents earn 601.3 vs RLM agents' 220.8 at 0% tax — and taxation widens it further because the proportional reduction hits RLM agents harder.
 
-This finding extends [[claim-smarter-agents-earn-less]]: not only do deeper-reasoning agents earn less at baseline, they are also more vulnerable to governance taxation.
+This finding extends [[claim-smarter-agents-earn-less]] by showing that deeper-reasoning agents are not only penalized at baseline but also more vulnerable to governance taxation. It adds a distributional dimension to [[claim-tax-welfare-tradeoff]]: the aggregate welfare decline is unevenly borne across agent types, with RLM agents absorbing a disproportionate share. Together with [[claim-staking-backfires]], this establishes a pattern where punitive governance mechanisms systematically disadvantage specific agent populations rather than applying uniform pressure.
 
 ## Mechanism
 
@@ -68,10 +72,14 @@ RLM agents engage in more complex multi-step transactions that incur tax at each
 - At what agent composition ratio does the differential disappear?
 - Is the mechanism transactional volume or per-transaction value?
 - How does this interact with [[claim-staking-backfires]] — do both mechanisms compound against the same agent type?
+- The non-normal welfare distributions at extreme tax rates ([[claim-welfare-non-normality-at-extreme-tax]]) may reflect heterogeneous agent-type responses to taxation — does the bifurcation correspond to RLM vs honest agent outcomes?
+- This contributes to [[claim-governance-cost-paradox]] by showing governance costs are not uniformly distributed
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
 
 <!-- topics: governance, transaction-tax, agent-behavior, rlm -->
