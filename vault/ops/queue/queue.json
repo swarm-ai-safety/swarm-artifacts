@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS \u2014 synthesis pipeline queue",
-  "next_claim_start": 50,
+  "next_claim_start": 55,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
@@ -1587,6 +1587,136 @@
       "claims_created": [],
       "enrichments_applied": [],
       "note": "Methodological demo (hard vs soft metrics). Single seed, incomplete data. No claims"
+    },
+    {
+      "id": "extract-20260221-081106_redteam_contract_screening_no_collusion",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260221-081106_redteam_contract_screening_no_collusion/",
+      "file": "20260221-081106_redteam_contract_screening_no_collusion-extract.md",
+      "created": "2026-02-21T00:00:00Z",
+      "completed": "2026-02-21T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [
+        "claim-collusion-detection-reduces-ring-damage-75pct"
+      ],
+      "enrichments_applied": [
+        "claim-sybil-attacks-resist-full-governance-stack",
+        "claim-collusion-detection-is-binding-constraint-on-robustness",
+        "claim-coordination-attacks-dominate-redteam-damage"
+      ]
+    },
+    {
+      "id": "extract-20260221-081953_redteam_contract_screening_with_collusion",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260221-081953_redteam_contract_screening_with_collusion/",
+      "file": "20260221-081953_redteam_contract_screening_with_collusion-extract.md",
+      "created": "2026-02-21T00:00:00Z",
+      "completed": "2026-02-21T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-collusion-detection-reduces-ring-damage-75pct",
+        "claim-sybil-attacks-resist-full-governance-stack",
+        "claim-collusion-detection-is-binding-constraint-on-robustness"
+      ]
+    },
+    {
+      "id": "extract-20260221-082443_redteam_contract_screening_full",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260221-082443_redteam_contract_screening_full/",
+      "file": "20260221-082443_redteam_contract_screening_full-extract.md",
+      "created": "2026-02-21T00:00:00Z",
+      "completed": "2026-02-21T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-collusion-detection-reduces-ring-damage-75pct",
+        "claim-sybil-attacks-resist-full-governance-stack"
+      ]
+    },
+    {
+      "id": "extract-20260221_081328_langgraph_governed",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260221_081328_langgraph_governed/",
+      "file": "20260221_081328_langgraph_governed-extract.md",
+      "created": "2026-02-21T00:00:00Z",
+      "completed": "2026-02-21T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [
+        "claim-trust-boundaries-modify-but-never-deny-handoffs",
+        "claim-delegation-completion-requires-handoff-budget-above-15"
+      ],
+      "enrichments_applied": []
+    },
+    {
+      "id": "extract-contract_screening_seed42",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/contract_screening_seed42/",
+      "file": "contract_screening_seed42-extract.md",
+      "created": "2026-02-21T00:00:00Z",
+      "completed": "2026-02-21T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [
+        "claim-contract-screening-achieves-perfect-type-separation",
+        "claim-screening-equilibrium-generates-honest-payoff-premium"
+      ],
+      "enrichments_applied": []
+    },
+    {
+      "id": "extract-contract_screening_sweep",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/contract_screening_sweep/",
+      "file": "contract_screening_sweep-extract.md",
+      "created": "2026-02-21T00:00:00Z",
+      "completed": "2026-02-21T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-contract-screening-achieves-perfect-type-separation",
+        "claim-screening-equilibrium-generates-honest-payoff-premium"
+      ]
     }
   ],
   "maintenance_conditions": {

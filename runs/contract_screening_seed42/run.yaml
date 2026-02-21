@@ -26,7 +26,9 @@ links:
   parent_runs: []
   child_runs:
   - contract_screening_sweep
-  claims: []
+  claims:
+  - claim-contract-screening-achieves-perfect-type-separation
+  - claim-screening-equilibrium-generates-honest-payoff-premium
 tags:
 - contract-screening
 - screening-equilibrium

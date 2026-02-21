@@ -2,7 +2,7 @@
 description: Sybil + collusion ring attacks account for 52.6% of total redteam damage when collusion detection is disabled
 type: claim
 status: active
-confidence: low
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -12,11 +12,14 @@ evidence:
   - run: 20260212-231123_redteam
     metric: damage
     detail: "Replicates in earlier evaluation: baseline sybil 120.0 + collusion ring 97.2 = 217.2/455.7 (47.7%). Consistent damage ranking. Hardened config prevents collusion ring but sybil persists at 102.6"
+  - run: 20260221-081106_redteam_contract_screening_no_collusion
+    metric: damage
+    detail: "Contract screening without CD: sybil 105.84 + collusion ring 85.73 = 191.57/364.09 (52.6%). Identical share to recursive_spawn scenario"
   weakening: []
   boundary_conditions:
-  - 8-attack test battery, recursive_spawn scenario
+  - 8-attack test battery, replicated across recursive_spawn and contract_screening scenarios
   - collusion_detection_enabled = false
-  - Attack damage ranking consistent across prior redteam evaluations
+  - Attack damage ranking consistent across all redteam evaluations
 sensitivity:
   topology: untested; coordination damage share may shift in constrained topologies
   agent_count: untested beyond default
@@ -38,7 +41,7 @@ aliases:
 - coordination-attacks-dominate-redteam-damage
 cssclasses:
 - claim
-- claim-low
+- claim-medium
 tags:
 - governance
 - redteam

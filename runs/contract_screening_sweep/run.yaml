@@ -40,7 +40,9 @@ links:
   parent_runs:
   - contract_screening_seed42
   child_runs: []
-  claims: []
+  claims:
+  - claim-contract-screening-achieves-perfect-type-separation
+  - claim-screening-equilibrium-generates-honest-payoff-premium
 tags:
 - contract-screening
 - screening-equilibrium

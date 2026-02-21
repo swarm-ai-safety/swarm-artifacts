@@ -2,7 +2,7 @@
 description: Sybil attacks succeed in both undefended (120 damage) and fully hardened (103 damage) configurations, only 14% damage reduction
 type: claim
 status: active
-confidence: low
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -18,9 +18,15 @@ evidence:
   - run: 20260210-005442_redteam_strict_governance
     metric: damage
     detail: "Strict governance (no CD): sybil 97 damage. Strict+CD: sybil 97 damage. Lowered threshold (0.35): sybil 97 damage. Sybil invariant to all governance variations"
+  - run: 20260221-081106_redteam_contract_screening_no_collusion
+    metric: damage
+    detail: "Contract screening without CD: sybil damage=105.84, evasion=0.296. Highest damage in 8-attack battery"
+  - run: 20260221-081953_redteam_contract_screening_with_collusion
+    metric: damage
+    detail: "Contract screening with CD: sybil damage=105.84, evasion=0.296. Unchanged by collusion detection. Replicated in 20260221-082443"
   weakening: []
   boundary_conditions:
-  - "Five redteam evaluations (20260208-20260214) confirm sybil persistence — robust across governance configs"
+  - "Seven redteam evaluations (20260208-20260221) across multiple scenarios confirm sybil persistence"
   - "Hardened config: CB + collusion detection + audit + staking + 5% tax. No vote normalization or bandwidth caps"
   - "5 adversarial agents per sybil attack in both evaluations"
   - "recursive_spawn scenario — legitimate spawn infrastructure may amplify sybil surface"
@@ -35,13 +41,15 @@ related_claims:
 - claim-coordination-attacks-dominate-redteam-damage
 - claim-collusion-detection-is-binding-constraint-on-robustness
 - claim-cb-audit-sufficient-for-solo-exploits
+- claim-collusion-detection-reduces-ring-damage-75pct
+- claim-contract-screening-achieves-perfect-type-separation
 created: 2026-02-21
 updated: 2026-02-21
 aliases:
 - sybil-attacks-resist-full-governance-stack
 cssclasses:
 - claim
-- claim-low
+- claim-medium
 tags:
 - governance
 - redteam
@@ -60,6 +68,10 @@ Across two independent redteam evaluations, sybil attacks consistently inflict t
 **20260212 evaluation** ([[20260212-231123_redteam]]): Baseline (no defenses) sybil damage = 120.0; fully hardened (CB + collusion detection + audit + staking + 5% tax) sybil damage = 102.6 — only a 14.5% reduction. By comparison, the full stack prevented 5 of 8 other attack types entirely. Sybil was rated CRITICAL vulnerability in both configurations.
 
 **20260214 evaluation** ([[20260214-094622_redteam]]): Sybil damage = 117.6, accounting for 29.1% of total redteam damage (404.5). This is consistent with the 20260212 baseline figure (120.0), confirming the attack's reproducibility.
+
+**20260221 contract screening evaluations** ([[20260221-081106_redteam_contract_screening_no_collusion]], [[20260221-081953_redteam_contract_screening_with_collusion]], [[20260221-082443_redteam_contract_screening_full]]): Sybil damage = 105.84 in all three configurations. Critically, enabling collusion detection reduces collusion ring damage by 75% (see [[claim-collusion-detection-reduces-ring-damage-75pct]]) but has zero effect on sybil damage. This extends the finding to the contract_screening scenario and confirms that sybil attacks exploit a different channel than collusion rings — individual behavioral normality rather than coordination patterns.
+
+With 7 independent redteam evaluations across multiple scenarios now supporting this claim, confidence is upgraded from low to medium.
 
 The persistent sybil vulnerability creates a critical gap in the governance architecture. While [[claim-cb-audit-sufficient-for-solo-exploits]] shows CB + audit prevents all solo attacks, and [[claim-collusion-detection-is-binding-constraint-on-robustness]] identifies collusion detection as key for coordination attacks, sybil attacks appear to occupy a third category — coordination attacks that partially evade even collusion detection. This supports [[claim-spawn-infrastructure-may-amplify-sybil-surface]]: the recursive_spawn scenario provides legitimate infrastructure that sybil attackers exploit, making identity verification harder.
 

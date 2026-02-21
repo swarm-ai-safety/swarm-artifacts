@@ -33,7 +33,10 @@ links:
   parent_runs:
   - 20260221-081106_redteam_contract_screening_no_collusion
   child_runs: []
-  claims: []
+  claims:
+  - claim-collusion-detection-reduces-ring-damage-75pct
+  - claim-sybil-attacks-resist-full-governance-stack
+  - claim-collusion-detection-is-binding-constraint-on-robustness
 tags:
 - redteam
 - contract-screening

@@ -47,8 +47,8 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-tax-cb-interact-on-quality-gap]] — Tax x CB interaction on quality gap is marginal, F=2.065 p=0.055 (low confidence)
 - [[claim-optimal-tax-range-0-to-5pct]] — Welfare flat below 5% tax, defining safe operating range (medium confidence)
 - [[claim-cb-null-may-reflect-design-limitation]] — CB null effect may be artifact of 2-level on/off design (low confidence)
-- [[claim-collusion-detection-is-binding-constraint-on-robustness]] — Disabling collusion detection degrades robustness to F grade (medium confidence)
-- [[claim-coordination-attacks-dominate-redteam-damage]] — Sybil + collusion ring = 52.6% of redteam damage (medium confidence)
+- [[claim-collusion-detection-is-binding-constraint-on-robustness]] — Disabling collusion detection degrades robustness to F grade, replicated across scenarios (medium confidence)
+- [[claim-coordination-attacks-dominate-redteam-damage]] — Sybil + collusion ring = 52.6% of redteam damage, replicated across scenarios (medium confidence)
 - [[claim-cb-audit-sufficient-for-solo-exploits]] — CB + 10% audit prevents all 4 solo exploit types (medium confidence)
 - [[claim-audit-threshold-interaction-enables-dancing]] — Lenient freeze threshold + low audit allows threshold dancing (low confidence)
 - [[claim-cascade-mechanisms-ineffective-against-governance-gaming]] — Cascade ban/freeze don't stop governance gaming (low confidence)
@@ -63,7 +63,7 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-memori-agents-show-no-governance-sensitivity]] — Memori LLM agents show zero governance response in short-horizon study (low confidence)
 - [[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]] — CB helps at 5% tax but harms at all other rates in kernel v4 (low confidence)
 - [[claim-acausality-depth-does-not-affect-cooperation-outcomes]] — Neither acausality depth nor decision theory affects LDT outcomes (high confidence)
-- [[claim-sybil-attacks-resist-full-governance-stack]] — Sybil attacks persist with only 14% damage reduction under full governance (low confidence)
+- [[claim-sybil-attacks-resist-full-governance-stack]] — Sybil attacks persist with only 14% damage reduction under full governance (medium confidence)
 - [[claim-full-governance-stack-prevents-most-attack-types]] — Full stack prevents 5/8 attack types, 36% total damage reduction (low confidence)
 - [[claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect]] — CAPTCHA difficulty and collusion penalty show zero effect in 200-run factorial (medium confidence)
 - [[claim-deceptive-agents-dominate-moltbook-payoff-hierarchy]] — Deceptive agents earn 3x honest payoff in moltbook regardless of governance (medium confidence)
@@ -73,6 +73,11 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-reputation-decay-rate-improves-welfare]] — Full reputation persistence + zero stake produces best welfare and lowest toxicity (low confidence)
 - [[claim-full-governance-reduces-welfare-in-concordia]] — Full governance stack reduces Concordia welfare 18% with zero toxicity benefit (medium confidence)
 - [[claim-agent-architecture-constrains-behavior-more-than-governance]] — Agent architecture constrains behavior more than governance in homogeneous populations (medium confidence)
+- [[claim-collusion-detection-reduces-ring-damage-75pct]] — Collusion detection reduces ring damage 75% through correlation-based detection (medium confidence)
+- [[claim-contract-screening-achieves-perfect-type-separation]] — Contract screening achieves perfect type separation across 11 seeds (high confidence)
+- [[claim-screening-equilibrium-generates-honest-payoff-premium]] — Screening equilibrium generates 6.7x honest-to-deceptive payoff premium (high confidence)
+- [[claim-trust-boundaries-modify-but-never-deny-handoffs]] — Trust boundaries modify 100% of handoffs but deny none (medium confidence)
+- [[claim-delegation-completion-requires-handoff-budget-above-15]] — Delegation task completion requires handoff budget above 15 (medium confidence)
 
 ## Governance Mechanisms
 

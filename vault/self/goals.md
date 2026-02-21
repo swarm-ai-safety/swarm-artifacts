@@ -7,9 +7,9 @@ type: moc
 
 ## Active Threads
 
-- **50 claims** (48 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
-- **Confidence distribution:** 7 high, 15 medium, 28 low (tax-cb-interact downgraded medium→low; tax-penalty-interaction upgraded low→medium; net zero change; welfare-non-normality and opportunistic-variance weakened)
-- **Pipeline queue:** 89/89 completed, 0 pending — all 112 runs processed
+- **55 claims** (53 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market domains
+- **Confidence distribution:** 9 high, 18 medium, 28 low (5 new claims: 2 high, 3 medium; 4 existing claims upgraded low→medium)
+- **Pipeline queue:** 95/95 completed, 0 pending — all 125 runs processed
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
   2. Governance interaction universality — **rejected**: contradictory evidence (orthogonality finding vs interaction claims). Not a universal pattern.
@@ -69,6 +69,23 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 - **Conflict review:** 3 potentially conflicting claim pairs reviewed — all resolved as complementary (different metrics or boundary conditions), no status changes needed.
 - **Replication priority list:** 6 claims identified for targeted replication that would upgrade low→medium with additional seeds.
 - **Proposal 2 (no-formal-test annotations) deferred:** low value — "low" confidence rating already communicates statistical limitations.
+
+## Completed (2026-02-21 session, 6 new runs pipeline)
+
+- **6 new runs processed** through full pipeline (seed → extract → cross-link → update → validate)
+- **6 experiment notes** created (3 contract screening redteams, 1 LangGraph sweep, 1 contract screening single, 1 contract screening sweep)
+- **5 new claims** extracted:
+  - claim-contract-screening-achieves-perfect-type-separation (high) — separation_quality=1.0, infiltration=0.0 across 11 seeds
+  - claim-screening-equilibrium-generates-honest-payoff-premium (high) — 6.7x honest-to-deceptive payoff ratio
+  - claim-collusion-detection-reduces-ring-damage-75pct (medium) — A/B comparison: 85.73→21.43 damage
+  - claim-trust-boundaries-modify-but-never-deny-handoffs (medium) — 100% modification, 0% denial
+  - claim-delegation-completion-requires-handoff-budget-above-15 (medium) — threshold for task completion
+- **4 existing claims upgraded** low→medium with new replication evidence:
+  - claim-sybil-attacks-resist-full-governance-stack (7 evaluations across 2 scenarios)
+  - claim-collusion-detection-is-binding-constraint-on-robustness (F→D grade lift in contract screening)
+  - claim-coordination-attacks-dominate-redteam-damage (52.6% share replicated)
+  - claim-cb-audit-sufficient-for-solo-exploits (4/4 solo prevention replicated)
+- **New domain: market** — contract screening introduces mechanism design / screening equilibrium findings
 
 ## Completed (2026-02-21 session, Gate 2 formal statistics)
 

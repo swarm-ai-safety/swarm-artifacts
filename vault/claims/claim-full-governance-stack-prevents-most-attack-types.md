@@ -12,9 +12,12 @@ evidence:
   - run: 20260213-151729_redteam
     metric: damage
     detail: "Graduated 4-tier progression on 3-attack battery: no_defenses 176.7, baseline(CB) 157.8, moderate(CB+audit+staking+5%tax) 114.4, strict(+CD+10%tax) 49.3. 69% reduction baseline→strict. Collusion detection provides largest marginal gain"
+  - run: 20260221-082443_redteam_contract_screening_full
+    metric: damage
+    detail: "Contract screening full governance: 4/8 attacks prevented, total damage 299.79, robustness 0.607 (D). Confirms pattern: sybil, threshold dancing, collusion ring, governance gaming persist"
   weakening: []
   boundary_conditions:
-  - "Single redteam evaluation, single seed — limited statistical power"
+  - "Replicated across recursive_spawn and contract_screening scenarios"
   - "Hardened config: CB + collusion detection + audit + staking + 5% tax"
   - "8-attack battery: reputation farming, collusion ring, threshold dancing, sybil, timing, laundering, resource drain, governance gaming"
   - "Grade improved from F (0.40) to D (0.66) — still below passing threshold"

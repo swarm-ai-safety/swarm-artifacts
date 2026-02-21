@@ -1,12 +1,12 @@
-generated_utc: '2026-02-21T16:58:22.702097+00:00'
+generated_utc: '2026-02-21T21:59:26.067648+00:00'
 total_runs: 117
 by_type:
   calibration: 2
-  redteam: 9
-  single: 53
+  redteam: 12
+  single: 54
   study: 23
-  sweep: 23
-  unknown: 7
+  sweep: 25
+  unknown: 1
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1077,29 +1077,62 @@ runs:
   status: completed
   total_runs: 30
 - id: 20260221-081106_redteam_contract_screening_no_collusion
-  type: unknown
+  slug: redteam_contract_screening_no_collusion
+  type: redteam
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - redteam
+  - contract-screening
+  - adversarial
+  date: '2026-02-21'
+  status: completed
+  claims:
+  - claim-collusion-detection-reduces-ring-damage-75pct
+  - claim-sybil-attacks-resist-full-governance-stack
+  - claim-coordination-attacks-dominate-redteam-damage
+  - claim-collusion-detection-is-binding-constraint-on-robustness
 - id: 20260221-081953_redteam_contract_screening_with_collusion
-  type: unknown
+  slug: redteam_contract_screening_with_collusion
+  type: redteam
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - redteam
+  - contract-screening
+  - adversarial
+  - collusion-detection
+  date: '2026-02-21'
+  status: completed
+  claims:
+  - claim-collusion-detection-reduces-ring-damage-75pct
+  - claim-sybil-attacks-resist-full-governance-stack
+  - claim-collusion-detection-is-binding-constraint-on-robustness
 - id: 20260221-082443_redteam_contract_screening_full
-  type: unknown
+  slug: redteam_contract_screening_full
+  type: redteam
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - redteam
+  - contract-screening
+  - adversarial
+  - full-governance
+  date: '2026-02-21'
+  status: completed
+  claims:
+  - claim-collusion-detection-reduces-ring-damage-75pct
+  - claim-sybil-attacks-resist-full-governance-stack
+  - claim-full-governance-stack-prevents-most-attack-types
 - id: 20260221_081328_langgraph_governed
-  type: unknown
+  slug: langgraph_governed
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - langgraph
+  - delegation
+  - trust-boundaries
+  - handoffs
+  date: '2026-02-21'
+  status: completed
+  total_runs: 32
+  total_configs: 32
+  claims:
+  - claim-trust-boundaries-modify-but-never-deny-handoffs
+  - claim-delegation-completion-requires-handoff-budget-above-15
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
@@ -1109,17 +1142,30 @@ runs:
   date: unknown
   status: completed
 - id: contract_screening_seed42
-  type: unknown
+  slug: contract_screening_seed42
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - contract-screening
+  - screening-equilibrium
+  date: '2026-02-21'
+  status: completed
+  claims:
+  - claim-contract-screening-achieves-perfect-type-separation
+  - claim-screening-equilibrium-generates-honest-payoff-premium
 - id: contract_screening_sweep
-  type: unknown
+  slug: contract_screening_sweep
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - contract-screening
+  - screening-equilibrium
+  - multi-seed
+  date: '2026-02-21'
+  status: completed
+  total_runs: 10
+  total_configs: 10
+  claims:
+  - claim-contract-screening-achieves-perfect-type-separation
+  - claim-screening-equilibrium-generates-honest-payoff-premium
 - id: redteam
   type: unknown
   tags:

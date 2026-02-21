@@ -2,7 +2,7 @@
 description: Disabling collusion detection degrades robustness to F grade (0.546) even with CB, audit, and tax active
 type: claim
 status: active
-confidence: low
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -15,11 +15,17 @@ evidence:
   - run: 20260210-005952_redteam_strict_governance
     metric: damage
     detail: "Strict+CD+lowered threshold (0.35): 275.3 damage, identical to normal threshold. Threshold tuning provides no additional benefit beyond CD enablement"
+  - run: 20260221-081106_redteam_contract_screening_no_collusion
+    metric: robustness_score
+    detail: "Contract screening without CD: robustness=0.572, grade F. Collusion ring damage=85.73, evasion=0.40"
+  - run: 20260221-081953_redteam_contract_screening_with_collusion
+    metric: robustness_score
+    detail: "Contract screening with CD: robustness=0.607, grade D (up from F). Collusion ring damage=21.43 (-75%). Total damage 299.79 vs 364.09 (-17.6%)"
   weakening: []
   boundary_conditions:
-  - "Multiple redteam evaluations (20260210, 20260214) confirm CD is binding constraint"
-  - "CD-off vs CD-on comparison: 334.4→275.3 damage (18% reduction), collusion ring prevented"
-  - recursive_spawn scenario, 3-8 attack batteries
+  - "Multiple redteam evaluations across two scenarios (recursive_spawn, contract_screening) confirm CD is binding constraint"
+  - "CD-off vs CD-on: 334.4→275.3 damage (recursive_spawn), 364.1→299.8 damage (contract_screening)"
+  - "CD lifts grade from F to D in contract_screening"
 sensitivity:
   topology: untested; recursive_spawn scenario topology not specified
   agent_count: untested beyond default
@@ -38,13 +44,14 @@ related_claims:
 - claim-graduated-defense-reduces-damage-monotonically
 - claim-full-governance-stack-prevents-most-attack-types
 - claim-sybil-attacks-resist-full-governance-stack
+- claim-collusion-detection-reduces-ring-damage-75pct
 created: 2026-02-20
 updated: 2026-02-21
 aliases:
 - collusion-detection-is-binding-constraint-on-robustness
 cssclasses:
 - claim
-- claim-low
+- claim-medium
 tags:
 - governance
 - collusion-detection
@@ -58,6 +65,8 @@ graph-group: claim
 ## Evidence summary
 
 In the [[20260214-094622_redteam]] evaluation (8-attack battery, recursive_spawn scenario), the governance stack with CB enabled, 10% audit, and 2% tax but **no collusion detection** scored 0.546 (grade F). Four of eight attacks succeeded, with [[failure-collusion-ring-mutual-boosting]] causing 95.3 damage and [[failure-sybil-identity-amplification]] causing 117.6 damage — both coordination attacks that collusion detection would partially address.
+
+The 20260221 contract screening red-team series ([[20260221-081106_redteam_contract_screening_no_collusion]], [[20260221-081953_redteam_contract_screening_with_collusion]]) provides a clean A/B comparison in a different scenario. Without CD: robustness=0.572 (F), collusion ring damage=85.73. With CD: robustness=0.607 (D), collusion ring damage=21.43 — a 75% reduction (see [[claim-collusion-detection-reduces-ring-damage-75pct]]). Total damage drops from 364.09 to 299.79 (-17.6%). This replication across a second scenario (contract_screening) strengthens the claim from low to medium confidence.
 
 This establishes collusion detection as the **binding constraint** on overall robustness. [[claim-circuit-breakers-dominate]] shows CB is effective for toxicity reduction, and [[claim-cb-audit-sufficient-for-solo-exploits]] confirms CB + audit handles solo exploits. But without collusion detection, coordination attacks pass through unchecked, dragging the portfolio robustness score below passing.
 

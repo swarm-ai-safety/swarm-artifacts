@@ -32,7 +32,9 @@ artifacts:
 links:
   parent_runs: []
   child_runs: []
-  claims: []
+  claims:
+  - claim-trust-boundaries-modify-but-never-deny-handoffs
+  - claim-delegation-completion-requires-handoff-budget-above-15
 tags:
 - langgraph
 - delegation
