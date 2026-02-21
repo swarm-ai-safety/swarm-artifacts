@@ -28,6 +28,11 @@ related_claims:
 - claim-tax-disproportionately-punishes-rlm-agents
 - claim-staking-backfires
 - claim-governance-cost-paradox
+- claim-deceptive-payoff-weakly-declines-with-tax
+- claim-optimal-tax-range-0-to-5pct
+- claim-welfare-plateaus-above-12pct-tax
+- claim-high-tax-increases-toxicity
+- claim-tax-phase-transition
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -54,21 +59,27 @@ This extends [[claim-tax-disproportionately-punishes-rlm-agents]] to a different
 
 Honest agents transact at higher volumes and values because they engage in cooperative exchanges. Higher transaction volume means more tax events per round. Opportunistic agents selectively transact when advantageous, reducing their tax exposure. Adversarial agents earn 0.0 payoff regardless of tax rate (they are detected and excluded).
 
+Completing the agent-type picture: [[claim-deceptive-payoff-weakly-declines-with-tax]] shows deceptive agents lose the least in absolute terms (delta=-0.55, d=0.44) because their baseline payoff is already marginal. Meanwhile, [[claim-tax-disproportionately-punishes-rlm-agents]] confirms the same honest-agent vulnerability in a different population composition with RLM agents bearing 2x the effect size. Together, these three claims establish a general pattern: agents who transact cooperatively and frequently are systematically penalized by flat-rate taxation.
+
 ## Boundary conditions
 
 - 8-agent population with fixed composition (4 honest, 2 adversarial, 2 adaptive)
 - Small-world topology — honest agents may be less disadvantaged in sparser topologies where transaction opportunities are limited for all agents
 - Tax range 0-15% captures the full phase transition
+- The differential is policy-relevant primarily above 5%; within the safe operating range identified by [[claim-optimal-tax-range-0-to-5pct]], honest agents absorb the tax with negligible welfare impact. Above 12.5%, [[claim-welfare-plateaus-above-12pct-tax]] suggests all agents converge to a depleted floor where the differential becomes moot.
 
 ## Open questions
 
 - Is the honest-vs-opportunistic differential consistent with the honest-vs-RLM differential in [[claim-tax-disproportionately-punishes-rlm-agents]], or do different agent taxonomies produce different rankings?
 - Does tax redistribution preferentially benefit honest agents, offsetting the differential?
-- At what tax rate does the differential become negligible (convergence to shared poverty)?
+- At what tax rate does the differential become negligible (convergence to shared poverty)? The [[claim-welfare-plateaus-above-12pct-tax]] plateau suggests ~12.5% is the answer.
+- [[claim-high-tax-increases-toxicity]] shows tax increases toxicity — do honest agents bear the brunt of this too, compounding the distributional injustice?
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
 
 <!-- topics: governance, transaction-tax, agent-behavior -->

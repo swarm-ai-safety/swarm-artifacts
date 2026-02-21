@@ -12,7 +12,10 @@ evidence:
   - run: 20260213-221500_collusion_tax_effect
     metric: toxicity_rate
     detail: "5% vs 10% tax: d=-0.57, BH-significant; 0% vs 5%: d=-0.69, BH-significant"
-  weakening: []
+  weakening:
+  - run: 20260213-202050_baseline_governance_v2
+    metric: toxicity_rate
+    detail: "2.5% vs 15% tax: d=-0.34, not BH-significant, N=200. Fails to replicate in 8-agent algorithmic population (vs 12-agent RLM population where d=-0.86)"
   boundary_conditions:
   - 12 agents, default topology, tax range 0-10%, 10 seeds
   - Collusion penalty active (0.5-2.0x) but orthogonal to tax-toxicity relationship
@@ -57,10 +60,14 @@ This creates a governance dilemma: transaction tax reduces welfare ([[claim-tax-
 
 Resource scarcity induced by high taxation may force agents into more competitive, lower-quality interactions. When legitimate transaction returns decline, agents shift toward strategies that extract short-term value at the cost of ecosystem quality. This parallels how [[claim-collusion-penalty-destabilizes]] shows punitive governance measures backfiring on toxicity — both tax and penalty produce the same paradoxical safety degradation through different economic channels. This shared pattern of "governance-induced toxicity" is a recurring motif: mechanisms designed to constrain harmful behavior instead redirecting agents toward different harmful behaviors.
 
+## Weakening evidence
+
+The [[20260213-202050_baseline_governance_v2]] sweep (700 runs, 8 agents, 50 seeds) **fails to replicate** the tax-toxicity effect: 2.5% vs 15% tax shows d=-0.34, not BH-significant. The key difference is agent composition: the v2 sweep uses 8 algorithmic agents (4 honest, 2 adversarial, 2 adaptive) while the collusion study uses 12 heterogeneous RLM agents. This suggests the tax-toxicity effect may be specific to collusion-enabled populations with RLM agents, not a universal property of transaction tax.
+
 ## Boundary conditions
 
-- The absolute toxicity increase is small (~0.6pp), though statistically robust
-- Only tested with collusion-enabled agent population; pure honest-agent ecosystems may respond differently
+- The absolute toxicity increase is small (~0.6pp), though statistically robust in the collusion context
+- **Replication failure** in 8-agent algorithmic population narrows the boundary: effect may require RLM agents or active collusion dynamics
 - No redistribution modeled — returning tax revenue might offset the scarcity mechanism
 
 ## Open questions

@@ -41,6 +41,12 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-tax-and-penalty-effects-are-orthogonal]] — Tax dominates economics, penalty dominates toxicity, no interaction (medium confidence)
 - [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] — Combined high tax + high penalty toxicity may be super-additive (low confidence)
 - [[claim-welfare-non-normality-at-extreme-tax]] — Welfare distributions non-normal at extreme tax rates (low confidence)
+- [[claim-tax-hurts-honest-more-than-opportunistic]] — Tax reduces honest payoff more than opportunistic in absolute terms (high confidence)
+- [[claim-welfare-plateaus-above-12pct-tax]] — Welfare decline flattens above 12.5% tax (high confidence)
+- [[claim-deceptive-payoff-weakly-declines-with-tax]] — Deceptive agent payoff declines with tax but effect is small, BH-sig only (medium confidence)
+- [[claim-tax-cb-interact-on-quality-gap]] — Tax x circuit breaker interaction on quality gap but not welfare (medium confidence)
+- [[claim-optimal-tax-range-0-to-5pct]] — Welfare flat below 5% tax, defining safe operating range (medium confidence)
+- [[claim-cb-null-may-reflect-design-limitation]] — CB null effect may be artifact of 2-level on/off design (low confidence)
 
 ## Governance Mechanisms
 

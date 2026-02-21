@@ -54,9 +54,14 @@ The freeze duration sweep (Feb 8) explored the `freeze_duration_epochs` paramete
 - **With staking**: staking *undermines* circuit breaker effectiveness because honest agents can't afford the stake. See [[claim-staking-backfires]].
 - **With audits**: audits add marginal detection power but don't improve outcomes when circuit breaker is already active.
 
+## Interaction with tax
+
+- [[claim-tax-cb-interact-on-quality-gap]] — tax x CB interaction significant on quality gap (range=0.77) but not on aggregate welfare. CB modulates distributional effects of taxation.
+- [[claim-cb-null-may-reflect-design-limitation]] — the binary on/off design may mask threshold-dependent effects. All three council reviewers flagged CB recalibration as top experimental priority.
+
 ## Known failure modes
 
-- **Threshold dancing**: adversaries learning to stay just below `freeze_threshold_toxicity`. Untested — this is the primary open question.
+- **Threshold dancing**: adversaries learning to stay just below `freeze_threshold_toxicity`. Untested — this is the primary open question. See [[failure-threshold-dancing]].
 - **Freeze arbitrage**: in dynamic networks, frozen agents lose edges and may be permanently disadvantaged even after unfreezing.
 
 ---

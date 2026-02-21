@@ -28,6 +28,10 @@ related_claims:
 - claim-circuit-breakers-dominate
 - claim-tax-and-penalty-effects-are-orthogonal
 - claim-cb-null-may-reflect-design-limitation
+- claim-welfare-plateaus-above-12pct-tax
+- claim-tax-hurts-honest-more-than-opportunistic
+- claim-high-tax-increases-toxicity
+- claim-governance-cost-paradox
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -55,6 +59,10 @@ This complicates [[claim-tax-dominates-cb-kernel]], which treats tax and CB as h
 
 Circuit breakers freeze high-toxicity agents, removing them from the transaction pool. At low tax rates, this has minimal impact because the ecosystem is healthy. At high tax rates, removing agents from an already-stressed ecosystem has outsized effects on the quality of remaining interactions — fewer agents means less competition for remaining opportunities, changing the quality gap.
 
+The agent-type payoff interactions (honest, opportunistic, deceptive) channel through [[claim-tax-hurts-honest-more-than-opportunistic]]: because honest agents bear disproportionate tax burden, CB-induced agent removal at high tax rates shifts the remaining population composition, amplifying quality gap effects. This also connects to [[claim-high-tax-increases-toxicity]] — the quality gap interaction may be the distributional mechanism through which tax increases toxicity, as CB modulates which agents remain active in a toxicity-stressed ecosystem.
+
+The interaction complicates [[claim-governance-cost-paradox]]: governance cost-benefit analysis assuming independent mechanism effects underestimates the true cost when interaction terms are non-zero.
+
 ## Boundary conditions
 
 - CB tested as binary on/off; the interaction may be threshold-dependent
@@ -67,10 +75,14 @@ Circuit breakers freeze high-toxicity agents, removing them from the transaction
 - Does the interaction persist when CB threshold is varied (not just on/off)?
 - Is quality gap the primary interaction channel, or are agent-type payoffs more fundamental?
 - How does this relate to the tax x penalty interaction explored in [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]]?
+- Does the interaction change character in the [[claim-welfare-plateaus-above-12pct-tax]] plateau regime, where the ecosystem is already at minimum viable state?
+- [[failure-threshold-dancing]] shows adversaries can learn CB thresholds — does the interaction disappear if adversaries successfully evade CB, leaving only the tax main effect?
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
 
 <!-- topics: governance, transaction-tax, circuit-breaker, interaction -->

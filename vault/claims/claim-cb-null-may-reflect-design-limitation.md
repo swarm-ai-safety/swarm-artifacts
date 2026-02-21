@@ -24,6 +24,9 @@ related_claims:
 - claim-tax-dominates-cb-kernel
 - claim-circuit-breakers-dominate
 - claim-tax-cb-interact-on-quality-gap
+- claim-governance-cost-paradox
+- claim-tax-and-penalty-effects-are-orthogonal
+- claim-optimal-tax-range-0-to-5pct
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -50,15 +53,20 @@ The significant tax x CB interactions on 5 metrics ([[claim-tax-cb-interact-on-q
 
 If the CB null effect is a design artifact, then [[claim-circuit-breakers-dominate]] (from other runs with different CB configurations) and [[claim-tax-dominates-cb-kernel]] may be measuring different aspects of CB effectiveness rather than contradicting each other. The resolution requires a CB threshold sweep within the baseline governance v2 framework.
 
+If CB is effective when properly calibrated, [[claim-governance-cost-paradox]] may be partially resolvable: the welfare cost of governance stacks could be reduced by replacing high tax rates with optimized CB thresholds. This would also expand the safe operating range identified in [[claim-optimal-tax-range-0-to-5pct]] — if CB can compensate for security at low tax rates, designers gain more policy headroom. A CB threshold sweep would also reveal whether CB operates as a third orthogonal axis alongside tax and penalty ([[claim-tax-and-penalty-effects-are-orthogonal]]), or whether it interacts with both.
+
 ## Recommended next experiment
 
 - Sweep CB freeze threshold (0.3, 0.5, 0.7, 0.9) x CB freeze duration (1, 5, 10, 20 rounds) at fixed tax rates (0%, 5%, 10%)
 - Test whether CB effect size increases with threshold optimization
 - If confirmed, update [[claim-tax-dominates-cb-kernel]] with boundary condition
+- The threshold sweep would simultaneously address [[failure-threshold-dancing]]: varying freeze thresholds tests both CB effectiveness and adversarial evasion resilience
+- If CB threshold variation reveals significant effects, [[claim-tax-and-penalty-effects-are-orthogonal]] should be extended to test 3-way orthogonality (tax x penalty x CB threshold)
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: methodology, circuit-breaker, experimental-design -->

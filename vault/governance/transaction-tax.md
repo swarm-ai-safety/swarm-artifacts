@@ -49,6 +49,23 @@ The baseline governance v2 sweep (700 runs, 50 seeds, 7 tax levels) showed that 
 - **Agent-type differential**: [[claim-tax-disproportionately-punishes-rlm-agents]] — tax reduces RLM agent payoff 2x more severely than honest agent payoff (d=6.02 vs d=2.87).
 - **Toxicity side effect**: [[claim-high-tax-increases-toxicity]] — 10% tax increases toxicity by 0.6pp (d=-0.86), making tax a dual-cost mechanism.
 
+## Agent-type sensitivity
+
+- [[claim-tax-hurts-honest-more-than-opportunistic]] — honest agents lose more than opportunistic in absolute terms (d=0.80 vs d=0.43)
+- [[claim-deceptive-payoff-weakly-declines-with-tax]] — deceptive agents lose the least (d=0.44, BH-sig only)
+- Full spectrum: RLM > honest > opportunistic > deceptive in absolute tax sensitivity
+
+## Welfare response curve
+
+- [[claim-optimal-tax-range-0-to-5pct]] — safe range with negligible welfare impact
+- [[claim-tax-phase-transition]] — steep decline 5-12.5%
+- [[claim-welfare-plateaus-above-12pct-tax]] — floor reached above 12.5%
+
+## CB interaction
+
+- [[claim-tax-cb-interact-on-quality-gap]] — tax x CB interaction on quality gap (range=0.77) but not welfare
+- [[claim-cb-null-may-reflect-design-limitation]] — CB null effect may be design artifact; recalibration is top priority
+
 ## Known failure modes
 
 - Tax evasion via off-graph interactions is not modeled.

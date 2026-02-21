@@ -27,6 +27,11 @@ related_claims:
 - claim-tax-phase-transition
 - claim-tax-welfare-tradeoff
 - claim-welfare-plateaus-above-12pct-tax
+- claim-tax-hurts-honest-more-than-opportunistic
+- claim-deceptive-payoff-weakly-declines-with-tax
+- claim-governance-cost-paradox
+- claim-tax-cb-interact-on-quality-gap
+- claim-tax-and-penalty-effects-are-orthogonal
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -54,6 +59,10 @@ This identifies the **safe operating range**: governance designers can set tax r
 
 Below 5%, the tax extraction is small enough that all agents can absorb it without changing strategies. Transaction volumes remain stable (95-96% acceptance across all conditions), and no agents are pushed below profitability thresholds. The 5% threshold likely corresponds to the point where marginal transactions become unprofitable.
 
+The safe range is consequential for distributional equity: [[claim-tax-hurts-honest-more-than-opportunistic]] shows honest agents bear disproportionate tax burden, but within 0-5% the absolute impact is negligible for all agent types. [[claim-deceptive-payoff-weakly-declines-with-tax]] confirms deceptive agents are barely affected at any rate, let alone in the safe range — taxation below 5% provides essentially zero anti-deception benefit. The [[claim-tax-cb-interact-on-quality-gap]] interaction is also negligible in this range, simplifying governance design: within the safe range, tax and CB effects can be treated as independent.
+
+This range addresses [[claim-governance-cost-paradox]] directly: constraining tax to 0-5% avoids the welfare cost that drives the paradox, while [[claim-tax-and-penalty-effects-are-orthogonal]] ensures that penalty can be tuned independently for toxicity control. The [[failure-resource-drain-extraction]] evidence confirms that even 5% tax is sufficient to prevent resource drain attacks, establishing a floor for the safe range.
+
 ## Boundary conditions
 
 - Welfare-optimal does not mean governance-optimal: some tax may be needed to fund monitoring
@@ -71,5 +80,7 @@ Below 5%, the tax extraction is small enough that all agents can absorb it witho
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
 
 <!-- topics: governance, transaction-tax, welfare, optimization -->

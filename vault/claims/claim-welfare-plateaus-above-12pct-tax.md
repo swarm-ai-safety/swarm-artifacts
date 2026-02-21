@@ -24,6 +24,11 @@ related_claims:
 - claim-tax-phase-transition
 - claim-tax-welfare-tradeoff
 - claim-optimal-tax-range-0-to-5pct
+- claim-tax-hurts-honest-more-than-opportunistic
+- claim-deceptive-payoff-weakly-declines-with-tax
+- claim-welfare-non-normality-at-extreme-tax
+- claim-high-tax-increases-toxicity
+- claim-tax-cb-interact-on-quality-gap
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -51,6 +56,8 @@ This refines [[claim-tax-phase-transition]] by identifying the upper bound of th
 
 Above the phase transition, most marginal interactions have already become unprofitable. Remaining transactions are either essential (high-value, tax-resistant) or between agents with no alternative partners. Additional tax beyond 12.5% cannot further reduce participation because participation is already near its floor.
 
+The plateau's existence is grounded by the agent-type decomposition: [[claim-tax-hurts-honest-more-than-opportunistic]] shows honest agents bear the largest absolute loss from taxation, and by 12.5% their transaction volume has been maximally compressed. [[claim-deceptive-payoff-weakly-declines-with-tax]] confirms that deceptive agents contribute negligibly to the plateau since their baseline payoff is already marginal (2.55) — they have little left to lose at any tax rate.
+
 ## Boundary conditions
 
 - Only tested up to 15% tax; behavior at 20%+ is unknown — the plateau may eventually break into full ecosystem collapse
@@ -62,10 +69,15 @@ Above the phase transition, most marginal interactions have already become unpro
 - Does the plateau hold at 20%, 25%, or higher tax rates, or does a second transition occur?
 - Is the plateau tax rate topology-dependent?
 - Does the collusion_tax_effect run (which only tested 0-10%) show early signs of flattening at 10%?
+- [[claim-welfare-non-normality-at-extreme-tax]] shows non-normal welfare distributions at 10% tax — does the plateau regime (>12.5%) exhibit even more severe non-normality, or does the distributional shape stabilize once the ecosystem collapses?
+- Does the [[claim-tax-cb-interact-on-quality-gap]] interaction change character in the plateau regime? If CB modulates quality gap differently when the ecosystem is already depleted, this could affect recovery strategies.
+- [[claim-high-tax-increases-toxicity]] reports a toxicity increase with tax — does toxicity also plateau above 12.5%, or does it continue rising even as welfare flattens?
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
 
 <!-- topics: governance, transaction-tax, welfare, phase-transition -->
