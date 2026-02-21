@@ -42,7 +42,7 @@ tags:
 graph-group: claim
 ---
 
-## Collusion Penalty Destabilization
+# Collusion penalty multiplier above 1.5x increases toxicity with no welfare benefit
 
 Collusion penalty multipliers above 1.5x paradoxically increase toxicity with no compensating welfare benefit. At a 2.0x multiplier, mean toxicity rises to 0.342 compared to 0.334 at 0.5x (d = -1.12, p < 0.0001).
 

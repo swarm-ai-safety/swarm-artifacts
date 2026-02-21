@@ -2,7 +2,7 @@
 description: Sybil + collusion ring attacks account for 52.6% of total redteam damage when collusion detection is disabled
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
@@ -33,7 +33,7 @@ aliases:
 - coordination-attacks-dominate-redteam-damage
 cssclasses:
 - claim
-- claim-medium
+- claim-low
 tags:
 - governance
 - redteam

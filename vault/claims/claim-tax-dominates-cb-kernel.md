@@ -12,70 +12,10 @@ evidence:
     detail: Tax d=1.14-1.59, CB d=-0.02 (p=0.88), N=40, 5 seeds
   - run: 20260213-173805_baseline_governance
     metric: welfare
-    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
+    detail: 'Tax dominance replicates in baseline governance v1: d=1.13-1.41 across pairwise comparisons, N=80, 10 seeds, Bonferroni-corrected'
   - run: 20260213-202050_baseline_governance_v2
     metric: welfare
-    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
+    detail: 'Tax dominance replicates at scale in v2: d=0.51-1.18, welfare and honest_payoff, N=700, 100 seeds, Bonferroni-corrected'
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -116,7 +56,7 @@ tags:
 graph-group: claim
 ---
 
-## Tax Dominates Circuit Breakers in Kernel Markets
+# Transaction tax rate explains 32.4% of welfare variance while circuit breakers show no detectable effect in kernel markets
 
 In a GPU kernel marketplace simulation, the transaction tax rate explains 32.4% of welfare variance (d = 1.14–1.59), while circuit breakers show no statistically detectable effect (d = -0.02, p = 0.88).
 
@@ -142,27 +82,6 @@ In a GPU kernel marketplace simulation, the transaction tax rate explains 32.4% 
 ## Lifecycle audit
 
 **2026-02-19** — automated claim-lifecycle audit:
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- (Note: 22 bulk-added tax-rate evidence entries consolidated 2026-02-20 into 2 representative entries per source run)
 
 <!-- topics: governance, transaction-tax, circuit-breaker, kernel-market -->

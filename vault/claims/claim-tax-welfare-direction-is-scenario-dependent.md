@@ -14,8 +14,8 @@ evidence:
     detail: "No tax sensitivity detected (d<0.23, all p>0.60). 12 tests, 0 significant after Bonferroni. N=5 seeds, 2 epochs"
   weakening: []
   boundary_conditions:
-  - kernel_v4_code: 8 agents, 5 seeds per config, 5 epochs — severely underpowered
-  - memori: 5 LLM agents (all honest), 5 seeds, 2 epochs — severely underpowered and no adversarial agents
+  - "kernel_v4_code: 8 agents, 5 seeds per config, 5 epochs — severely underpowered"
+  - "memori: 5 LLM agents (all honest), 5 seeds, 2 epochs — severely underpowered and no adversarial agents"
   - Both studies flagged by council review for insufficient sample size
 sensitivity:
   topology: untested

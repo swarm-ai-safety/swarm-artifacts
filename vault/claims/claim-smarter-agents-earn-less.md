@@ -53,6 +53,8 @@ tags:
 graph-group: claim
 ---
 
+# Deeper recursive reasoning negatively correlates with individual payoff in soft-governance ecosystems
+
 Deeper recursive reasoning hurts individual payoff in soft-governance ecosystems.
 
 ## Evidence summary

@@ -2,7 +2,7 @@
 description: Welfare decline flattens above 12.5% tax rate with negligible marginal change (d=0.028 at 12.5-15%)
 type: claim
 status: active
-confidence: high
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -35,7 +35,7 @@ aliases:
 - welfare-plateaus-above-12pct-tax
 cssclasses:
 - claim
-- claim-high
+- claim-medium
 tags:
 - governance
 - transaction-tax

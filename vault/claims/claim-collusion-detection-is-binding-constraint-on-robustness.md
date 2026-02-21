@@ -2,7 +2,7 @@
 description: Disabling collusion detection degrades robustness to F grade (0.546) even with CB, audit, and tax active
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
@@ -35,7 +35,7 @@ aliases:
 - collusion-detection-is-binding-constraint-on-robustness
 cssclasses:
 - claim
-- claim-medium
+- claim-low
 tags:
 - governance
 - collusion-detection

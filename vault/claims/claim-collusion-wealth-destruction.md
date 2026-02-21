@@ -2,7 +2,7 @@
 description: Collusive agents accumulate 137x less wealth than honest agents under behavioral monitoring
 type: claim
 status: active
-confidence: high
+confidence: medium
 domain: collusion
 evidence:
   supporting:
@@ -30,7 +30,7 @@ aliases:
 - collusive-agents-accumulate-137x-less-wealth
 cssclasses:
 - claim
-- claim-high
+- claim-medium
 tags:
 - collusion
 - agent-behavior
@@ -39,7 +39,7 @@ tags:
 graph-group: claim
 ---
 
-## Collusion Wealth Destruction
+# Collusive agents accumulate 137x less wealth than honest agents under behavioral monitoring
 
 Under behavioral monitoring with a similarity threshold of 0.70, collusive agents accumulate 137x less wealth than honest agents (3.4 +/- 1.2 vs 467.3 +/- 186.9, d = 3.51, p < 0.001).
 

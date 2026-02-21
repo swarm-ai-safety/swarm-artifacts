@@ -36,7 +36,7 @@ tags:
 graph-group: claim
 ---
 
-## Memory Promotion Gate
+# Quality-based promotion gate blocks 100% of poisoned content from reaching higher memory tiers
 
 A quality-based promotion gate with threshold p >= 0.5 blocks 100% of poisoned content from reaching memory tiers 2 and above, despite 50.7% poisoning in the ephemeral tier.
 

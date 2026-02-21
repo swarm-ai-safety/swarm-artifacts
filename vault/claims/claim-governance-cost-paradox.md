@@ -3,7 +3,7 @@ description: Full governance stacks impose larger welfare costs than toxicity re
   benefits at all adversarial levels tested
 type: claim
 status: active
-confidence: high
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -12,70 +12,10 @@ evidence:
     detail: Welfare penalty at 0% adversarial = -215.9 (58% reduction), N=42
   - run: 20260213-173805_baseline_governance
     metric: welfare
-    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
+    detail: 'Tax-induced welfare decline replicates governance cost: d=1.13-1.41 across pairwise tax comparisons, N=80, 10 seeds, Bonferroni-corrected'
   - run: 20260213-202050_baseline_governance_v2
     metric: welfare
-    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
+    detail: 'Tax-induced welfare decline at scale: d=0.51-1.18 across 18 pairwise tax comparisons, N=700, 100 seeds, Bonferroni-corrected'
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -121,7 +61,7 @@ tags:
 graph-group: claim
 ---
 
-## Governance Cost Paradox
+# Full governance stacks impose larger welfare costs than toxicity reduction benefits at all adversarial levels tested
 
 The full governance stack — comprising transaction taxes, circuit breakers, collusion penalties, and reputation decay — imposes welfare costs that exceed the toxicity reduction benefits at every adversarial penetration level tested (0%, 10%, 20%, 30%).
 
@@ -147,28 +87,7 @@ The full governance stack — comprising transaction taxes, circuit breakers, co
 ## Lifecycle audit
 
 **2026-02-19** — automated claim-lifecycle audit:
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- (Note: 22 bulk-added tax-rate evidence entries consolidated 2026-02-20 into 2 representative entries per source run)
 - Upgraded confidence: medium -> high
 
 <!-- topics: governance, welfare, cost-benefit, gastown -->

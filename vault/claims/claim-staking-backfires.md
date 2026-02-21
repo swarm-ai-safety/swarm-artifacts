@@ -8,7 +8,7 @@ evidence:
   supporting:
   - run: 20260211-000149_kernel_market_governance_comparison
     metric: welfare
-    detail: 'Staking-only: welfare 10.65 vs no-governance 12.70. Honest agents lose disproportionately.'
+    detail: 'Staking-only: welfare 10.65 vs no-governance 12.70 (-16%). Staking+audits 14.20 vs audits-only 15.02 (-5%). N=10 seeds per regime, 70 runs total across 7 regimes. Bonferroni-corrected within sweep.'
   weakening: []
   boundary_conditions:
   - Tested in kernel market domain with 8 agents

@@ -3,7 +3,7 @@ description: Circuit breakers alone outperform full governance stacks on welfare
   toxicity
 type: claim
 status: active
-confidence: high
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -55,7 +55,7 @@ aliases:
 - circuit-breakers-alone-outperform-full-governance
 cssclasses:
 - claim
-- claim-high
+- claim-medium
 tags:
 - governance
 - circuit-breaker
@@ -63,6 +63,8 @@ tags:
 - mechanism-design
 graph-group: claim
 ---
+
+# Circuit breakers alone outperform full governance stacks on welfare and toxicity
 
 Circuit breakers alone produce better welfare and toxicity outcomes than full governance stacks combining taxes, audits, staking, and reputation.
 

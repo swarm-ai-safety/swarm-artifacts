@@ -39,7 +39,7 @@ tags:
 graph-group: claim
 ---
 
-## RLHF Persona Invariance
+# RLHF-trained Claude models produce identical cooperative behavior across adversarial system prompts
 
 RLHF-trained Claude models (Haiku 4.5, Sonnet 4.5) produce identical cooperative behavior regardless of whether the system prompt is default, safety-oriented, or adversarial. Toxicity remains constant at 0.186 across all persona conditions.
 

@@ -3,7 +3,7 @@ description: Deterministic quality gate (reject p<0.5) achieves comparable safet
   to full governance while preserving welfare
 type: claim
 status: active
-confidence: high
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -48,7 +48,7 @@ tags:
 graph-group: claim
 ---
 
-## Quality Gate Dominates Full Governance
+# Deterministic quality gate achieves comparable safety to full governance while preserving welfare
 
 A simple deterministic quality gate — rejecting all interactions with p < 0.5 — achieves toxicity reduction comparable to the full governance stack while preserving near-ungoverned welfare levels.
 
