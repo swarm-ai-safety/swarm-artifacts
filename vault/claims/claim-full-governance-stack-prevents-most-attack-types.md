@@ -48,7 +48,7 @@ tags:
 graph-group: claim
 ---
 
-# Full governance stack prevents 5 of 8 attack types but residual threats persist
+# full governance stack prevents 5 of 8 attack types but residual threats persist
 
 ## Evidence summary
 

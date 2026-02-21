@@ -57,7 +57,7 @@ tags:
 graph-group: claim
 ---
 
-# Welfare decline under transaction tax is non-linear with phase transition between 5-10% tax rate
+# welfare decline under transaction tax is non-linear with phase transition between 5-10% tax rate
 
 The relationship between transaction tax rate and welfare is non-linear, with a phase transition occurring between 5% and 10% tax rate. Below 5%, welfare declines only 3%. Between 5% and 10%, welfare drops 14%. Above 10%, the decline flattens as the ecosystem has already contracted.
 

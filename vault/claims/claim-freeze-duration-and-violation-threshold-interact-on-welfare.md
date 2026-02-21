@@ -44,7 +44,7 @@ tags:
 graph-group: claim
 ---
 
-# Longer freeze durations improve welfare 17% and interact with violation thresholds
+# longer freeze durations improve welfare 17% and interact with violation thresholds
 
 ## Evidence summary
 

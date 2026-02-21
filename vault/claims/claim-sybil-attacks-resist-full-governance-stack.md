@@ -51,7 +51,7 @@ tags:
 graph-group: claim
 ---
 
-# Sybil attacks resist the full governance stack with only 14% damage reduction
+# sybil attacks resist the full governance stack with only 14% damage reduction
 
 ## Evidence summary
 

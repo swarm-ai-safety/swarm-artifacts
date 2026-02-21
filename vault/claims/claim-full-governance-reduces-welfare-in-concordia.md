@@ -47,7 +47,7 @@ tags:
 graph-group: claim
 ---
 
-# Full governance stack reduces welfare ~18% in Concordia with zero toxicity benefit
+# full governance stack reduces welfare ~18% in Concordia with zero toxicity benefit
 
 ## Evidence summary
 

@@ -47,7 +47,7 @@ tags:
 graph-group: claim
 ---
 
-# Deterministic quality gate achieves comparable safety to full governance while preserving welfare
+# deterministic quality gate achieves comparable safety to full governance while preserving welfare
 
 A simple deterministic quality gate — rejecting all interactions with p < 0.5 — achieves toxicity reduction comparable to the full governance stack while preserving near-ungoverned welfare levels.
 

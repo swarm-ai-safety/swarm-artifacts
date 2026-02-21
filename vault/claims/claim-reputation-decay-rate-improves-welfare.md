@@ -43,7 +43,7 @@ tags:
 graph-group: claim
 ---
 
-# Full reputation persistence (no decay) improves welfare 12% while minimum stake requirements reduce it
+# full reputation persistence (no decay) improves welfare 12% while minimum stake requirements reduce it
 
 ## Evidence summary
 

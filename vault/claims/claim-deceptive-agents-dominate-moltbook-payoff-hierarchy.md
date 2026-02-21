@@ -40,7 +40,7 @@ tags:
 graph-group: claim
 ---
 
-# Deceptive agents earn 3x honest agent payoff in moltbook regardless of governance configuration
+# deceptive agents earn 3x honest agent payoff in moltbook regardless of governance configuration
 
 ## Evidence summary
 

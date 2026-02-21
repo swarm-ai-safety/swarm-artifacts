@@ -56,7 +56,7 @@ tags:
 graph-group: claim
 ---
 
-# Transaction tax rate explains 32.4% of welfare variance while circuit breakers show no detectable effect in kernel markets
+# transaction tax rate explains 32.4% of welfare variance while circuit breakers show no detectable effect in kernel markets
 
 In a GPU kernel marketplace simulation, the transaction tax rate explains 32.4% of welfare variance (d = 1.14–1.59), while circuit breakers show no statistically detectable effect (d = -0.02, p = 0.88).
 

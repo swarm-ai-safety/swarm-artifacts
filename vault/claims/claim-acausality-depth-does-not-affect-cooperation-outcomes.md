@@ -58,7 +58,7 @@ tags:
 graph-group: claim
 ---
 
-# Neither acausality depth nor decision theory variant significantly affects cooperation outcomes in LDT scenarios
+# neither acausality depth nor decision theory variant significantly affects cooperation outcomes in LDT scenarios
 
 ## Evidence summary
 

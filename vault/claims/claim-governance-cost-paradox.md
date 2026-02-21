@@ -68,7 +68,7 @@ tags:
 graph-group: claim
 ---
 
-# Full governance stacks impose larger welfare costs than toxicity reduction benefits at all adversarial levels tested
+# full governance stacks impose larger welfare costs than toxicity reduction benefits at all adversarial levels tested
 
 The full governance stack — comprising transaction taxes, circuit breakers, collusion penalties, and reputation decay — imposes welfare costs that exceed the toxicity reduction benefits at every adversarial penetration level tested (0%, 10%, 20%, 30%).
 

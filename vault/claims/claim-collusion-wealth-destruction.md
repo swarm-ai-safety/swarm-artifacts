@@ -39,7 +39,7 @@ tags:
 graph-group: claim
 ---
 
-# Collusive agents accumulate 137x less wealth than honest agents under behavioral monitoring
+# collusive agents accumulate 137x less wealth than honest agents under behavioral monitoring
 
 Under behavioral monitoring with a similarity threshold of 0.70, collusive agents accumulate 137x less wealth than honest agents (3.4 +/- 1.2 vs 467.3 +/- 186.9, d = 3.51, p < 0.001).
 

@@ -46,7 +46,7 @@ tags:
 graph-group: claim
 ---
 
-# Graduated governance defense reduces adversarial damage monotonically across 4 tiers
+# graduated governance defense reduces adversarial damage monotonically across 4 tiers
 
 ## Evidence summary
 
