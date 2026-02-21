@@ -1,0 +1,47 @@
+run_id: contract_screening_sweep
+slug: contract_screening_sweep
+created_utc: '2026-02-21T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: contract_screening
+  seeds:
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  swept_parameters:
+    seed:
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+  total_runs: 10
+results:
+  status: completed
+artifacts:
+  summary: sweep_results.csv
+links:
+  parent_runs:
+  - contract_screening_seed42
+  child_runs: []
+  claims: []
+tags:
+- contract-screening
+- screening-equilibrium
+- multi-seed
