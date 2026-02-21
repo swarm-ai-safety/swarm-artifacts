@@ -9,13 +9,20 @@ evidence:
   - run: 20260211-234038_pi_claude_live
     metric: toxicity
     detail: Haiku toxicity 0.186 across default/safety/adversarial personas, N=18 episodes, 180 API calls
+  - run: 20260212-001857_pi_bridge_claude_study
+    metric: toxicity
+    detail: "0/19 Holm-significant. Model (haiku vs sonnet): d=0.033, p=0.99. Persona (safety vs adversarial): d=-0.702, p=0.125 (largest effect, not significant). Mix (mostly_honest vs adversarial_heavy): d=-0.467, p=0.385. 54 episodes, 3 seeds, 2x3x3 factorial"
+  - run: 20260211-225057_pi_bridge_sweep
+    metric: toxicity
+    detail: "Behavior dominates composition: adversarial mode toxicity 0.597 vs cooperative 0.241 vs mixed 0.259. Within behavior class, composition variation negligible (max spread ~0.01). 63 episodes, 7 mixes x 3 behaviors x 3 seeds"
   weakening: []
   boundary_conditions:
   - Haiku 4.5 and Sonnet 4.5 only
-  - Heuristic text scorer, single seed
+  - Heuristic text scorer
+  - Pi bridge study uses 3 seeds across 18 conditions (small per-cell N)
 sensitivity:
   topology: Not topology-dependent; tested on default interaction structure
-  agent_count: Small episode count (N=18); larger samples needed to detect subtle persona effects
+  agent_count: "Tested at N=18 (live), N=54 (factorial), N=63 (sweep) — consistent null across scales"
 supersedes: []
 superseded_by: []
 related_claims:
@@ -23,8 +30,9 @@ related_claims:
 - claim-circuit-breakers-dominate
 - claim-collusion-penalty-destabilizes
 - claim-governance-cost-paradox
+- claim-acausality-depth-does-not-affect-cooperation-outcomes
 created: 2026-02-19
-updated: 2026-02-19
+updated: 2026-02-21
 aliases:
 - rlhf-persona-invariant
 - rlhf-trained-claude-models-produce-identical-cooperative

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS \u2014 synthesis pipeline queue",
-  "next_claim_start": 43,
+  "next_claim_start": 46,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
@@ -751,11 +751,21 @@
     {
       "id": "extract-20260211-225057_pi_bridge_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-225057_pi_bridge_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-rlhf-persona-invariant"
+      ]
     },
     {
       "id": "extract-20260211-232940_gastown_composition_study",
@@ -787,11 +797,21 @@
     {
       "id": "extract-20260212-001857_pi_bridge_claude_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260212-001857_pi_bridge_claude_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-rlhf-persona-invariant"
+      ]
     },
     {
       "id": "extract-20260212-012511_sweep",
@@ -893,65 +913,133 @@
     {
       "id": "extract-20260213-003804_ldt_modeling_adversary_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-003804_ldt_modeling_adversary_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-acausality-depth-does-not-affect-cooperation-outcomes"
+      ]
     },
     {
       "id": "extract-20260213-003812_ldt_low_prior_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-003812_ldt_low_prior_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-acausality-depth-does-not-affect-cooperation-outcomes"
+      ]
     },
     {
       "id": "extract-20260213-003819_ldt_short_horizon_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-003819_ldt_short_horizon_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-acausality-depth-does-not-affect-cooperation-outcomes"
+      ]
     },
     {
       "id": "extract-20260213-005951_gastown_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-005951_gastown_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single-seed GasTown composition; observational only, no claims extracted"
     },
     {
       "id": "extract-20260213-013951_ldt_decision_theory_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-013951_ldt_decision_theory_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-acausality-depth-does-not-affect-cooperation-outcomes"
+      ]
     },
     {
       "id": "extract-20260213-101646_ldt_large_pop_dt_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-101646_ldt_large_pop_dt_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-acausality-depth-does-not-affect-cooperation-outcomes"
+      ]
     },
     {
       "id": "extract-20260213-103908_gastown_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-103908_gastown_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single-seed GasTown composition with refinery regime; observational only"
     },
     {
       "id": "extract-20260213-103914_gastown_composition_study",
@@ -974,11 +1062,22 @@
     {
       "id": "extract-20260213-123944_moltbook_captcha_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-123944_moltbook_captcha_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect",
+        "claim-deceptive-agents-dominate-moltbook-payoff-hierarchy"
+      ],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260213-143120_delegation_games_seed42",
@@ -1022,29 +1121,59 @@
     {
       "id": "extract-20260213-151729_redteam",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-151729_redteam/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-graduated-defense-reduces-damage-monotonically"
+      ],
+      "enrichments_applied": [
+        "claim-full-governance-stack-prevents-most-attack-types"
+      ]
     },
     {
       "id": "extract-20260213-165419_gastown_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-165419_gastown_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "GasTown replicate; single-seed, no claims extracted"
     },
     {
       "id": "extract-20260213-165430_gastown_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-165430_gastown_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "GasTown replicate; single-seed, no claims extracted"
     },
     {
       "id": "extract-20260213-204503_agent_lab_research_safety_study",

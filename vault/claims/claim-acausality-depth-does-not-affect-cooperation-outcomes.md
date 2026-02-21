@@ -1,8 +1,8 @@
 ---
-description: Two independent LDT studies (N=30 each) find zero Bonferroni-significant effects of acausality depth 1-3 on welfare, toxicity, or payoffs
+description: Seven LDT studies across 5 scenarios find zero Bonferroni-significant effects of acausality depth or decision theory on outcomes
 type: claim
 status: active
-confidence: medium
+confidence: high
 domain: agent-behavior
 evidence:
   supporting:
@@ -12,14 +12,30 @@ evidence:
   - run: 20260213-003757_ldt_large_population_study
     metric: welfare
     detail: "Depth 1: 366.38, Depth 2: 371.41, Depth 3: 387.68. Largest effect d=-1.17 (depth 1 vs 3), p=0.018. 3/15 nominally significant, 0/15 Bonferroni-significant. N=10 seeds per depth, large population scenario"
+  - run: 20260213-013951_ldt_decision_theory_study
+    metric: welfare
+    detail: "TDT vs FDT vs UDT: 0/15 Bonferroni-significant, 0/15 nominally significant. Largest d=-0.865 (TDT vs FDT welfare). N=10 seeds per DT, 7 agents. Decision theory choice also irrelevant"
+  - run: 20260213-101646_ldt_large_pop_dt_study
+    metric: welfare
+    detail: "TDT vs FDT vs UDT at large pop: 0/15 Bonferroni-sig, 3/15 nominal. UDT welfare nominally higher (387.68 vs TDT 366.38, d=-1.17, p=0.018). N=10 seeds per DT, 21 agents"
+  - run: 20260213-003804_ldt_modeling_adversary_study
+    metric: welfare
+    detail: "Acausality depth 1-3 in modeling_adversary scenario: 0/15 Bonferroni-sig, 0/15 nominal. N=10 seeds per depth"
+  - run: 20260213-003812_ldt_low_prior_study
+    metric: welfare
+    detail: "Acausality depth 1-3 in low_prior scenario: 0/15 Bonferroni-sig, 0/15 nominal. Largest d=-0.846 (depth 1 vs 2), p=0.075. N=10 seeds per depth"
+  - run: 20260213-003819_ldt_short_horizon_study
+    metric: welfare
+    detail: "Acausality depth 1-3 in short_horizon scenario: 0/15 Bonferroni-sig, 0/15 nominal. Largest d=-0.755 (depth 1 vs 2 welfare), p=0.109. N=10 seeds per depth"
   weakening: []
   boundary_conditions:
-  - "Both studies use 10 seeds per condition — adequately powered for large effects but may miss small effects"
+  - "All studies use 10 seeds per condition — adequately powered for large effects but may miss small effects"
   - "Acausality depth range limited to 1-3; deeper reasoning may behave differently"
-  - "ldt_cooperation and large_population scenarios only; untested in adversarial or governance-heavy contexts"
+  - "7 LDT studies across 5 scenarios (cooperation, large_pop, modeling_adversary, low_prior, short_horizon) — broad scenario coverage"
+  - "Decision theory variant (TDT/FDT/UDT) also shows no effect, generalizing beyond depth to reasoning framework"
 sensitivity:
   topology: untested
-  agent_count: tested at 7 (standard) and large population — consistent null
+  agent_count: tested at 7 (standard) and 21 (large population) — consistent null
   governance_interaction: no governance mechanisms in LDT studies
 supersedes: []
 superseded_by: []
@@ -32,7 +48,7 @@ aliases:
 - acausality-depth-does-not-affect-cooperation-outcomes
 cssclasses:
 - claim
-- claim-medium
+- claim-high
 tags:
 - agent-behavior
 - acausality
@@ -41,17 +57,17 @@ tags:
 graph-group: claim
 ---
 
-# Acausality depth (1-3) does not significantly affect cooperation outcomes in LDT scenarios
+# Neither acausality depth nor decision theory variant significantly affects cooperation outcomes in LDT scenarios
 
 ## Evidence summary
 
-Two pre-registered LDT studies tested whether deeper acausal reasoning (modeling of counterparty reasoning chains) improves cooperation outcomes. Neither found Bonferroni-significant effects across any metric.
+Seven pre-registered LDT studies across 5 scenarios tested whether deeper acausal reasoning (depth 1-3) or decision theory variant (TDT/FDT/UDT) improves cooperation outcomes. None found Bonferroni-significant effects on any metric. Combined: 0/105 tests Bonferroni-significant, 6/105 nominally significant (consistent with chance at alpha=0.05).
 
-**Standard scale** ([[20260212-231859_ldt_acausality_study]], 7 agents, 30 runs): Depth 2 showed nominally higher welfare (132.16 vs 125.07 at depth 1, d=-0.865) and lower toxicity (0.326 vs 0.336, d=0.849), but neither survived correction (0/15 Bonferroni-significant). All pairwise comparisons across welfare, toxicity, quality gap, honest payoff, and adversarial payoff were non-significant.
+**Acausality depth** (5 studies): Tested across cooperation ([[20260212-231859_ldt_acausality_study]]), large_population ([[20260213-003757_ldt_large_population_study]]), modeling_adversary ([[20260213-003804_ldt_modeling_adversary_study]]), low_prior ([[20260213-003812_ldt_low_prior_study]]), and short_horizon ([[20260213-003819_ldt_short_horizon_study]]). Largest effects are medium-sized (d~0.85-1.17) but none survive correction. The null is consistent across all 5 scenarios.
 
-**Large population** ([[20260213-003757_ldt_large_population_study]], 30 runs): Depth 3 showed nominally higher welfare (387.68 vs 366.38 at depth 1, d=-1.17, p=0.018) and honest payoff (24.57 vs 22.47, d=-1.25, p=0.013). Three tests reached nominal significance but zero survived Bonferroni correction (threshold p<0.003 for 15 tests).
+**Decision theory** (2 studies): TDT vs FDT vs UDT tested at standard ([[20260213-013951_ldt_decision_theory_study]]) and large population ([[20260213-101646_ldt_large_pop_dt_study]]) scales. 0/30 Bonferroni-significant. UDT shows nominal welfare advantage at large scale (d=-1.17, p=0.018) but this does not survive correction.
 
-The consistency of null results across two independent studies with different population sizes strengthens the conclusion. This aligns with [[claim-smarter-agents-earn-less]] — additional reasoning capacity does not translate into better outcomes, and may be irrelevant below some threshold. The null also parallels [[claim-rlhf-persona-invariant]], where architectural variation (RLHF training) similarly failed to affect behavioral outcomes.
+The breadth and consistency of nulls across 7 studies, 5 scenarios, and 210 total runs makes this one of the most robustly established null findings in the vault. This aligns with [[claim-smarter-agents-earn-less]] — additional reasoning capacity does not translate into better outcomes. The null also parallels [[claim-rlhf-persona-invariant]], where architectural variation similarly failed to affect behavioral outcomes.
 
 ## Mechanism (hypothesized)
 

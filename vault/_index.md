@@ -62,9 +62,12 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-tax-welfare-direction-is-scenario-dependent]] — Tax-welfare direction reverses between baseline and kernel v4 scenarios (low confidence)
 - [[claim-memori-agents-show-no-governance-sensitivity]] — Memori LLM agents show zero governance response in short-horizon study (low confidence)
 - [[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]] — CB helps at 5% tax but harms at all other rates in kernel v4 (low confidence)
-- [[claim-acausality-depth-does-not-affect-cooperation-outcomes]] — Acausality depth 1-3 has no significant effect on cooperation outcomes (medium confidence)
+- [[claim-acausality-depth-does-not-affect-cooperation-outcomes]] — Neither acausality depth nor decision theory affects LDT outcomes (high confidence)
 - [[claim-sybil-attacks-resist-full-governance-stack]] — Sybil attacks persist with only 14% damage reduction under full governance (low confidence)
 - [[claim-full-governance-stack-prevents-most-attack-types]] — Full stack prevents 5/8 attack types, 36% total damage reduction (low confidence)
+- [[claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect]] — CAPTCHA difficulty and collusion penalty show zero effect in 200-run factorial (medium confidence)
+- [[claim-deceptive-agents-dominate-moltbook-payoff-hierarchy]] — Deceptive agents earn 3x honest payoff in moltbook regardless of governance (medium confidence)
+- [[claim-graduated-defense-reduces-damage-monotonically]] — Adding governance layers monotonically reduces redteam damage by up to 69% (low confidence)
 
 ## Governance Mechanisms
 

@@ -9,6 +9,9 @@ evidence:
   - run: 20260212-231123_redteam
     metric: damage
     detail: "Baseline (no defenses): 6/8 attacks succeed, 455.7 total damage, 42% evasion rate. Hardened (full stack): 3/8 succeed, 290.6 total damage, 26% evasion rate. 36.2% damage reduction, 38.4% detection improvement. N=1 evaluation per config"
+  - run: 20260213-151729_redteam
+    metric: damage
+    detail: "Graduated 4-tier progression on 3-attack battery: no_defenses 176.7, baseline(CB) 157.8, moderate(CB+audit+staking+5%tax) 114.4, strict(+CD+10%tax) 49.3. 69% reduction baseline→strict. Collusion detection provides largest marginal gain"
   weakening: []
   boundary_conditions:
   - "Single redteam evaluation, single seed — limited statistical power"
@@ -29,6 +32,7 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-cascade-mechanisms-ineffective-against-governance-gaming
 - claim-audit-threshold-interaction-enables-dancing
+- claim-graduated-defense-reduces-damage-monotonically
 created: 2026-02-21
 updated: 2026-02-21
 aliases:
