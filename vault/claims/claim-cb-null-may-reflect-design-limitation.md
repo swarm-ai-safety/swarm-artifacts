@@ -21,7 +21,13 @@ evidence:
   - run: 20260213-204503_agent_lab_research_safety_study
     metric: welfare
     detail: "CB null across welfare, toxicity, honest payoff in 160-run factorial. Quality gap invariant (always zero). N=10 seeds per config, 4x2x2 design"
-  weakening: []
+  - run: 20260210-220048_kernel_governance
+    metric: welfare
+    detail: "CB marginal toxicity effect (d=0.55, p=0.017) fails Bonferroni. 0/12 hypotheses significant. 80 runs, 10 seeds per config, kernel governance scenario"
+  weakening:
+  - run: 20260208-215009_sweep_freeze_duration
+    metric: welfare
+    detail: "Freeze duration sweep shows CB parameters DO matter when varied: 5 vs 1 epoch freeze gives 17% welfare improvement. Binary on/off misses this"
   boundary_conditions:
   - Methodological critique, not empirical finding
   - CB tested as binary on/off with default thresholds; no threshold sweep

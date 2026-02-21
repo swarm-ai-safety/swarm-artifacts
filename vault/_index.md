@@ -68,6 +68,10 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect]] — CAPTCHA difficulty and collusion penalty show zero effect in 200-run factorial (medium confidence)
 - [[claim-deceptive-agents-dominate-moltbook-payoff-hierarchy]] — Deceptive agents earn 3x honest payoff in moltbook regardless of governance (medium confidence)
 - [[claim-graduated-defense-reduces-damage-monotonically]] — Adding governance layers monotonically reduces redteam damage by up to 69% (low confidence)
+- [[claim-ldt-agents-provide-welfare-stability-at-intermediate-composition]] — LDT agents maintain +42% welfare at 40-70% composition (medium confidence)
+- [[claim-freeze-duration-and-violation-threshold-interact-on-welfare]] — Longer freeze durations improve welfare 17% and interact with violation thresholds (low confidence)
+- [[claim-reputation-decay-rate-improves-welfare]] — Full reputation persistence + zero stake produces best welfare and lowest toxicity (low confidence)
+- [[claim-full-governance-reduces-welfare-in-concordia]] — Full governance stack reduces Concordia welfare 18% with zero toxicity benefit (medium confidence)
 
 ## Governance Mechanisms
 

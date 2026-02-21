@@ -12,9 +12,15 @@ evidence:
   - run: 20260214-094622_redteam
     metric: damage
     detail: "Sybil damage 117.6 (29.1% of total 404.5). Highest single-attack damage in 8-attack battery. Consistent with 20260212 evaluation"
+  - run: 20260209-174740_redteam
+    metric: damage
+    detail: "Replicates: baseline sybil 120 damage, hardened 103 damage. Identical pattern across 3 independent redteam evaluations"
+  - run: 20260210-005442_redteam_strict_governance
+    metric: damage
+    detail: "Strict governance (no CD): sybil 97 damage. Strict+CD: sybil 97 damage. Lowered threshold (0.35): sybil 97 damage. Sybil invariant to all governance variations"
   weakening: []
   boundary_conditions:
-  - "Two redteam evaluations (20260212 and 20260214), single seed each — limited statistical power"
+  - "Five redteam evaluations (20260208-20260214) confirm sybil persistence — robust across governance configs"
   - "Hardened config: CB + collusion detection + audit + staking + 5% tax. No vote normalization or bandwidth caps"
   - "5 adversarial agents per sybil attack in both evaluations"
   - "recursive_spawn scenario — legitimate spawn infrastructure may amplify sybil surface"

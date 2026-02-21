@@ -24,6 +24,9 @@ evidence:
   - run: 20260213-204503_agent_lab_research_safety_study
     metric: welfare
     detail: "Tax 0% vs 10%: welfare 112.99→103.81, d=0.798, p=0.000654, Holm-significant. N=10 seeds per config, 160 total runs, 4x2x2 factorial. CB and CD null"
+  - run: 20260210-223119_kernel_market_v2
+    metric: welfare
+    detail: "Tax 0% vs 15%: welfare 14.06→7.99, d=1.19, p=0.000566, Bonferroni-significant. 80 runs, 10 seeds per config, kernel market v2 scenario. 1/42 tests survives correction"
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -70,7 +73,7 @@ graph-group: claim
 
 ## Evidence summary
 
-Six independent sweeps confirm the finding:
+Seven independent sweeps confirm the finding:
 
 | Sweep | Runs | Seeds | Tax levels | Agents | d | p (Bonferroni) |
 |-------|------|-------|------------|--------|---|----------------|

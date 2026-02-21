@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS \u2014 synthesis pipeline queue",
-  "next_claim_start": 46,
+  "next_claim_start": 50,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
@@ -353,209 +353,380 @@
     {
       "id": "extract-20260208-214018_baseline_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-214018_baseline_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single baseline seed \u2014 covered by baseline governance sweeps"
     },
     {
       "id": "extract-20260208-214230_redteam_baseline",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-214230_redteam_baseline/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Earliest redteam baseline \u2014 identical results to 20260210-002525 (455.7 damage, grade F)"
     },
     {
       "id": "extract-20260208-214307_adversarial_redteam_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-214307_adversarial_redteam_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single adversarial redteam seed \u2014 covered by later redteam evaluations"
     },
     {
       "id": "extract-20260208-214455_sweep_thresholds",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-214455_sweep_thresholds/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Threshold sweep: 54 runs, 1 seed. Observational only \u2014 no formal significance testing. Effects <15%"
     },
     {
       "id": "extract-20260208-214603_adversarial_redteam_optimized_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-214603_adversarial_redteam_optimized_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single optimized redteam seed \u2014 covered by later evaluations"
     },
     {
       "id": "extract-20260208-215009_sweep_freeze_duration",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-215009_sweep_freeze_duration/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-freeze-duration-and-violation-threshold-interact-on-welfare"
+      ],
+      "enrichments_applied": [
+        "claim-cb-null-may-reflect-design-limitation"
+      ]
     },
     {
       "id": "extract-20260208-215712_adversarial_redteam_v2_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-215712_adversarial_redteam_v2_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single redteam v2 seed \u2014 covered by 20260212/20260214 redteams"
     },
     {
       "id": "extract-20260208-215902_sweep_reputation_decay",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-215902_sweep_reputation_decay/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-reputation-decay-rate-improves-welfare"
+      ],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260208-220218_adversarial_redteam_v3_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260208-220218_adversarial_redteam_v3_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single redteam v3 seed \u2014 covered by later evaluations"
     },
     {
       "id": "extract-20260209-174740_redteam",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260209-174740_redteam/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-sybil-attacks-resist-full-governance-stack"
+      ]
     },
     {
       "id": "extract-20260210-002013_baseline_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-002013_baseline_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single baseline seed \u2014 covered by governance sweeps"
     },
     {
       "id": "extract-20260210-002525_redteam_baseline",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-002525_redteam_baseline/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Baseline redteam replicate \u2014 identical to 20260208 baseline (455.7 damage)"
     },
     {
       "id": "extract-20260210-002820_strict_governance_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-002820_strict_governance_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single strict governance seed \u2014 covered by strict governance redteams"
     },
     {
       "id": "extract-20260210-003409_strict_governance_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-003409_strict_governance_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single strict governance seed \u2014 covered by strict governance redteams"
     },
     {
       "id": "extract-20260210-004916_baseline_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-004916_baseline_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single baseline seed \u2014 covered by governance sweeps"
     },
     {
       "id": "extract-20260210-005255_strict_governance_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-005255_strict_governance_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single strict governance seed"
     },
     {
       "id": "extract-20260210-005442_redteam_strict_governance",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-005442_redteam_strict_governance/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-collusion-detection-is-binding-constraint-on-robustness",
+        "claim-sybil-attacks-resist-full-governance-stack"
+      ]
     },
     {
       "id": "extract-20260210-005755_redteam_strict_governance",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-005755_redteam_strict_governance/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-collusion-detection-is-binding-constraint-on-robustness"
+      ]
     },
     {
       "id": "extract-20260210-005755_strict_governance_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-005755_strict_governance_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single strict governance seed"
     },
     {
       "id": "extract-20260210-005952_redteam_strict_governance",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-005952_redteam_strict_governance/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-collusion-detection-is-binding-constraint-on-robustness"
+      ]
     },
     {
       "id": "extract-20260210-005952_strict_governance_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-005952_strict_governance_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single strict governance seed"
     },
     {
       "id": "extract-20260210-211305_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-211305_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Tax x CB sweep, 2 seeds. Observational \u2014 covered by larger sweeps"
     },
     {
       "id": "extract-20260210-212120_rlm_collusion_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-212120_rlm_collusion_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "2 seeds, no summary.json. Extreme welfare variance observed but no formal analysis"
     },
     {
       "id": "extract-20260210-213833_collusion_governance",
@@ -580,29 +751,55 @@
     {
       "id": "extract-20260210-220048_kernel_governance",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-220048_kernel_governance/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-cb-null-may-reflect-design-limitation"
+      ]
     },
     {
       "id": "extract-20260210-222725_kernel_market_baseline_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-222725_kernel_market_baseline_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single kernel market seed \u2014 covered by kernel_market_v2 sweep"
     },
     {
       "id": "extract-20260210-223119_kernel_market_v2",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-223119_kernel_market_v2/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-tax-welfare-tradeoff"
+      ]
     },
     {
       "id": "extract-20260210-224358_kernel_market_sweep",
@@ -625,128 +822,236 @@
     {
       "id": "extract-20260210-235816_rlm_governance_lag_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-235816_rlm_governance_lag_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single RLM governance lag seed \u2014 observational"
     },
     {
       "id": "extract-20260210-235847_kernel_market_baseline_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-235847_kernel_market_baseline_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single kernel market seed \u2014 covered by sweep"
     },
     {
       "id": "extract-20260211-002843_ldt_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-002843_ldt_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-ldt-agents-provide-welfare-stability-at-intermediate-composition"
+      ]
     },
     {
       "id": "extract-20260211-003414_ldt_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-003414_ldt_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-ldt-agents-provide-welfare-stability-at-intermediate-composition"
+      ]
     },
     {
       "id": "extract-20260211-003727_reproduce_2602_00035",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-003727_reproduce_2602_00035/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Paper reproduction attempt \u2014 no summary.json, observational"
     },
     {
       "id": "extract-20260211-004007_ldt_cooperation_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-004007_ldt_cooperation_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single LDT cooperation seed \u2014 covered by composition studies"
     },
     {
       "id": "extract-20260211-004649_reproduce_2602_00035",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-004649_reproduce_2602_00035/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Paper reproduction attempt \u2014 observational"
     },
     {
       "id": "extract-20260211-011020_ldt_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-011020_ldt_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-ldt-agents-provide-welfare-stability-at-intermediate-composition"
+      ]
     },
     {
       "id": "extract-20260211-011507_concordia_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-011507_concordia_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-full-governance-reduces-welfare-in-concordia"
+      ]
     },
     {
       "id": "extract-20260211-012350_concordia_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-012350_concordia_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-full-governance-reduces-welfare-in-concordia"
+      ],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260211-215617_ldt_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-215617_ldt_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-ldt-agents-provide-welfare-stability-at-intermediate-composition"
+      ],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260211-222902_reproduce_2602_00035",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-222902_reproduce_2602_00035/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Paper reproduction attempt \u2014 observational"
     },
     {
       "id": "extract-20260211-223213_kernel_market_v3_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-223213_kernel_market_v3_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single kernel market v3 seed \u2014 observational"
     },
     {
       "id": "extract-20260211-223640_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-223640_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Tax x CB sweep, 2 seeds. Replicates 20260210 sweep"
     },
     {
       "id": "extract-20260211-225057_pi_bridge_sweep",
@@ -770,29 +1075,47 @@
     {
       "id": "extract-20260211-232940_gastown_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-232940_gastown_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single-seed GasTown \u2014 observational"
     },
     {
       "id": "extract-20260211-233528_pi_claude_live",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-233528_pi_claude_live/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Pi-Claude live session \u2014 already pre-extracted (evidence in rlhf-persona-invariant)"
     },
     {
       "id": "extract-20260211-235047_pi_claude_live",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260211-235047_pi_claude_live/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Pi-Claude live session \u2014 observational, covered by pi_bridge studies"
     },
     {
       "id": "extract-20260212-001857_pi_bridge_claude_study",
@@ -816,38 +1139,62 @@
     {
       "id": "extract-20260212-012511_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260212-012511_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Tax x CB sweep, 2 seeds. Duplicate of 20260211-223640"
     },
     {
       "id": "extract-20260212-015027_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260212-015027_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Tax x CB sweep, 5 seeds. CB welfare effect observed but covered by claim-circuit-breakers-dominate"
     },
     {
       "id": "extract-20260212-225641_ldt_cooperation_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260212-225641_ldt_cooperation_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single LDT cooperation seed \u2014 covered by composition studies"
     },
     {
       "id": "extract-20260212-230038_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260212-230038_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Acausality depth sweep, 3 seeds. Null \u2014 covered by acausality claim"
     },
     {
       "id": "extract-20260212-231123_redteam",
@@ -1044,20 +1391,32 @@
     {
       "id": "extract-20260213-103914_gastown_composition_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-103914_gastown_composition_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single-seed GasTown \u2014 observational"
     },
     {
       "id": "extract-20260213-120237_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-120237_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Tax x CB sweep, 5 agents. Population size variant \u2014 observational"
     },
     {
       "id": "extract-20260213-123944_moltbook_captcha_study",
@@ -1082,20 +1441,35 @@
     {
       "id": "extract-20260213-143120_delegation_games_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-143120_delegation_games_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Single delegation games seed \u2014 covered by delegation study"
     },
     {
       "id": "extract-20260213-143607_delegation_games_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-143607_delegation_games_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "3 seeds per cell, underpowered. Tax-welfare trend replicates but no Bonferroni survivors with n=3"
     },
     {
       "id": "extract-20260213-143751_delegation_games_study",
@@ -1199,11 +1573,20 @@
     {
       "id": "extract-self_optimizer_seed42",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/self_optimizer_seed42/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Methodological demo (hard vs soft metrics). Single seed, incomplete data. No claims"
     }
   ],
   "maintenance_conditions": {

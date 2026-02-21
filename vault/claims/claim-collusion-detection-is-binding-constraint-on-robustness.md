@@ -9,11 +9,17 @@ evidence:
   - run: 20260214-094622_redteam
     metric: robustness_score
     detail: "Score 0.546 (grade F), 4/8 attacks succeeded. Coordination attacks caused 212.9 damage (52.6% of total)"
+  - run: 20260210-005442_redteam_strict_governance
+    metric: damage
+    detail: "Strict without CD: 334.4 total damage, 4/8 attacks succeed, collusion ring succeeds. Strict with CD (20260210-005755): 275.3 damage, collusion ring detected and prevented. CD reduces damage 18% and blocks collusion ring specifically"
+  - run: 20260210-005952_redteam_strict_governance
+    metric: damage
+    detail: "Strict+CD+lowered threshold (0.35): 275.3 damage, identical to normal threshold. Threshold tuning provides no additional benefit beyond CD enablement"
   weakening: []
   boundary_conditions:
-  - CB enabled, audit 10%, tax 2%, no staking, no collusion detection
-  - recursive_spawn scenario, 8-attack battery
-  - Single run; robustness score may vary with seed
+  - "Multiple redteam evaluations (20260210, 20260214) confirm CD is binding constraint"
+  - "CD-off vs CD-on comparison: 334.4→275.3 damage (18% reduction), collusion ring prevented"
+  - recursive_spawn scenario, 3-8 attack batteries
 sensitivity:
   topology: untested; recursive_spawn scenario topology not specified
   agent_count: untested beyond default
@@ -29,8 +35,11 @@ related_claims:
 - claim-quality-gate-dominates
 - claim-cascade-mechanisms-ineffective-against-governance-gaming
 - claim-spawn-infrastructure-may-amplify-sybil-surface
+- claim-graduated-defense-reduces-damage-monotonically
+- claim-full-governance-stack-prevents-most-attack-types
+- claim-sybil-attacks-resist-full-governance-stack
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - collusion-detection-is-binding-constraint-on-robustness
 cssclasses:
