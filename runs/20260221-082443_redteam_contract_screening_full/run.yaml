@@ -1,0 +1,41 @@
+run_id: 20260221-082443_redteam_contract_screening_full
+slug: redteam_contract_screening_full
+created_utc: '2026-02-21T08:24:43+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: redteam
+  scenario_ref: contract_screening
+  seeds:
+  - 0
+  governance_config:
+    staking: true
+    audit: true
+    transaction_tax: 0.02
+    reputation_decay: 0.95
+    bandwidth_cap: 10
+    circuit_breaker: true
+    collusion_detection: true
+results:
+  status: completed
+  attacks_tested: 8
+  attacks_successful: 4
+  attacks_prevented: 4
+  overall_evasion_rate: 0.268
+  total_damage_allowed: 299.79
+  robustness_score: 0.607
+  grade: D
+artifacts:
+  summary: report.json
+links:
+  parent_runs:
+  - 20260221-081106_redteam_contract_screening_no_collusion
+  child_runs: []
+  claims: []
+tags:
+- redteam
+- contract-screening
+- adversarial
+- full-governance
