@@ -1,0 +1,11 @@
+{
+  "session_id": "20260221-084105",
+  "end_time": "2026-02-21T13:41:05.984618Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-acausality-depth-does-not-affect-cooperation-outcomes.md",
+    "vault/claims/claim-full-governance-stack-prevents-most-attack-types.md",
+    "vault/claims/claim-rlhf-persona-invariant.md"
+  ]
+}
