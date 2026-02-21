@@ -1,12 +1,12 @@
-generated_utc: '2026-02-21T04:12:17.489021+00:00'
-total_runs: 111
+generated_utc: '2026-02-21T04:36:08.827087+00:00'
+total_runs: 112
 by_type:
   calibration: 2
   redteam: 9
   single: 53
   study: 23
   sweep: 23
-  unknown: 1
+  unknown: 2
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1085,6 +1085,12 @@ runs:
   date: unknown
   status: completed
 - id: contract_screening_seed42
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: contract_screening_sweep
   type: unknown
   tags:
   - unmigrated
