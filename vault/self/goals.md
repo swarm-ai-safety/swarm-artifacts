@@ -7,7 +7,8 @@ type: moc
 
 ## Active Threads
 
-- **40 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology domains
+- **39 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology domains
+- **Confidence distribution:** 7 high, 14 medium, 18 low (post-validation calibration)
 - **3 emergent meta-patterns** needing synthesis into higher-order claims:
   1. Safe operating envelope universality (tax 0-5%, tau 0.50-0.60, write cap >=12)
   2. Governance interaction universality (3 independent super-additive compounding findings)
@@ -18,7 +19,8 @@ type: moc
 
 ## Pending Processing
 
-- Run `/validate` on all 40 claims — provenance and schema compliance not yet checked
+- **Gate 2 statistical rigor** — 12 claims still need effect sizes, correction methods, or formal tests computed from raw run data. Priority: collusion-penalty-destabilizes (add correction method), staking-backfires (add Cohen's d), quality-gate-dominates (add d, p, correction)
+- **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
 - Run `/update` on remaining claims that received new incoming links but weren't in the backward pass (e.g., claim-collusion-penalty-destabilizes, claim-collusion-wealth-destruction)
 - Synthesize the 3 meta-patterns into higher-order claims or topic maps
 - Update sweep notes (transaction-tax-rate, collusion-penalty-multiplier) with new claim references
@@ -42,6 +44,15 @@ type: moc
 - Backward-pass updated 8 hub claims (governance-cost-paradox, quality-gate-dominates, circuit-breakers-dominate, tax-welfare-tradeoff, tax-phase-transition, smarter-agents-earn-less, staking-backfires, tax-dominates-cb-kernel)
 - Cleaned 62 spurious evidence entries from 3 claims (lifecycle audit artifacts)
 - Cross-linked 2 orphan-risk claims (memory-promotion-gate, rlhf-persona-invariant)
+
+## Completed (2026-02-20 session, validation pass)
+
+- Ran `/validate` on all 39 claims — 2 full passes
+- **Gate 6 fixed:** Added proposition-style H1 headings to 10 claims (0 failures remaining)
+- **Gate 3 fixed:** Aligned cssclasses with frontmatter confidence for 2 claims; downgraded 5 claims high→medium and 3 claims medium→low to match replication/correction criteria
+- **Gate 2 partially fixed:** Consolidated 69 bulk lifecycle-audit evidence entries into representative summaries across 3 hub claims (governance-cost-paradox, tax-dominates-cb-kernel, tax-phase-transition); improved staking-backfires evidence detail
+- **Schema fix:** Quoted YAML boundary_conditions in claim-tax-welfare-direction-is-scenario-dependent (dict→string)
+- Validation improved from 10/39 pass (25.6%) to 24/39 pass (61.5%) → then 31/39 after confidence downgrades (projected)
 
 ---
 
