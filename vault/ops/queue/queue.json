@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "description": "SWARM Research OS — synthesis pipeline queue",
+  "description": "SWARM Research OS \u2014 synthesis pipeline queue",
   "next_claim_start": 40,
   "tasks": [
     {
@@ -12,10 +12,20 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 13,
-      "claims_created": ["claim-opportunistic-payoff-variance-increases-under-low-tax"],
-      "enrichments_applied": ["claim-tax-hurts-honest-more-than-opportunistic", "claim-tax-phase-transition"]
+      "claims_created": [
+        "claim-opportunistic-payoff-variance-increases-under-low-tax"
+      ],
+      "enrichments_applied": [
+        "claim-tax-hurts-honest-more-than-opportunistic",
+        "claim-tax-phase-transition"
+      ]
     },
     {
       "id": "extract-20260213-202050_baseline_governance_v2",
@@ -26,10 +36,24 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 16,
-      "claims_created": ["claim-tax-hurts-honest-more-than-opportunistic", "claim-welfare-plateaus-above-12pct-tax", "claim-deceptive-payoff-weakly-declines-with-tax", "claim-tax-cb-interact-on-quality-gap", "claim-optimal-tax-range-0-to-5pct", "claim-cb-null-may-reflect-design-limitation"],
-      "enrichments_applied": ["claim-high-tax-increases-toxicity"]
+      "claims_created": [
+        "claim-tax-hurts-honest-more-than-opportunistic",
+        "claim-welfare-plateaus-above-12pct-tax",
+        "claim-deceptive-payoff-weakly-declines-with-tax",
+        "claim-tax-cb-interact-on-quality-gap",
+        "claim-optimal-tax-range-0-to-5pct",
+        "claim-cb-null-may-reflect-design-limitation"
+      ],
+      "enrichments_applied": [
+        "claim-high-tax-increases-toxicity"
+      ]
     },
     {
       "id": "extract-20260213-221500_collusion_tax_effect",
@@ -40,10 +64,25 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 21,
-      "claims_created": ["claim-tax-disproportionately-punishes-rlm-agents", "claim-high-tax-increases-toxicity", "claim-collusion-penalty-has-no-economic-effect", "claim-tax-and-penalty-effects-are-orthogonal", "claim-tax-penalty-interaction-on-toxicity-uncharacterized", "claim-welfare-non-normality-at-extreme-tax"],
-      "enrichments_applied": ["claim-tax-welfare-tradeoff", "claim-tax-phase-transition"]
+      "claims_created": [
+        "claim-tax-disproportionately-punishes-rlm-agents",
+        "claim-high-tax-increases-toxicity",
+        "claim-collusion-penalty-has-no-economic-effect",
+        "claim-tax-and-penalty-effects-are-orthogonal",
+        "claim-tax-penalty-interaction-on-toxicity-uncharacterized",
+        "claim-welfare-non-normality-at-extreme-tax"
+      ],
+      "enrichments_applied": [
+        "claim-tax-welfare-tradeoff",
+        "claim-tax-phase-transition"
+      ]
     },
     {
       "id": "extract-20260213-231532_phylogeny_demo_seed7",
@@ -54,9 +93,16 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 26,
-      "claims_created": ["claim-step-count-triggers-rejection-emergence"],
+      "claims_created": [
+        "claim-step-count-triggers-rejection-emergence"
+      ],
       "enrichments_applied": []
     },
     {
@@ -68,7 +114,12 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 27,
       "claims_created": [],
       "enrichments_applied": []
@@ -82,9 +133,19 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 28,
-      "claims_created": ["claim-tau-065-triggers-acceptance-phase-transition", "claim-write-cap-below-12-destroys-welfare", "claim-optimal-tau-range-050-to-060", "claim-write-cap-amplifies-tau-rejection"],
+      "claims_created": [
+        "claim-tau-065-triggers-acceptance-phase-transition",
+        "claim-write-cap-below-12-destroys-welfare",
+        "claim-optimal-tau-range-050-to-060",
+        "claim-write-cap-amplifies-tau-rejection"
+      ],
       "enrichments_applied": []
     },
     {
@@ -96,7 +157,12 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 30,
       "claims_created": [],
       "enrichments_applied": []
@@ -110,9 +176,21 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 32,
-      "claims_created": ["claim-collusion-detection-is-binding-constraint-on-robustness", "claim-coordination-attacks-dominate-redteam-damage", "claim-cb-audit-sufficient-for-solo-exploits", "claim-audit-threshold-interaction-enables-dancing", "claim-cascade-mechanisms-ineffective-against-governance-gaming", "claim-spawn-infrastructure-may-amplify-sybil-surface"],
+      "claims_created": [
+        "claim-collusion-detection-is-binding-constraint-on-robustness",
+        "claim-coordination-attacks-dominate-redteam-damage",
+        "claim-cb-audit-sufficient-for-solo-exploits",
+        "claim-audit-threshold-interaction-enables-dancing",
+        "claim-cascade-mechanisms-ineffective-against-governance-gaming",
+        "claim-spawn-infrastructure-may-amplify-sybil-surface"
+      ],
       "enrichments_applied": []
     },
     {
@@ -124,10 +202,20 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 34,
-      "claims_created": ["claim-tax-welfare-direction-is-scenario-dependent", "claim-cb-tax-interaction-non-monotonic-in-kernel-v4"],
-      "enrichments_applied": ["claim-cb-null-may-reflect-design-limitation"]
+      "claims_created": [
+        "claim-tax-welfare-direction-is-scenario-dependent",
+        "claim-cb-tax-interaction-non-monotonic-in-kernel-v4"
+      ],
+      "enrichments_applied": [
+        "claim-cb-null-may-reflect-design-limitation"
+      ]
     },
     {
       "id": "extract-20260217_memori_study",
@@ -138,10 +226,777 @@
       "created": "2026-02-20T00:00:00Z",
       "completed": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
-      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
       "next_claim_start": 36,
-      "claims_created": ["claim-memori-agents-show-no-governance-sensitivity"],
+      "claims_created": [
+        "claim-memori-agents-show-no-governance-sensitivity"
+      ],
       "enrichments_applied": []
+    },
+    {
+      "id": "pre-extracted-20260210-212323_rlm_collusion_sweep_10seeds",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212323_rlm_collusion_sweep_10seeds/",
+      "created": "2026-02-20T00:00:00Z",
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "note": "Pre-pipeline extraction \u2014 evidence already referenced in claims"
+    },
+    {
+      "id": "pre-extracted-20260210-225121_rlm_recursive_collusion_seed42",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-225121_rlm_recursive_collusion_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "note": "Pre-pipeline extraction \u2014 evidence already referenced in claims"
+    },
+    {
+      "id": "pre-extracted-20260210-225330_rlm_memory_as_power_seed42",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-225330_rlm_memory_as_power_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "note": "Pre-pipeline extraction \u2014 evidence already referenced in claims"
+    },
+    {
+      "id": "pre-extracted-20260210-235049_kernel_market_audit_rate",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-235049_kernel_market_audit_rate/",
+      "created": "2026-02-20T00:00:00Z",
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "note": "Pre-pipeline extraction \u2014 evidence already referenced in claims"
+    },
+    {
+      "id": "pre-extracted-20260211-000149_kernel_market_governance_comparison",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260211-000149_kernel_market_governance_comparison/",
+      "created": "2026-02-20T00:00:00Z",
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "note": "Pre-pipeline extraction \u2014 evidence already referenced in claims"
+    },
+    {
+      "id": "pre-extracted-20260211-232952_gastown_composition_study",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260211-232952_gastown_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "note": "Pre-pipeline extraction \u2014 evidence already referenced in claims"
+    },
+    {
+      "id": "pre-extracted-20260211-234038_pi_claude_live",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260211-234038_pi_claude_live/",
+      "created": "2026-02-20T00:00:00Z",
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "note": "Pre-pipeline extraction \u2014 evidence already referenced in claims"
+    },
+    {
+      "id": "extract-20260208-214018_baseline_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-214018_baseline_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-214230_redteam_baseline",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-214230_redteam_baseline/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-214307_adversarial_redteam_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-214307_adversarial_redteam_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-214455_sweep_thresholds",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-214455_sweep_thresholds/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-214603_adversarial_redteam_optimized_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-214603_adversarial_redteam_optimized_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-215009_sweep_freeze_duration",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-215009_sweep_freeze_duration/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-215712_adversarial_redteam_v2_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-215712_adversarial_redteam_v2_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-215902_sweep_reputation_decay",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-215902_sweep_reputation_decay/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260208-220218_adversarial_redteam_v3_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260208-220218_adversarial_redteam_v3_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260209-174740_redteam",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260209-174740_redteam/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-002013_baseline_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-002013_baseline_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-002525_redteam_baseline",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-002525_redteam_baseline/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-002820_strict_governance_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-002820_strict_governance_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-003409_strict_governance_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-003409_strict_governance_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-004916_baseline_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-004916_baseline_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-005255_strict_governance_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-005255_strict_governance_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-005442_redteam_strict_governance",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-005442_redteam_strict_governance/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-005755_redteam_strict_governance",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-005755_redteam_strict_governance/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-005755_strict_governance_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-005755_strict_governance_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-005952_redteam_strict_governance",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-005952_redteam_strict_governance/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-005952_strict_governance_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-005952_strict_governance_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-211305_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-211305_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-212120_rlm_collusion_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-212120_rlm_collusion_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-213833_collusion_governance",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-213833_collusion_governance/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-220048_kernel_governance",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-220048_kernel_governance/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-222725_kernel_market_baseline_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-222725_kernel_market_baseline_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-223119_kernel_market_v2",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-223119_kernel_market_v2/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-224358_kernel_market_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-224358_kernel_market_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-235816_rlm_governance_lag_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-235816_rlm_governance_lag_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260210-235847_kernel_market_baseline_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260210-235847_kernel_market_baseline_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-002843_ldt_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-002843_ldt_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-003414_ldt_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-003414_ldt_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-003727_reproduce_2602_00035",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-003727_reproduce_2602_00035/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-004007_ldt_cooperation_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-004007_ldt_cooperation_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-004649_reproduce_2602_00035",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-004649_reproduce_2602_00035/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-011020_ldt_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-011020_ldt_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-011507_concordia_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-011507_concordia_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-012350_concordia_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-012350_concordia_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-215617_ldt_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-215617_ldt_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-222902_reproduce_2602_00035",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-222902_reproduce_2602_00035/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-223213_kernel_market_v3_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-223213_kernel_market_v3_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-223640_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-223640_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-225057_pi_bridge_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-225057_pi_bridge_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-232940_gastown_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-232940_gastown_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-233528_pi_claude_live",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-233528_pi_claude_live/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260211-235047_pi_claude_live",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260211-235047_pi_claude_live/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260212-001857_pi_bridge_claude_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260212-001857_pi_bridge_claude_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260212-012511_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260212-012511_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260212-015027_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260212-015027_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260212-225641_ldt_cooperation_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260212-225641_ldt_cooperation_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260212-230038_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260212-230038_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260212-231123_redteam",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260212-231123_redteam/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260212-231859_ldt_acausality_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260212-231859_ldt_acausality_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-003757_ldt_large_population_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-003757_ldt_large_population_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-003804_ldt_modeling_adversary_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-003804_ldt_modeling_adversary_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-003812_ldt_low_prior_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-003812_ldt_low_prior_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-003819_ldt_short_horizon_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-003819_ldt_short_horizon_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-005951_gastown_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-005951_gastown_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-013951_ldt_decision_theory_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-013951_ldt_decision_theory_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-101646_ldt_large_pop_dt_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-101646_ldt_large_pop_dt_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-103908_gastown_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-103908_gastown_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-103914_gastown_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-103914_gastown_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-120237_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-120237_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-123944_moltbook_captcha_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-123944_moltbook_captcha_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-143120_delegation_games_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-143120_delegation_games_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-143607_delegation_games_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-143607_delegation_games_sweep/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-143751_delegation_games_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-143751_delegation_games_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-151729_redteam",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-151729_redteam/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-165419_gastown_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-165419_gastown_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-165430_gastown_composition_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-165430_gastown_composition_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-20260213-204503_agent_lab_research_safety_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-204503_agent_lab_research_safety_study/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
+    },
+    {
+      "id": "extract-self_optimizer_seed42",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/self_optimizer_seed42/",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": []
     }
   ],
   "maintenance_conditions": {
@@ -150,6 +1005,11 @@
     "stale_claim_days": 30,
     "orphan_check_frequency": "weekly"
   },
-  "phase_order": ["extract", "cross-link", "update", "validate"],
+  "phase_order": [
+    "extract",
+    "cross-link",
+    "update",
+    "validate"
+  ],
   "created": "2026-02-20T00:00:00Z"
 }
