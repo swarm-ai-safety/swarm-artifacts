@@ -9,11 +9,14 @@ evidence:
   - run: 20260213-221500_collusion_tax_effect
     metric: all
     detail: "Tax accounts for all 17 Bonferroni-sig economic findings; penalty accounts for 3 Bonferroni-sig toxicity findings. Zero cross-domain significance in 60 hypotheses tested"
-  weakening: []
+  weakening:
+  - run: 20260213-221500_collusion_tax_effect
+    metric: toxicity_rate
+    detail: "Formal 2-way ANOVA reveals MASSIVE tax x penalty interaction on toxicity: F=53.3, p<0.0001, partial eta2=0.413. Orthogonality holds for economics but NOT for toxicity. See claim-tax-penalty-interaction-on-toxicity-uncharacterized"
   boundary_conditions:
   - 4x4 factorial design (tax 0-10%, penalty 0.5-2.0x), 10 seeds per cell
   - 12 agents, default topology
-  - Single run; interaction may emerge at extreme parameter combinations
+  - "CRITICAL: Orthogonality is domain-specific — holds for economic outcomes (welfare, payoffs) but NOT for toxicity, where the interaction is super-additive (eta2=0.41)"
 sensitivity:
   topology: untested beyond default
   agent_count: 12 agents; orthogonality may break with different population compositions
@@ -58,7 +61,9 @@ The [[20260213-221500_collusion_tax_effect]] factorial sweep (4 tax rates x 4 pe
 
 Tax rate explains all detected economic variance. Penalty multiplier explains all detected toxicity variance (excluding the smaller tax-toxicity effect). Neither parameter has significant effects in the other's primary domain. Quality gap shows no response to either parameter.
 
-This orthogonality means governance designers can tune economic outcomes (via tax) and safety outcomes (via penalty) independently — but given that both mechanisms produce negative side effects at high levels ([[claim-tax-welfare-tradeoff]], [[claim-collusion-penalty-destabilizes]]), the optimal configuration may be low values of both. The clean partition is grounded by [[claim-collusion-penalty-has-no-economic-effect]], which establishes the penalty's economic null result, and by [[claim-tax-disproportionately-punishes-rlm-agents]], which shows tax's economic effects are agent-type-specific but purely economic. However, [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]] raises a tension: the orthogonality may break at extreme parameter combinations where tax-induced and penalty-induced toxicity compound super-additively.
+**Important boundary condition**: formal 2-way ANOVA ([[claim-tax-penalty-interaction-on-toxicity-uncharacterized]]) reveals that orthogonality **does not hold for toxicity**. The tax x penalty interaction on toxicity is super-additive (F=53.3, p<0.0001, eta2=0.41), meaning combined high tax + high penalty produces toxicity far exceeding the sum of individual effects. The orthogonality claim must be bounded to **economic outcomes only**.
+
+For economics, governance designers can tune welfare (via tax) and detect collusion (via penalty) independently. The clean economic partition is grounded by [[claim-collusion-penalty-has-no-economic-effect]] and [[claim-tax-disproportionately-punishes-rlm-agents]]. But for toxicity, the super-additive interaction means governance designers cannot independently tune tax and penalty — their combined effect on toxicity is worse than the sum of parts. This is a critical governance design constraint: configurations that appear safe on each dimension individually may produce dangerous toxicity in combination.
 
 ## Mechanism
 

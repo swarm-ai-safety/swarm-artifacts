@@ -1,18 +1,18 @@
 ---
-description: Combined effect of high tax + high penalty on toxicity may be super-additive but interaction term is untested
+description: Tax x penalty interaction on toxicity is super-additive (F=53.3, p<0.0001, eta2=0.41) — 41% of toxicity variance
 type: claim
 status: active
-confidence: low
+confidence: medium
 domain: governance
 evidence:
   supporting:
   - run: 20260213-221500_collusion_tax_effect
     metric: toxicity_rate
-    detail: "Raw data shows tax=0.1/penalty=2.0 cells have toxicity >0.35, above marginal predictions. Interaction term not formally tested"
+    detail: "2-way ANOVA: tax x penalty interaction F=53.335, p<0.0001, partial eta2=0.413 (41% of toxicity variance). Tax main F=65.98 p<1e-26, penalty main F=113.47 p<1e-37. N=160, 10 seeds per cell, 4x4 factorial"
   weakening: []
   boundary_conditions:
-  - 4x4 factorial design provides data for interaction analysis but only marginal effects tested
-  - 10 seeds per cell may be underpowered for interaction detection
+  - 4x4 factorial design, 10 seeds per cell, 2-way ANOVA with Type II SS
+  - Interaction explains more variance (eta2=0.41) than either main effect alone
 sensitivity:
   topology: untested
   agent_count: untested
@@ -28,12 +28,12 @@ related_claims:
 - claim-welfare-non-normality-at-extreme-tax
 - claim-governance-cost-paradox
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - tax-penalty-interaction-on-toxicity-uncharacterized
 cssclasses:
 - claim
-- claim-low
+- claim-medium
 tags:
 - governance
 - transaction-tax
@@ -43,21 +43,21 @@ tags:
 graph-group: claim
 ---
 
-# tax and penalty interaction effect on toxicity is uncharacterized
+# tax and penalty interaction on toxicity is super-additive, explaining 41% of variance
 
 ## Evidence summary
 
-The [[20260213-221500_collusion_tax_effect]] sweep varies tax rate and penalty multiplier simultaneously in a 4x4 factorial design (160 runs). The analysis reports only marginal effects — tax on economics, penalty on toxicity — but the raw data (sweep_results.csv) contains the full 16-cell grid needed for interaction analysis.
+Formal 2-way ANOVA on the [[20260213-221500_collusion_tax_effect]] sweep (160 runs, 4x4 factorial, 10 seeds/cell) reveals a massive tax x penalty interaction on toxicity: **F=53.3, p<0.0001, partial eta2=0.413**. The interaction explains more variance than either main effect alone (tax F=66.0, penalty F=113.5), confirming that combined high tax + high penalty produces toxicity far exceeding the sum of individual effects.
 
-Inspection of the extreme cell (tax=0.1, penalty=2.0) shows mean toxicity >0.35, which is higher than either marginal prediction alone would suggest. If the interaction is super-additive, governance configurations combining high tax and high penalty would be worse than either alone — a critical finding for governance design. This directly challenges the clean partition established by [[claim-tax-and-penalty-effects-are-orthogonal]], which found zero cross-domain interaction in the marginal analysis. The marginal effects are well-characterized separately: [[claim-high-tax-increases-toxicity]] establishes the tax channel (d=-0.86 on toxicity) and [[claim-collusion-penalty-destabilizes]] establishes the penalty channel (d=-1.12 on toxicity). The open question is whether their combination exceeds the sum of parts.
+This directly contradicts [[claim-tax-and-penalty-effects-are-orthogonal]], which found zero cross-domain interaction in marginal analysis. The resolution: tax and penalty are orthogonal on **economic** outcomes (welfare, payoffs) but super-additive on **toxicity**. The orthogonality claim should be bounded to economics only.
+
+The individual channels are well-established: [[claim-high-tax-increases-toxicity]] (d=-0.86 on toxicity) and [[claim-collusion-penalty-destabilizes]] (d=-1.12 on toxicity). The formal ANOVA shows their combination is worse than additive — a critical governance design constraint.
 
 ## Open questions
 
-- Run 2-way ANOVA with interaction term on the existing data to test formally — the [[factorial-sweep]] design already contains the necessary data structure
-- If super-additive, is the mechanism resource scarcity (from tax) amplifying behavioral distortion (from penalty)? The [[claim-tax-disproportionately-punishes-rlm-agents]] finding suggests tax-induced resource scarcity is agent-type-specific, so the interaction may also be agent-type-specific
-- Does the interaction extend to welfare, or is it toxicity-specific? [[claim-collusion-penalty-has-no-economic-effect]] suggests no, but extreme parameter combinations may break this
-- What is the minimum sample size needed to detect the interaction at 80% power?
-- The [[claim-welfare-non-normality-at-extreme-tax]] finding at tax=10% coincides with the extreme cell where interaction is suspected — non-normality and interaction may share a common cause (ecosystem regime bifurcation under combined governance stress)
+- Is the mechanism resource scarcity (from tax) amplifying behavioral distortion (from penalty)? [[claim-tax-disproportionately-punishes-rlm-agents]] suggests tax effects are agent-type-specific
+- Does the interaction extend to welfare, or is it toxicity-specific? [[claim-collusion-penalty-has-no-economic-effect]] suggests no
+- Is the interaction monotonic or does it plateau at extreme combinations?
 
 ---
 

@@ -8,7 +8,7 @@ evidence:
   supporting:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
-    detail: "Welfare increases 0%→15% tax (12.18→16.96 without CB). Contradicts 5% threshold from baseline governance sweeps. N=5 seeds, high variance"
+    detail: "Welfare increases 0%→15% tax (12.18→16.96 without CB) but formal t-test 0% vs 15%: d=0.466, p=0.31 — NOT significant. N=5 seeds per cell, severely underpowered"
   - run: 20260217_memori_study
     metric: welfare
     detail: "No tax sensitivity detected (d<0.23, all p>0.60). 12 tests, 0 significant after Bonferroni. N=5 seeds, 2 epochs"
@@ -53,7 +53,7 @@ graph-group: claim
 
 The established tax-welfare tradeoff ([[claim-tax-welfare-tradeoff]], d=1.18-4.80, high confidence) shows welfare declining above 5% tax in baseline governance scenarios. However:
 
-- **Kernel v4 code** ([[20260214-113750_kernel_v4_code_sweep]]): welfare *increases* from 12.18 (0% tax) to 16.96 (15% tax, no CB). The direction reverses entirely.
+- **Kernel v4 code** ([[20260214-113750_kernel_v4_code_sweep]]): welfare appears to increase from 12.18 (0% tax) to 16.96 (15% tax, no CB), but formal t-test yields d=0.466, p=0.31 — **not significant**. The apparent reversal may be noise.
 - **Memori LLM** ([[20260217_memori_study]]): no detectable tax sensitivity (d<0.23, 0/12 tests significant). Tax appears irrelevant.
 
 Both studies are severely underpowered (N=5 seeds), so these results are suggestive, not conclusive. But they establish an important **boundary condition** on the high-confidence tax-welfare claims: the relationship may be scenario-specific rather than universal. The kernel v4 reversal coincides with the non-monotonic CB interaction in [[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]] from the same sweep, suggesting the kernel v4 scenario produces qualitatively different governance dynamics. If the tax-welfare reversal is real, the welfare S-curve of [[claim-welfare-plateaus-above-12pct-tax]] and the safe operating range of [[claim-optimal-tax-range-0-to-5pct]] may apply only to baseline governance scenarios. This would narrow the scope of [[claim-governance-cost-paradox]] — if tax increases welfare in some scenarios, governance is not universally costly. The [[claim-tax-dominates-cb-kernel]] finding from the same kernel v4 data shows tax dominance even where its welfare direction reverses, creating an unusual configuration where the strongest governance lever is also beneficial.

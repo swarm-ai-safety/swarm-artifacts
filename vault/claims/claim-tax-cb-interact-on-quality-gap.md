@@ -1,18 +1,21 @@
 ---
-description: Tax and circuit breaker interact significantly on quality gap (range=0.77) but not on welfare (CB d=0.008)
+description: Tax x CB interaction on quality gap is marginal (ANOVA F=2.065, p=0.055, eta2=0.018) — not significant after formal testing
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
   - run: 20260213-202050_baseline_governance_v2
     metric: quality_gap
-    detail: "Tax x CB interaction: quality_gap effect size range=0.77 across conditions. CB main effect on welfare d=0.008 (null)"
+    detail: "Council review noted quality_gap effect size range=0.77 across conditions. CB main effect on welfare d=0.008 (null)"
   - run: 20260213-202050_baseline_governance_v2
     metric: multiple
-    detail: "Significant tax x CB interactions on 5 metrics: toxicity_rate, quality_gap, honest_payoff, opportunistic_payoff, deceptive_payoff"
-  weakening: []
+    detail: "Council review flagged tax x CB interactions on 5 metrics: toxicity_rate, quality_gap, honest_payoff, opportunistic_payoff, deceptive_payoff"
+  weakening:
+  - run: 20260213-202050_baseline_governance_v2
+    metric: quality_gap
+    detail: "Formal 2-way ANOVA (Type II SS): tax x CB interaction on quality_gap F=2.065, p=0.055, partial eta2=0.018. Marginal — does NOT reach significance at alpha=0.05. N=700, 7 tax x 2 CB x 50 seeds"
   boundary_conditions:
   - 8 agents, small-world topology, 7 tax levels x 2 CB levels, 50 seeds
   - CB tested as binary on/off only; threshold variation not explored
@@ -38,7 +41,7 @@ aliases:
 - tax-cb-interact-on-quality-gap
 cssclasses:
 - claim
-- claim-medium
+- claim-low
 tags:
 - governance
 - transaction-tax
@@ -51,9 +54,11 @@ graph-group: claim
 
 ## Evidence summary
 
-In the [[20260213-202050_baseline_governance_v2]] sweep (700 runs, 7 tax levels x 2 CB levels x 50 seeds), circuit breakers show zero main effect on welfare (d=0.008, p=0.92). However, the council review identifies significant tax x CB interactions on 5 metrics: toxicity_rate, quality_gap, honest_payoff, opportunistic_payoff, and deceptive_payoff. Quality gap shows the strongest interaction (effect size range=0.77 across conditions).
+In the [[20260213-202050_baseline_governance_v2]] sweep (700 runs, 7 tax levels x 2 CB levels x 50 seeds), circuit breakers show zero main effect on welfare (d=0.008, p=0.92). The council review identified potential tax x CB interactions on 5 metrics including quality_gap (effect size range=0.77 across conditions).
 
-This complicates [[claim-tax-dominates-cb-kernel]], which treats tax and CB as having independent effects. While CB has no main effect on welfare, it modulates how tax affects quality and agent-type-specific payoffs. The interaction pattern parallels [[claim-tax-and-penalty-effects-are-orthogonal]] — governance mechanisms appear orthogonal on aggregate welfare but interact on distributional and quality metrics.
+**However**, formal 2-way ANOVA (Type II SS) on quality_gap yields F=2.065, p=0.055, partial eta2=0.018 — **marginal but not significant** at alpha=0.05. The interaction explains only 1.8% of quality_gap variance. This weakens the original council review assessment: the tax x CB interaction on quality gap is suggestive but not statistically confirmed.
+
+This partially validates [[claim-tax-dominates-cb-kernel]]: not only does CB have null main effect on welfare, but the CB interaction with tax on quality gap is also not significant. The pattern weakly parallels [[claim-tax-and-penalty-effects-are-orthogonal]], which found orthogonality on economics (though super-additive interaction on toxicity per [[claim-tax-penalty-interaction-on-toxicity-uncharacterized]]).
 
 ## Mechanism
 

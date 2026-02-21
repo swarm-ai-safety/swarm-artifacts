@@ -8,7 +8,10 @@ evidence:
   supporting:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
-    detail: "CB welfare delta by tax: 0%=-2.02, 5%=+2.42, 10%=-2.15, 15%=-7.65. N=5 seeds per cell, no significance testing"
+    detail: "CB welfare delta by tax: 0%=-2.02, 5%=+2.42, 10%=-2.15, 15%=-7.65. N=5 seeds per cell"
+  - run: 20260214-113750_kernel_v4_code_sweep
+    metric: welfare
+    detail: "Formal 2-way ANOVA (Type II SS): tax x CB interaction F=2.33, p=0.09, partial eta2=0.15. Marginal — does NOT reach significance at alpha=0.05. N=40, 4 tax x 2 CB x 5 seeds. Severely underpowered"
   weakening: []
   boundary_conditions:
   - kernel_market_v4_code scenario, 8 agents, 5 seeds per config, 5 epochs
@@ -48,7 +51,7 @@ graph-group: claim
 
 ## Evidence summary
 
-In the [[20260214-113750_kernel_v4_code_sweep]] (40 runs, 4 tax x 2 CB x 5 seeds), the CB welfare effect reverses direction depending on tax rate:
+In the [[20260214-113750_kernel_v4_code_sweep]] (40 runs, 4 tax x 2 CB x 5 seeds), the CB welfare effect appears to reverse direction depending on tax rate. **Formal 2-way ANOVA** yields F=2.33, p=0.09, partial eta2=0.15 — **marginal but not significant** at alpha=0.05. The large eta2 (15% of variance) with non-significant p reflects severe underpowering (N=5 per cell).
 
 | Tax rate | CB off welfare | CB on welfare | Delta |
 |----------|---------------|---------------|-------|

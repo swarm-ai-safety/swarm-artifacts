@@ -7,8 +7,8 @@ type: moc
 
 ## Active Threads
 
-- **50 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
-- **Confidence distribution:** 7 high, 15 medium, 28 low
+- **50 claims** (48 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
+- **Confidence distribution:** 7 high, 14 medium, 29 low (tax-cb-interact downgraded medium→low; tax-penalty-interaction upgraded low→medium; welfare-non-normality and opportunistic-variance weakened)
 - **Pipeline queue:** 89/89 completed, 0 pending — all 112 runs processed
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
@@ -20,7 +20,7 @@ type: moc
 
 ## Pending Processing
 
-- **Gate 2 statistical rigor** — 20 low-confidence claims lack formal effect sizes (d, p, correction). Most are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
+- **Gate 2 statistical rigor** — Remaining low-confidence claims without formal stats are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
 - **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
 
 ## Replication Priority List
@@ -40,7 +40,7 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 2. **Kernel v4 replication** — expand from 5 to 20-30 seeds per config. Confirms or rejects tax-welfare direction reversal.
 3. **Memori with adversarial agents** — add adversarial/opportunistic LLM agents, extend to 10+ epochs. Tests whether governance null is a design artifact or LLM property.
 4. **Tau_min fine sweep** — 0.60-0.70 in 0.01 increments to locate exact phase transition point.
-5. **2-way ANOVA on collusion_tax_effect** — formal interaction term for tax x penalty on toxicity. Tests claim-tax-penalty-interaction-on-toxicity-uncharacterized.
+5. ~~**2-way ANOVA on collusion_tax_effect**~~ — **COMPLETED**: F=53.3, p<0.0001, eta2=0.41. Super-additive interaction confirmed. Claim upgraded low→medium.
 
 ## Completed (2026-02-20 session)
 
@@ -69,6 +69,19 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 - **Conflict review:** 3 potentially conflicting claim pairs reviewed — all resolved as complementary (different metrics or boundary conditions), no status changes needed.
 - **Replication priority list:** 6 claims identified for targeted replication that would upgrade low→medium with additional seeds.
 - **Proposal 2 (no-formal-test annotations) deferred:** low value — "low" confidence rating already communicates statistical limitations.
+
+## Completed (2026-02-21 session, Gate 2 formal statistics)
+
+- **7 claims updated** with formal statistics computed from existing raw CSV data:
+  1. **claim-tax-penalty-interaction-on-toxicity-uncharacterized** — UPGRADED low→medium. 2-way ANOVA: F=53.3, p<0.0001, eta2=0.41. Super-additive interaction confirmed.
+  2. **claim-welfare-non-normality-at-extreme-tax** — WEAKENED. Shapiro-Wilk at N=100 with Bonferroni: all 7 groups normal. Prior N=40 finding was artifact.
+  3. **claim-tax-cb-interact-on-quality-gap** — DOWNGRADED medium→low. 2-way ANOVA: F=2.065, p=0.055. Marginal, not significant.
+  4. **claim-opportunistic-payoff-variance-increases-under-low-tax** — WEAKENED. Levene's test: F=1.01, p=0.42. NULL.
+  5. **claim-freeze-duration-and-violation-threshold-interact-on-welfare** — NULL interaction confirmed. 2-way ANOVA: F=0.23, p=0.96. Main effects are additive.
+  6. **claim-cb-tax-interaction-non-monotonic-in-kernel-v4** — Marginal. 2-way ANOVA: F=2.33, p=0.09, eta2=0.15. Not significant but large effect size suggests underpowering.
+  7. **claim-tax-welfare-direction-is-scenario-dependent** — Not significant. t-test 0% vs 15%: d=0.466, p=0.31.
+- **claim-tax-and-penalty-effects-are-orthogonal** — Added weakening evidence: orthogonality holds for economics but NOT for toxicity (super-additive interaction eta2=0.41)
+- **_index.md** — Updated 7 claim entries with revised confidence labels and descriptions
 
 ## Completed (2026-02-20 session, validation pass)
 

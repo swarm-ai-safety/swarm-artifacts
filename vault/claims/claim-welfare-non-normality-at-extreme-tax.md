@@ -1,15 +1,18 @@
 ---
-description: Welfare distributions are non-normal at 0% and 10% tax (Shapiro-Wilk p<0.01), suggesting regime bifurcation
+description: Welfare non-normality at N=40 does not replicate at N=100 (all Shapiro-Wilk p>0.05 Bonferroni-corrected) — likely underpowering artifact
 type: claim
-status: active
+status: weakened
 confidence: low
 domain: governance
 evidence:
   supporting:
   - run: 20260213-221500_collusion_tax_effect
     metric: welfare
-    detail: "Shapiro-Wilk: tax=0% W=0.92 p=0.01; tax=10% W=0.87 p=0.0003; tax=5% W=0.97 p=0.35 (normal). Non-normality at extremes suggests bimodal distributions"
-  weakening: []
+    detail: "At N=40 (pooled across penalties): Shapiro-Wilk tax=0% W=0.92 p=0.01; tax=10% W=0.87 p=0.0003; tax=5% W=0.97 p=0.35"
+  weakening:
+  - run: 20260213-202050_baseline_governance_v2
+    metric: welfare
+    detail: "At N=100 per tax level (v2 sweep, 7 tax levels x 50 seeds): Shapiro-Wilk with Bonferroni correction (alpha=0.05/7=0.0071) — ALL 7 groups pass normality. Non-normality at N=40 was likely underpowering artifact"
   boundary_conditions:
   - N=40 per tax level (pooled across penalty levels)
   - Non-normality does not prove bimodality; could be skew or outliers
@@ -42,11 +45,11 @@ tags:
 graph-group: claim
 ---
 
-# welfare distributions are non-normal at extreme tax rates suggesting ecosystem regime bifurcation
+# welfare non-normality at extreme tax does not replicate at higher sample sizes
 
 ## Evidence summary
 
-In the [[20260213-221500_collusion_tax_effect]] sweep, Shapiro-Wilk normality tests on welfare distributions by tax level reveal:
+In the [[20260213-221500_collusion_tax_effect]] sweep at N=40 per tax level (pooled across penalties), Shapiro-Wilk tests suggested non-normality at 0% and 10% tax:
 
 | Tax rate | W statistic | p-value | Normal? |
 |----------|-------------|---------|---------|
@@ -55,9 +58,9 @@ In the [[20260213-221500_collusion_tax_effect]] sweep, Shapiro-Wilk normality te
 | 5% | 0.97 | 0.35 | Yes |
 | 10% | 0.87 | 0.0003 | No |
 
-The most extreme non-normality occurs at 10% tax (W=0.87), suggesting the welfare distribution may be bimodal or heavy-tailed. This pattern is consistent with ecosystem bifurcation — some simulation runs collapse into a low-cooperation regime while others maintain moderate cooperation, producing a mixture distribution rather than a single normal.
+**However**, formal replication at N=100 per tax level in the [[20260213-202050_baseline_governance_v2]] sweep (700 runs, 7 tax levels x 2 CB x 50 seeds) with Bonferroni correction (alpha=0.05/7=0.0071) shows **all 7 tax levels pass normality**. The non-normality finding at N=40 was likely an underpowering artifact — Shapiro-Wilk is known to be sensitive to small sample sizes while simultaneously lacking power to detect true non-normality at N=40.
 
-This has methodological implications: the parametric tests used throughout the collusion_tax_effect analysis assume normality. The [[claim-tax-phase-transition]] findings may understate the true complexity of the welfare response to taxation. If the bimodality reflects heterogeneous agent-type responses, this connects to [[claim-tax-disproportionately-punishes-rlm-agents]] — the two modes may correspond to ecosystems where RLM agents collapse versus those where they survive. The normality violations also affect the effect-size estimates underlying [[claim-tax-welfare-tradeoff]], which reports Cohen's d under an implicit normality assumption.
+This **weakens** the original claim and its methodological implications. The parametric tests (Cohen's d, t-tests) used in [[claim-tax-welfare-tradeoff]] and [[claim-tax-phase-transition]] are not invalidated by normality violations, as the underlying distributions appear normal at adequate sample sizes. The bifurcation hypothesis remains interesting but lacks statistical support.
 
 ## Open questions
 

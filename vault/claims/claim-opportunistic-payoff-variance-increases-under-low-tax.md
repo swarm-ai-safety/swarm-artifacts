@@ -1,7 +1,7 @@
 ---
-description: Opportunistic agent payoff SD doubles at low tax (4.49-5.46) vs high tax (2.53), suggesting variable strategic outcomes
+description: Opportunistic payoff variance pattern at N=20 does not replicate — Levene's test at N=100 is null (F=1.01, p=0.42)
 type: claim
-status: active
+status: weakened
 confidence: low
 domain: agent-behavior
 evidence:
@@ -9,7 +9,10 @@ evidence:
   - run: 20260213-173805_baseline_governance
     metric: opportunistic_payoff
     detail: "SD by tax rate: 0%=4.49, 5%=5.46, 10%=3.94, 15%=2.53. SD ratio 5%/15% = 2.16x. No formal Levene's test, N=20 per cell"
-  weakening: []
+  weakening:
+  - run: 20260213-202050_baseline_governance_v2
+    metric: opportunistic_payoff
+    detail: "Formal Levene's test across 7 tax levels (N=100 per level): F=1.01, p=0.42 — NULL. No significant variance heterogeneity detected at adequate sample size"
   boundary_conditions:
   - 5 agents, small-world topology, 10 seeds per cell
   - No formal heteroscedasticity test in the data
@@ -48,11 +51,11 @@ tags:
 graph-group: claim
 ---
 
-# opportunistic agent payoff variance doubles under low tax relative to high tax
+# opportunistic agent payoff variance pattern does not replicate at adequate sample size
 
 ## Evidence summary
 
-In the [[20260213-173805_baseline_governance]] sweep (80 runs, 5 agents, 10 seeds), opportunistic agent payoff shows markedly higher variance at low tax rates:
+In the [[20260213-173805_baseline_governance]] sweep (80 runs, 5 agents, 10 seeds), opportunistic agent payoff appeared to show higher variance at low tax rates:
 
 | Tax rate | Mean | SD | N |
 |----------|------|----|---|
@@ -61,7 +64,9 @@ In the [[20260213-173805_baseline_governance]] sweep (80 runs, 5 agents, 10 seed
 | 10% | 11.41 | 3.94 | 20 |
 | 15% | 9.88 | 2.53 | 20 |
 
-The SD at 0-5% tax (4.49-5.46) is roughly 2x the SD at 15% tax (2.53). This variance compression under high tax suggests that taxation constrains the strategy space available to opportunistic agents: at low tax, opportunistic agents can exploit variable conditions for high-variance returns; at high tax, the narrow margin after tax squeezes all agents into a similar low-payoff band. The peak variance at 5% aligns with the onset of the [[claim-tax-phase-transition]] — the 5-10% transition band is precisely where the strategy space compresses most sharply. The [[claim-tax-and-penalty-effects-are-orthogonal]] finding confirms this variance compression is a pure tax effect, not a penalty interaction.
+The SD at 0-5% tax (4.49-5.46) appeared roughly 2x the SD at 15% tax (2.53). **However**, formal Levene's test on the [[20260213-202050_baseline_governance_v2]] sweep (N=100 per tax level, 7 levels) yields F=1.01, p=0.42 — **no significant variance heterogeneity**. The apparent doubling at N=20 was likely a small-sample artifact.
+
+The original interpretation suggested that taxation constrains the strategy space available to opportunistic agents: at low tax, opportunistic agents can exploit variable conditions for high-variance returns; at high tax, the narrow margin after tax squeezes all agents into a similar low-payoff band. The peak variance at 5% aligns with the onset of the [[claim-tax-phase-transition]] — the 5-10% transition band is precisely where the strategy space compresses most sharply. The [[claim-tax-and-penalty-effects-are-orthogonal]] finding confirms this variance compression is a pure tax effect, not a penalty interaction.
 
 This connects to [[claim-welfare-non-normality-at-extreme-tax]] — the non-normal welfare distributions at extreme tax rates may partly reflect this agent-type-specific variance heteroscedasticity. The high-variance regime (0-5% tax) coincides exactly with the safe operating range identified by [[claim-optimal-tax-range-0-to-5pct]], meaning the welfare-safe range permits the widest opportunistic strategy space. At the other extreme, the variance compression at 15% (SD=2.53) is consistent with the collapsed regime identified by [[claim-welfare-plateaus-above-12pct-tax]], where all agents converge to a depleted floor.
 

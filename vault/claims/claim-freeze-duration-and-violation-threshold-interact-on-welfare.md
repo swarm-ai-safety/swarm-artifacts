@@ -1,5 +1,5 @@
 ---
-description: Longer freeze durations (5 vs 1 epoch) improve welfare 17% and interact with violation thresholds, replicated across 3 seeds
+description: Freeze duration improves welfare 17% but formal ANOVA shows no interaction with violation threshold (F=0.23, p=0.96)
 type: claim
 status: active
 confidence: low
@@ -12,12 +12,15 @@ evidence:
   - run: 20260208-215009_sweep_freeze_duration
     metric: toxicity_rate
     detail: "Tighter violation threshold (3 vs 8): toxicity 0.227 vs 0.261 (-13%). Replicated across all 3 seeds"
-  weakening: []
+  weakening:
+  - run: 20260208-215009_sweep_freeze_duration
+    metric: welfare
+    detail: "Formal 2-way ANOVA (Type II SS): freeze_duration x violation_threshold interaction F=0.23, p=0.96 — NULL interaction. Main effects are additive, not interactive. N=36, 4 durations x 3 thresholds x 3 seeds"
   boundary_conditions:
   - "Freeze duration: 1, 2, 3, 5 epochs. Violation threshold: 3, 5, 8"
   - "3 seeds — adequate for medium effects but may miss interactions"
   - "8 agents, default topology"
-  - "No formal interaction test (2-way ANOVA missing)"
+  - "Formal ANOVA confirms NO interaction (F=0.23, p=0.96) — main effects only"
 sensitivity:
   topology: untested
   agent_count: untested beyond 8
@@ -44,11 +47,11 @@ tags:
 graph-group: claim
 ---
 
-# longer freeze durations improve welfare 17% and interact with violation thresholds
+# longer freeze durations improve welfare 17% but effects are additive not interactive with violation thresholds
 
 ## Evidence summary
 
-The [[20260208-215009_sweep_freeze_duration]] swept freeze duration (1-5 epochs) x violation threshold (3-8) across 36 runs with 3 seeds per config.
+The [[20260208-215009_sweep_freeze_duration]] swept freeze duration (1-5 epochs) x violation threshold (3-8) across 36 runs with 3 seeds per config. **Formal 2-way ANOVA** (Type II SS) shows no interaction between freeze duration and violation threshold on welfare (F=0.23, p=0.96). The two parameters have independent, additive main effects.
 
 | Duration | Violations=3 | Violations=5 | Violations=8 |
 |----------|-------------|-------------|-------------|
