@@ -97,6 +97,8 @@ related_claims:
 - claim-staking-backfires
 - claim-tax-welfare-tradeoff
 - claim-rlhf-persona-invariant
+- claim-cb-audit-sufficient-for-solo-exploits
+- claim-audit-threshold-interaction-enables-dancing
 created: 2026-02-11
 updated: '2026-02-19'
 aliases:

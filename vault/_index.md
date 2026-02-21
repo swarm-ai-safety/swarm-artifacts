@@ -47,6 +47,12 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-tax-cb-interact-on-quality-gap]] — Tax x circuit breaker interaction on quality gap but not welfare (medium confidence)
 - [[claim-optimal-tax-range-0-to-5pct]] — Welfare flat below 5% tax, defining safe operating range (medium confidence)
 - [[claim-cb-null-may-reflect-design-limitation]] — CB null effect may be artifact of 2-level on/off design (low confidence)
+- [[claim-collusion-detection-is-binding-constraint-on-robustness]] — Disabling collusion detection degrades robustness to F grade (medium confidence)
+- [[claim-coordination-attacks-dominate-redteam-damage]] — Sybil + collusion ring = 52.6% of redteam damage (medium confidence)
+- [[claim-cb-audit-sufficient-for-solo-exploits]] — CB + 10% audit prevents all 4 solo exploit types (medium confidence)
+- [[claim-audit-threshold-interaction-enables-dancing]] — Lenient freeze threshold + low audit allows threshold dancing (low confidence)
+- [[claim-cascade-mechanisms-ineffective-against-governance-gaming]] — Cascade ban/freeze don't stop governance gaming (low confidence)
+- [[claim-spawn-infrastructure-may-amplify-sybil-surface]] — Spawn infrastructure may provide cover for sybil attacks (low confidence)
 
 ## Governance Mechanisms
 

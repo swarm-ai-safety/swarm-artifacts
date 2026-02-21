@@ -24,6 +24,10 @@ superseded_by: []
 related_claims:
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-collusion-detection-is-binding-constraint-on-robustness
+- claim-coordination-attacks-dominate-redteam-damage
+- claim-audit-threshold-interaction-enables-dancing
+- claim-quality-gate-dominates
+- claim-spawn-infrastructure-may-amplify-sybil-surface
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -57,6 +61,10 @@ Governance gaming operates at a different abstraction level than cascade mechani
 - Expert-difficulty adversary; less sophisticated adversaries may not find the mechanism seams
 - Collusion detection and staking were disabled; they might provide cross-cutting detection that closes some seams
 
+## Connections
+
+Cascade ineffectiveness against gaming parallels [[claim-collusion-detection-is-binding-constraint-on-robustness]]: both reveal that governance mechanisms have dimensional blind spots — cascade addresses vertical (parent-child) propagation while gaming exploits horizontal (inter-mechanism) gaps. This positions governance gaming as an intermediate threat between solo exploits (fully prevented by CB + audit per [[claim-cb-audit-sufficient-for-solo-exploits]]) and coordination attacks (dominant per [[claim-coordination-attacks-dominate-redteam-damage]]). The structural similarity with [[claim-audit-threshold-interaction-enables-dancing]] is notable: both expose parameter-specific blind spots where individually compliant behavior accumulates harm. [[claim-quality-gate-dominates]] faces the same limitation — a quality gate addresses transaction-level quality but not inter-mechanism seam exploitation. [[claim-spawn-infrastructure-may-amplify-sybil-surface]] extends the concern: cascade mechanisms govern spawn hierarchies, but neither cascade nor gaming defenses address identity-level attacks that bypass the governance stack entirely.
+
 ## Open questions
 
 - Would enabling collusion detection reduce governance gaming success? Gaming behavior may look like anomalous coordination patterns even from a single agent.
@@ -67,5 +75,7 @@ Governance gaming operates at a different abstraction level than cascade mechani
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[failures-dashboard]]
 
 <!-- topics: governance, governance-gaming, cascade, adversarial -->

@@ -23,6 +23,10 @@ superseded_by: []
 related_claims:
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-cb-null-may-reflect-design-limitation
+- claim-circuit-breakers-dominate
+- claim-cascade-mechanisms-ineffective-against-governance-gaming
+- claim-governance-cost-paradox
+- claim-coordination-attacks-dominate-redteam-damage
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -51,6 +55,10 @@ Prior redteam runs with stricter parameters (freeze threshold 0.35–0.5, audit 
 
 Threshold dancers calibrate their behavior to stay just below the freeze threshold. A lenient threshold (0.7) provides a wide operating band for toxic-but-sub-threshold activity. Low audit probability (0.1) means stochastic detection rarely catches the sustained low-grade exploitation. The combination creates a governance blind spot for persistent, moderate-intensity adversaries.
 
+## Connections
+
+This finding introduces a boundary condition on [[claim-circuit-breakers-dominate]]: CB dominates welfare metrics, but its effectiveness against adaptive adversaries is parameter-dependent. If the freeze threshold is lenient enough for dancing to succeed, the CB dominance result is contingent on adversary sophistication. This also complicates [[claim-governance-cost-paradox]]: if tighter CB parameters are needed to prevent dancing, governance cost changes because more aggressive thresholds may increase false positive rates. The parallel with [[claim-cascade-mechanisms-ineffective-against-governance-gaming]] is structural — both reveal parameter-specific blind spots where mechanisms designed for one threat dimension fail against adversaries who exploit the gap. Together with [[claim-coordination-attacks-dominate-redteam-damage]], these claims map the full threat taxonomy: coordination attacks dominate total damage, threshold dancing extracts moderate damage through parameter exploitation, and governance gaming exploits mechanism seams.
+
 ## Boundary conditions
 
 - Single data point from this specific run; the sensitivity curve is not yet characterized
@@ -68,5 +76,6 @@ Threshold dancers calibrate their behavior to stay just below the freeze thresho
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: governance, circuit-breaker, audit, threshold-dancing, parameter-sensitivity -->

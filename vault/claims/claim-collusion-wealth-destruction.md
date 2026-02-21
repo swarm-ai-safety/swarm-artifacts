@@ -21,6 +21,8 @@ superseded_by: []
 related_claims:
 - claim-collusion-penalty-destabilizes
 - claim-collusion-penalty-has-no-economic-effect
+- claim-collusion-detection-is-binding-constraint-on-robustness
+- claim-coordination-attacks-dominate-redteam-damage
 created: 2026-02-19
 updated: 2026-02-19
 aliases:

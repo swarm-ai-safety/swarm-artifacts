@@ -91,6 +91,9 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-circuit-breakers-dominate
 - claim-memory-promotion-gate
+- claim-collusion-detection-is-binding-constraint-on-robustness
+- claim-cb-audit-sufficient-for-solo-exploits
+- claim-cascade-mechanisms-ineffective-against-governance-gaming
 created: 2026-02-19
 updated: '2026-02-19'
 aliases:

@@ -25,6 +25,10 @@ related_claims:
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-coordination-attacks-dominate-redteam-damage
 - claim-governance-cost-paradox
+- claim-collusion-wealth-destruction
+- claim-quality-gate-dominates
+- claim-cascade-mechanisms-ineffective-against-governance-gaming
+- claim-spawn-infrastructure-may-amplify-sybil-surface
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -48,6 +52,8 @@ In the [[20260214-094622_redteam]] evaluation (8-attack battery, recursive_spawn
 
 This establishes collusion detection as the **binding constraint** on overall robustness. [[claim-circuit-breakers-dominate]] shows CB is effective for toxicity reduction, and [[claim-cb-audit-sufficient-for-solo-exploits]] confirms CB + audit handles solo exploits. But without collusion detection, coordination attacks pass through unchecked, dragging the portfolio robustness score below passing.
 
+The binding nature of collusion detection is grounded by [[claim-collusion-wealth-destruction]], which shows that when detection IS enabled, collusive agents accumulate 137x less wealth — confirming the mechanism's potency and explaining the catastrophic gap when it is absent. Meanwhile, [[claim-quality-gate-dominates]] argues simple governance can match full stacks, but that result was established without adversarial coordination attacks; this claim reveals the quality gate's blind spot. The structural gap parallels [[claim-cascade-mechanisms-ineffective-against-governance-gaming]], where cascade mechanisms fail because they address a different dimension (vertical propagation) than the threat (horizontal coordination). Additionally, [[claim-spawn-infrastructure-may-amplify-sybil-surface]] suggests that spawn-enabled scenarios may further widen the coordination attack surface that collusion detection must cover.
+
 ## Mechanism
 
 Collusion detection identifies coordinated behavior patterns (behavioral similarity, mutual boosting, coordinated transactions) that circuit breakers cannot detect. CB operates on individual agent metrics (toxicity, violation rate), making it blind to multi-agent coordination. Audit samples random transactions and can detect individual fraud but not systematic coordination across agents. The governance gap is structural: no other mechanism in the stack addresses the coordination dimension.
@@ -69,5 +75,7 @@ Collusion detection identifies coordinated behavior patterns (behavioral similar
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[failures-dashboard]]
 
 <!-- topics: governance, collusion-detection, redteam, robustness -->

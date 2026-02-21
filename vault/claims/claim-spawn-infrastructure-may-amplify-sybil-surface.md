@@ -23,6 +23,8 @@ superseded_by: []
 related_claims:
 - claim-coordination-attacks-dominate-redteam-damage
 - claim-collusion-detection-is-binding-constraint-on-robustness
+- claim-cascade-mechanisms-ineffective-against-governance-gaming
+- claim-staking-backfires
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -50,6 +52,10 @@ However, this is currently an **open question**, not a confirmed finding. [[fail
 
 In spawn-enabled scenarios, agents can create child agents as part of normal operation. A sybil attacker could create malicious child agents that appear identical to legitimate spawns — same creation pathway, same initial parameters, same parent-child relationship structure. This would make sybil detection harder because the baseline rate of new identity creation is high, masking adversarial identity multiplication in the noise of legitimate spawning.
 
+## Connections
+
+This claim extends [[claim-coordination-attacks-dominate-redteam-damage]] by hypothesizing a scenario-specific amplifier for the sybil component of coordination damage. It also extends [[claim-collusion-detection-is-binding-constraint-on-robustness]]: if spawn infrastructure amplifies the sybil surface, collusion detection becomes even more critical in spawn-enabled scenarios. [[claim-cascade-mechanisms-ineffective-against-governance-gaming]] reveals that cascade mechanisms govern spawn hierarchies (parent-child propagation) but not identity verification — the same gap this claim identifies. A potential mitigation through proof-of-stake identity binding connects to [[claim-staking-backfires]]: staking-as-identity-cost could address sybil multiplication, but staking backfires against honest agents, creating a design tension between sybil defense and honest-agent welfare.
+
 ## Open questions
 
 - Run the same redteam battery with spawn_enabled = false to measure sybil damage differential
@@ -61,5 +67,7 @@ In spawn-enabled scenarios, agents can create child agents as part of normal ope
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[failures-dashboard]]
 
 <!-- topics: governance, sybil, spawn, open-question -->

@@ -24,6 +24,8 @@ superseded_by: []
 related_claims:
 - claim-circuit-breakers-dominate
 - claim-tax-disproportionately-punishes-rlm-agents
+- claim-cb-audit-sufficient-for-solo-exploits
+- claim-spawn-infrastructure-may-amplify-sybil-surface
 created: 2026-02-11
 updated: 2026-02-18
 aliases:
