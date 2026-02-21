@@ -8,7 +8,7 @@ evidence:
   supporting:
   - run: 20260213-221500_collusion_tax_effect
     metric: toxicity
-    detail: 2.0x penalty toxicity 0.342 vs 0.334 at 0.5x, d=-1.12, p<0.0001, N=160
+    detail: "2.0x penalty toxicity 0.342 vs 0.334 at 0.5x, d=-1.12, p=1.1e-05, Bonferroni-significant across 60 hypotheses. N=160, 10 seeds per config"
   weakening: []
   boundary_conditions:
   - 12 RLM agents at depths 1/3/5, 30 epochs, collusion detection enabled
@@ -26,8 +26,9 @@ related_claims:
 - claim-high-tax-increases-toxicity
 - claim-tax-penalty-interaction-on-toxicity-uncharacterized
 - claim-welfare-non-normality-at-extreme-tax
+- claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect
 created: 2026-02-19
-updated: 2026-02-19
+updated: 2026-02-21
 aliases:
 - collusion-penalty-destabilizes
 - collusion-penalty-multiplier-above-15x-increases

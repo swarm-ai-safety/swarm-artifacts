@@ -2,7 +2,7 @@
 description: LDT agents maintain +42% welfare over honest agents at 40-70% population composition and suppress deceptive payoffs
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: agent-behavior
 evidence:
   supporting:
@@ -40,7 +40,7 @@ aliases:
 - ldt-agents-provide-welfare-stability-at-intermediate-composition
 cssclasses:
 - claim
-- claim-medium
+- claim-low
 tags:
 - agent-behavior
 - ldt

@@ -27,8 +27,10 @@ related_claims:
 - claim-cascade-mechanisms-ineffective-against-governance-gaming
 - claim-governance-cost-paradox
 - claim-coordination-attacks-dominate-redteam-damage
+- claim-freeze-duration-and-violation-threshold-interact-on-welfare
+- claim-full-governance-stack-prevents-most-attack-types
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - audit-threshold-interaction-enables-dancing
 cssclasses:

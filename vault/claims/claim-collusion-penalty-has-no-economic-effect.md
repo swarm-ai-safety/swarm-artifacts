@@ -27,8 +27,9 @@ related_claims:
 - claim-collusion-wealth-destruction
 - claim-tax-penalty-interaction-on-toxicity-uncharacterized
 - claim-high-tax-increases-toxicity
+- claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - collusion-penalty-has-no-economic-effect
 cssclasses:

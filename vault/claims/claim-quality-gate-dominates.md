@@ -3,14 +3,13 @@ description: Deterministic quality gate (reject p<0.5) achieves comparable safet
   to full governance while preserving welfare
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
   - run: 20260211-232952_gastown_composition_study
     metric: welfare, toxicity
-    detail: Refinery regime preserves near-ungoverned welfare with comparable toxicity
-      reduction, N=63
+    detail: "Refinery regime preserves near-ungoverned welfare with comparable toxicity reduction. N=63 (9 configs x 7 agents). No formal effect sizes computed — descriptive comparison only. 3 seeds per config"
   weakening: []
   boundary_conditions:
   - GasTown workspace, 7 agents, 30 epochs
@@ -33,13 +32,13 @@ related_claims:
 - claim-memori-agents-show-no-governance-sensitivity
 - claim-cb-null-may-reflect-design-limitation
 created: 2026-02-19
-updated: '2026-02-20'
+updated: 2026-02-21
 aliases:
 - quality-gate-dominates
 - deterministic-quality-gate-reject-p05-achieves
 cssclasses:
 - claim
-- claim-medium
+- claim-low
 tags:
 - governance
 - quality-gate
@@ -69,6 +68,10 @@ A simple deterministic quality gate — rejecting all interactions with p < 0.5 
 - Added sensitivity note for agent type (algorithmic vs LLM).
 - Added related claims: claim-memori-agents-show-no-governance-sensitivity, claim-cb-null-may-reflect-design-limitation.
 - Confidence remains **high** within the established GasTown boundary. No direct weakening evidence against the quality gate mechanism itself.
+
+**2026-02-21** — Gate 2 statistical rigor fix:
+- Downgraded **medium → low**: no formal effect sizes (Cohen's d), p-values, or correction methods computed. Run data contains only descriptive aggregated means with 3 seeds per config.
+- Upgrade requires: formal pairwise tests between refinery and full-governance regimes with ≥10 seeds per config, Bonferroni-corrected across regime comparisons.
 
 ## Lifecycle audit
 

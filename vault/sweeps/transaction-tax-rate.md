@@ -4,7 +4,7 @@ type: sweep-summary
 status: active
 parameter: governance.transaction_tax_rate
 created: 2026-02-10
-updated: 2026-02-19
+updated: 2026-02-21
 aliases:
 - governance.transaction_tax_rate
 - transaction-tax-rate
@@ -25,13 +25,19 @@ graph-group: sweep
 | 20260213-202050_baseline_governance_v2 | Feb 13 | 50 | 7 | 2 | d=1.18, sig |
 | 20260213-221500_collusion_tax_effect | Feb 13 | 10 | 4 | — | d=6.02 on RLM payoff |
 | 20260212-015027_kernel_market_v4_code | Feb 12 | 5 | 4 | 2 | d=1.14-1.59, CB null |
+| 20260213-143751_delegation_games_study | Feb 13 | 10 | 4 | 2 | d=1.56, sig |
+| 20260210-213833_collusion_governance | Feb 10 | 10 | 4 | 2 | d=1.33, sig |
+| 20260213-204503_agent_lab_research_safety_study | Feb 13 | 10 | 4 | 2 | d=0.80, sig |
+| 20260210-223119_kernel_market_v2 | Feb 10 | 10 | varies | 2 | d=1.19, sig |
 
 ## Convergence
 
-The tax-welfare effect is robust across all runs and domains:
+The tax-welfare effect is robust across 8 independent sweeps and 5 domains:
 - Baseline governance: d=0.95 (v1, N=280) → d=1.18 (v2, N=700), narrowed CIs
-- Kernel market: d=1.14-1.59, step-function at 5-10% boundary
-- Collusion context: d=6.02 on RLM payoff (massive effect)
+- Kernel market: d=1.14-1.59 (v4), d=1.19 (v2), step-function at 5-10% boundary
+- Collusion context: d=6.02 on RLM payoff (massive effect), d=1.33 welfare
+- Delegation games: d=1.56, only Bonferroni-surviving comparison in 8-test battery
+- Agent lab: d=0.80, Holm-significant in 160-run 4x2x2 factorial (CB and CD null)
 
 ## Phase transition surface
 

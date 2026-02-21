@@ -45,8 +45,14 @@ related_claims:
 - claim-tax-welfare-direction-is-scenario-dependent
 - claim-cb-tax-interaction-non-monotonic-in-kernel-v4
 - claim-memori-agents-show-no-governance-sensitivity
+- claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect
+- claim-freeze-duration-and-violation-threshold-interact-on-welfare
+- claim-reputation-decay-rate-improves-welfare
+- claim-full-governance-reduces-welfare-in-concordia
+- claim-graduated-defense-reduces-damage-monotonically
+- claim-full-governance-stack-prevents-most-attack-types
 created: 2026-02-19
-updated: '2026-02-20'
+updated: 2026-02-21
 aliases:
 - governance-cost-paradox
 - full-governance-stacks-impose-larger-welfare

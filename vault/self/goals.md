@@ -7,23 +7,22 @@ type: moc
 
 ## Active Threads
 
-- **39 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology domains
-- **Confidence distribution:** 7 high, 14 medium, 18 low (post-validation calibration)
+- **49 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
+- **Confidence distribution:** 7 high, 15 medium, 27 low (post-Gate 2 calibration)
+- **Pipeline queue:** 89/89 completed, 0 pending — all 112 runs processed
 - **3 emergent meta-patterns** needing synthesis into higher-order claims:
   1. Safe operating envelope universality (tax 0-5%, tau 0.50-0.60, write cap >=12)
   2. Governance interaction universality (3 independent super-additive compounding findings)
   3. Architecture-over-environment (RLHF, RLM depth, LLM training constrain governance response)
 - **8 failure patterns** — cross-linked to redteam claims but not yet formally validated via `/validate`
-- **7 sweep series** — parameter sensitivity findings now extracted; sweep notes may need updating
+- **7 sweep series** — sweep notes updated with new runs and claim references
 - **Scenario-dependence boundary** — kernel v4 and memori studies challenge universality of baseline governance findings; replication with larger N is the top experimental priority
 
 ## Pending Processing
 
-- **Gate 2 statistical rigor** — 12 claims still need effect sizes, correction methods, or formal tests computed from raw run data. Priority: collusion-penalty-destabilizes (add correction method), staking-backfires (add Cohen's d), quality-gate-dominates (add d, p, correction)
+- **Gate 2 statistical rigor** — 20 low-confidence claims lack formal effect sizes (d, p, correction). Most are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
 - **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
-- Run `/update` on remaining claims that received new incoming links but weren't in the backward pass (e.g., claim-collusion-penalty-destabilizes, claim-collusion-wealth-destruction)
 - Synthesize the 3 meta-patterns into higher-order claims or topic maps
-- Update sweep notes (transaction-tax-rate, collusion-penalty-multiplier) with new claim references
 - Run `/rethink` — 0 observations and 0 tensions logged, but governance-dashboard has accumulated 10+ tensions from cross-linking that should be reviewed
 
 ## Experimental Priorities
@@ -44,6 +43,16 @@ type: moc
 - Backward-pass updated 8 hub claims (governance-cost-paradox, quality-gate-dominates, circuit-breakers-dominate, tax-welfare-tradeoff, tax-phase-transition, smarter-agents-earn-less, staking-backfires, tax-dominates-cb-kernel)
 - Cleaned 62 spurious evidence entries from 3 claims (lifecycle audit artifacts)
 - Cross-linked 2 orphan-risk claims (memory-promotion-gate, rlhf-persona-invariant)
+
+## Completed (2026-02-21 session, extraction + maintenance)
+
+- **Pipeline fully cleared:** 89/89 queue tasks completed across 3 extraction batches
+- **10 new claims** created (39→49 total): acausality-depth null, sybil-resistance, full-governance-stack, CAPTCHA null, deceptive-moltbook, graduated-defense, LDT-composition, freeze-duration, reputation-decay, Concordia-welfare
+- **~23 enrichments** to existing claims with new supporting/weakening evidence
+- **Gate 2 fixes:** collusion-penalty-destabilizes (added Bonferroni label), staking-backfires (d=0.41 p=0.37 → downgraded low), quality-gate-dominates (no formal tests → downgraded low), ldt-composition (missing d/p → downgraded low)
+- **8 backward-pass link fixes:** bidirectional related_claims completed for smarter-agents, cb-audit, collusion-penalty-no-effect, collusion-penalty-destabilizes, governance-cost-paradox, circuit-breakers-dominate, cb-null-design-limitation, audit-threshold-dancing
+- **Sweep notes updated:** transaction-tax-rate (+4 runs, 8 total), collusion-penalty-multiplier (+moltbook CAPTCHA null)
+- **Confidence recalibration:** 7 high → 7 high, 17 medium → 15 medium, 25 low → 27 low (3 downgrades: staking-backfires, quality-gate-dominates, ldt-composition)
 
 ## Completed (2026-02-20 session, validation pass)
 

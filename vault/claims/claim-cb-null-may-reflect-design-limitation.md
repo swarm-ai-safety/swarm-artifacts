@@ -45,6 +45,7 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-tax-and-penalty-effects-are-orthogonal
 - claim-optimal-tax-range-0-to-5pct
+- claim-freeze-duration-and-violation-threshold-interact-on-welfare
 created: 2026-02-20
 updated: 2026-02-21
 aliases:

@@ -36,8 +36,11 @@ related_claims:
 - claim-tax-disproportionately-punishes-rlm-agents
 - claim-memori-agents-show-no-governance-sensitivity
 - claim-rlhf-persona-invariant
+- claim-acausality-depth-does-not-affect-cooperation-outcomes
+- claim-ldt-agents-provide-welfare-stability-at-intermediate-composition
+- claim-deceptive-agents-dominate-moltbook-payoff-hierarchy
 created: 2026-02-10
-updated: '2026-02-20'
+updated: 2026-02-21
 aliases:
 - smarter-agents-earn-less
 - deeper-recursive-reasoning-rlm-depth-negatively

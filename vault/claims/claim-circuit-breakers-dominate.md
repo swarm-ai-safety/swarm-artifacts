@@ -54,8 +54,11 @@ related_claims:
 - claim-cb-null-may-reflect-design-limitation
 - claim-cb-tax-interaction-non-monotonic-in-kernel-v4
 - claim-memori-agents-show-no-governance-sensitivity
+- claim-freeze-duration-and-violation-threshold-interact-on-welfare
+- claim-reputation-decay-rate-improves-welfare
+- claim-full-governance-reduces-welfare-in-concordia
 created: 2026-02-11
-updated: '2026-02-21'
+updated: 2026-02-21
 aliases:
 - circuit-breakers-dominate
 - circuit-breakers-alone-outperform-full-governance
