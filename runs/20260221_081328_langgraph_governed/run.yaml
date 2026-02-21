@@ -1,0 +1,40 @@
+run_id: 20260221_081328_langgraph_governed
+slug: langgraph_governed
+created_utc: '2026-02-21T08:13:28+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: langgraph_governed
+  seeds:
+  - 42
+  swept_parameters:
+    max_cycles:
+    - 1
+    - 2
+    - 3
+    - 5
+    max_handoffs:
+    - 5
+    - 10
+    - 15
+    - 30
+    trust_boundaries:
+    - true
+    - false
+  total_runs: 32
+results:
+  status: completed
+artifacts:
+  summary: sweep_results.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- langgraph
+- delegation
+- trust-boundaries
+- handoffs
