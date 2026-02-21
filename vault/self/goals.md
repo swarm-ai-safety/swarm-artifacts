@@ -8,7 +8,7 @@ type: moc
 ## Active Threads
 
 - **50 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
-- **Confidence distribution:** 7 high, 16 medium, 27 low (post-Gate 2 calibration + meta-pattern synthesis)
+- **Confidence distribution:** 7 high, 15 medium, 28 low
 - **Pipeline queue:** 89/89 completed, 0 pending — all 112 runs processed
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
