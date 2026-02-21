@@ -12,6 +12,9 @@ evidence:
   - run: 20260213-202050_baseline_governance_v2
     metric: opportunistic_payoff
     detail: "0% vs 15% tax: opportunistic payoff 12.19→10.58, delta=-1.61, d=0.43, BH-significant only"
+  - run: 20260213-173805_baseline_governance
+    metric: honest_payoff
+    detail: "0% vs 10% tax: d=1.29, Bonferroni-corrected, N=80. Independent v1 replication with 5 agents, 10 seeds"
   weakening: []
   boundary_conditions:
   - 8 agents (4 honest, 2 adversarial, 2 adaptive), small-world topology k=4 p=0.15

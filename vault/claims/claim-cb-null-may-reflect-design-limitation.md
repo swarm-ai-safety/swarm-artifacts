@@ -9,6 +9,9 @@ evidence:
   - run: 20260213-202050_baseline_governance_v2
     metric: welfare
     detail: "CB on vs off: d=0.008, p=0.92, N=700. But significant tax x CB interactions on 5 metrics suggest CB matters conditionally"
+  - run: 20260213-173805_baseline_governance
+    metric: all
+    detail: "CB null across all 6 metrics: welfare d=-0.10 p=0.66, honest_payoff d=-0.27 p=0.24, toxicity d=0.10 p=0.64. N=80, 10 seeds"
   weakening: []
   boundary_conditions:
   - Methodological critique, not empirical finding
@@ -45,7 +48,7 @@ graph-group: claim
 
 ## Evidence summary
 
-In the [[20260213-202050_baseline_governance_v2]] sweep (700 runs), circuit breakers show d=0.008 on welfare (p=0.92) — essentially zero main effect. This is a cornerstone finding supporting [[claim-tax-dominates-cb-kernel]]. However, the experimental design only tests CB as binary on/off with default thresholds, without varying the freeze threshold, freeze duration, or activation sensitivity.
+In both the [[20260213-202050_baseline_governance_v2]] sweep (700 runs, d=0.008, p=0.92) and the [[20260213-173805_baseline_governance]] sweep (80 runs, d=-0.10, p=0.66), circuit breakers show essentially zero main effect on welfare. This is a cornerstone finding supporting [[claim-tax-dominates-cb-kernel]]. However, the experimental design only tests CB as binary on/off with default thresholds, without varying the freeze threshold, freeze duration, or activation sensitivity.
 
 The significant tax x CB interactions on 5 metrics ([[claim-tax-cb-interact-on-quality-gap]]) demonstrate that CB *does* matter conditionally, undermining the interpretation that CB is simply ineffective. The null main effect may mask threshold-dependent effects that a finer-grained sweep would reveal. All three council reviewers flagged "circuit breaker recalibration" as the top experimental priority.
 

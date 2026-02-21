@@ -53,6 +53,7 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-audit-threshold-interaction-enables-dancing]] — Lenient freeze threshold + low audit allows threshold dancing (low confidence)
 - [[claim-cascade-mechanisms-ineffective-against-governance-gaming]] — Cascade ban/freeze don't stop governance gaming (low confidence)
 - [[claim-spawn-infrastructure-may-amplify-sybil-surface]] — Spawn infrastructure may provide cover for sybil attacks (low confidence)
+- [[claim-opportunistic-payoff-variance-increases-under-low-tax]] — Opportunistic agent payoff SD doubles under low vs high tax (low confidence)
 
 ## Governance Mechanisms
 

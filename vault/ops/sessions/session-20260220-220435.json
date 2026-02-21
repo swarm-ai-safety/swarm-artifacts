@@ -1,0 +1,20 @@
+{
+  "session_id": "20260220-220435",
+  "end_time": "2026-02-21T03:04:35.163738Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-audit-threshold-interaction-enables-dancing.md",
+    "vault/claims/claim-cascade-mechanisms-ineffective-against-governance-gaming.md",
+    "vault/claims/claim-cb-audit-sufficient-for-solo-exploits.md",
+    "vault/claims/claim-circuit-breakers-dominate.md",
+    "vault/claims/claim-collusion-detection-is-binding-constraint-on-robustness.md",
+    "vault/claims/claim-collusion-wealth-destruction.md",
+    "vault/claims/claim-coordination-attacks-dominate-redteam-damage.md",
+    "vault/claims/claim-opportunistic-payoff-variance-increases-under-low-tax.md",
+    "vault/claims/claim-quality-gate-dominates.md",
+    "vault/claims/claim-spawn-infrastructure-may-amplify-sybil-surface.md",
+    "vault/claims/claim-staking-backfires.md",
+    "vault/governance-dashboard.md"
+  ]
+}
