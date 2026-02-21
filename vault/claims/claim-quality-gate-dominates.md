@@ -11,80 +11,16 @@ evidence:
     metric: welfare, toxicity
     detail: Refinery regime preserves near-ungoverned welfare with comparable toxicity
       reduction, N=63
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
   weakening: []
   boundary_conditions:
   - GasTown workspace, 7 agents, 30 epochs
   - Zero friction on accepted interactions
+  - Gate may be unnecessary in all-honest LLM populations where there is nothing to filter
 sensitivity:
   topology: Tested on GasTown small-world; gate effectiveness may vary on denser topologies
     where agents have more interaction partners
   agent_count: 7 agents; gate false-rejection rate may matter more at scale
+  agent_type: Tested with algorithmic agents; LLM agents may behave differently near p=0.5 threshold
 supersedes: []
 superseded_by: []
 related_claims:
@@ -94,8 +30,10 @@ related_claims:
 - claim-collusion-detection-is-binding-constraint-on-robustness
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-cascade-mechanisms-ineffective-against-governance-gaming
+- claim-memori-agents-show-no-governance-sensitivity
+- claim-cb-null-may-reflect-design-limitation
 created: 2026-02-19
-updated: '2026-02-19'
+updated: '2026-02-20'
 aliases:
 - quality-gate-dominates
 - deterministic-quality-gate-reject-p05-achieves
@@ -122,33 +60,20 @@ A simple deterministic quality gate — rejecting all interactions with p < 0.5 
 - Is the p = 0.5 threshold optimal, or would a calibrated threshold improve the welfare-safety frontier?
 - Does the quality gate remain effective under adversarial manipulation of the proxy score?
 - How does gate performance interact with proxy miscalibration?
+- Is the gate necessary at all in LLM-only populations where agents show zero governance sensitivity ([[claim-memori-agents-show-no-governance-sensitivity]])?
 
+## Update history
+
+**2026-02-20** — backward-pass update:
+- Added boundary condition: gate may be unnecessary in all-honest LLM populations (per [[claim-memori-agents-show-no-governance-sensitivity]], no adversarial behavior to filter).
+- Added sensitivity note for agent type (algorithmic vs LLM).
+- Added related claims: claim-memori-agents-show-no-governance-sensitivity, claim-cb-null-may-reflect-design-limitation.
+- Confidence remains **high** within the established GasTown boundary. No direct weakening evidence against the quality gate mechanism itself.
 
 ## Lifecycle audit
 
 **2026-02-19** — automated claim-lifecycle audit:
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
 - Upgraded confidence: medium -> high
+- (Note: 22 bulk-added tax-rate evidence entries removed 2026-02-20 — they measured transaction_tax_rate effects, not quality gate performance)
 
 <!-- topics: governance, quality-gate, welfare, refinery -->

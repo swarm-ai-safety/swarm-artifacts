@@ -12,6 +12,9 @@ evidence:
   - run: 20260213-173805_baseline_governance
     metric: all
     detail: "CB null across all 6 metrics: welfare d=-0.10 p=0.66, honest_payoff d=-0.27 p=0.24, toxicity d=0.10 p=0.64. N=80, 10 seeds"
+  - run: 20260217_memori_study
+    metric: all
+    detail: "CB null in LLM memori scenario: largest d=0.55 (quality_gap, p=0.14). 0/12 tests significant. N=30, 5 seeds"
   weakening: []
   boundary_conditions:
   - Methodological critique, not empirical finding

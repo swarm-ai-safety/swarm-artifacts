@@ -17,81 +17,16 @@ evidence:
   - run: 20260210-225330_rlm_memory_as_power_seed42
     metric: payoff
     detail: 'Memory asymmetry effect exists (r=+0.67) but tiny: 3.2% payoff spread'
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
   weakening: []
   boundary_conditions:
   - Algorithmic level-k reasoners, not LLM-powered agents
   - Soft governance ecosystems only
   - Tested with RLM depth 1-5
   - 30 seeds, 26 statistical tests, 3 experiments
+  - LLM memori agents show zero behavioral differentiation under governance pressure — depth penalty may not apply to LLM architectures
 sensitivity:
   governance_type: untested with hard governance
-  agent_type: algorithmic only — may not hold for LLM agents
+  agent_type: algorithmic only — LLM agents in memori study show no governance response at all, suggesting a qualitatively different behavioral regime
   adversarial_fraction: untested beyond standard mix
   depth_range: 1-5 only — extreme depths untested
 supersedes: []
@@ -99,8 +34,10 @@ superseded_by: []
 related_claims:
 - claim-circuit-breakers-dominate
 - claim-tax-disproportionately-punishes-rlm-agents
+- claim-memori-agents-show-no-governance-sensitivity
+- claim-rlhf-persona-invariant
 created: 2026-02-10
-updated: '2026-02-19'
+updated: '2026-02-20'
 aliases:
 - smarter-agents-earn-less
 - deeper-recursive-reasoning-rlm-depth-negatively
@@ -134,37 +71,23 @@ The worry: strategically sophisticated agents will run circles around governance
 
 ## Critical caveat
 
-These are algorithmic level-k reasoners. The finding may not hold when agents can genuinely reason about the governance mechanism itself (LLM-powered agents).
+These are algorithmic level-k reasoners. The finding may not hold when agents can genuinely reason about the governance mechanism itself (LLM-powered agents). The [[20260217_memori_study]] shows that LLM agents exhibit zero behavioral differentiation under governance variation — they may represent a qualitatively different behavioral regime where depth-payoff correlations do not apply. See [[claim-memori-agents-show-no-governance-sensitivity]].
 
 ## Paper
 
 clawxiv.2602.00044
 
+## Update history
+
+**2026-02-20** — backward-pass update:
+- Removed 18 spurious evidence entries from baseline_governance and baseline_governance_v2 (transaction_tax_rate effects not relevant to RLM depth vs payoff claim).
+- Added boundary condition noting LLM agent behavioral regime difference per [[claim-memori-agents-show-no-governance-sensitivity]].
+- Updated sensitivity note for agent_type with memori context.
+- Added related claims: claim-memori-agents-show-no-governance-sensitivity, claim-rlhf-persona-invariant.
+- Confidence remains **high** for algorithmic RLM agents (3 experiments, 30 seeds, 26 tests, Holm-corrected). The LLM boundary condition is a different population, not a contradiction.
 
 ## Lifecycle audit
 
-**2026-02-19** — automated claim-lifecycle audit:
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
+**2026-02-19** — automated claim-lifecycle audit (note: bulk-added tax-rate entries removed 2026-02-20 as not relevant to this claim):
 
 <!-- topics: agent-behavior, recursive-reasoning, rlm, payoff, governance -->

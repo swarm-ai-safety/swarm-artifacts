@@ -28,6 +28,8 @@ related_claims:
 - claim-quality-gate-dominates
 - claim-optimal-tau-range-050-to-060
 - claim-write-cap-amplifies-tau-rejection
+- claim-welfare-plateaus-above-12pct-tax
+- claim-step-count-triggers-rejection-emergence
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -48,7 +50,7 @@ graph-group: claim
 
 Across two calibration runs ([[20260214-014153_tau_k_calibration]] and [[20260214-020518_tau_k_calibration]]), tau_min values of 0.45–0.60 produce 100% acceptance rates. At tau_min=0.65, acceptance drops abruptly to ~64%, with exactly 160 rejections per run across all 5 seeds — suggesting a structural threshold rather than a stochastic effect.
 
-The phase transition produces a toxicity-welfare tradeoff: toxicity drops 21% (0.312→0.245) but welfare drops 15% (360→306). This parallels [[claim-tax-phase-transition]] in the governance domain — both show governance parameters with safe operating ranges below a critical threshold and steep costs above it.
+The phase transition produces a toxicity-welfare tradeoff: toxicity drops 21% (0.312→0.245) but welfare drops 15% (360→306). This parallels [[claim-tax-phase-transition]] in the governance domain and [[claim-welfare-plateaus-above-12pct-tax]] in shape — both show governance parameters with safe operating ranges below a critical threshold and steep costs above it. The tau_min threshold is structurally a quality gate akin to [[claim-quality-gate-dominates]], but calibrated for memory tier promotion rather than interaction filtering; the 0.65 cliff reveals the threshold sensitivity that the quality gate literature does not yet explore.
 
 ## Mechanism
 
@@ -59,10 +61,12 @@ The tau_min parameter sets the minimum quality threshold for memory tier promoti
 - Sweep tau_min from 0.60 to 0.70 in 0.01 increments to locate the exact transition point
 - Is the threshold scenario-specific (memory_tiers) or does it generalize?
 - Does [[claim-write-cap-amplifies-tau-rejection]] compound the damage at tau=0.65?
+- Does the phase transition parallel [[claim-step-count-triggers-rejection-emergence]], where a different simulation parameter (steps per epoch) also triggers abrupt rejection emergence?
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: memory, calibration, phase-transition -->

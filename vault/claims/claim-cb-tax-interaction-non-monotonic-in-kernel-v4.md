@@ -24,6 +24,10 @@ related_claims:
 - claim-tax-cb-interact-on-quality-gap
 - claim-cb-null-may-reflect-design-limitation
 - claim-tax-welfare-direction-is-scenario-dependent
+- claim-governance-cost-paradox
+- claim-optimal-tax-range-0-to-5pct
+- claim-welfare-plateaus-above-12pct-tax
+- claim-write-cap-amplifies-tau-rejection
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -53,7 +57,7 @@ In the [[20260214-113750_kernel_v4_code_sweep]] (40 runs, 4 tax x 2 CB x 5 seeds
 | 10% | 11.25 | 9.10 | -2.15 |
 | 15% | 16.96 | 9.31 | -7.65 |
 
-CB helps at 5% tax but harms at all other rates, with the most severe harm at 15% (-7.65). This extends [[claim-tax-cb-interact-on-quality-gap]] from the baseline governance context to kernel markets, but with a different pattern: the baseline study showed CB interacting on quality_gap but not welfare, while this study shows welfare-level interaction.
+CB helps at 5% tax but harms at all other rates, with the most severe harm at 15% (-7.65). This extends [[claim-tax-cb-interact-on-quality-gap]] from the baseline governance context to kernel markets, but with a different pattern: the baseline study showed CB interacting on quality_gap but not welfare, while this study shows welfare-level interaction. The non-monotonic interaction means [[claim-governance-cost-paradox]] cannot be evaluated from main effects alone — governance cost-benefit depends on the specific parameter combination. The CB benefit at 5% tax coincides with the safe operating range identified in [[claim-optimal-tax-range-0-to-5pct]], suggesting that the tax safe range may also be the region where CB adds value. The severe harm at 15% occurs in what [[claim-welfare-plateaus-above-12pct-tax]] identifies as the collapsed ecosystem regime, where CB removal of agents from an already-depleted system is maximally destructive. The tau x k_max interaction in [[claim-write-cap-amplifies-tau-rejection]] shows the same pattern in the memory domain: governance parameters that are independently manageable become destructive when combined at their boundary conditions.
 
 ## Open questions
 
@@ -65,5 +69,7 @@ CB helps at 5% tax but harms at all other rates, with the most severe harm at 15
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[transaction-tax-rate]]
 
 <!-- topics: governance, circuit-breaker, transaction-tax, interaction, kernel-market -->

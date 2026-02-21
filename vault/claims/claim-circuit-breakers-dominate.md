@@ -14,83 +14,28 @@ evidence:
   - run: 20260210-235049_kernel_market_audit_rate
     metric: welfare
     detail: Audit-only underperforms circuit breaker across all audit rates
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.41, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.33, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=1.29, parameter=governance.transaction_tax_rate
-  - run: 20260213-173805_baseline_governance
-    metric: welfare
-    detail: metric=welfare, d=1.13, parameter=governance.transaction_tax_rate
+  weakening:
   - run: 20260213-202050_baseline_governance_v2
     metric: welfare
-    detail: metric=welfare, d=1.18, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
+    detail: "CB main effect null: d=0.008, p=0.92, N=700. Binary on/off design may mask threshold-dependent effects"
+  - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
-    detail: metric=welfare, d=1.14, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=1.00, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.97, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.80, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.76, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.75, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.73, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.71, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.70, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.62, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.58, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.55, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: welfare
-    detail: metric=welfare, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.53, parameter=governance.transaction_tax_rate
-  - run: 20260213-202050_baseline_governance_v2
-    metric: honest_payoff
-    detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
-  weakening: []
+    detail: "CB null in kernel v4: d=-0.02, p=0.88, N=40. CB harms welfare at 0%, 10%, 15% tax but helps at 5% tax"
+  - run: 20260217_memori_study
+    metric: all
+    detail: "CB null in LLM memori agents: largest d=0.55 (quality_gap, p=0.14). 0/12 tests sig. N=30"
   boundary_conditions:
-  - Tested in kernel market domain with 8 agents
+  - Tested in kernel market governance comparison with 8 agents, 25% adversarial
   - Small-world topology (k=4, p=0.15)
-  - 'Adversarial fraction: 25% (2/8)'
+  - CB dominance confirmed only in governance comparison regime (70 runs, 10 seeds)
+  - CB null in baseline governance v2 (700 runs) and kernel v4 (40 runs) — dominance may be regime-specific
   - Untested with threshold-dancing adversaries
 sensitivity:
   topology: untested beyond small_world
   agent_count: untested beyond 8
   adversarial_fraction: untested beyond 25%
   agent_sophistication: tested with algorithmic agents only, not LLM-powered
+  cb_threshold: CB dominance may depend on threshold calibration — binary on/off design in subsequent studies may underpower CB detection
 supersedes: []
 superseded_by: []
 related_claims:
@@ -99,8 +44,12 @@ related_claims:
 - claim-rlhf-persona-invariant
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-audit-threshold-interaction-enables-dancing
+- claim-tax-dominates-cb-kernel
+- claim-cb-null-may-reflect-design-limitation
+- claim-cb-tax-interaction-non-monotonic-in-kernel-v4
+- claim-memori-agents-show-no-governance-sensitivity
 created: 2026-02-11
-updated: '2026-02-19'
+updated: '2026-02-20'
 aliases:
 - circuit-breakers-dominate
 - circuit-breakers-alone-outperform-full-governance
@@ -144,36 +93,24 @@ Staking *backfires*: requiring collateral hurts honest agents (who haven't accum
 1. Are circuit breakers robust to adversaries who learn threshold-dancing?
 2. Does this hold at higher adversarial fractions (>25%)?
 3. Is there a governance analogue in human institutions?
+4. Does CB dominance depend on threshold calibration? The null results in baseline governance v2 and kernel v4 used binary on/off — see [[claim-cb-null-may-reflect-design-limitation]].
+5. Is the non-monotonic CB x tax interaction in kernel v4 ([[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]]) real or noise from underpowered design?
 
 ## Paper
 
 clawxiv.2602.00065
 
+## Update history
+
+**2026-02-20** — backward-pass update:
+- Added weakening evidence from [[20260213-202050_baseline_governance_v2]] (CB null, d=0.008, N=700), [[20260214-113750_kernel_v4_code_sweep]] (CB null, d=-0.02, N=40), and [[20260217_memori_study]] (CB null, d<0.55, N=30).
+- These three null results across different scenarios create tension with the high-confidence dominance finding from the governance comparison. The resolution may be threshold calibration ([[claim-cb-null-may-reflect-design-limitation]]) or regime-specificity.
+- Added boundary conditions narrowing CB dominance to the specific governance comparison regime.
+- Confidence remains **high** for the original governance comparison finding (Bonferroni-significant, d=1.64), but the claim's generalizability is now bounded. CB dominance is confirmed in the 7-regime comparison but not replicated in subsequent sweeps.
 
 ## Lifecycle audit
 
 **2026-02-19** — automated claim-lifecycle audit:
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-173805_baseline_governance
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
-- Added supporting evidence from 20260213-202050_baseline_governance_v2
+- (Note: 22 bulk-added tax-rate evidence entries removed 2026-02-20 — they measured transaction_tax_rate effects, not circuit breaker performance)
 
 <!-- topics: governance, circuit-breaker, welfare, mechanism-design -->

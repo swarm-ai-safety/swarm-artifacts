@@ -28,6 +28,8 @@ related_claims:
 - claim-memory-promotion-gate
 - claim-tau-065-triggers-acceptance-phase-transition
 - claim-optimal-tau-range-050-to-060
+- claim-quality-gate-dominates
+- claim-staking-backfires
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -57,7 +59,7 @@ In the [[20260214-020518_tau_k_calibration]] and [[20260214-014153_tau_k_calibra
 | 16 | 355-374 | ~100% | 0 | 0.313 |
 | 20 | 355-374 | ~100% | 0 | 0.313 |
 
-Toxicity is unchanged across all k values — the write cap provides **zero safety benefit** at any level. Below k=12, it only destroys welfare. This is a memory-domain instance of [[claim-governance-cost-paradox]]: governance overhead with no compensating safety improvement.
+Toxicity is unchanged across all k values — the write cap provides **zero safety benefit** at any level. Below k=12, it only destroys welfare. This is a memory-domain instance of [[claim-governance-cost-paradox]]: governance overhead with no compensating safety improvement. The write cap is the anti-[[claim-quality-gate-dominates]] — whereas a quality gate achieves safety at near-zero welfare cost, the write cap achieves zero safety at severe welfare cost. The pattern also parallels [[claim-staking-backfires]], where another governance mechanism penalizes honest agents without deterring adversarial behavior.
 
 ## Mechanism
 
@@ -73,5 +75,6 @@ The write cap limits the number of memory writes per epoch per agent. At low k v
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: memory, calibration, governance-cost -->

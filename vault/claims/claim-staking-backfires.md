@@ -19,6 +19,7 @@ sensitivity:
   topology: untested beyond small_world
   stake_amount: only tested at default (10.0)
   agent_wealth_distribution: uniform starting conditions only
+  scenario: untested beyond kernel market governance comparison
 supersedes: []
 superseded_by: []
 related_claims:
@@ -26,8 +27,11 @@ related_claims:
 - claim-tax-disproportionately-punishes-rlm-agents
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-spawn-infrastructure-may-amplify-sybil-surface
+- claim-write-cap-below-12-destroys-welfare
+- claim-governance-cost-paradox
+- claim-tax-welfare-tradeoff
 created: 2026-02-11
-updated: 2026-02-18
+updated: 2026-02-20
 aliases:
 - staking-backfires
 - staking-requirement-hurts-honest-agents-more
@@ -68,6 +72,14 @@ Confidence is medium because:
 1. Does a very low stake (e.g., 1.0) avoid the backfire while still providing some governance benefit?
 2. Does the effect reverse if agents start with heterogeneous wealth?
 3. Would dynamic staking (adjusting stake to reputation) fix the problem?
+4. Does staking interact with the tax phase transition ([[claim-tax-phase-transition]])? At high tax rates, capital scarcity from taxation may compound the staking barrier.
+
+## Update history
+
+**2026-02-20** — backward-pass update:
+- Added related claims: claim-governance-cost-paradox (staking backfire is a specific instance of the governance cost paradox), claim-tax-welfare-tradeoff (staking and tax both disproportionately harm honest agents).
+- Added sensitivity note for scenario scope.
+- Confidence remains **medium** — still based on a single 7-regime comparison (10 seeds per regime). No new direct evidence for or against the staking mechanism. Priority: stake amount sweep.
 
 ---
 

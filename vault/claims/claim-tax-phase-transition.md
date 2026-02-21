@@ -86,14 +86,20 @@ evidence:
   - run: 20260213-221500_collusion_tax_effect
     metric: toxicity_rate
     detail: metric=toxicity_rate, d=-0.86, parameter=governance.transaction_tax_rate
-  weakening: []
+  weakening:
+  - run: 20260214-113750_kernel_v4_code_sweep
+    metric: welfare
+    detail: "No phase transition detected in kernel v4: welfare monotonically INCREASES 0%→15% tax. S-curve absent. N=5 seeds, underpowered"
   boundary_conditions:
   - Small-world topology k=4 p=0.15, 8 agents, tax range 0-15%
   - No redistribution modeled
+  - Phase transition confirmed in baseline governance and collusion contexts only
+  - Kernel v4 code scenario shows monotonic welfare increase — no S-curve, no transition
 sensitivity:
   topology: Small-world k=4 p=0.15; phase transition point may shift under different
     clustering coefficients
   agent_count: 8 agents; transition sharpness may change with population size
+  scenario: Phase transition absent in kernel v4 code — may be scenario-specific rather than universal
 supersedes: []
 superseded_by: []
 related_claims:
@@ -102,8 +108,10 @@ related_claims:
 - claim-welfare-non-normality-at-extreme-tax
 - claim-tax-disproportionately-punishes-rlm-agents
 - claim-high-tax-increases-toxicity
+- claim-tax-welfare-direction-is-scenario-dependent
+- claim-cb-tax-interaction-non-monotonic-in-kernel-v4
 created: 2026-02-19
-updated: '2026-02-19'
+updated: '2026-02-20'
 aliases:
 - tax-phase-transition
 - welfare-decline-under-transaction-tax-is
@@ -133,7 +141,15 @@ The relationship between transaction tax rate and welfare is non-linear, with a 
 - Is the phase transition point topology-dependent (i.e., does it shift with connectivity)?
 - Can the transition be predicted from network properties alone?
 - What happens to toxicity across the phase transition — does it also show non-linear behavior?
+- Why is the phase transition absent in kernel v4 code markets? Is it the market mechanism, agent types, or interaction structure?
 
+## Update history
+
+**2026-02-20** — backward-pass update:
+- Added weakening evidence from [[20260214-113750_kernel_v4_code_sweep]]: no S-curve detected; welfare monotonically increases with tax. This contradicts the 5-10% phase transition found in baseline governance. Underpowered (N=5 seeds).
+- Added boundary condition and sensitivity note for scenario-dependence per [[claim-tax-welfare-direction-is-scenario-dependent]].
+- Added related claims: claim-tax-welfare-direction-is-scenario-dependent, claim-cb-tax-interaction-non-monotonic-in-kernel-v4.
+- Confidence remains **high** for baseline governance scenarios (N=700 and N=160, both Bonferroni-corrected with large effect sizes). The kernel v4 weakening is underpowered and establishes a boundary condition.
 
 ## Lifecycle audit
 

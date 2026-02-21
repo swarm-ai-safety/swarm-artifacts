@@ -23,6 +23,8 @@ related_claims:
 - claim-tau-065-triggers-acceptance-phase-transition
 - claim-write-cap-below-12-destroys-welfare
 - claim-governance-cost-paradox
+- claim-tax-cb-interact-on-quality-gap
+- claim-cb-tax-interaction-non-monotonic-in-kernel-v4
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -50,16 +52,17 @@ In [[20260214-020518_tau_k_calibration]], at tau_min=0.65 (where [[claim-tau-065
 | tau=0.65, k=4 | 247 | -0.316 |
 | tau=0.65, k=6 | 279 | -0.280 |
 
-The tau rejection reduces the pool of accepted interactions; the write cap then further constrains how much welfare those accepted interactions generate. This is a governance mechanism interaction: two independently harmful parameters compound super-additively, extending [[claim-governance-cost-paradox]] to the memory domain.
+The tau rejection reduces the pool of accepted interactions; the write cap then further constrains how much welfare those accepted interactions generate. This is a governance mechanism interaction: two independently harmful parameters compound super-additively, extending [[claim-governance-cost-paradox]] to the memory domain. The super-additive compounding parallels [[claim-tax-cb-interact-on-quality-gap]] in the governance domain and [[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]] in kernel markets — all three demonstrate that governance mechanisms cannot be tuned independently when their operating regions overlap.
 
 ## Open questions
 
 - Does the interaction exist at tau values below 0.65, or only in the rejection regime?
-- Is this a general property of stacked governance mechanisms (paralleling the tax-penalty interaction)?
+- Is this a general property of stacked governance mechanisms? Three interaction findings now exist: tau x k_max (this claim), [[claim-tax-cb-interact-on-quality-gap]] (tax x CB), and [[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]] (CB x tax in kernel v4). Do all governance parameter pairs interact super-additively at their boundary conditions?
 
 ---
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: memory, calibration, interaction -->

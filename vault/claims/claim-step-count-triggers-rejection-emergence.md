@@ -26,6 +26,9 @@ superseded_by: []
 related_claims:
 - claim-tax-phase-transition
 - claim-smarter-agents-earn-less
+- claim-tau-065-triggers-acceptance-phase-transition
+- claim-quality-gate-dominates
+- claim-governance-cost-paradox
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -55,7 +58,7 @@ Comparing [[20260213-231532_phylogeny_demo_seed7]] (15 steps/epoch) with [[20260
 | Total welfare | 39.5 | 156.8 | +297% |
 | Avg payoff/agent | 0.515 | 0.356 | -31% |
 
-At 15 steps, the system is in a perfectly cooperative equilibrium (zero rejections, zero quality gap). At 20 steps, a qualitatively different regime emerges: more interactions generate more welfare but at the cost of higher toxicity, quality gaps, and lower per-agent payoff efficiency. This suggests diminishing returns to interaction density — paralleling how [[claim-tax-phase-transition]] shows non-linear governance parameter responses.
+At 15 steps, the system is in a perfectly cooperative equilibrium (zero rejections, zero quality gap). At 20 steps, a qualitatively different regime emerges: more interactions generate more welfare but at the cost of higher toxicity, quality gaps, and lower per-agent payoff efficiency. This suggests diminishing returns to interaction density — paralleling how [[claim-tax-phase-transition]] shows non-linear governance parameter responses and how [[claim-tau-065-triggers-acceptance-phase-transition]] shows abrupt rejection emergence at a memory-tier threshold. The quality gap emergence at 20 steps is precisely the kind of degradation that [[claim-quality-gate-dominates]] addresses — a quality gate in the 20-step regime might restore per-agent efficiency while preserving the welfare benefits of higher interaction volume. The ungoverned degradation at 20 steps also quantifies the baseline threat that motivates [[claim-governance-cost-paradox]]: without governance, interaction density alone generates toxicity, establishing a floor for governance value.
 
 ## Open questions
 
@@ -68,5 +71,6 @@ At 15 steps, the system is in a perfectly cooperative equilibrium (zero rejectio
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: agent-behavior, phase-transition, simulation-parameter -->

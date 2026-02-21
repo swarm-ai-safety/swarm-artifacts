@@ -25,6 +25,9 @@ related_claims:
 - claim-tax-welfare-direction-is-scenario-dependent
 - claim-rlhf-persona-invariant
 - claim-cb-null-may-reflect-design-limitation
+- claim-governance-cost-paradox
+- claim-quality-gate-dominates
+- claim-smarter-agents-earn-less
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -49,7 +52,7 @@ In the [[20260217_memori_study]] (30 runs, 6 configs, 5 seeds), zero out of 12 p
 
 Critical limitation: all agents are honest (adversarial/opportunistic/deceptive payoffs = 0.0 across all 30 runs). The study cannot test governance deterrent effects because there is no adversarial behavior to deter. Combined with the 2-epoch horizon (only 10.8 interactions per run), this is likely underpowered by design.
 
-This connects to [[claim-rlhf-persona-invariant]] — if LLM agents behave identically regardless of governance pressure (as RLHF models show identical behavior across adversarial prompts), governance mechanisms may be fundamentally unnecessary in LLM-only ecosystems.
+This connects to [[claim-rlhf-persona-invariant]] — if LLM agents behave identically regardless of governance pressure (as RLHF models show identical behavior across adversarial prompts), governance mechanisms may be fundamentally unnecessary in LLM-only ecosystems. The null result is the strongest possible form of [[claim-governance-cost-paradox]]: governance imposes pure overhead when agents show zero response. Even [[claim-quality-gate-dominates]] may be unnecessary in all-honest populations where the quality gate has nothing to filter. The pattern parallels [[claim-smarter-agents-earn-less]], where agent architecture (RLM depth) constrains behavioral adaptation to environmental conditions — here, LLM RLHF training constrains adaptation to governance pressure. The memori scenario is also one of the data points establishing [[claim-tax-welfare-direction-is-scenario-dependent]], where tax insensitivity contributes to the case that tax-welfare relationships are not universal.
 
 ## Open questions
 
@@ -61,5 +64,6 @@ This connects to [[claim-rlhf-persona-invariant]] — if LLM agents behave ident
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: agent-behavior, llm, memori, null-result, methodology -->

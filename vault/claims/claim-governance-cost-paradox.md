@@ -76,13 +76,22 @@ evidence:
   - run: 20260213-202050_baseline_governance_v2
     metric: honest_payoff
     detail: metric=honest_payoff, d=0.51, parameter=governance.transaction_tax_rate
-  weakening: []
+  weakening:
+  - run: 20260214-113750_kernel_v4_code_sweep
+    metric: welfare
+    detail: "Welfare INCREASES with tax in kernel v4 code scenario (12.18→16.96, 0%→15%), contradicting universal governance cost. N=5 seeds, underpowered"
+  - run: 20260217_memori_study
+    metric: welfare
+    detail: "No governance sensitivity in LLM memori agents (d<0.23, 0/12 tests sig). Governance imposes pure overhead in all-honest LLM population. N=5 seeds, 2 epochs"
   boundary_conditions:
   - GasTown workspace, 7 agents, 30 epochs, full governance stack
+  - Kernel v4 code scenario shows welfare INCREASE under tax — paradox may be scenario-specific
+  - Memori LLM scenario shows zero governance response — cost is pure overhead with no adversarial behavior to deter
 sensitivity:
   topology: Tested on GasTown small-world only; unknown whether hub-and-spoke or ring
     topologies amplify or dampen the cost
   agent_count: 7 agents; cost-per-agent may scale non-linearly with larger populations
+  scenario: Paradox confirmed in GasTown and baseline governance; direction reversal in kernel v4 narrows universality
 supersedes: []
 superseded_by: []
 related_claims:
@@ -93,8 +102,11 @@ related_claims:
 - claim-high-tax-increases-toxicity
 - claim-collusion-penalty-has-no-economic-effect
 - claim-tax-and-penalty-effects-are-orthogonal
+- claim-tax-welfare-direction-is-scenario-dependent
+- claim-cb-tax-interaction-non-monotonic-in-kernel-v4
+- claim-memori-agents-show-no-governance-sensitivity
 created: 2026-02-19
-updated: '2026-02-19'
+updated: '2026-02-20'
 aliases:
 - governance-cost-paradox
 - full-governance-stacks-impose-larger-welfare
@@ -121,7 +133,16 @@ The full governance stack — comprising transaction taxes, circuit breakers, co
 - Does the paradox hold under partial governance stacks (e.g., tax + quality gate only)?
 - Is there a population threshold above which governance overhead amortizes?
 - How does the welfare penalty interact with redistribution mechanisms?
+- Does the paradox generalize beyond baseline governance scenarios, given the kernel v4 reversal?
 
+## Update history
+
+**2026-02-20** — backward-pass update:
+- Added weakening evidence from [[20260214-113750_kernel_v4_code_sweep]]: welfare increases with tax in kernel v4 code scenario, contradicting universal governance cost. Underpowered (N=5 seeds).
+- Added weakening evidence from [[20260217_memori_study]]: zero governance sensitivity in LLM memori agents. Governance imposes pure overhead in all-honest population. Underpowered (N=5 seeds, 2 epochs).
+- Added boundary conditions noting scenario-dependence of the paradox per [[claim-tax-welfare-direction-is-scenario-dependent]].
+- Added related claims: claim-tax-welfare-direction-is-scenario-dependent, claim-cb-tax-interaction-non-monotonic-in-kernel-v4, claim-memori-agents-show-no-governance-sensitivity.
+- Confidence remains **high** for the GasTown/baseline governance context (Bonferroni-significant, multi-run replication). Weakening evidence is underpowered and does not yet challenge the core finding within its established boundary.
 
 ## Lifecycle audit
 

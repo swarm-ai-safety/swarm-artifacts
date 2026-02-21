@@ -54,6 +54,14 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-cascade-mechanisms-ineffective-against-governance-gaming]] — Cascade ban/freeze don't stop governance gaming (low confidence)
 - [[claim-spawn-infrastructure-may-amplify-sybil-surface]] — Spawn infrastructure may provide cover for sybil attacks (low confidence)
 - [[claim-opportunistic-payoff-variance-increases-under-low-tax]] — Opportunistic agent payoff SD doubles under low vs high tax (low confidence)
+- [[claim-tau-065-triggers-acceptance-phase-transition]] — tau_min=0.65 drops acceptance from 100% to 64% in memory tiers (low confidence)
+- [[claim-write-cap-below-12-destroys-welfare]] — Write cap k<=6 destroys up to 75% welfare with zero safety benefit (low confidence)
+- [[claim-optimal-tau-range-050-to-060]] — Optimal tau_min is 0.50-0.60 with flat composite scores (low confidence)
+- [[claim-write-cap-amplifies-tau-rejection]] — Write cap compounds tau=0.65 rejection, reducing welfare 51% further (low confidence)
+- [[claim-step-count-triggers-rejection-emergence]] — Steps per epoch 15→20 triggers rejection emergence in ungoverned swarms (low confidence)
+- [[claim-tax-welfare-direction-is-scenario-dependent]] — Tax-welfare direction reverses between baseline and kernel v4 scenarios (low confidence)
+- [[claim-memori-agents-show-no-governance-sensitivity]] — Memori LLM agents show zero governance response in short-horizon study (low confidence)
+- [[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]] — CB helps at 5% tax but harms at all other rates in kernel v4 (low confidence)
 
 ## Governance Mechanisms
 

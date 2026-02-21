@@ -27,6 +27,8 @@ related_claims:
 - claim-tau-065-triggers-acceptance-phase-transition
 - claim-optimal-tax-range-0-to-5pct
 - claim-write-cap-below-12-destroys-welfare
+- claim-welfare-plateaus-above-12pct-tax
+- claim-governance-cost-paradox
 created: 2026-02-20
 updated: 2026-02-20
 aliases:
@@ -47,7 +49,7 @@ graph-group: claim
 
 Across two calibration runs ([[20260214-014153_tau_k_calibration]] and [[20260214-020518_tau_k_calibration]]), composite scores are flat in the 0.45-0.60 tau_min range (0.485-0.516) with a catastrophic cliff at 0.65 (-0.237). The flat optimum means governance designers have a wide safe operating range, paralleling [[claim-optimal-tax-range-0-to-5pct]] in the tax domain.
 
-Combined recommendation from both runs: tau_min=0.55-0.60 with k_max >= 12 (which imposes zero overhead per [[claim-write-cap-below-12-destroys-welfare]]).
+Combined recommendation from both runs: tau_min=0.55-0.60 with k_max >= 12 (which imposes zero overhead per [[claim-write-cap-below-12-destroys-welfare]]). The flat optimum with a cliff at 0.65 mirrors the S-curve welfare response in [[claim-welfare-plateaus-above-12pct-tax]] — both parameters have safe operating envelopes followed by catastrophic regimes. Staying within the safe range addresses [[claim-governance-cost-paradox]] in the memory domain, just as [[claim-optimal-tax-range-0-to-5pct]] addresses it in the tax domain.
 
 ## Open questions
 
@@ -59,5 +61,6 @@ Combined recommendation from both runs: tau_min=0.55-0.60 with k_max >= 12 (whic
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: calibration, memory, optimization -->
