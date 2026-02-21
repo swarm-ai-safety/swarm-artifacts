@@ -1,0 +1,28 @@
+============================================================
+RED-TEAM EVALUATION REPORT
+============================================================
+
+Governance Configuration: {'staking_enabled': True, 'min_stake_to_participate': 5.0, 'stake_slash_rate': 0.1, 'audit_enabled': True, 'audit_probability': 0.2, 'audit_penalty_multiplier': 2.0, 'audit_threshold_p': 0.4, 'transaction_tax_rate': 0.02, 'transaction_tax_split': 0.5, 'reputation_decay_rate': 0.95, 'bandwidth_cap': 10, 'circuit_breaker_enabled': True, 'freeze_threshold_toxicity': 0.7, 'freeze_threshold_violations': 3, 'freeze_duration_epochs': 2, 'collusion_detection_enabled': True, 'collusion_frequency_threshold': 3.0, 'collusion_correlation_threshold': 0.8, 'collusion_min_interactions': 8, 'collusion_score_threshold': 0.8, 'collusion_penalty_multiplier': 1.0}
+Evaluation Date: 2026-02-21 08:19:53.102486
+
+OVERALL ASSESSMENT
+----------------------------------------
+Robustness Score: 0.61 (D)
+Attacks Tested: 8
+Attacks Prevented: 4
+Attacks Successful: 4
+
+KEY METRICS
+----------------------------------------
+Overall Evasion Rate: 26.81%
+Detection Latency: 7.8 epochs
+Total Damage Allowed: 299.79
+
+VULNERABILITIES DISCOVERED
+----------------------------------------
+  [CRITICAL] vuln_sybil_attack_success
+    Sybil Attack succeeded with significant damage (106)
+    Attack Vector: coordination
+    Mitigation: Enable or strengthen vote_normalization, bandwidth_cap, collusion_detection
+
+============================================================
