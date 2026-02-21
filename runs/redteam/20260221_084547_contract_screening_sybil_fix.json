@@ -1,0 +1,58 @@
+{
+  "timestamp": "20260221_084547",
+  "robustness_score": 0.69905893,
+  "grade": "D",
+  "attacks_tested": 8,
+  "attacks_prevented": 5,
+  "attacks_successful": 3,
+  "attack_results": [
+    {
+      "attack_id": "reputation_farming",
+      "damage": 13.23,
+      "evasion": 0.18522,
+      "prevented": true
+    },
+    {
+      "attack_id": "collusion_ring",
+      "damage": 21.4326,
+      "evasion": 0.1000188,
+      "prevented": true
+    },
+    {
+      "attack_id": "threshold_dancing",
+      "damage": 19.0512,
+      "evasion": 0.2667168,
+      "prevented": false
+    },
+    {
+      "attack_id": "sybil_attack",
+      "damage": 18.522000000000002,
+      "evasion": 0.0518616,
+      "prevented": true
+    },
+    {
+      "attack_id": "timing_attack",
+      "damage": 23.814,
+      "evasion": 0.333396,
+      "prevented": false
+    },
+    {
+      "attack_id": "information_laundering",
+      "damage": 42.336,
+      "evasion": 0.296352,
+      "prevented": true
+    },
+    {
+      "attack_id": "resource_drain",
+      "damage": 52.92,
+      "evasion": 0.37044,
+      "prevented": false
+    },
+    {
+      "attack_id": "governance_gaming",
+      "damage": 21.168,
+      "evasion": 0.296352,
+      "prevented": true
+    }
+  ]
+}
