@@ -1,6 +1,5 @@
 ---
-description: Deterministic quality gate (reject p<0.5) achieves comparable safety
-  to full governance while preserving welfare
+description: Deterministic quality gate (reject p<0.5) achieves comparable safety to full governance while preserving welfare
 type: claim
 status: active
 confidence: low

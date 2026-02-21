@@ -1,6 +1,5 @@
 ---
-description: Deeper recursive reasoning (RLM depth) negatively correlates with individual
-  payoff
+description: Deeper recursive reasoning (RLM depth) negatively correlates with individual payoff
 type: claim
 status: active
 confidence: high

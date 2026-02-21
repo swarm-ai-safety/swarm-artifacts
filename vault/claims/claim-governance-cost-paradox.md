@@ -1,6 +1,5 @@
 ---
-description: Full governance stacks impose larger welfare costs than toxicity reduction
-  benefits at all adversarial levels tested
+description: Full governance stacks impose larger welfare costs than toxicity reduction benefits at all adversarial levels tested
 type: claim
 status: active
 confidence: medium
@@ -89,7 +88,7 @@ The full governance stack — comprising transaction taxes, circuit breakers, co
 - Added weakening evidence from [[20260217_memori_study]]: zero governance sensitivity in LLM memori agents. Governance imposes pure overhead in all-honest population. Underpowered (N=5 seeds, 2 epochs).
 - Added boundary conditions noting scenario-dependence of the paradox per [[claim-tax-welfare-direction-is-scenario-dependent]].
 - Added related claims: claim-tax-welfare-direction-is-scenario-dependent, claim-cb-tax-interaction-non-monotonic-in-kernel-v4, claim-memori-agents-show-no-governance-sensitivity.
-- Confidence remains **high** for the GasTown/baseline governance context (Bonferroni-significant, multi-run replication). Weakening evidence is underpowered and does not yet challenge the core finding within its established boundary.
+- Confidence remains **medium** for the GasTown/baseline governance context (Bonferroni-significant supporting evidence, but primary GasTown comparison lacks formal d/p). Weakening evidence is underpowered and does not yet challenge the core finding within its established boundary.
 
 ## Lifecycle audit
 

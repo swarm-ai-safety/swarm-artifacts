@@ -1,6 +1,5 @@
 ---
-description: Transaction tax rate explains 32.4% of welfare variance; circuit breakers
-  show no detectable effect in kernel markets
+description: Transaction tax rate explains 32.4% of welfare variance; circuit breakers show no detectable effect in kernel markets
 type: claim
 status: active
 confidence: high

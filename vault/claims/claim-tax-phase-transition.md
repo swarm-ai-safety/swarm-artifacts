@@ -1,6 +1,5 @@
 ---
-description: Welfare decline under transaction tax is non-linear with phase transition
-  between 5-10% tax rate
+description: Welfare decline under transaction tax is non-linear with phase transition between 5-10% tax rate
 type: claim
 status: active
 confidence: high

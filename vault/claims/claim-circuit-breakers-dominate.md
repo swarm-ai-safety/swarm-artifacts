@@ -1,6 +1,5 @@
 ---
-description: Circuit breakers alone outperform full governance stacks on welfare and
-  toxicity
+description: Circuit breakers alone outperform full governance stacks on welfare and toxicity
 type: claim
 status: active
 confidence: medium
