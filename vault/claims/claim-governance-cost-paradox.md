@@ -51,6 +51,7 @@ related_claims:
 - claim-full-governance-reduces-welfare-in-concordia
 - claim-graduated-defense-reduces-damage-monotonically
 - claim-full-governance-stack-prevents-most-attack-types
+- claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-19
 updated: 2026-02-21
 aliases:

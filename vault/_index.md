@@ -30,8 +30,8 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-collusion-wealth-destruction]] — Collusive agents accumulate 137x less wealth under monitoring (high confidence)
 - [[claim-smarter-agents-earn-less]] — Deeper recursive reasoning hurts individual payoff (high confidence)
 - [[claim-governance-cost-paradox]] — Full governance stacks cost more welfare than they save in safety (medium confidence)
-- [[claim-quality-gate-dominates]] — Simple quality gate matches full governance safety at lower cost (medium confidence)
-- [[claim-staking-backfires]] — Staking requirement hurts honest agents more than adversarial (medium confidence)
+- [[claim-quality-gate-dominates]] — Simple quality gate matches full governance safety at lower cost (low confidence)
+- [[claim-staking-backfires]] — Staking requirement hurts honest agents more than adversarial (low confidence)
 - [[claim-collusion-penalty-destabilizes]] — Penalty multiplier >1.5x paradoxically increases toxicity (medium confidence)
 - [[claim-rlhf-persona-invariant]] — RLHF models show identical cooperation across adversarial prompts (low confidence)
 - [[claim-memory-promotion-gate]] — Quality gate blocks 100% poisoned content from higher tiers (low confidence)
@@ -68,10 +68,11 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect]] — CAPTCHA difficulty and collusion penalty show zero effect in 200-run factorial (medium confidence)
 - [[claim-deceptive-agents-dominate-moltbook-payoff-hierarchy]] — Deceptive agents earn 3x honest payoff in moltbook regardless of governance (medium confidence)
 - [[claim-graduated-defense-reduces-damage-monotonically]] — Adding governance layers monotonically reduces redteam damage by up to 69% (low confidence)
-- [[claim-ldt-agents-provide-welfare-stability-at-intermediate-composition]] — LDT agents maintain +42% welfare at 40-70% composition (medium confidence)
+- [[claim-ldt-agents-provide-welfare-stability-at-intermediate-composition]] — LDT agents maintain +42% welfare at 40-70% composition (low confidence)
 - [[claim-freeze-duration-and-violation-threshold-interact-on-welfare]] — Longer freeze durations improve welfare 17% and interact with violation thresholds (low confidence)
 - [[claim-reputation-decay-rate-improves-welfare]] — Full reputation persistence + zero stake produces best welfare and lowest toxicity (low confidence)
 - [[claim-full-governance-reduces-welfare-in-concordia]] — Full governance stack reduces Concordia welfare 18% with zero toxicity benefit (medium confidence)
+- [[claim-agent-architecture-constrains-behavior-more-than-governance]] — Agent architecture constrains behavior more than governance in homogeneous populations (medium confidence)
 
 ## Governance Mechanisms
 

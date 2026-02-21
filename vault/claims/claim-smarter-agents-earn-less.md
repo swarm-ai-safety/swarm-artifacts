@@ -39,6 +39,7 @@ related_claims:
 - claim-acausality-depth-does-not-affect-cooperation-outcomes
 - claim-ldt-agents-provide-welfare-stability-at-intermediate-composition
 - claim-deceptive-agents-dominate-moltbook-payoff-hierarchy
+- claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-10
 updated: 2026-02-21
 aliases:

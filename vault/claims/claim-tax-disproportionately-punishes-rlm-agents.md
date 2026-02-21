@@ -32,8 +32,9 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-welfare-non-normality-at-extreme-tax
 - claim-tax-and-penalty-effects-are-orthogonal
+- claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - tax-disproportionately-punishes-rlm-agents
 cssclasses:

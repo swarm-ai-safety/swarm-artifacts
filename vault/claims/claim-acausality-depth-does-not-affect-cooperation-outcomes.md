@@ -42,6 +42,7 @@ superseded_by: []
 related_claims:
 - claim-smarter-agents-earn-less
 - claim-rlhf-persona-invariant
+- claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-21
 updated: 2026-02-21
 aliases:

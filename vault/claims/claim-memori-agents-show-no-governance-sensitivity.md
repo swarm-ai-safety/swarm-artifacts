@@ -28,8 +28,9 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-quality-gate-dominates
 - claim-smarter-agents-earn-less
+- claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - memori-agents-show-no-governance-sensitivity
 cssclasses:

@@ -7,13 +7,13 @@ type: moc
 
 ## Active Threads
 
-- **49 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
-- **Confidence distribution:** 7 high, 15 medium, 27 low (post-Gate 2 calibration)
+- **50 active claims** across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT domains
+- **Confidence distribution:** 7 high, 16 medium, 27 low (post-Gate 2 calibration + meta-pattern synthesis)
 - **Pipeline queue:** 89/89 completed, 0 pending — all 112 runs processed
-- **3 emergent meta-patterns** needing synthesis into higher-order claims:
-  1. Safe operating envelope universality (tax 0-5%, tau 0.50-0.60, write cap >=12)
-  2. Governance interaction universality (3 independent super-additive compounding findings)
-  3. Architecture-over-environment (RLHF, RLM depth, LLM training constrain governance response)
+- **3 emergent meta-patterns** — evaluated and dispositioned:
+  1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
+  2. Governance interaction universality — **rejected**: contradictory evidence (orthogonality finding vs interaction claims). Not a universal pattern.
+  3. Architecture-over-environment — **synthesized** as [[claim-agent-architecture-constrains-behavior-more-than-governance]] (medium confidence)
 - **8 failure patterns** — cross-linked to redteam claims but not yet formally validated via `/validate`
 - **7 sweep series** — sweep notes updated with new runs and claim references
 - **Scenario-dependence boundary** — kernel v4 and memori studies challenge universality of baseline governance findings; replication with larger N is the top experimental priority
@@ -22,7 +22,6 @@ type: moc
 
 - **Gate 2 statistical rigor** — 20 low-confidence claims lack formal effect sizes (d, p, correction). Most are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
 - **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
-- Synthesize the 3 meta-patterns into higher-order claims or topic maps
 - Run `/rethink` — 0 observations and 0 tensions logged, but governance-dashboard has accumulated 10+ tensions from cross-linking that should be reviewed
 
 ## Experimental Priorities

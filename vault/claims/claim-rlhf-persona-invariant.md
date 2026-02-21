@@ -31,6 +31,7 @@ related_claims:
 - claim-collusion-penalty-destabilizes
 - claim-governance-cost-paradox
 - claim-acausality-depth-does-not-affect-cooperation-outcomes
+- claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-19
 updated: 2026-02-21
 aliases:
