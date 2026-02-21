@@ -1,117 +1,147 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS — synthesis pipeline queue",
-  "next_claim_start": 38,
+  "next_claim_start": 40,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-173805_baseline_governance/",
       "file": "20260213-173805_baseline_governance-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 13
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 13,
+      "claims_created": ["claim-opportunistic-payoff-variance-increases-under-low-tax"],
+      "enrichments_applied": ["claim-tax-hurts-honest-more-than-opportunistic", "claim-tax-phase-transition"]
     },
     {
       "id": "extract-20260213-202050_baseline_governance_v2",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-202050_baseline_governance_v2/",
       "file": "20260213-202050_baseline_governance_v2-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 16
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 16,
+      "claims_created": ["claim-tax-hurts-honest-more-than-opportunistic", "claim-welfare-plateaus-above-12pct-tax", "claim-deceptive-payoff-weakly-declines-with-tax", "claim-tax-cb-interact-on-quality-gap", "claim-optimal-tax-range-0-to-5pct", "claim-cb-null-may-reflect-design-limitation"],
+      "enrichments_applied": ["claim-high-tax-increases-toxicity"]
     },
     {
       "id": "extract-20260213-221500_collusion_tax_effect",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-221500_collusion_tax_effect/",
       "file": "20260213-221500_collusion_tax_effect-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 21
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 21,
+      "claims_created": ["claim-tax-disproportionately-punishes-rlm-agents", "claim-high-tax-increases-toxicity", "claim-collusion-penalty-has-no-economic-effect", "claim-tax-and-penalty-effects-are-orthogonal", "claim-tax-penalty-interaction-on-toxicity-uncharacterized", "claim-welfare-non-normality-at-extreme-tax"],
+      "enrichments_applied": ["claim-tax-welfare-tradeoff", "claim-tax-phase-transition"]
     },
     {
       "id": "extract-20260213-231532_phylogeny_demo_seed7",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-231532_phylogeny_demo_seed7/",
       "file": "20260213-231532_phylogeny_demo_seed7-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 26
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 26,
+      "claims_created": ["claim-step-count-triggers-rejection-emergence"],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260213-234651_phylogeny_demo_seed7",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-234651_phylogeny_demo_seed7/",
       "file": "20260213-234651_phylogeny_demo_seed7-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 27
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 27,
+      "claims_created": [],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260214-014153_tau_k_calibration",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260214-014153_tau_k_calibration/",
       "file": "20260214-014153_tau_k_calibration-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 28
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 28,
+      "claims_created": ["claim-tau-065-triggers-acceptance-phase-transition", "claim-write-cap-below-12-destroys-welfare", "claim-optimal-tau-range-050-to-060", "claim-write-cap-amplifies-tau-rejection"],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260214-020518_tau_k_calibration",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260214-020518_tau_k_calibration/",
       "file": "20260214-020518_tau_k_calibration-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 30
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 30,
+      "claims_created": [],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260214-094622_redteam",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260214-094622_redteam/",
       "file": "20260214-094622_redteam-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 32
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 32,
+      "claims_created": ["claim-collusion-detection-is-binding-constraint-on-robustness", "claim-coordination-attacks-dominate-redteam-damage", "claim-cb-audit-sufficient-for-solo-exploits", "claim-audit-threshold-interaction-enables-dancing", "claim-cascade-mechanisms-ineffective-against-governance-gaming", "claim-spawn-infrastructure-may-amplify-sybil-surface"],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260214-113750_kernel_v4_code_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260214-113750_kernel_v4_code_sweep/",
       "file": "20260214-113750_kernel_v4_code_sweep-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 34
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 34,
+      "claims_created": ["claim-tax-welfare-direction-is-scenario-dependent", "claim-cb-tax-interaction-non-monotonic-in-kernel-v4"],
+      "enrichments_applied": ["claim-cb-null-may-reflect-design-limitation"]
     },
     {
       "id": "extract-20260217_memori_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260217_memori_study/",
       "file": "20260217_memori_study-extract.md",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 36
+      "completed": "2026-02-20T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": ["extract", "cross-link", "update", "validate"],
+      "next_claim_start": 36,
+      "claims_created": ["claim-memori-agents-show-no-governance-sensitivity"],
+      "enrichments_applied": []
     }
   ],
   "maintenance_conditions": {
@@ -120,6 +150,6 @@
     "stale_claim_days": 30,
     "orphan_check_frequency": "weekly"
   },
-  "phase_order": ["create", "cross-link", "update", "validate"],
+  "phase_order": ["extract", "cross-link", "update", "validate"],
   "created": "2026-02-20T00:00:00Z"
 }

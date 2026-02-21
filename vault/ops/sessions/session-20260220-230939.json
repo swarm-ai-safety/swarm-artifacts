@@ -1,0 +1,27 @@
+{
+  "session_id": "20260220-230939",
+  "end_time": "2026-02-21T04:09:39.174177Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-cb-null-may-reflect-design-limitation.md",
+    "vault/claims/claim-cb-tax-interaction-non-monotonic-in-kernel-v4.md",
+    "vault/claims/claim-circuit-breakers-dominate.md",
+    "vault/claims/claim-governance-cost-paradox.md",
+    "vault/claims/claim-memori-agents-show-no-governance-sensitivity.md",
+    "vault/claims/claim-optimal-tau-range-050-to-060.md",
+    "vault/claims/claim-quality-gate-dominates.md",
+    "vault/claims/claim-smarter-agents-earn-less.md",
+    "vault/claims/claim-staking-backfires.md",
+    "vault/claims/claim-step-count-triggers-rejection-emergence.md",
+    "vault/claims/claim-tau-065-triggers-acceptance-phase-transition.md",
+    "vault/claims/claim-tax-dominates-cb-kernel.md",
+    "vault/claims/claim-tax-phase-transition.md",
+    "vault/claims/claim-tax-welfare-direction-is-scenario-dependent.md",
+    "vault/claims/claim-tax-welfare-tradeoff.md",
+    "vault/claims/claim-write-cap-amplifies-tau-rejection.md",
+    "vault/claims/claim-write-cap-below-12-destroys-welfare.md",
+    "vault/governance-dashboard.md",
+    "vault/self/goals.md"
+  ]
+}
