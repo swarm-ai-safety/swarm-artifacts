@@ -1,8 +1,119 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS — synthesis pipeline queue",
-  "next_claim_start": 1,
-  "tasks": [],
+  "next_claim_start": 38,
+  "tasks": [
+    {
+      "id": "extract-20260213-173805_baseline_governance",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-173805_baseline_governance/",
+      "file": "20260213-173805_baseline_governance-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 13
+    },
+    {
+      "id": "extract-20260213-202050_baseline_governance_v2",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-202050_baseline_governance_v2/",
+      "file": "20260213-202050_baseline_governance_v2-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 16
+    },
+    {
+      "id": "extract-20260213-221500_collusion_tax_effect",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-221500_collusion_tax_effect/",
+      "file": "20260213-221500_collusion_tax_effect-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 21
+    },
+    {
+      "id": "extract-20260213-231532_phylogeny_demo_seed7",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-231532_phylogeny_demo_seed7/",
+      "file": "20260213-231532_phylogeny_demo_seed7-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 26
+    },
+    {
+      "id": "extract-20260213-234651_phylogeny_demo_seed7",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260213-234651_phylogeny_demo_seed7/",
+      "file": "20260213-234651_phylogeny_demo_seed7-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 27
+    },
+    {
+      "id": "extract-20260214-014153_tau_k_calibration",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260214-014153_tau_k_calibration/",
+      "file": "20260214-014153_tau_k_calibration-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 28
+    },
+    {
+      "id": "extract-20260214-020518_tau_k_calibration",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260214-020518_tau_k_calibration/",
+      "file": "20260214-020518_tau_k_calibration-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 30
+    },
+    {
+      "id": "extract-20260214-094622_redteam",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260214-094622_redteam/",
+      "file": "20260214-094622_redteam-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 32
+    },
+    {
+      "id": "extract-20260214-113750_kernel_v4_code_sweep",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260214-113750_kernel_v4_code_sweep/",
+      "file": "20260214-113750_kernel_v4_code_sweep-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 34
+    },
+    {
+      "id": "extract-20260217_memori_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260217_memori_study/",
+      "file": "20260217_memori_study-extract.md",
+      "created": "2026-02-20T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 36
+    }
+  ],
   "maintenance_conditions": {
     "observations_threshold": 10,
     "tensions_threshold": 5,
