@@ -15,6 +15,12 @@ evidence:
   - run: 20260217_memori_study
     metric: all
     detail: "CB null in LLM memori scenario: largest d=0.55 (quality_gap, p=0.14). 0/12 tests significant. N=30, 5 seeds"
+  - run: 20260213-143751_delegation_games_study
+    metric: toxicity_rate
+    detail: "CB effect on toxicity negligible: d=0.078, p=0.73. CB welfare effect nominal (d=0.557, p=0.015) but not Bonferroni-significant. N=10 seeds, delegation games scenario"
+  - run: 20260213-204503_agent_lab_research_safety_study
+    metric: welfare
+    detail: "CB null across welfare, toxicity, honest payoff in 160-run factorial. Quality gap invariant (always zero). N=10 seeds per config, 4x2x2 design"
   weakening: []
   boundary_conditions:
   - Methodological critique, not empirical finding
@@ -34,7 +40,7 @@ related_claims:
 - claim-tax-and-penalty-effects-are-orthogonal
 - claim-optimal-tax-range-0-to-5pct
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - cb-null-may-reflect-design-limitation
 cssclasses:

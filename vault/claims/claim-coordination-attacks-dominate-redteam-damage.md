@@ -9,6 +9,9 @@ evidence:
   - run: 20260214-094622_redteam
     metric: damage
     detail: "Coordination damage 212.9/404.5 total (52.6%). Sybil: 117.6 (29.1%), Collusion ring: 95.3 (23.5%)"
+  - run: 20260212-231123_redteam
+    metric: damage
+    detail: "Replicates in earlier evaluation: baseline sybil 120.0 + collusion ring 97.2 = 217.2/455.7 (47.7%). Consistent damage ranking. Hardened config prevents collusion ring but sybil persists at 102.6"
   weakening: []
   boundary_conditions:
   - 8-attack test battery, recursive_spawn scenario
@@ -27,8 +30,10 @@ related_claims:
 - claim-cascade-mechanisms-ineffective-against-governance-gaming
 - claim-collusion-wealth-destruction
 - claim-spawn-infrastructure-may-amplify-sybil-surface
+- claim-sybil-attacks-resist-full-governance-stack
+- claim-full-governance-stack-prevents-most-attack-types
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - coordination-attacks-dominate-redteam-damage
 cssclasses:

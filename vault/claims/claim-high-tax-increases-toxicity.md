@@ -12,6 +12,9 @@ evidence:
   - run: 20260213-221500_collusion_tax_effect
     metric: toxicity_rate
     detail: "5% vs 10% tax: d=-0.57, BH-significant; 0% vs 5%: d=-0.69, BH-significant"
+  - run: 20260210-213833_collusion_governance
+    metric: toxicity_rate
+    detail: "Tax 0% vs 15%: toxicity 0.336→0.347, d=-2.447, p=2.52e-09, Bonferroni-significant. N=10 seeds per config, rlm_recursive_collusion scenario. Replicates monotonic toxicity increase with larger effect size"
   weakening:
   - run: 20260213-202050_baseline_governance_v2
     metric: toxicity_rate
@@ -35,7 +38,7 @@ related_claims:
 - claim-tax-and-penalty-effects-are-orthogonal
 - claim-tax-disproportionately-punishes-rlm-agents
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - high-tax-increases-toxicity
 cssclasses:

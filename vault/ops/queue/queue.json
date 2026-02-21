@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS \u2014 synthesis pipeline queue",
-  "next_claim_start": 40,
+  "next_claim_start": 43,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
@@ -560,11 +560,22 @@
     {
       "id": "extract-20260210-213833_collusion_governance",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-213833_collusion_governance/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-tax-welfare-tradeoff",
+        "claim-high-tax-increases-toxicity"
+      ]
     },
     {
       "id": "extract-20260210-220048_kernel_governance",
@@ -596,11 +607,20 @@
     {
       "id": "extract-20260210-224358_kernel_market_sweep",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260210-224358_kernel_market_sweep/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [],
+      "note": "Only 2 seeds per config \u2014 severely underpowered, no claims extracted"
     },
     {
       "id": "extract-20260210-235816_rlm_governance_lag_seed42",
@@ -812,29 +832,63 @@
     {
       "id": "extract-20260212-231123_redteam",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260212-231123_redteam/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-sybil-attacks-resist-full-governance-stack",
+        "claim-full-governance-stack-prevents-most-attack-types"
+      ],
+      "enrichments_applied": [
+        "claim-coordination-attacks-dominate-redteam-damage",
+        "claim-spawn-infrastructure-may-amplify-sybil-surface"
+      ]
     },
     {
       "id": "extract-20260212-231859_ldt_acausality_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260212-231859_ldt_acausality_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [
+        "claim-acausality-depth-does-not-affect-cooperation-outcomes"
+      ],
+      "enrichments_applied": []
     },
     {
       "id": "extract-20260213-003757_ldt_large_population_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-003757_ldt_large_population_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-acausality-depth-does-not-affect-cooperation-outcomes"
+      ]
     },
     {
       "id": "extract-20260213-003804_ldt_modeling_adversary_study",
@@ -947,11 +1001,23 @@
     {
       "id": "extract-20260213-143751_delegation_games_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-143751_delegation_games_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-tax-welfare-tradeoff",
+        "claim-cb-null-may-reflect-design-limitation",
+        "claim-circuit-breakers-dominate"
+      ]
     },
     {
       "id": "extract-20260213-151729_redteam",
@@ -983,11 +1049,23 @@
     {
       "id": "extract-20260213-204503_agent_lab_research_safety_study",
       "type": "extract",
-      "status": "pending",
+      "status": "completed",
       "target": "runs/20260213-204503_agent_lab_research_safety_study/",
       "created": "2026-02-20T00:00:00Z",
-      "current_phase": "extract",
-      "completed_phases": []
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "completed": "2026-02-21T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-tax-welfare-tradeoff",
+        "claim-cb-null-may-reflect-design-limitation",
+        "claim-circuit-breakers-dominate"
+      ]
     },
     {
       "id": "extract-self_optimizer_seed42",

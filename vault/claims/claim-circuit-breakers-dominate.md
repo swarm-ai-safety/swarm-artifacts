@@ -24,6 +24,12 @@ evidence:
   - run: 20260217_memori_study
     metric: all
     detail: "CB null in LLM memori agents: largest d=0.55 (quality_gap, p=0.14). 0/12 tests sig. N=30"
+  - run: 20260213-143751_delegation_games_study
+    metric: welfare
+    detail: "CB welfare nominal (d=0.557, p=0.015) but not Bonferroni-significant. CB toxicity negligible (d=0.078). N=10 seeds, 10 agents, delegation games"
+  - run: 20260213-204503_agent_lab_research_safety_study
+    metric: welfare
+    detail: "CB null across all outcomes in 160-run factorial (agent lab scenario). Quality gap always zero. N=10 seeds per config"
   boundary_conditions:
   - Tested in kernel market governance comparison with 8 agents, 25% adversarial
   - Small-world topology (k=4, p=0.15)
@@ -49,7 +55,7 @@ related_claims:
 - claim-cb-tax-interaction-non-monotonic-in-kernel-v4
 - claim-memori-agents-show-no-governance-sensitivity
 created: 2026-02-11
-updated: '2026-02-20'
+updated: '2026-02-21'
 aliases:
 - circuit-breakers-dominate
 - circuit-breakers-alone-outperform-full-governance

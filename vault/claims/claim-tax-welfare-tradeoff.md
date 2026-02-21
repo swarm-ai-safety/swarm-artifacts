@@ -15,6 +15,15 @@ evidence:
   - run: 20260213-221500_collusion_tax_effect
     metric: welfare
     detail: d=4.80, p<1e-30, N=160, 10 seeds, Bonferroni-corrected, 12 agents with collusion-enabled context
+  - run: 20260213-143751_delegation_games_study
+    metric: welfare
+    detail: "Tax 0% vs 15% (CB=True): welfare drops 25.03 points, d=1.558, p=0.00363, Bonferroni-significant. N=10 seeds per config, 10 agents, delegation games scenario. Only comparison surviving correction in 8-test battery"
+  - run: 20260210-213833_collusion_governance
+    metric: welfare
+    detail: "Tax 0% vs 15%: welfare 103.96→93.39, d=1.326, p=0.000208, Bonferroni-significant. N=10 seeds per config, rlm_recursive_collusion scenario. 6/12 tests Bonferroni-significant"
+  - run: 20260213-204503_agent_lab_research_safety_study
+    metric: welfare
+    detail: "Tax 0% vs 10%: welfare 112.99→103.81, d=0.798, p=0.000654, Holm-significant. N=10 seeds per config, 160 total runs, 4x2x2 factorial. CB and CD null"
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -24,14 +33,14 @@ evidence:
     detail: "No tax sensitivity in LLM memori agents: d<0.23, all p>0.60. 0/12 tests sig. N=5 seeds, 2 epochs, all-honest population"
   boundary_conditions:
   - Tested in small-world topology (k=4, p=0.15)
-  - 8 agents (4 honest, 2 adversarial, 2 adaptive) in v1/v2; 12 agents (heterogeneous RLM) in collusion study
+  - 8-12 agents across scenarios; 10 agents in delegation games, varies in agent lab (160 runs)
   - Tax range 0–15% (v1/v2), 0–10% (collusion study)
   - Does not model redistribution effects on agent strategy
   - Kernel v4 code scenario shows direction reversal — tradeoff may be scenario-specific
   - Memori LLM scenario shows no tax effect — tradeoff may require adversarial agents to manifest
 sensitivity:
   topology: untested beyond small_world
-  agent_count: untested beyond 8
+  agent_count: tested at 8, 10, 12 agents — effect replicates across all
   governance_interaction: circuit breakers partially compensate at tax >= 0.075
   scenario: direction reversal in kernel v4, null in memori — see claim-tax-welfare-direction-is-scenario-dependent
 supersedes: []
@@ -47,7 +56,7 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-tax-phase-transition
 created: 2026-02-13
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - tax-welfare-tradeoff
 - transaction-tax-above-5-significantly-reduces
@@ -61,13 +70,16 @@ graph-group: claim
 
 ## Evidence summary
 
-Three independent sweeps confirm the finding:
+Six independent sweeps confirm the finding:
 
 | Sweep | Runs | Seeds | Tax levels | Agents | d | p (Bonferroni) |
 |-------|------|-------|------------|--------|---|----------------|
 | v1 (Feb 13) | 280 | 10 | 4 | 8 | 0.95 | <0.001 |
 | v2 (Feb 13) | 700 | 50 | 7 | 8 | 1.18 | <1e-14 |
 | collusion_tax (Feb 13) | 160 | 10 | 4 | 12 | 4.80 | <1e-30 |
+| delegation_games (Feb 13) | 80 | 10 | 4 | 10 | 1.56 | 0.0036 |
+| collusion_gov (Feb 10) | 80 | 10 | 4 | varies | 1.33 | 0.0002 |
+| agent_lab (Feb 13) | 160 | 10 | 4 | varies | 0.80 | 0.0007 |
 
 The phase transition is around 5% — below this threshold, the welfare effect is negligible. Above 5%, welfare declines monotonically with tax rate.
 

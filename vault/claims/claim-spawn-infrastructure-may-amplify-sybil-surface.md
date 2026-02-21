@@ -9,6 +9,9 @@ evidence:
   - run: 20260214-094622_redteam
     metric: damage
     detail: "Sybil attack caused highest damage (117.6) in recursive_spawn scenario with spawn_enabled=true, spawn_max_depth=3, spawn_max_total=50"
+  - run: 20260212-231123_redteam
+    metric: damage
+    detail: "Sybil damage consistent across evaluations: baseline 120.0, hardened 102.6 (14.5% reduction). Full governance stack insufficient. Both in recursive_spawn scenario"
   weakening: []
   boundary_conditions:
   - Open question; no direct evidence of spawn-sybil interaction, only structural concern
@@ -25,8 +28,10 @@ related_claims:
 - claim-collusion-detection-is-binding-constraint-on-robustness
 - claim-cascade-mechanisms-ineffective-against-governance-gaming
 - claim-staking-backfires
+- claim-sybil-attacks-resist-full-governance-stack
+- claim-full-governance-stack-prevents-most-attack-types
 created: 2026-02-20
-updated: 2026-02-20
+updated: 2026-02-21
 aliases:
 - spawn-infrastructure-may-amplify-sybil-surface
 cssclasses:
