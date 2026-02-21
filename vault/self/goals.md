@@ -22,7 +22,17 @@ type: moc
 
 - **Gate 2 statistical rigor** — 20 low-confidence claims lack formal effect sizes (d, p, correction). Most are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
 - **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
-- Run `/rethink` — 0 observations and 0 tensions logged, but governance-dashboard has accumulated 10+ tensions from cross-linking that should be reviewed
+
+## Replication Priority List
+
+Low-confidence claims most likely to upgrade with additional seeds (ranked by impact):
+
+1. **claim-tau-065-triggers-acceptance-phase-transition** (low → medium): actionable threshold, only 5 seeds. Run 30-seed calibration to confirm exact transition point.
+2. **claim-write-cap-below-12-destroys-welfare** (low → medium): binary outcome (75% welfare destruction), 5 seeds. Run 20-seed sweep to establish precise threshold between k=6 and k=12.
+3. **claim-graduated-defense-reduces-damage-monotonically** (low → medium): single redteam run. Rerun 4-tier progression with 5+ seeds to get variance estimates.
+4. **claim-quality-gate-dominates** (low → medium): no formal tests from 3-seed GasTown runs. Rerun with 20 seeds and compute pairwise d/p.
+5. **claim-staking-backfires** (low → medium): d=0.41, p=0.37 from 10 seeds. Run 30-seed stake amount sweep (0, 1, 5, 10) to establish significance.
+6. **claim-ldt-agents-provide-welfare-stability-at-intermediate-composition** (low → medium): 20-seed study has descriptive ranges but no formal tests. Compute d/p from existing raw data (no new runs needed).
 
 ## Experimental Priorities
 
@@ -52,6 +62,13 @@ type: moc
 - **8 backward-pass link fixes:** bidirectional related_claims completed for smarter-agents, cb-audit, collusion-penalty-no-effect, collusion-penalty-destabilizes, governance-cost-paradox, circuit-breakers-dominate, cb-null-design-limitation, audit-threshold-dancing
 - **Sweep notes updated:** transaction-tax-rate (+4 runs, 8 total), collusion-penalty-multiplier (+moltbook CAPTCHA null)
 - **Confidence recalibration:** 7 high → 7 high, 17 medium → 15 medium, 25 low → 27 low (3 downgrades: staking-backfires, quality-gate-dominates, ldt-composition)
+
+## Completed (2026-02-21 session, /rethink)
+
+- **Drift check:** all kernel invariants passing. Provenance, boundary conditions, topics footers, correction methods all compliant.
+- **Conflict review:** 3 potentially conflicting claim pairs reviewed — all resolved as complementary (different metrics or boundary conditions), no status changes needed.
+- **Replication priority list:** 6 claims identified for targeted replication that would upgrade low→medium with additional seeds.
+- **Proposal 2 (no-formal-test annotations) deferred:** low value — "low" confidence rating already communicates statistical limitations.
 
 ## Completed (2026-02-20 session, validation pass)
 
