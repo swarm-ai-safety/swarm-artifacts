@@ -1,0 +1,6 @@
+git: true
+session_capture: true
+domain: swarm-research-os
+preset: research
+generated: 2026-02-20
+engine_version: "0.8.0"

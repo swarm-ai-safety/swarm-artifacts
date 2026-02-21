@@ -1,0 +1,14 @@
+{
+  "schema_version": 3,
+  "description": "SWARM Research OS — synthesis pipeline queue",
+  "next_claim_start": 1,
+  "tasks": [],
+  "maintenance_conditions": {
+    "observations_threshold": 10,
+    "tensions_threshold": 5,
+    "stale_claim_days": 30,
+    "orphan_check_frequency": "weekly"
+  },
+  "phase_order": ["create", "cross-link", "update", "validate"],
+  "created": "2026-02-20T00:00:00Z"
+}

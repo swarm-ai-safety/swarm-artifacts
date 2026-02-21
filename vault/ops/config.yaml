@@ -1,0 +1,58 @@
+# vault/ops/config.yaml — edit to adjust your system
+# See vault/ops/derivation.md for WHY each choice was made
+
+dimensions:
+  granularity: atomic
+  organization: flat
+  linking: explicit+implicit
+  processing: heavy
+  navigation: 3-tier
+  maintenance: condition-based
+  schema: dense
+  automation: full
+
+features:
+  semantic-search: true       # install qmd for full capability
+  processing-pipeline: true
+  sleep-processing: false
+  voice-capture: false
+
+processing_tier: auto
+
+processing:
+  depth: standard              # deep | standard | quick
+  chaining: suggested          # manual | suggested | automatic
+  extraction:
+    selectivity: moderate      # strict | moderate | permissive
+    categories:
+      - governance-claims
+      - adversarial-patterns
+      - parameter-sensitivity
+      - mechanism-interactions
+      - open-questions
+      - method-validations
+      - failure-modes
+  verification:
+    description_test: true
+    schema_check: true
+    link_check: true
+    evidence_provenance: true  # SWARM: every claim needs a real run_id
+    effect_size_check: true    # SWARM: Bonferroni/Holm/BH required
+  reweave:
+    scope: related
+    frequency: after_create
+
+provenance: full              # SWARM: always full provenance
+
+personality:
+  enabled: false              # neutral-analytical default for research
+
+self_evolution:
+  observation_threshold: 10   # /rethink suggested when pending observations >= 10
+  tension_threshold: 5        # /rethink suggested when pending tensions >= 5
+
+research:
+  primary: exa-deep-research
+  fallback: exa-web-search
+  last_resort: web-search
+  default_depth: deep         # SWARM: deep research for AI safety domain
