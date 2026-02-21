@@ -1,0 +1,24 @@
+{
+  "session_id": "20260221-110019",
+  "end_time": "2026-02-21T16:00:19.209523Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/claims/claim-acausality-depth-does-not-affect-cooperation-outcomes.md",
+    "vault/claims/claim-circuit-breakers-dominate.md",
+    "vault/claims/claim-collusion-penalty-destabilizes.md",
+    "vault/claims/claim-collusion-wealth-destruction.md",
+    "vault/claims/claim-deceptive-agents-dominate-moltbook-payoff-hierarchy.md",
+    "vault/claims/claim-freeze-duration-and-violation-threshold-interact-on-welfare.md",
+    "vault/claims/claim-full-governance-reduces-welfare-in-concordia.md",
+    "vault/claims/claim-full-governance-stack-prevents-most-attack-types.md",
+    "vault/claims/claim-governance-cost-paradox.md",
+    "vault/claims/claim-graduated-defense-reduces-damage-monotonically.md",
+    "vault/claims/claim-memory-promotion-gate.md",
+    "vault/claims/claim-quality-gate-dominates.md",
+    "vault/claims/claim-reputation-decay-rate-improves-welfare.md",
+    "vault/claims/claim-smarter-agents-earn-less.md",
+    "vault/claims/claim-sybil-attacks-resist-full-governance-stack.md",
+    "vault/claims/claim-tax-dominates-cb-kernel.md",
+    "vault/claims/claim-tax-phase-transition.md"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "session_id": "20260221-130710",
+  "end_time": "2026-02-21T18:07:10.029128Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-cb-tax-interaction-non-monotonic-in-kernel-v4.md",
+    "vault/claims/claim-freeze-duration-and-violation-threshold-interact-on-welfare.md",
+    "vault/claims/claim-opportunistic-payoff-variance-increases-under-low-tax.md",
+    "vault/claims/claim-tax-and-penalty-effects-are-orthogonal.md",
+    "vault/claims/claim-tax-cb-interact-on-quality-gap.md",
+    "vault/claims/claim-tax-penalty-interaction-on-toxicity-uncharacterized.md",
+    "vault/claims/claim-tax-welfare-direction-is-scenario-dependent.md",
+    "vault/claims/claim-welfare-non-normality-at-extreme-tax.md",
+    "vault/self/goals.md"
+  ]
+}

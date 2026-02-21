@@ -1,0 +1,15 @@
+{
+  "session_id": "20260221-100420",
+  "end_time": "2026-02-21T15:04:20.960974Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-acausality-depth-does-not-affect-cooperation-outcomes.md",
+    "vault/claims/claim-governance-cost-paradox.md",
+    "vault/claims/claim-memori-agents-show-no-governance-sensitivity.md",
+    "vault/claims/claim-rlhf-persona-invariant.md",
+    "vault/claims/claim-smarter-agents-earn-less.md",
+    "vault/claims/claim-tax-disproportionately-punishes-rlm-agents.md",
+    "vault/self/goals.md"
+  ]
+}
