@@ -90,6 +90,7 @@ superseded_by: []
 related_claims:
 - claim-governance-cost-paradox
 - claim-circuit-breakers-dominate
+- claim-memory-promotion-gate
 created: 2026-02-19
 updated: '2026-02-19'
 aliases:

@@ -38,4 +38,9 @@ WHERE type = "failure-pattern"
 SORT choice(severity = "critical", 1, choice(severity = "high", 2, choice(severity = "medium", 3, 4))) ASC
 ```
 
+## Tensions
+
+- **RLHF invariance vs governance necessity**: [[claim-rlhf-persona-invariant]] suggests RLHF-trained agents resist prompt-based behavioral manipulation, which — if confirmed at higher confidence — would imply that governance overhead ([[claim-governance-cost-paradox]]) is unnecessary for RLHF-only ecosystems. This contradicts the design assumption that adversarial prompts can corrupt agent behavior and that governance must defend against prompt-induced threats. The tension resolves differently depending on agent population composition: mixed RLHF + algorithmic ecosystems still require governance.
+- **Behavioral distortion scope**: [[claim-collusion-penalty-destabilizes]] shows governance mechanisms can distort agent behavior, but [[claim-rlhf-persona-invariant]] suggests RLHF agents may be immune to such distortion. If confirmed, penalty destabilization is an algorithmic-agent-only phenomenon.
+
 <!-- topics: dashboard, vault -->

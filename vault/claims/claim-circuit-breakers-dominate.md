@@ -96,6 +96,7 @@ superseded_by: []
 related_claims:
 - claim-staking-backfires
 - claim-tax-welfare-tradeoff
+- claim-rlhf-persona-invariant
 created: 2026-02-11
 updated: '2026-02-19'
 aliases:

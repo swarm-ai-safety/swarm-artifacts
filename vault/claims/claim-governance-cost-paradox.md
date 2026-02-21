@@ -88,6 +88,7 @@ superseded_by: []
 related_claims:
 - claim-tax-welfare-tradeoff
 - claim-quality-gate-dominates
+- claim-memory-promotion-gate
 created: 2026-02-19
 updated: '2026-02-19'
 aliases:
