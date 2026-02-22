@@ -8,10 +8,10 @@ evidence:
   supporting:
   - run: 20260213-151729_redteam
     metric: damage
-    detail: "4-tier progression: no_defenses 176.7, baseline(CB only) 157.8, moderate(CB+audit+staking+5%tax) 114.4, strict(+collusion_detection+10%tax) 49.3. 69% reduction baseline→strict. Evasion rate: 52%→43%→28%→17%"
+    detail: "4-tier progression: no_defenses 176.7, baseline(CB only) 157.8, moderate(CB+audit+staking+5%tax) 114.4, strict(+collusion_detection+10%tax) 49.3. 69% reduction baseline→strict. Evasion rate: 52%→43%→28%→17%. N=1 per tier; inferential statistics not applicable"
   - run: 20260212-231123_redteam
     metric: damage
-    detail: "2-tier comparison: baseline 455.7, hardened 290.6. 36% reduction. Consistent direction with graduated finding"
+    detail: "2-tier comparison: baseline 455.7, hardened 290.6. 36% reduction. Consistent direction with graduated finding. N=1 evaluation per config; inferential statistics not applicable"
   weakening: []
   boundary_conditions:
   - "3-attack battery (reputation farming, collusion ring, threshold dancing) vs 8-attack battery in other redteams"

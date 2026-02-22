@@ -11,19 +11,19 @@ evidence:
     detail: "Sybil attack: baseline 120.0 damage (33.6% evasion, 9 epoch detection), hardened 102.6 damage (28.7% evasion, 8 epoch detection). Only 14.5% damage reduction despite full governance stack. N=1 evaluation per config"
   - run: 20260214-094622_redteam
     metric: damage
-    detail: "Sybil damage 117.6 (29.1% of total 404.5). Highest single-attack damage in 8-attack battery. Consistent with 20260212 evaluation"
+    detail: "Sybil damage 117.6 (29.1% of total 404.5). Highest single-attack damage in 8-attack battery. Consistent with 20260212 evaluation. N=1 evaluation; inferential statistics not applicable"
   - run: 20260209-174740_redteam
     metric: damage
-    detail: "Replicates: baseline sybil 120 damage, hardened 103 damage. Identical pattern across 3 independent redteam evaluations"
+    detail: "Replicates: baseline sybil 120 damage, hardened 103 damage. Identical pattern across 3 independent redteam evaluations. N=1 evaluation per config per run; inferential statistics not applicable"
   - run: 20260210-005442_redteam_strict_governance
     metric: damage
-    detail: "Strict governance (no CD): sybil 97 damage. Strict+CD: sybil 97 damage. Lowered threshold (0.35): sybil 97 damage. Sybil invariant to all governance variations"
+    detail: "Strict governance (no CD): sybil 97 damage. Strict+CD: sybil 97 damage. Lowered threshold (0.35): sybil 97 damage. Sybil invariant to all governance variations. N=1 evaluation per config; inferential statistics not applicable"
   - run: 20260221-081106_redteam_contract_screening_no_collusion
     metric: damage
-    detail: "Contract screening without CD: sybil damage=105.84, evasion=0.296. Highest damage in 8-attack battery"
+    detail: "Contract screening without CD: sybil damage=105.84, evasion=0.296. Highest damage in 8-attack battery. N=1 evaluation; inferential statistics not applicable"
   - run: 20260221-081953_redteam_contract_screening_with_collusion
     metric: damage
-    detail: "Contract screening with CD: sybil damage=105.84, evasion=0.296. Unchanged by collusion detection. Replicated in 20260221-082443"
+    detail: "Contract screening with CD: sybil damage=105.84, evasion=0.296. Unchanged by collusion detection. Replicated in 20260221-082443. N=1 evaluation per config; inferential statistics not applicable"
   weakening: []
   boundary_conditions:
   - "Seven redteam evaluations (20260208-20260221) across multiple scenarios confirm sybil persistence"

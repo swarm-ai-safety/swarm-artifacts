@@ -8,10 +8,10 @@ evidence:
   supporting:
   - run: 20260208-215902_sweep_reputation_decay
     metric: welfare
-    detail: "Decay 1.0 vs 0.9: welfare_per_epoch 7.2 vs 5.9 (+12%). Best config: decay=1.0, stake=0.0. Worst: decay=0.9, stake=10.0, welfare=4.75. 48% spread. 36 runs, 12 configs x 3 seeds"
+    detail: "Decay 1.0 vs 0.9: welfare_per_epoch 7.2 vs 5.9 (+12%). Best config: decay=1.0, stake=0.0. Worst: decay=0.9, stake=10.0, welfare=4.75. 48% spread. 36 runs, 12 configs x 3 seeds. N=3 seeds per config; formal effect sizes unreliable at this sample size"
   - run: 20260208-215902_sweep_reputation_decay
     metric: toxicity_rate
-    detail: "Best config (decay=1.0, stake=0.0) also minimizes toxicity: 0.170 (lowest in sweep). Consistent across 3 seeds"
+    detail: "Best config (decay=1.0, stake=0.0) also minimizes toxicity: 0.170 (lowest in sweep). Consistent across 3 seeds. N=3 seeds per config; formal effect sizes unreliable at this sample size"
   weakening: []
   boundary_conditions:
   - "Decay rates: 0.9, 0.95, 0.98, 1.0. Min stake: 0.0, 5.0, 10.0"

@@ -11,10 +11,10 @@ evidence:
     detail: "Baseline (no defenses): 6/8 attacks succeed, 455.7 total damage, 42% evasion rate. Hardened (full stack): 3/8 succeed, 290.6 total damage, 26% evasion rate. 36.2% damage reduction, 38.4% detection improvement. N=1 evaluation per config"
   - run: 20260213-151729_redteam
     metric: damage
-    detail: "Graduated 4-tier progression on 3-attack battery: no_defenses 176.7, baseline(CB) 157.8, moderate(CB+audit+staking+5%tax) 114.4, strict(+CD+10%tax) 49.3. 69% reduction baseline→strict. Collusion detection provides largest marginal gain"
+    detail: "Graduated 4-tier progression on 3-attack battery: no_defenses 176.7, baseline(CB) 157.8, moderate(CB+audit+staking+5%tax) 114.4, strict(+CD+10%tax) 49.3. 69% reduction baseline→strict. Collusion detection provides largest marginal gain. N=1 per tier; inferential statistics not applicable"
   - run: 20260221-082443_redteam_contract_screening_full
     metric: damage
-    detail: "Contract screening full governance: 4/8 attacks prevented, total damage 299.79, robustness 0.607 (D). Confirms pattern: sybil, threshold dancing, collusion ring, governance gaming persist"
+    detail: "Contract screening full governance: 4/8 attacks prevented, total damage 299.79, robustness 0.607 (D). Confirms pattern: sybil, threshold dancing, collusion ring, governance gaming persist. N=1 evaluation; inferential statistics not applicable"
   weakening: []
   boundary_conditions:
   - "Replicated across recursive_spawn and contract_screening scenarios"

@@ -8,10 +8,10 @@ evidence:
   supporting:
   - run: 20260214-094622_redteam
     metric: damage
-    detail: "Sybil attack caused highest damage (117.6) in recursive_spawn scenario with spawn_enabled=true, spawn_max_depth=3, spawn_max_total=50"
+    detail: "Sybil attack caused highest damage (117.6) in recursive_spawn scenario with spawn_enabled=true, spawn_max_depth=3, spawn_max_total=50. N=1 evaluation; inferential statistics not applicable"
   - run: 20260212-231123_redteam
     metric: damage
-    detail: "Sybil damage consistent across evaluations: baseline 120.0, hardened 102.6 (14.5% reduction). Full governance stack insufficient. Both in recursive_spawn scenario"
+    detail: "Sybil damage consistent across evaluations: baseline 120.0, hardened 102.6 (14.5% reduction). Full governance stack insufficient. Both in recursive_spawn scenario. N=1 evaluation per config; inferential statistics not applicable"
   weakening: []
   boundary_conditions:
   - Open question; no direct evidence of spawn-sybil interaction, only structural concern

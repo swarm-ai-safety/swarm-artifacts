@@ -8,7 +8,7 @@ evidence:
   supporting:
   - run: 20260211-232952_gastown_composition_study
     metric: welfare
-    detail: Welfare penalty at 0% adversarial = -215.9 (58% reduction), N=42
+    detail: 'Governed vs ungoverned welfare at 0% adversarial: d=-13.07, t=-16.00, p=4.83e-03 Bonferroni-corrected (k=7), N=3+3 runs. Mean welfare 158.9 vs 374.7 (58% reduction)'
   - run: 20260213-173805_baseline_governance
     metric: welfare
     detail: 'Tax-induced welfare decline replicates governance cost: d=1.13-1.41 across pairwise tax comparisons, N=80, 10 seeds, Bonferroni-corrected'
@@ -71,7 +71,7 @@ graph-group: claim
 
 The full governance stack — comprising transaction taxes, circuit breakers, collusion penalties, and reputation decay — imposes welfare costs that exceed the toxicity reduction benefits at every adversarial penetration level tested (0%, 10%, 20%, 30%).
 
-**Evidence summary.** In the GasTown composition study (N=42 runs, 7 agents, 30 epochs), the fully governed regime produced a welfare penalty of -215.9 at 0% adversarial penetration, representing a 58% reduction relative to the ungoverned baseline. As adversarial penetration increased, the governance stack did reduce toxicity, but the marginal welfare cost of each unit of toxicity reduction remained net-negative across all tested levels.
+**Evidence summary.** In the GasTown composition study (7 agents, 30 epochs, 3 seeds per condition), the fully governed regime produced significantly lower welfare than the ungoverned baseline at 0% adversarial penetration (mean total welfare 158.9 vs 374.7, a 58% reduction; Cohen's d = -13.07, Welch's t = -16.00, p = 4.83 x 10^-3 Bonferroni-corrected across k=7 adversarial levels). The effect was Bonferroni-significant at all adversarial levels from 0% through 71% (d ranging from -7.66 to -13.07), attenuating only at 86% adversarial where both regimes collapsed (d = -1.85, p_bonf = 0.61). As adversarial penetration increased, the governance stack did reduce toxicity, but the marginal welfare cost of each unit of toxicity reduction remained net-negative across all tested levels.
 
 **Boundary conditions.** This result is established only for the GasTown workspace with 7 agents and 30-epoch horizons. The full governance stack was applied as a monolithic bundle; individual mechanism contributions are decomposed in related claims (see `claim-quality-gate-dominates`, `claim-tax-welfare-tradeoff`). It is unknown whether longer horizons would allow reputation effects to eventually offset the welfare penalty.
 
@@ -88,7 +88,12 @@ The full governance stack — comprising transaction taxes, circuit breakers, co
 - Added weakening evidence from [[20260217_memori_study]]: zero governance sensitivity in LLM memori agents. Governance imposes pure overhead in all-honest population. Underpowered (N=5 seeds, 2 epochs).
 - Added boundary conditions noting scenario-dependence of the paradox per [[claim-tax-welfare-direction-is-scenario-dependent]].
 - Added related claims: claim-tax-welfare-direction-is-scenario-dependent, claim-cb-tax-interaction-non-monotonic-in-kernel-v4, claim-memori-agents-show-no-governance-sensitivity.
-- Confidence remains **medium** for the GasTown/baseline governance context (Bonferroni-significant supporting evidence, but primary GasTown comparison lacks formal d/p). Weakening evidence is underpowered and does not yet challenge the core finding within its established boundary.
+- Confidence remains **medium** for the GasTown/baseline governance context (Bonferroni-significant supporting evidence). Weakening evidence is underpowered and does not yet challenge the core finding within its established boundary.
+
+**2026-02-21** — formal statistics computed for primary GasTown evidence:
+- Computed Cohen's d = -13.07, Welch's t = -16.00, p = 4.83e-03 (Bonferroni, k=7) for governed vs ungoverned welfare at 0% adversarial.
+- All levels 0%-71% are Bonferroni-significant (d = -7.66 to -13.07). Only 86% adversarial is non-significant (d = -1.85).
+- Resolves Gate 2 (formal effect size + correction method) for the primary evidence entry.
 
 ## Lifecycle audit
 

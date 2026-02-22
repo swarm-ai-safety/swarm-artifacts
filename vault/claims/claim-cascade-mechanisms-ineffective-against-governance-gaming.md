@@ -8,7 +8,7 @@ evidence:
   supporting:
   - run: 20260214-094622_redteam
     metric: damage
-    detail: "governance_gaming: damage 23.52, evasion_rate 0.329, never detected. cascade_ban=true, cascade_freeze=true"
+    detail: "governance_gaming: damage 23.52, evasion_rate 0.329, never detected. cascade_ban=true, cascade_freeze=true. N=1 evaluation; inferential statistics not applicable"
   weakening: []
   boundary_conditions:
   - recursive_spawn scenario, expert-difficulty single adversary

@@ -8,7 +8,7 @@ evidence:
   supporting:
   - run: 20260211-232952_gastown_composition_study
     metric: tier_poisoning_rate
-    detail: Ephemeral tier 50.7% poisoned, tier 2+ 0.0% poisoned, single seed
+    detail: "Ephemeral tier 50.7% poisoned, tier 2+ 0.0% poisoned, single seed. N=1 evaluation; inferential statistics not applicable"
   weakening: []
   boundary_conditions:
   - 20 epochs, 9 agents, quality threshold p>=0.5, single seed=42
