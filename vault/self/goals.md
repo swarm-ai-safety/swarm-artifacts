@@ -8,8 +8,9 @@ type: moc
 ## Active Threads
 
 - **55 claims** (53 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market domains
-- **Confidence distribution:** 9 high, 18 medium, 28 low (5 new claims: 2 high, 3 medium; 4 existing claims upgraded low→medium)
+- **Confidence distribution:** 10 high, 18 medium, 27 low (LDT composition upgraded low→high with d=2.89 Bonferroni-sig replicated)
 - **Pipeline queue:** 95/95 completed, 0 pending — all 125 runs processed
+- **8 sweep series** — contract-screening sweep note added
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
   2. Governance interaction universality — **rejected**: contradictory evidence (orthogonality finding vs interaction claims). Not a universal pattern.
@@ -32,7 +33,7 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 3. **claim-graduated-defense-reduces-damage-monotonically** (low → medium): single redteam run. Rerun 4-tier progression with 5+ seeds to get variance estimates.
 4. **claim-quality-gate-dominates** (low → medium): no formal tests from 3-seed GasTown runs. Rerun with 20 seeds and compute pairwise d/p.
 5. **claim-staking-backfires** (low → medium): d=0.41, p=0.37 from 10 seeds. Run 30-seed stake amount sweep (0, 1, 5, 10) to establish significance.
-6. **claim-ldt-agents-provide-welfare-stability-at-intermediate-composition** (low → medium): 20-seed study has descriptive ranges but no formal tests. Compute d/p from existing raw data (no new runs needed).
+6. ~~**claim-ldt-agents-provide-welfare-stability-at-intermediate-composition**~~ — **COMPLETED**: d=2.89 Bonferroni-sig, replicated across 2 runs. Upgraded low→**high**.
 
 ## Experimental Priorities
 
@@ -69,6 +70,12 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 - **Conflict review:** 3 potentially conflicting claim pairs reviewed — all resolved as complementary (different metrics or boundary conditions), no status changes needed.
 - **Replication priority list:** 6 claims identified for targeted replication that would upgrade low→medium with additional seeds.
 - **Proposal 2 (no-formal-test annotations) deferred:** low value — "low" confidence rating already communicates statistical limitations.
+
+## Completed (2026-02-21 session, synthesis work)
+
+- **Contract screening sweep note** created at vault/sweeps/contract-screening.md (8th sweep series)
+- **LDT composition formal stats** computed: d=2.89, p=7.9e-41, Bonferroni-corrected across 4 composition levels, replicated in 10-seed study. Upgraded low→**high** confidence.
+- **Older unprocessed runs**: audit found 0 legitimate unprocessed runs — vault coverage is complete (3 remaining dirs are test fixtures)
 
 ## Completed (2026-02-21 session, 6 new runs pipeline)
 

@@ -7,7 +7,7 @@ created: 2026-02-19
 updated: 2026-02-19
 ---
 
-# Sweeps dashboard aggregates 7 parameter sweep series
+# Sweeps dashboard aggregates 8 parameter sweep series
 
 Each sweep summary note tracks a single parameter dimension across multiple runs, recording the values tested, convergence status, and key findings. This dashboard provides an at-a-glance view of all sweep series ordered by most recently updated.
 

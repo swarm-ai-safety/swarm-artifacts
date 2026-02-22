@@ -68,7 +68,7 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-captcha-difficulty-and-collusion-penalty-have-no-governance-effect]] — CAPTCHA difficulty and collusion penalty show zero effect in 200-run factorial (medium confidence)
 - [[claim-deceptive-agents-dominate-moltbook-payoff-hierarchy]] — Deceptive agents earn 3x honest payoff in moltbook regardless of governance (medium confidence)
 - [[claim-graduated-defense-reduces-damage-monotonically]] — Adding governance layers monotonically reduces redteam damage by up to 69% (low confidence)
-- [[claim-ldt-agents-provide-welfare-stability-at-intermediate-composition]] — LDT agents maintain +42% welfare at 40-70% composition (low confidence)
+- [[claim-ldt-agents-provide-welfare-stability-at-intermediate-composition]] — LDT agents maintain +48% welfare at 40-70% composition, d=2.89 Bonferroni-sig (high confidence)
 - [[claim-freeze-duration-and-violation-threshold-interact-on-welfare]] — Freeze duration improves welfare 17% but no interaction with threshold, F=0.23 p=0.96 (low confidence)
 - [[claim-reputation-decay-rate-improves-welfare]] — Full reputation persistence + zero stake produces best welfare and lowest toxicity (low confidence)
 - [[claim-full-governance-reduces-welfare-in-concordia]] — Full governance stack reduces Concordia welfare 18% with zero toxicity benefit (medium confidence)
@@ -120,7 +120,7 @@ One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
 ## Sweeps
 
-Cross-run aggregations tracking convergence of parameter explorations. 7 sweep series.
+Cross-run aggregations tracking convergence of parameter explorations. 8 sweep series.
 
 - [[transaction-tax-rate]] — Tax rate sweep series across multiple runs
 - [[collusion-penalty-multiplier]] — Collusion penalty sensitivity and tax interaction
@@ -129,6 +129,7 @@ Cross-run aggregations tracking convergence of parameter explorations. 7 sweep s
 - [[gastown-composition]] — GasTown adversarial composition sweeps
 - [[ldt-parametric]] — LDT cooperation parameter sweeps
 - [[rlm-recursive-collusion]] — RLM recursive reasoning sweeps
+- [[contract-screening]] — Contract screening separation, payoff premium, and adversarial robustness across 5 runs
 
 ## Methods
 
