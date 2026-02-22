@@ -48,6 +48,16 @@ Before a claim is considered complete:
 - Boundary conditions documented
 - Schema passes _schema block constraints
 
+## Operational Memory (`/remember`)
+
+Invoke `/remember` during processing sessions when:
+- A judgment call is made (e.g., choosing between confidence levels, deciding to merge vs split claims)
+- A tool or pipeline step behaves unexpectedly
+- A pattern is noticed but not yet formalized as a claim
+- A methodological friction point is encountered (e.g., schema doesn't fit a finding type)
+
+This feeds the `/rethink` maintenance loop. Without `/remember` invocations, the observation pipeline has no input and system evolution stalls.
+
 ## Maintenance Triggers
 
 - Pending observations ≥ 10 → run /rethink

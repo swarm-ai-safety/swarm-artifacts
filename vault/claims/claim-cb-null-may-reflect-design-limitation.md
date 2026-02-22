@@ -2,7 +2,7 @@
 description: Circuit breaker null effect in baseline v2 may reflect insufficient threshold variation in 2-level on/off design
 type: claim
 status: active
-confidence: low
+confidence: medium
 domain: methodology
 evidence:
   supporting:
@@ -52,7 +52,7 @@ aliases:
 - cb-null-may-reflect-design-limitation
 cssclasses:
 - claim
-- claim-low
+- claim-medium
 tags:
 - methodology
 - circuit-breaker

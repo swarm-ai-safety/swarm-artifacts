@@ -28,6 +28,8 @@ related_claims:
 - claim-staking-backfires
 - claim-governance-cost-paradox
 - claim-circuit-breakers-dominate
+- claim-freeze-duration-and-violation-threshold-interact-on-welfare
+- claim-optimal-tax-range-0-to-5pct
 created: 2026-02-21
 updated: 2026-02-21
 aliases:
@@ -56,6 +58,14 @@ The strongest finding: decay rate 1.0 (full persistence, no decay) with zero sta
 **Stake interaction:** Higher minimum stakes reduce welfare, consistent with [[claim-staking-backfires]]. The reputation decay sweep provides independent confirmation that staking requirements hurt honest agents more than they protect the ecosystem.
 
 The combination of "no decay + no stake" achieving both best welfare and lowest toxicity challenges [[claim-governance-cost-paradox]]: this specific configuration achieves security and welfare simultaneously, suggesting the paradox may be resolvable through parameter optimization rather than fundamental tradeoff.
+
+## Connections
+
+The finding that decay=1.0 (no decay) maximizes welfare creates a direct tension with [[failure-reputation-farming-exploit]], which shows that reputation decay is the primary defense against sleeper agents who farm trust then exploit it. Without decay, farmed reputation persists indefinitely, giving sleeper agents unlimited exploitation windows. A decay rate of 0.85 is sufficient to detect farming pivots within 6 epochs and reduce damage by 62-69%. This is a welfare-security tradeoff within the reputation parameter: no decay maximizes welfare but maximizes farming vulnerability; moderate decay (0.85-0.95) sacrifices some welfare for sleeper detection. The optimal decay rate depends on the expected adversarial fraction.
+
+The freeze duration sweep ([[claim-freeze-duration-and-violation-threshold-interact-on-welfare]]) is methodologically parallel — both are 12-config x 3-seed factorial sweeps from the same 20260208 experimental batch, both test CB-related governance parameters, and both find significant welfare effects when parameters are varied continuously. Together they provide a two-dimensional view of CB parameter sensitivity that the binary on/off design missed.
+
+The "no decay + no stake = best welfare" finding parallels the safe operating range in [[claim-optimal-tax-range-0-to-5pct]]: both identify parameter configurations where governance cost is minimized. The convergence across governance dimensions (reputation vs tax vs freeze) suggests a general principle that minimal governance parameterization maximizes welfare, with the caveat that minimal parameterization may also minimize security.
 
 ## Open questions
 

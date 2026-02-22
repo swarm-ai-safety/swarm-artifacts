@@ -32,6 +32,8 @@ related_claims:
 - claim-cb-null-may-reflect-design-limitation
 - claim-governance-cost-paradox
 - claim-audit-threshold-interaction-enables-dancing
+- claim-optimal-tax-range-0-to-5pct
+- claim-reputation-decay-rate-improves-welfare
 created: 2026-02-21
 updated: 2026-02-21
 aliases:
@@ -63,6 +65,12 @@ The best configuration (duration=5, violations=3) produces 14% higher welfare th
 Toxicity also responds: violation threshold 3 vs 8 reduces toxicity from 0.261 to 0.227 (-13%), replicated across all 3 seeds.
 
 This directly addresses [[claim-cb-null-may-reflect-design-limitation]]: the CB null effect in binary on/off designs may reflect that the default freeze parameters are suboptimal. The freeze duration sweep shows CB parameters have real effects when varied continuously. If confirmed, this partially resolves the tension between [[claim-circuit-breakers-dominate]] (CB effective in governance comparison) and the CB null in baseline governance sweeps — the difference may be parameter calibration, not fundamental CB ineffectiveness.
+
+## Connections
+
+The freeze duration sweep's safe operating range (duration 3-5 epochs, violation threshold 3-5) parallels the tax safe operating range identified in [[claim-optimal-tax-range-0-to-5pct]]: both establish parameter bands where governance cost is negligible, with cliffs beyond those bands. This convergence across governance domains (CB parameters vs tax rate) reinforces the pattern identified in the governance dashboard that multi-agent governance parameters have narrow safe operating envelopes.
+
+The freeze duration and reputation decay sweeps ([[claim-reputation-decay-rate-improves-welfare]]) are methodologically parallel — both are 12-config x 3-seed factorial sweeps from the same experimental batch (20260208), both test CB-related governance parameters, and both find that welfare responds to parameter tuning when the parameter is varied continuously rather than binary on/off. Together they strengthen the case that the CB null effect in binary designs is a design limitation, not evidence of CB ineffectiveness.
 
 ## Open questions
 

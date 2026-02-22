@@ -23,6 +23,8 @@ supersedes: []
 superseded_by: []
 related_claims:
   - claim-trust-boundaries-modify-but-never-deny-handoffs
+  - claim-agent-architecture-constrains-behavior-more-than-governance
+  - claim-prompt-level-governance-fails-in-multi-agent-systems
 created: 2026-02-21
 updated: 2026-02-21
 aliases:
@@ -67,6 +69,10 @@ The chi-square test for the handoff effect yields chi2=7.11 (df=3, p=0.068), whi
 ## Mechanism
 
 LangGraph delegation involves a coordinator agent that routes subtasks to specialist agents (researcher, writer, reviewer) via handoffs. The task requires all three specialists to contribute, meaning a minimum of 3 handoffs. In practice, LLM-based routing is not always optimal — the coordinator may route to the wrong specialist or repeat handoffs. A budget of 5-10 handoffs provides too little slack for routing errors, while 15+ provides enough buffer. The max_cycles parameter limits re-visitation but does not constrain the critical path, explaining its null effect.
+
+## Connections
+
+The handoff budget threshold is fundamentally an architectural constraint — the 4-role delegation chain requires a minimum chain depth of 3 with 4 handoffs, and LLM routing imperfection demands slack beyond that minimum. This extends [[claim-agent-architecture-constrains-behavior-more-than-governance]] to delegation scenarios: the architecture of the agent pipeline (number of roles, chain depth) constrains completion more than any governance parameter (max_cycles is null). The LLM routing failures that necessitate high handoff budgets also exemplify the pattern in [[claim-prompt-level-governance-fails-in-multi-agent-systems]]: the coordinator's routing decisions are prompt-driven, and their imperfection under multi-agent coordination pressure is what demands the budget slack.
 
 ## Open questions
 

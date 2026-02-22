@@ -22,6 +22,8 @@ supersedes: []
 superseded_by: []
 related_claims:
   - claim-delegation-completion-requires-handoff-budget-above-15
+  - claim-quality-gate-dominates
+  - claim-prompt-level-governance-fails-in-multi-agent-systems
 created: 2026-02-21
 updated: 2026-02-21
 aliases:
@@ -56,6 +58,10 @@ This has important implications for understanding trust boundaries as a governan
 ## Mechanism
 
 Trust boundaries appear to implement a "modify-all" policy rather than a selective filter. When an agent proposes a handoff, the trust boundary layer modifies the handoff parameters (possibly adjusting task scope, adding constraints, or changing the target agent) while always allowing it to proceed. This creates a softer governance layer compared to hard denial, which could explain why it improves rather than degrades task completion in some configurations.
+
+## Connections
+
+The trust boundary's "modify-all, deny-none" approach contrasts with [[claim-quality-gate-dominates]], where a quality gate achieves safety by rejecting interactions below p=0.5. Trust boundaries represent a transformation philosophy (modify and permit) while the quality gate represents an exclusion philosophy (reject and block). The trust boundary approach may explain why it paradoxically improves completion: transformation preserves delegation flow while adding governance constraints, whereas hard rejection (as in the quality gate or circuit breaker freeze) disrupts agent workflow. This distinction maps to the broader finding in [[claim-prompt-level-governance-fails-in-multi-agent-systems]] that mechanism-level governance works where declarative restrictions fail — trust boundaries succeed as a mechanism-level transformation layer that restructures handoffs rather than prohibiting them.
 
 ## Open questions
 

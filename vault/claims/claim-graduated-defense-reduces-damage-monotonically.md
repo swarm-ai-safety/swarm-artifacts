@@ -33,6 +33,8 @@ related_claims:
 - claim-tax-welfare-tradeoff
 - claim-leniency-whistleblowing-is-untested-governance-lever
 - claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations
+- claim-collusion-detection-reduces-ring-damage-75pct
+- claim-prompt-level-governance-fails-in-multi-agent-systems
 created: 2026-02-21
 updated: 2026-02-21
 aliases:
@@ -70,6 +72,12 @@ A key nuance: the "no defenses" tier paradoxically prevents all 3 attacks throug
 ## Mechanism
 
 Each governance layer addresses a different attack surface: CB detects behavioral anomalies, audit provides stochastic sampling, staking imposes economic costs, tax reduces transaction incentives, and collusion detection identifies coordination. The monotonic damage reduction suggests these surfaces are complementary rather than redundant — each closes a gap the others leave open. This is consistent with [[claim-governance-cost-paradox]]: the welfare cost of each layer must be weighed against its marginal security benefit.
+
+## Connections
+
+The largest marginal damage reduction (moderate to strict: 114.4 to 49.3, -57%) comes from enabling collusion detection. [[claim-collusion-detection-reduces-ring-damage-75pct]] quantifies the specific mechanism: CD reduces collusion ring damage by 75% through correlation-based detection. The graduated finding and the CD quantification are complementary — the graduated claim shows collusion detection's marginal contribution within the full stack, while the CD claim isolates the mechanism in controlled A/B comparison.
+
+The monotonic reduction from mechanism-level governance additions validates the finding in [[claim-prompt-level-governance-fails-in-multi-agent-systems]] that altering payoff structures (each governance tier changes the economic landscape) works where declarative prohibitions do not. The graduated progression is essentially a demonstration that mechanism design compounds — each tier adds a structural intervention, and each structural intervention produces measurable damage reduction.
 
 ## Open questions
 

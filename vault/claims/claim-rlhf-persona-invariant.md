@@ -2,7 +2,7 @@
 description: RLHF-trained Claude models produce identical cooperative behavior across adversarial system prompts
 type: claim
 status: active
-confidence: low
+confidence: medium
 domain: agent-behavior
 evidence:
   supporting:
@@ -39,7 +39,7 @@ aliases:
 - rlhf-trained-claude-models-produce-identical-cooperative
 cssclasses:
 - claim
-- claim-low
+- claim-medium
 tags:
 - agent-behavior
 - rlhf

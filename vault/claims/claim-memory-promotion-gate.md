@@ -20,6 +20,9 @@ superseded_by: []
 related_claims:
 - claim-quality-gate-dominates
 - claim-governance-cost-paradox
+- claim-contract-screening-achieves-perfect-type-separation
+- claim-optimal-tau-range-050-to-060
+- claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-19
 updated: 2026-02-19
 aliases:
@@ -45,6 +48,12 @@ A quality-based promotion gate with threshold p >= 0.5 blocks 100% of poisoned c
 **Boundary conditions.** This is a single-seed result with only 9 agents and 20 epochs. The 100% blocking rate is likely an artifact of the small sample and the gap between poisoned content quality scores and the threshold. In larger runs or under adversarial optimization of quality scores, some poisoned content may approach or exceed the threshold. The confidence is rated low because the perfect blocking rate has not been stress-tested.
 
 **Threat model.** The promotion gate's fixed p >= 0.5 threshold is structurally analogous to the circuit breaker freeze threshold exploited in [[failure-threshold-dancing]] — adversaries who learn the gate threshold could craft content calibrated to score just above it while remaining poisoned. Similarly, [[failure-information-laundering-via-proxies]] suggests that adversaries could route poisoned content through proxy agents whose quality scoring inflates apparent content quality, bypassing the gate. The [[failure-reputation-farming-exploit]] pattern demonstrates that trust-based thresholds can be gamed through behavioral accumulation — an adversary building a history of high-quality contributions could calibrate poisoned content to pass the gate.
+
+**Connections.** The promotion gate's perfect separation of poisoned from clean content mirrors [[claim-contract-screening-achieves-perfect-type-separation]], where a different deterministic filtering mechanism achieves perfect agent type separation across 11 seeds. Both demonstrate that incentive-compatible or quality-based deterministic filters can achieve perfect classification in controlled settings — the same mechanism design principle (screening via self-selection or threshold gating) applied in different domains (memory content vs agent types). Both also share the same fragility concern: adversarial optimization could degrade the perfect separation, as Rothschild-Stiglitz theory predicts for screening equilibria and as [[failure-threshold-dancing]] demonstrates for fixed-threshold systems.
+
+The promotion gate's p>=0.5 threshold is structurally analogous to the tau_min parameter in [[claim-optimal-tau-range-050-to-060]], where tau_min=0.50-0.60 defines the safe operating range for memory acceptance. Both define quality thresholds with cliff effects beyond the optimal range, reinforcing the pattern of narrow safe operating envelopes for governance parameters.
+
+If [[claim-agent-architecture-constrains-behavior-more-than-governance]] generalizes to content generation, the promotion gate may be unnecessary in well-aligned populations where agents do not produce poisoned content. The gate's value is contingent on the threat model — in all-honest populations, it is pure overhead.
 
 **Open questions.**
 - At what adversarial penetration rate does the promotion gate begin to leak?
