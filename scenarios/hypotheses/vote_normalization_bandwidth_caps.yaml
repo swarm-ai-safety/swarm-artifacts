@@ -1,0 +1,79 @@
+# Hypothesis: Vote normalization and bandwidth caps reduce sybil damage
+#
+# Tests claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations.
+# These parameters exist in SWARM's config but have never been tested.
+# SyRA (IACR 2024) provides cryptographic precedent for rate-limiting.
+#
+# Design: 2x2x2 factorial with redteam sybil attack.
+#   Factor 1: vote_normalization (off, on)
+#   Factor 2: bandwidth_cap (off, on)
+#   Factor 3: sybil attack (none, 5-identity)
+# Measure: sybil damage, governance grade, honest payoff, welfare.
+#
+# Falsification: If neither parameter reduces sybil damage, rate-limiting
+# is ineffective in SWARM's architecture.
+
+scenario_id: hypothesis_vote_norm_bandwidth
+description: "Test vote normalization and bandwidth caps against sybil attacks"
+motif: "Rate-limiting sybil mitigations"
+hypothesis: claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations
+
+agents:
+  - type: honest
+    count: 6
+  - type: adversarial
+    count: 2
+
+governance:
+  transaction_tax_rate: 0.03
+  circuit_breaker_enabled: true
+  freeze_threshold_toxicity: 0.6
+  freeze_threshold_violations: 3
+  freeze_duration_epochs: 3
+  audit_enabled: true
+  audit_probability: 0.10
+  collusion_detection_enabled: true
+  collusion_correlation_threshold: 0.6
+  staking_enabled: false
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 20
+  steps_per_epoch: 10
+
+sweep:
+  type: factorial
+  seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080,
+          11, 22, 33, 44, 55, 66, 77, 88, 99, 100]
+  parameters:
+    governance.vote_normalization: [false, true]
+    governance.bandwidth_cap: [0, 10]
+    redteam.sybil_identities: [0, 5]
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+analysis:
+  primary_metrics:
+    - sybil_damage: "Total damage from sybil attack"
+    - governance_grade: "Robustness letter grade"
+    - honest_payoff: "Mean honest agent payoff"
+    - welfare: "System-wide welfare"
+  comparison: three_way_anova
+  correction: bonferroni
+  expected_effect: "vote_normalization and/or bandwidth_cap reduce sybil_damage"
+  falsification: "neither parameter shows significant main effect on sybil_damage"
+
+success_criteria:
+  min_seeds: 20
+  significance_level: 0.05
