@@ -1,7 +1,7 @@
 ---
 description: The /remember command has never been invoked despite 55 claims and 95+ extraction tasks
 type: observation
-status: pending
+status: triaged
 created: 2026-02-21
 source: /rethink phase 2 pattern detection
 ---

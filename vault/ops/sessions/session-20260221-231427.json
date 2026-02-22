@@ -1,0 +1,25 @@
+{
+  "session_id": "20260221-231427",
+  "end_time": "2026-02-22T04:14:27.038550Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-collusion-wealth-destruction.md",
+    "vault/claims/claim-contract-screening-achieves-perfect-type-separation.md",
+    "vault/claims/claim-coordination-attacks-dominate-redteam-damage.md",
+    "vault/claims/claim-critical-slowing-down-would-confirm-tax-phase-transition.md",
+    "vault/claims/claim-full-governance-stack-prevents-most-attack-types.md",
+    "vault/claims/claim-governance-cost-paradox.md",
+    "vault/claims/claim-graduated-defense-reduces-damage-monotonically.md",
+    "vault/claims/claim-leniency-whistleblowing-is-untested-governance-lever.md",
+    "vault/claims/claim-optimal-tax-range-0-to-5pct.md",
+    "vault/claims/claim-prompt-level-governance-fails-in-multi-agent-systems.md",
+    "vault/claims/claim-quadratic-staking-may-solve-sybil-cost-inversion.md",
+    "vault/claims/claim-steganographic-collusion-unaddressed-by-swarm-detection.md",
+    "vault/claims/claim-tax-phase-transition-hysteresis-predicted-but-untested.md",
+    "vault/claims/claim-tax-welfare-direction-is-scenario-dependent.md",
+    "vault/claims/claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations.md",
+    "vault/governance-dashboard.md",
+    "vault/self/goals.md"
+  ]
+}
