@@ -86,6 +86,13 @@ The 20260212 redteam also revealed that reputation farming partially persists in
 
 Sybil attacks multiply identity to amplify a single adversary's influence across 5 synthetic agents. Current governance mechanisms detect behavioral anomalies (CB), correlate actions (collusion detection), sample transactions (audit), and impose economic costs (staking, tax). But sybil agents can maintain individually normal behavior while collectively amplifying influence, staying below per-agent thresholds. The missing defenses — vote normalization and bandwidth caps — would limit per-identity influence directly, attacking the multiplication rather than the behavior.
 
+## Update history
+
+**2026-02-22** — research enrichment:
+- Added external literature on sybil resistance defense taxonomy (economic, cryptographic, social, behavioral). SWARM currently tests only 2 of 4 categories. HCO (arXiv:2601.03923) provides formal proof of linear sybil cost enforcement. Cryptographic (ZK-PoI, SyRA) and social (graph analysis, vouching) defenses remain untested.
+- Added related claims: claim-quadratic-staking-may-solve-sybil-cost-inversion, claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations.
+- Confidence unchanged — external literature, not new SWARM evidence.
+
 ## Open questions
 
 - Do vote normalization and bandwidth caps actually prevent sybil attacks?
