@@ -1,5 +1,5 @@
 ---
-description: "Phase transition theory predicts convergence time peaks near 5-10% tax — measurable in existing SWARM data"
+description: "Phase transition theory predicts convergence time peaks near 5-10% tax — requires new experiments with per-round data"
 type: claim
 status: active
 confidence: low
@@ -8,11 +8,12 @@ evidence:
   supporting:
   - run: research-mechanism-design-screening-2026-02-22
     metric: convergence_time
-    detail: 'Statistical physics predicts critical slowing down near phase transitions; convergence time should peak at 5-10% tax if transition is genuine. Testable in SWARM by measuring round-by-round welfare convergence in existing run data'
+    detail: 'Statistical physics predicts critical slowing down near phase transitions; convergence time should peak at 5-10% tax if transition is genuine. Requires new experiments — existing sweep runs store only aggregate welfare, not round-by-round time series. Single-run experiments do have epoch-level history.json but no tax sweeps were run in single-run mode'
     source_type: research
   weakening: []
   boundary_conditions:
-  - Requires per-round welfare data from existing SWARM runs
+  - Requires new experiments — existing tax sweep runs only store aggregate welfare, not per-round time series
+  - Single-run harness saves epoch-level history.json but no tax sweeps were run in single-run mode
   - Assumes sufficient rounds per run to measure convergence dynamics
 supersedes: []
 superseded_by: []
@@ -44,7 +45,7 @@ Critical slowing down is a universal signature of continuous phase transitions i
 
 Applied to SWARM, the prediction is specific and testable: if welfare convergence time (measured as rounds to reach steady-state welfare) is plotted against tax rate, it should peak at or near the 5-10% transition band identified in [[claim-tax-phase-transition]]. Runs at 5% and 7.5% tax should converge more slowly than runs at 0% or 15%.
 
-This test is particularly valuable because it can be performed on existing SWARM data without new experiments. The per-round welfare data in `history.json` files from the baseline governance sweeps contains the necessary time series.
+This test requires new experiments — existing tax sweep runs only store aggregate welfare per configuration (via `SweepRunner.to_csv()`), not per-round time series. The single-run harness does save epoch-level `history.json`, but no tax sweeps were run in single-run mode. The `scenarios/hypotheses/critical_slowing_down.yaml` experiment config is designed to generate the needed data.
 
 If critical slowing down is confirmed, the companion prediction of [[claim-tax-phase-transition-hysteresis-predicted-but-untested|hysteresis at the tax phase transition]] becomes substantially more credible — both derive from the same physical theory but test different signatures. The [[claim-welfare-plateaus-above-12pct-tax|welfare plateau above 12.5%]] is consistent with the post-transition regime where critical slowing down should be absent: once the system has collapsed, convergence speeds up again. Critical slowing down would also validate the [[claim-optimal-tax-range-0-to-5pct|0-5% safe range]] from a physics perspective — the safe range corresponds to the pre-transition regime where the system is far from criticality. A key falsification test: [[claim-tax-welfare-direction-is-scenario-dependent|the kernel v4 scenario]] shows no phase transition (welfare monotonically increases with tax), so it should also show no critical slowing down — confirming that both signatures are genuine rather than measurement artifacts.
 
