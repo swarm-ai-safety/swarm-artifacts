@@ -1,0 +1,83 @@
+# Hypothesis: Critical slowing down near tax phase transition
+#
+# Tests claim-critical-slowing-down-would-confirm-tax-phase-transition.
+# Phase transition theory predicts convergence time peaks near critical
+# point (5-10% tax). Measure round-by-round welfare variance and
+# autocorrelation at each tax rate.
+#
+# Design: Fine-grained tax sweep with long runs to measure convergence.
+# At each tax rate, measure:
+#   1. Rounds to welfare convergence (within 5% of terminal value)
+#   2. Welfare autocorrelation lag-1 (should peak near transition)
+#   3. Welfare variance across rounds (should peak near transition)
+#
+# Falsification: If convergence time is uniform across tax rates,
+# there is no critical slowing down and the transition is not genuine.
+#
+# NOTE: Can be partially tested on EXISTING run data by analyzing
+# round-by-round welfare in tax sweep runs.
+
+scenario_id: hypothesis_critical_slowing_down
+description: "Measure convergence time and variance near tax phase transition"
+motif: "Critical slowing down detection"
+hypothesis: claim-critical-slowing-down-would-confirm-tax-phase-transition
+
+agents:
+  - type: honest
+    count: 6
+  - type: adversarial
+    count: 2
+  - type: opportunistic
+    count: 2
+
+governance:
+  circuit_breaker_enabled: true
+  freeze_threshold_toxicity: 0.6
+  freeze_threshold_violations: 3
+  freeze_duration_epochs: 3
+  audit_enabled: true
+  audit_probability: 0.10
+  collusion_detection_enabled: false
+  staking_enabled: false
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 50
+  steps_per_epoch: 10
+
+sweep:
+  type: grid
+  seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080,
+          11, 22, 33, 44, 55, 66, 77, 88, 99, 100,
+          201, 202, 203, 204, 205, 206, 207, 208, 209, 210]
+  parameters:
+    governance.transaction_tax_rate: [0.00, 0.02, 0.03, 0.04, 0.05,
+                                      0.06, 0.07, 0.08, 0.09, 0.10,
+                                      0.12, 0.15, 0.20]
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+analysis:
+  primary_metrics:
+    - convergence_rounds: "Rounds until welfare within 5% of final 10-round mean"
+    - lag1_autocorrelation: "Round-to-round welfare autocorrelation"
+    - welfare_variance: "Within-run welfare variance across rounds"
+  comparison: one_way_anova_across_tax_rates
+  correction: bonferroni
+  expected_effect: "convergence_rounds and variance peak at 5-10% tax"
+  falsification: "convergence_rounds uniform across all tax rates (ANOVA p>0.05)"
+
+success_criteria:
+  min_seeds: 30
+  significance_level: 0.05
