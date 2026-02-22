@@ -85,6 +85,7 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-critical-slowing-down-would-confirm-tax-phase-transition]] — Convergence time should peak near 5-10% tax if transition is genuine (low confidence)
 - [[claim-quadratic-staking-may-solve-sybil-cost-inversion]] — Super-linear staking would impose escalating costs on sybil controllers (low confidence)
 - [[claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations]] — vote_normalization and bandwidth_cap have precedent but zero SWARM testing (low confidence)
+- [[claim-governance-parameters-have-narrow-safe-operating-envelopes]] — Five+ governance parameters show flat safe range then non-linear cliff, suggesting universal structural property (low confidence)
 
 ## Governance Mechanisms
 
@@ -123,7 +124,7 @@ Named vulnerability and attack patterns from red-team evaluations. 8 patterns, 2
 
 One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
-- `vault/experiments/` — 110 experiment notes synthesized from 112 runs
+- `vault/experiments/` — 118 experiment notes synthesized from 125 runs
 
 ## Sweeps
 
