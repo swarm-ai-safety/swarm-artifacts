@@ -80,6 +80,11 @@ The relationship between transaction tax rate and welfare is non-linear, with a 
 
 ## Update history
 
+**2026-02-22** — research enrichment:
+- Added econophysics literature validation: Khashanah & Simaan (PNAS 2022) and Gualdi et al. (2015) document analogous phase transitions in agent-based economic models, including agent withdrawal cascades and hysteresis. SWARM's S-curve is consistent with genuine critical phenomena.
+- Added related claims: claim-tax-phase-transition-hysteresis-predicted-but-untested, claim-critical-slowing-down-would-confirm-tax-phase-transition.
+- Confidence unchanged — external literature, not new SWARM evidence.
+
 **2026-02-20** — backward-pass update:
 - Added weakening evidence from [[20260214-113750_kernel_v4_code_sweep]]: no S-curve detected; welfare monotonically increases with tax. This contradicts the 5-10% phase transition found in baseline governance. Underpowered (N=5 seeds).
 - Added boundary condition and sensitivity note for scenario-dependence per [[claim-tax-welfare-direction-is-scenario-dependent]].

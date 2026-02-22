@@ -77,6 +77,12 @@ The breadth and consistency of nulls across 7 studies, 5 scenarios, and 210 tota
 
 In the LDT cooperation scenario, the strategic landscape may be simple enough that depth-1 reasoning already captures the relevant counterparty dynamics. Deeper reasoning chains (depth 2-3) provide no additional strategic advantage because the game structure doesn't reward multi-step reasoning about reasoning. Alternatively, the acausality implementation may not effectively differentiate depths at the behavioral level.
 
+## Update history
+
+**2026-02-22** — research enrichment:
+- Added three theoretical explanations for null result from decision theory literature: implementation ceiling (depth-1 captures all benefit), population homogeneity (behavioral signals suffice), and game structure limitations. Oesterheld (2017) and Tennenholtz (2004) suggest formal source code transparency could outperform behavioral inference — a design direction SWARM has not tested.
+- Confidence unchanged — external literature, not new SWARM evidence.
+
 ## Open questions
 
 - Does acausality depth matter at depths >3?

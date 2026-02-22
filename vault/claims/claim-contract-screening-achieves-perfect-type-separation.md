@@ -70,6 +70,12 @@ Contract screening is a revelation mechanism from mechanism design theory. Each 
 
 The separation is self-enforcing because each type earns strictly higher payoff in its assigned pool than in any other pool — this is the incentive compatibility constraint that drives self-selection.
 
+## Update history
+
+**2026-02-22** — research enrichment:
+- Added Rothschild-Stiglitz (1976) theoretical grounding: screening equilibrium theory predicts perfect separation with discrete type spaces, consistent with SWARM's results. R-S also predicts fragility when types are close, suggesting adaptive adversaries could degrade separation. The 6.7x payoff premium aligns with classical information rent theory.
+- Confidence unchanged — external literature, not new SWARM evidence.
+
 ## Open questions
 
 - Does perfect separation break with larger populations (N>20)?

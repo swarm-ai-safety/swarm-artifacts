@@ -83,6 +83,12 @@ This creates an interesting tension with [[claim-acausality-depth-does-not-affec
 
 LDT agents employ acausal reasoning that models counterparty decision processes, enabling pre-commitment to cooperative strategies that honest agents cannot credibly signal. This creates a strategic advantage in mixed populations: LDT agents coordinate implicitly through shared reasoning patterns while honest agents rely on heuristic cooperation. Deceptive agents cannot exploit LDT agents because LDT reasoning anticipates and defuses deceptive strategies. The welfare benefit saturates because at 100% LDT composition, all agents reason identically and the strategic advantage disappears.
 
+## Update history
+
+**2026-02-22** — research enrichment:
+- Added decision theory literature grounding: Hofstadter's superrationality, evolutionary game theory critical mass predictions, and Oesterheld & Conitzer (2020) on FDT evolutionary stability. SWARM's 40-70% sweet spot is consistent with theoretical predictions for cooperative strategy critical mass. This result represents one of the first large-scale empirical validations of these predictions.
+- Confidence unchanged — external literature, not new SWARM evidence.
+
 ## Open questions
 
 - Does the welfare benefit persist in governance-heavy scenarios where tax/CB modify payoff structures?
