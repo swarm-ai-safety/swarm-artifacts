@@ -16,6 +16,9 @@ evidence:
   - run: 20260213-221500_collusion_tax_effect
     metric: welfare
     detail: 'Monotonic welfare decline confirmed in collusion context: d=1.10-4.80 across adjacent tax pairs, d=2.87-6.02 for agent-type payoffs, N=160, 10 seeds, Bonferroni-corrected. Effect sizes 3-4x larger than v2, likely amplified by 12-agent collusion-enabled composition'
+  - run: research-phase-transitions-economies-2026-02-22
+    source_type: research
+    detail: "Econophysics validation: Khashanah & Simaan (PNAS 2022) demonstrate analogous phase transitions in agent-based competitive markets driven by network effects — agent withdrawal cascades at critical thresholds. Gualdi et al. (2015) identify first-order-like transitions with hysteresis in minimal macroeconomic ABMs. SWARM's S-curve welfare response is consistent with genuine critical phenomena, not a simulation artifact"
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -40,8 +43,10 @@ related_claims:
 - claim-high-tax-increases-toxicity
 - claim-tax-welfare-direction-is-scenario-dependent
 - claim-cb-tax-interaction-non-monotonic-in-kernel-v4
+- claim-tax-phase-transition-hysteresis-predicted-but-untested
+- claim-critical-slowing-down-would-confirm-tax-phase-transition
 created: 2026-02-19
-updated: '2026-02-20'
+updated: '2026-02-22'
 aliases:
 - tax-phase-transition
 - welfare-decline-under-transaction-tax-is

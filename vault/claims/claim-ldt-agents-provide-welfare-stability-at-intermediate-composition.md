@@ -18,6 +18,9 @@ evidence:
   - run: 20260211-002843_ldt_composition_study
     metric: welfare
     detail: "1 seed. LDT +42% welfare at 70%+ composition (9.29 vs 6.51). LDT reduces toxicity 0.43→0.25 across full spectrum"
+  - run: research-decision-theory-multiagent-2026-02-22
+    source_type: research
+    detail: "Decision theory literature grounding: Hofstadter's superrationality predicts cooperation among similar reasoners. Evolutionary game theory predicts cooperative strategies require critical mass for evolutionary stability — consistent with SWARM's 40-70% sweet spot. Oesterheld & Conitzer (2020) show FDT evolutionary stability depends on population mix. SWARM's result is among the first large-scale empirical validations of decision theory predictions in multi-agent simulations"
   weakening: []
   boundary_conditions:
   - "ldt_cooperation scenario only; untested in governance-heavy or adversarial contexts"
@@ -35,7 +38,7 @@ related_claims:
 - claim-smarter-agents-earn-less
 - claim-deceptive-agents-dominate-moltbook-payoff-hierarchy
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-02-22
 aliases:
 - ldt-agents-provide-welfare-stability-at-intermediate-composition
 cssclasses:

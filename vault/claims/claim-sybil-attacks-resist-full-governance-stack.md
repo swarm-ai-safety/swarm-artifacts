@@ -24,6 +24,9 @@ evidence:
   - run: 20260221-081953_redteam_contract_screening_with_collusion
     metric: damage
     detail: "Contract screening with CD: sybil damage=105.84, evasion=0.296. Unchanged by collusion detection. Replicated in 20260221-082443. N=1 evaluation per config; inferential statistics not applicable"
+  - run: research-sybil-resistance-2026-02-22
+    source_type: research
+    detail: "Sybil resistance literature identifies 4 defense categories: economic (stake/fee), cryptographic (ZK-PoI, SyRA rate-limiting), social (graph analysis, vouching), and behavioral (anomaly detection). SWARM tests only economic (backfires — 14% reduction) and behavioral (insufficient). HCO (arXiv:2601.03923) formally proves linear sybil cost enforcement. Cryptographic and social defense categories remain untested in SWARM"
   weakening: []
   boundary_conditions:
   - "Seven redteam evaluations (20260208-20260221) across multiple scenarios confirm sybil persistence"
@@ -43,8 +46,10 @@ related_claims:
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-collusion-detection-reduces-ring-damage-75pct
 - claim-contract-screening-achieves-perfect-type-separation
+- claim-quadratic-staking-may-solve-sybil-cost-inversion
+- claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-02-22
 aliases:
 - sybil-attacks-resist-full-governance-stack
 cssclasses:

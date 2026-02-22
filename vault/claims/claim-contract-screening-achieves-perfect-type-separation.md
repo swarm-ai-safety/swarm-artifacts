@@ -12,6 +12,9 @@ evidence:
     - run: contract_screening_sweep
       metric: separation_quality
       detail: "separation_quality=1.0, infiltration_rate=0.0 across all 10 seeds (43-52). Zero variance. Bonferroni-corrected across 10 comparisons: every seed is individually perfect"
+    - run: research-mechanism-design-screening-2026-02-22
+      source_type: research
+      detail: "Rothschild-Stiglitz (1976) screening equilibrium theory predicts perfect type separation with discrete type spaces, consistent with SWARM's honest/deceptive/opportunistic classification. R-S also predicts fragility when types are close — adaptive adversaries who learn to mimic honest behavior may degrade separation. The 6.7x payoff premium is consistent with classical information rent theory"
   weakening: []
   boundary_conditions:
     - "10-agent population (5 honest, 3 opportunistic, 2 deceptive); scaling untested"
@@ -28,7 +31,7 @@ related_claims:
   - claim-screening-equilibrium-generates-honest-payoff-premium
   - claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-02-22
 aliases:
   - contract-screening-achieves-perfect-type-separation
 cssclasses:

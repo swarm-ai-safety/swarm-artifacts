@@ -27,6 +27,9 @@ evidence:
   - run: 20260213-003819_ldt_short_horizon_study
     metric: welfare
     detail: "Acausality depth 1-3 in short_horizon scenario: 0/15 Bonferroni-sig, 0/15 nominal. Largest d=-0.755 (depth 1 vs 2 welfare), p=0.109. N=10 seeds per depth"
+  - run: research-decision-theory-multiagent-2026-02-22
+    source_type: research
+    detail: "Three theoretical explanations for null result: (1) Implementation ceiling — benefits of acausal reasoning captured at depth 1, deeper reasoning adds noise; (2) Population homogeneity — homogeneous LDT populations may not need deep acausal reasoning since behavioral signals suffice; (3) Game structure — SWARM's interaction structures may not create situations where deeper acausal reasoning helps. Oesterheld (2017) multiverse cooperation theory and Tennenholtz (2004) program equilibrium suggest formal source code transparency could outperform behavioral inference"
   weakening: []
   boundary_conditions:
   - "All studies use 10 seeds per condition — adequately powered for large effects but may miss small effects"
@@ -44,7 +47,7 @@ related_claims:
 - claim-rlhf-persona-invariant
 - claim-agent-architecture-constrains-behavior-more-than-governance
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-02-22
 aliases:
 - acausality-depth-does-not-affect-cooperation-outcomes
 cssclasses:
