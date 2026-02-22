@@ -2,7 +2,7 @@
 description: Transaction tax reduces RLM agent payoff 2x more severely than honest agent payoff in effect-size terms
 type: claim
 status: active
-confidence: high
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -39,7 +39,7 @@ aliases:
 - tax-disproportionately-punishes-rlm-agents
 cssclasses:
 - claim
-- claim-high
+- claim-medium
 tags:
 - governance
 - transaction-tax

@@ -8,7 +8,7 @@ evidence:
   supporting:
   - run: research-mechanism-design-screening-2026-02-22
     metric: collusion_rate
-    detail: 'Savitt et al. 2026: constitutional (prompt-only) regime shows no reliable improvement over ungoverned baseline; institutional (governance-graph) regime produces d=1.28 collusion reduction. 90 runs per condition, 6 model configs'
+    detail: "Savitt et al. 2026: constitutional vs ungoverned not significant (paper reports 'no reliable improvement' without exact d/p for this contrast); institutional vs ungoverned d=1.28 (severe collusion 50%→5.6%). 90 runs per condition, 6 model configs. Constitutional null effect size not extractable from published results"
     source_type: research
   weakening: []
   boundary_conditions:
