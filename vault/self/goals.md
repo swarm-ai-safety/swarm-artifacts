@@ -94,6 +94,14 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
   - claim-cb-audit-sufficient-for-solo-exploits (4/4 solo prevention replicated)
 - **New domain: market** — contract screening introduces mechanism design / screening equilibrium findings
 
+## Completed (2026-02-21 session, /rethink pass 2)
+
+- **Drift check:** All kernel invariants passing. 55 claims, all with run_id provenance, boundary_conditions, topics footers, and confidence levels matching statistical criteria.
+- **Confidence correction:** Updated stale summary (was "10 high, 18 medium, 27 low") to actual counts: 10 high, 22 medium, 23 low.
+- **Pattern detected:** /remember pipeline never exercised -- 0 observations recorded despite 95+ extraction tasks. Created first observation note (`obs-remember-pipeline-never-exercised.md`) documenting this structural gap.
+- **Low-confidence ratio (42%):** Reviewed and determined appropriate -- claims are correctly rated as underpowered, not miscalibrated. Replication priority list already identifies upgrade path.
+- **No methodology changes needed.** System is operating within design parameters.
+
 ## Completed (2026-02-21 session, Gate 2 formal statistics)
 
 - **7 claims updated** with formal statistics computed from existing raw CSV data:
