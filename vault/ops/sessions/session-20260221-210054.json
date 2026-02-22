@@ -1,0 +1,14 @@
+{
+  "session_id": "20260221-210054",
+  "end_time": "2026-02-22T02:00:54.641826Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/_index.md",
+    "vault/claims/claim-cb-audit-sufficient-for-solo-exploits.md",
+    "vault/claims/claim-collusion-detection-is-binding-constraint-on-robustness.md",
+    "vault/claims/claim-coordination-attacks-dominate-redteam-damage.md",
+    "vault/claims/claim-full-governance-stack-prevents-most-attack-types.md",
+    "vault/claims/claim-sybil-attacks-resist-full-governance-stack.md",
+    "vault/self/goals.md"
+  ]
+}
