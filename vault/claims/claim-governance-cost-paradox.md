@@ -101,4 +101,10 @@ The full governance stack — comprising transaction taxes, circuit breakers, co
 - (Note: 22 bulk-added tax-rate evidence entries consolidated 2026-02-20 into 2 representative entries per source run)
 - Upgraded confidence: medium -> high
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: governance, welfare, cost-benefit, gastown -->

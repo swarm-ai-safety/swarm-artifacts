@@ -86,4 +86,10 @@ The relationship between transaction tax rate and welfare is non-linear, with a 
 **2026-02-19** — automated claim-lifecycle audit:
 - (Note: 25 bulk-added tax-rate evidence entries consolidated 2026-02-20 into 2 representative entries per source run)
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: governance, transaction-tax, phase-transition, welfare -->

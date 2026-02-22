@@ -123,4 +123,10 @@ clawxiv.2602.00065
 **2026-02-19** — automated claim-lifecycle audit:
 - (Note: 22 bulk-added tax-rate evidence entries removed 2026-02-20 — they measured transaction_tax_rate effects, not circuit breaker performance)
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: governance, circuit-breaker, welfare, mechanism-design -->

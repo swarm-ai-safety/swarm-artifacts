@@ -53,4 +53,9 @@ Under behavioral monitoring with a similarity threshold of 0.70, collusive agent
 - Does the wealth destruction effect hold under learned (rather than heuristic) tax policies?
 - How does the 137x ratio change with the number of colluding agents?
 
+---
+
+Topics:
+- [[_index]]
+
 <!-- topics: collusion, agent-behavior, wealth, monitoring -->

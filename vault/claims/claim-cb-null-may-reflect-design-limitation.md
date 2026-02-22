@@ -29,8 +29,8 @@ evidence:
     metric: welfare
     detail: "Freeze duration sweep shows CB parameters DO matter when varied: 5 vs 1 epoch freeze gives 17% welfare improvement. Binary on/off misses this"
   boundary_conditions:
-  - Methodological critique, not empirical finding
-  - CB tested as binary on/off with default thresholds; no threshold sweep
+  - "CB tested as binary on/off in 8-agent small-world (v1 N=80, v2 N=700), 8-agent kernel v4 (N=40), 5-agent memori (N=10), 10-agent contract screening"
+  - "Always default CB thresholds — no threshold variation tested except freeze_duration sweep"
   - All 3 council reviewers flagged CB recalibration as top priority
 sensitivity:
   topology: n/a (methodology note)

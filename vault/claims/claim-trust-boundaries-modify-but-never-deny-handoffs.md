@@ -2,7 +2,7 @@
 description: Trust boundaries classify 100% of handoffs as modified (0% denied/escalated) across 32 LangGraph configs, acting as transformation not filter
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
@@ -28,7 +28,7 @@ aliases:
   - trust-boundaries-modify-but-never-deny-handoffs
 cssclasses:
   - claim
-  - claim-medium
+  - claim-low
 tags:
   - langgraph
   - delegation

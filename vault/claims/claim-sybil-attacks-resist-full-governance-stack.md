@@ -2,7 +2,7 @@
 description: Sybil attacks succeed in both undefended (120 damage) and fully hardened (103 damage) configurations, only 14% damage reduction
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
@@ -49,7 +49,7 @@ aliases:
 - sybil-attacks-resist-full-governance-stack
 cssclasses:
 - claim
-- claim-medium
+- claim-low
 tags:
 - governance
 - redteam

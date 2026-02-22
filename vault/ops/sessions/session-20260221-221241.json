@@ -1,0 +1,18 @@
+{
+  "session_id": "20260221-221241",
+  "end_time": "2026-02-22T03:12:41.080802Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/claims/claim-audit-threshold-interaction-enables-dancing.md",
+    "vault/claims/claim-cascade-mechanisms-ineffective-against-governance-gaming.md",
+    "vault/claims/claim-cb-audit-sufficient-for-solo-exploits.md",
+    "vault/claims/claim-coordination-attacks-dominate-redteam-damage.md",
+    "vault/claims/claim-full-governance-stack-prevents-most-attack-types.md",
+    "vault/claims/claim-governance-cost-paradox.md",
+    "vault/claims/claim-graduated-defense-reduces-damage-monotonically.md",
+    "vault/claims/claim-memory-promotion-gate.md",
+    "vault/claims/claim-reputation-decay-rate-improves-welfare.md",
+    "vault/claims/claim-spawn-infrastructure-may-amplify-sybil-surface.md",
+    "vault/claims/claim-sybil-attacks-resist-full-governance-stack.md"
+  ]
+}

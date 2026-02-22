@@ -2,7 +2,7 @@
 description: LangGraph task completion jumps from 6% to 50%+ when max_handoffs >= 15; max_cycles has no consistent effect
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
@@ -29,7 +29,7 @@ aliases:
   - delegation-completion-requires-handoff-budget-above-15
 cssclasses:
   - claim
-  - claim-medium
+  - claim-low
 tags:
   - langgraph
   - delegation

@@ -83,4 +83,10 @@ In a GPU kernel marketplace simulation, the transaction tax rate explains 32.4% 
 **2026-02-19** — automated claim-lifecycle audit:
 - (Note: 22 bulk-added tax-rate evidence entries consolidated 2026-02-20 into 2 representative entries per source run)
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: governance, transaction-tax, circuit-breaker, kernel-market -->

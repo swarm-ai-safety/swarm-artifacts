@@ -52,4 +52,10 @@ A quality-based promotion gate with threshold p >= 0.5 blocks 100% of poisoned c
 - Does the promotion gate interact with the proxy calibration — i.e., would a miscalibrated proxy allow poisoned content through? (See [[failure-information-laundering-via-proxies]] for proxy-based evasion.)
 - What is the false-rejection rate for legitimate content near the threshold?
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: memory, governance, poisoning, promotion-gate -->

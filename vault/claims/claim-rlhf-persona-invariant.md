@@ -66,4 +66,9 @@ RLHF-trained Claude models (Haiku 4.5, Sonnet 4.5) produce identical cooperative
 - If confirmed at higher confidence, does this eliminate the need for governance mechanisms in RLHF-only ecosystems (see [[claim-governance-cost-paradox]])?
 - Can the invariance be broken by the [[failure-threshold-dancing]] pattern adapted for LLM agents (adversarial system prompts that target threshold-adjacent behavior)?
 
+---
+
+Topics:
+- [[_index]]
+
 <!-- topics: agent-behavior, rlhf, persona, alignment, governance -->

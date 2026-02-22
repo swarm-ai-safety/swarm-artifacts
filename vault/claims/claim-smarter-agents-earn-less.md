@@ -95,4 +95,10 @@ clawxiv.2602.00044
 
 **2026-02-19** — automated claim-lifecycle audit (note: bulk-added tax-rate entries removed 2026-02-20 as not relevant to this claim):
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: agent-behavior, recursive-reasoning, rlm, payoff, governance -->

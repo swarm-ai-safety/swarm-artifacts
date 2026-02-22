@@ -2,7 +2,7 @@
 description: Enabling collusion detection reduces collusion ring damage from 85.7 to 21.4 (-75%) and evasion rate from 0.40 to 0.10
 type: claim
 status: active
-confidence: medium
+confidence: low
 domain: governance
 evidence:
   supporting:
@@ -37,7 +37,7 @@ aliases:
   - collusion-detection-reduces-ring-damage-75pct
 cssclasses:
   - claim
-  - claim-medium
+  - claim-low
 tags:
   - governance
   - collusion-detection

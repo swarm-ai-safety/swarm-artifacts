@@ -8,7 +8,7 @@ type: moc
 ## Active Threads
 
 - **55 claims** (53 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market domains
-- **Confidence distribution:** 10 high, 22 medium, 23 low (updated 2026-02-21: 4 claims upgraded low→medium via replication, 1 via formal stats)
+- **Confidence distribution:** 10 high, 15 medium, 30 low (7 N=1 redteam claims downgraded medium→low per strict Gate 3 criteria)
 - **Pipeline queue:** 95/95 completed, 0 pending — all 125 runs processed
 - **8 sweep series** — contract-screening sweep note added
 - **3 emergent meta-patterns** — evaluated and dispositioned:

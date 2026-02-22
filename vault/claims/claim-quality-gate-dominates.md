@@ -78,4 +78,10 @@ A simple deterministic quality gate — rejecting all interactions with p < 0.5 
 - Upgraded confidence: medium -> high
 - (Note: 22 bulk-added tax-rate evidence entries removed 2026-02-20 — they measured transaction_tax_rate effects, not quality gate performance)
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: governance, quality-gate, welfare, refinery -->

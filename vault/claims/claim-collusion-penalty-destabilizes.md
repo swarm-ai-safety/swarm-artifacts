@@ -56,4 +56,10 @@ Collusion penalty multipliers above 1.5x paradoxically increase toxicity with no
 - Does the destabilization effect depend on the collusion detection accuracy?
 - How does reasoning depth interact with penalty sensitivity?
 
+---
+
+Topics:
+- [[_index]]
+- [[governance-dashboard]]
+
 <!-- topics: governance, collusion, penalty, toxicity -->
