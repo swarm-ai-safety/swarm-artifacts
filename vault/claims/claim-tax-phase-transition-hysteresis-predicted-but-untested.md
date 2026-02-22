@@ -20,6 +20,9 @@ superseded_by: []
 related_claims:
 - claim-tax-phase-transition
 - claim-welfare-plateaus-above-12pct-tax
+- claim-critical-slowing-down-would-confirm-tax-phase-transition
+- claim-governance-cost-paradox
+- claim-optimal-tax-range-0-to-5pct
 created: 2026-02-22
 cssclasses:
 - claim
@@ -44,6 +47,8 @@ Fold catastrophe models predict that first-order phase transitions exhibit hyste
 Applied to SWARM's [[claim-tax-phase-transition|tax phase transition]], this predicts that raising the tax from 0% to 10% and then reducing it back to 0% would not restore welfare to its original level. The ecosystem contraction caused by the transition — agents withdrawing from participation, network connections atrophying — may persist even after the tax incentive is removed.
 
 The [[claim-welfare-plateaus-above-12pct-tax|welfare plateau above 12.5% tax]] is consistent with this prediction: the flatness suggests the system has settled into a new basin of attraction from which it does not recover with marginal tax reduction.
+
+Hysteresis would compound the [[claim-governance-cost-paradox|governance cost paradox]]: if welfare losses from taxation are irreversible, the cost-benefit calculus for transaction tax becomes asymmetrically negative. Even temporary tax increases above the critical point would permanently damage the ecosystem. This makes the [[claim-optimal-tax-range-0-to-5pct|0-5% safe operating range]] even more critical — exceeding it even briefly could cause permanent welfare loss if hysteresis is real. The companion prediction of [[claim-critical-slowing-down-would-confirm-tax-phase-transition|critical slowing down]] addresses a logically prior question: whether the transition is genuine at all. If critical slowing down is observed, the hysteresis prediction becomes substantially more credible.
 
 ## Boundary conditions
 

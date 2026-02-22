@@ -28,6 +28,7 @@ related_claims:
 - claim-tax-phase-transition
 - claim-optimal-tax-range-0-to-5pct
 - claim-memori-agents-show-no-governance-sensitivity
+- claim-critical-slowing-down-would-confirm-tax-phase-transition
 - claim-cb-tax-interaction-non-monotonic-in-kernel-v4
 - claim-welfare-plateaus-above-12pct-tax
 - claim-governance-cost-paradox

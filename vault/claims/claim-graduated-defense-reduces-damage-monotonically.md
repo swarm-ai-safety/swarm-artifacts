@@ -31,6 +31,8 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-cb-audit-sufficient-for-solo-exploits
 - claim-tax-welfare-tradeoff
+- claim-leniency-whistleblowing-is-untested-governance-lever
+- claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations
 created: 2026-02-21
 updated: 2026-02-21
 aliases:

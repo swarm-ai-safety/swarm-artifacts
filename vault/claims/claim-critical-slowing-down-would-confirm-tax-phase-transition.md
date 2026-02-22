@@ -18,6 +18,10 @@ supersedes: []
 superseded_by: []
 related_claims:
 - claim-tax-phase-transition
+- claim-tax-phase-transition-hysteresis-predicted-but-untested
+- claim-welfare-plateaus-above-12pct-tax
+- claim-optimal-tax-range-0-to-5pct
+- claim-tax-welfare-direction-is-scenario-dependent
 created: 2026-02-22
 cssclasses:
 - claim
@@ -42,6 +46,8 @@ Applied to SWARM, the prediction is specific and testable: if welfare convergenc
 
 This test is particularly valuable because it can be performed on existing SWARM data without new experiments. The per-round welfare data in `history.json` files from the baseline governance sweeps contains the necessary time series.
 
+If critical slowing down is confirmed, the companion prediction of [[claim-tax-phase-transition-hysteresis-predicted-but-untested|hysteresis at the tax phase transition]] becomes substantially more credible — both derive from the same physical theory but test different signatures. The [[claim-welfare-plateaus-above-12pct-tax|welfare plateau above 12.5%]] is consistent with the post-transition regime where critical slowing down should be absent: once the system has collapsed, convergence speeds up again. Critical slowing down would also validate the [[claim-optimal-tax-range-0-to-5pct|0-5% safe range]] from a physics perspective — the safe range corresponds to the pre-transition regime where the system is far from criticality. A key falsification test: [[claim-tax-welfare-direction-is-scenario-dependent|the kernel v4 scenario]] shows no phase transition (welfare monotonically increases with tax), so it should also show no critical slowing down — confirming that both signatures are genuine rather than measurement artifacts.
+
 ## Boundary conditions
 
 - Requires per-round welfare data with sufficient temporal resolution
@@ -64,5 +70,6 @@ Near a phase transition, the system's free energy landscape flattens — the bar
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
 
 <!-- topics: methodology, phase-transition, critical-phenomena, convergence -->

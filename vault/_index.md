@@ -78,6 +78,13 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-screening-equilibrium-generates-honest-payoff-premium]] — Screening equilibrium generates 6.7x honest-to-deceptive payoff premium (high confidence)
 - [[claim-trust-boundaries-modify-but-never-deny-handoffs]] — Trust boundaries modify 100% of handoffs but deny none (low confidence)
 - [[claim-delegation-completion-requires-handoff-budget-above-15]] — Delegation task completion requires handoff budget above 15 (low confidence)
+- [[claim-prompt-level-governance-fails-in-multi-agent-systems]] — Prompt-only anti-collusion policies provide no improvement over ungoverned baselines (low confidence)
+- [[claim-steganographic-collusion-unaddressed-by-swarm-detection]] — SWARM CD addresses only tacit coordination, leaving steganographic channels undetected (low confidence)
+- [[claim-leniency-whistleblowing-is-untested-governance-lever]] — Leniency/whistleblowing is a major anti-collusion category absent from SWARM (low confidence)
+- [[claim-tax-phase-transition-hysteresis-predicted-but-untested]] — Catastrophe theory predicts irreversible welfare loss at 5-10% tax transition (low confidence)
+- [[claim-critical-slowing-down-would-confirm-tax-phase-transition]] — Convergence time should peak near 5-10% tax if transition is genuine (low confidence)
+- [[claim-quadratic-staking-may-solve-sybil-cost-inversion]] — Super-linear staking would impose escalating costs on sybil controllers (low confidence)
+- [[claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations]] — vote_normalization and bandwidth_cap have precedent but zero SWARM testing (low confidence)
 
 ## Governance Mechanisms
 
@@ -133,7 +140,7 @@ Cross-run aggregations tracking convergence of parameter explorations. 8 sweep s
 
 ## Methods
 
-Reusable statistical and experimental methods. 6 notes.
+Reusable statistical and experimental methods. 7 notes.
 
 - [[bonferroni-correction]] — Controls family-wise error rate by dividing alpha by comparisons
 - [[cohens-d]] — Standardized mean difference for practical effect magnitude
@@ -141,6 +148,7 @@ Reusable statistical and experimental methods. 6 notes.
 - [[benjamini-hochberg]] — FDR control for exploratory multi-comparison analysis
 - [[factorial-sweep]] — Factorial parameter sweep design used across SWARM experiments
 - [[cross-correlation]] — Parameter interaction matrix across sweep/study runs
+- [[empirical-decision-theory-validation]] — Large-scale empirical testing of decision theory predictions in multi-agent simulation
 
 ## Templates
 

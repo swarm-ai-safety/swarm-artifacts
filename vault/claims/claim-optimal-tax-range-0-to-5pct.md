@@ -28,6 +28,8 @@ related_claims:
 - claim-tax-welfare-tradeoff
 - claim-welfare-plateaus-above-12pct-tax
 - claim-tax-hurts-honest-more-than-opportunistic
+- claim-tax-phase-transition-hysteresis-predicted-but-untested
+- claim-critical-slowing-down-would-confirm-tax-phase-transition
 - claim-deceptive-payoff-weakly-declines-with-tax
 - claim-governance-cost-paradox
 - claim-tax-cb-interact-on-quality-gap

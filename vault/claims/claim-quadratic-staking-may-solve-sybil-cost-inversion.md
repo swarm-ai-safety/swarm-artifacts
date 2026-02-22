@@ -19,6 +19,10 @@ superseded_by: []
 related_claims:
 - claim-staking-backfires
 - claim-sybil-attacks-resist-full-governance-stack
+- claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations
+- claim-governance-cost-paradox
+- claim-coordination-attacks-dominate-redteam-damage
+- claim-contract-screening-achieves-perfect-type-separation
 created: 2026-02-22
 cssclasses:
 - claim
@@ -42,6 +46,8 @@ HCO (arXiv:2601.03923) formally proves that linear sybil cost enforcement is ach
 The theoretical proposal is: if staking cost for agent i's k-th identity is proportional to k (rather than constant), then a sybil controller running N identities pays 1+2+...+N = N(N+1)/2 total stake, while N honest agents each pay 1, for a total of N. The sybil controller's cost grows quadratically while honest agents' costs grow linearly. At N=5 sybil identities, the sybil controller pays 3x more per identity than an honest agent.
 
 This maps to SWARM as a modification to the staking governance parameter: instead of `stake_amount: fixed`, use `stake_amount: f(identity_count)` with super-linear scaling.
+
+Quadratic staking is one of two untested anti-sybil mechanisms identified in this research pass, alongside [[claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations|vote normalization and bandwidth caps]]. These approaches are complementary: quadratic staking attacks the economic viability of identity multiplication, while vote normalization and bandwidth caps limit the influence any identity can exert. Together they could address the [[failure-sybil-identity-amplification]] pattern that currently succeeds in 100% of configurations. Since [[claim-coordination-attacks-dominate-redteam-damage|sybil attacks account for 29% of total redteam damage]], even partial effectiveness would substantially improve the governance stack. Unlike flat staking, which [[claim-governance-cost-paradox|imposes welfare costs that exceed safety benefits]], quadratic staking's selective targeting of multi-identity controllers could avoid penalizing honest single-identity agents. The mechanism design philosophy parallels [[claim-contract-screening-achieves-perfect-type-separation|contract screening]]: both exploit structural asymmetries between agent types (honest vs sybil, honest vs deceptive) to create differential selection pressure.
 
 ## Boundary conditions
 

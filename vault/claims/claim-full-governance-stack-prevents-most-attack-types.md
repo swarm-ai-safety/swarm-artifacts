@@ -36,6 +36,7 @@ related_claims:
 - claim-cascade-mechanisms-ineffective-against-governance-gaming
 - claim-audit-threshold-interaction-enables-dancing
 - claim-graduated-defense-reduces-damage-monotonically
+- claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations
 created: 2026-02-21
 updated: 2026-02-21
 aliases:

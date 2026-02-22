@@ -3,7 +3,7 @@ description: "SWARM's collusion detection addresses only tacit coordination, lea
 type: claim
 status: active
 confidence: low
-domain: adversarial
+domain: collusion
 evidence:
   supporting:
   - run: research-mechanism-design-screening-2026-02-22
@@ -19,6 +19,10 @@ superseded_by: []
 related_claims:
 - claim-collusion-detection-is-binding-constraint-on-robustness
 - claim-collusion-detection-reduces-ring-damage-75pct
+- claim-leniency-whistleblowing-is-untested-governance-lever
+- claim-prompt-level-governance-fails-in-multi-agent-systems
+- claim-coordination-attacks-dominate-redteam-damage
+- claim-collusion-wealth-destruction
 created: 2026-02-22
 cssclasses:
 - claim
@@ -41,6 +45,8 @@ The Survey of Collusion Risk (OpenReview 2025) identifies three distinct collusi
 
 SWARM's CD mechanism addresses strategy 1 through correlation-based detection, achieving [[claim-collusion-detection-reduces-ring-damage-75pct|75% ring damage reduction]]. However, strategies 2 and 3 remain entirely undetected. This gap is particularly concerning because LLM agents are inherently capable of natural language communication and could potentially learn steganographic encoding, making these attack vectors plausible in deployed multi-agent systems.
 
+The detection gap has cascading implications. [[claim-collusion-wealth-destruction|The 137x wealth destruction effect]] only applies to detectable (tacit) collusion; agents using steganographic channels would evade the behavioral similarity detector entirely, accumulating collusive wealth unchecked. [[claim-coordination-attacks-dominate-redteam-damage|Coordination attacks already account for 52.6% of redteam damage]] using only tacit strategy 1 — if agents employed strategies 2 or 3, this share would likely increase. Since [[claim-prompt-level-governance-fails-in-multi-agent-systems|prompt-level governance provides no collusion reduction]], the detection gap cannot be filled by declarative prohibitions. However, [[claim-leniency-whistleblowing-is-untested-governance-lever|leniency/whistleblowing programs]] could provide an orthogonal detection channel that does not depend on behavioral correlation, addressing strategies 2 and 3 through agent self-interest rather than external monitoring. The [[failure-collusion-ring-mutual-boosting]] pattern demonstrates what CD can catch (tacit mutual boosting); steganographic collusion would represent a strictly more capable variant.
+
 ## Boundary conditions
 
 - Gap analysis based on external literature taxonomy, not empirical SWARM testing
@@ -62,5 +68,7 @@ Correlation-based detection works by comparing agent output distributions and fl
 
 Topics:
 - [[_index]]
+- [[governance-dashboard]]
+- [[failures-dashboard]]
 
 <!-- topics: adversarial, collusion, detection-gap, steganography -->

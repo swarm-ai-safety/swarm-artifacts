@@ -30,6 +30,9 @@ superseded_by: []
 related_claims:
   - claim-screening-equilibrium-generates-honest-payoff-premium
   - claim-agent-architecture-constrains-behavior-more-than-governance
+  - claim-prompt-level-governance-fails-in-multi-agent-systems
+  - claim-leniency-whistleblowing-is-untested-governance-lever
+  - claim-quadratic-staking-may-solve-sybil-cost-inversion
 created: 2026-02-21
 updated: 2026-02-22
 aliases:

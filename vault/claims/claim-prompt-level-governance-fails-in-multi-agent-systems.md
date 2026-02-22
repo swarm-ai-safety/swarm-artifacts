@@ -19,6 +19,11 @@ superseded_by: []
 related_claims:
 - claim-governance-cost-paradox
 - claim-circuit-breakers-dominate
+- claim-contract-screening-achieves-perfect-type-separation
+- claim-screening-equilibrium-generates-honest-payoff-premium
+- claim-agent-architecture-constrains-behavior-more-than-governance
+- claim-collusion-detection-is-binding-constraint-on-robustness
+- claim-leniency-whistleblowing-is-untested-governance-lever
 created: 2026-02-22
 cssclasses:
 - claim
@@ -39,7 +44,9 @@ Declarative prohibitions embedded in agent system prompts do not reliably bind a
 
 Savitt et al. (2026) tested three governance regimes in a Cournot market with LLM agents: ungoverned (no anti-collusion mechanisms), constitutional (prompt-only prohibitions), and institutional (governance-graph with mechanism-level enforcement). Across 90 runs per condition and 6 model configurations, the constitutional regime showed no reliable improvement over ungoverned baselines. In contrast, the institutional regime achieved d=1.28 collusion reduction, demonstrating that mechanism-level governance — the kind SWARM implements through circuit breakers, collusion detection, and transaction tax — is necessary to constrain collusive behavior.
 
-This aligns with SWARM's own finding that [[claim-circuit-breakers-dominate|circuit breakers alone outperform full governance stacks]] and that mechanism-level interventions (CB, CD, tax) produce measurable effects while prompt-level instructions do not.
+This aligns with SWARM's own finding that [[claim-circuit-breakers-dominate|circuit breakers alone outperform full governance stacks]] and that mechanism-level interventions (CB, CD, tax) produce measurable effects while prompt-level instructions do not. The [[claim-collusion-detection-is-binding-constraint-on-robustness|binding constraint role of collusion detection]] further demonstrates that mechanism-level enforcement — not declarative prohibition — is what prevents coordination attacks.
+
+The failure of prompt-level governance is partly explained by [[claim-agent-architecture-constrains-behavior-more-than-governance|agent architecture dominance]]: RLHF training bakes in behavioral tendencies that system prompts cannot override, making declarative prohibitions doubly ineffective. Mechanism-level alternatives like [[claim-contract-screening-achieves-perfect-type-separation|contract screening]] and [[claim-screening-equilibrium-generates-honest-payoff-premium|screening equilibrium payoff premiums]] demonstrate that incentive-compatible mechanism design can achieve what prompts cannot — they alter the payoff structure rather than relying on instruction-following fidelity. Similarly, [[claim-leniency-whistleblowing-is-untested-governance-lever|leniency/whistleblowing programs]] represent another mechanism-level approach that could succeed where prompts fail by creating defection incentives within collusive agreements.
 
 ## Boundary conditions
 

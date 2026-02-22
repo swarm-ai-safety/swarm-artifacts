@@ -18,6 +18,11 @@ supersedes: []
 superseded_by: []
 related_claims:
 - claim-sybil-attacks-resist-full-governance-stack
+- claim-quadratic-staking-may-solve-sybil-cost-inversion
+- claim-full-governance-stack-prevents-most-attack-types
+- claim-coordination-attacks-dominate-redteam-damage
+- claim-governance-cost-paradox
+- claim-graduated-defense-reduces-damage-monotonically
 created: 2026-02-22
 cssclasses:
 - claim
@@ -42,6 +47,8 @@ SyRA (IACR 2024) demonstrates that rate-limiting mechanisms can achieve sybil re
 - **bandwidth_cap** — limits the rate at which any agent can submit contributions, bounding the throughput advantage of running multiple identities
 
 The [[failure-sybil-identity-amplification]] failure pattern identified sybil attacks as succeeding in 100% of configurations including fully hardened stacks, and explicitly recommended testing these parameters. Despite this, no SWARM run in the `runs/` directory exercises either parameter.
+
+Vote normalization and bandwidth caps complement [[claim-quadratic-staking-may-solve-sybil-cost-inversion|quadratic staking]] as anti-sybil mechanisms: staking attacks economic viability of identity multiplication, while these parameters limit influence per identity. Testing these could close the sybil gap that limits the [[claim-full-governance-stack-prevents-most-attack-types|full governance stack to D grade]] — sybil attacks account for 35% of hardened-config damage and are the primary residual threat. Since [[claim-coordination-attacks-dominate-redteam-damage|coordination attacks cause 52.6% of total damage]], reducing sybil viability through rate-limiting would address a substantial share. Unlike staking and high tax, rate-limiting approaches are structurally low-overhead — they cap influence without extracting resources — potentially avoiding the [[claim-governance-cost-paradox|governance cost paradox]]. As new defense layers, these parameters would extend the [[claim-graduated-defense-reduces-damage-monotonically|monotonic damage reduction]] pattern observed in graduated governance tiers.
 
 ## Boundary conditions
 

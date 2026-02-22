@@ -7,9 +7,9 @@ type: moc
 
 ## Active Threads
 
-- **55 claims** (53 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market domains
-- **Confidence distribution:** 10 high, 15 medium, 30 low (7 N=1 redteam claims downgraded medium→low per strict Gate 3 criteria)
-- **Pipeline queue:** 95/95 completed, 0 pending — all 125 runs processed
+- **62 claims** (60 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil domains
+- **Confidence distribution:** 10 high, 15 medium, 37 low (7 new research-derived claims at low confidence)
+- **Pipeline queue:** 95/95 completed, 0 pending — all 125 runs processed + 5 research expansions
 - **8 sweep series** — contract-screening sweep note added
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
@@ -114,6 +114,27 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
   7. **claim-tax-welfare-direction-is-scenario-dependent** — Not significant. t-test 0% vs 15%: d=0.466, p=0.31.
 - **claim-tax-and-penalty-effects-are-orthogonal** — Added weakening evidence: orthogonality holds for economics but NOT for toxicity (super-additive interaction eta2=0.41)
 - **_index.md** — Updated 7 claim entries with revised confidence labels and descriptions
+
+## Completed (2026-02-22 session, research expansion)
+
+- **5 research files** created via `/learn` across: mechanism design/screening, multi-agent governance, phase transitions in economies, sybil resistance, decision theory (LDT/CDT/FDT)
+- **7 new claims** extracted from research literature (all low confidence, research-derived):
+  - claim-prompt-level-governance-fails-in-multi-agent-systems (Savitt et al. 2026, d=1.28)
+  - claim-steganographic-collusion-unaddressed-by-swarm-detection (2 of 3 collusion strategies undetected)
+  - claim-leniency-whistleblowing-is-untested-governance-lever (absent from anti-collusion taxonomy)
+  - claim-tax-phase-transition-hysteresis-predicted-but-untested (fold catastrophe prediction)
+  - claim-critical-slowing-down-would-confirm-tax-phase-transition (convergence time test)
+  - claim-quadratic-staking-may-solve-sybil-cost-inversion (super-linear cost structure)
+  - claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations (SyRA precedent)
+- **1 method note** created: empirical-decision-theory-validation
+- **5 existing claims enriched** with external literature grounding:
+  - claim-sybil-attacks-resist-full-governance-stack — 4-category defense taxonomy
+  - claim-tax-phase-transition — econophysics validation (PNAS 2022)
+  - claim-ldt-agents-provide-welfare-stability-at-intermediate-composition — superrationality theory
+  - claim-contract-screening-achieves-perfect-type-separation — Rothschild-Stiglitz fragility prediction
+  - claim-acausality-depth-does-not-affect-cooperation-outcomes — 3 theoretical explanations for null
+- **_index.md** updated with all 7 new claims and method note
+- **Key external papers integrated:** Savitt et al. 2026 (Institutional AI), PNAS 2022 (phase transitions), arXiv:2601.00360 (anti-collusion taxonomy), arXiv:2601.03923 (HCO), Oesterheld & Conitzer 2020 (FDT evolution)
 
 ## Completed (2026-02-20 session, validation pass)
 
