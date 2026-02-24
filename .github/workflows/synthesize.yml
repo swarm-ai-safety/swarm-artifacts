@@ -102,6 +102,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config user.name "SWARM Research OS"
+          git config user.email "noreply@swarm-ai-safety.org"
           BRANCH="research-os/synthesize-$(date +%Y%m%d-%H%M%S)"
           git checkout -b "$BRANCH"
           git add vault/ run-index.yaml

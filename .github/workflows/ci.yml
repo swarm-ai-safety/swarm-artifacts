@@ -75,9 +75,11 @@ jobs:
       - run: pip install pyyaml
       - name: Rebuild index and diff
         run: |
-          cp run-index.yaml run-index.yaml.bak
+          # Strip generated_utc before comparing — it changes every regeneration
+          grep -v '^generated_utc:' run-index.yaml > run-index.yaml.bak
           python scripts/index-runs.py
-          diff run-index.yaml.bak run-index.yaml || {
+          grep -v '^generated_utc:' run-index.yaml > run-index.yaml.new
+          diff run-index.yaml.bak run-index.yaml.new || {
             echo "::error::run-index.yaml is out of date. Run 'python scripts/index-runs.py' and commit."
             exit 1
           }
