@@ -13,6 +13,8 @@
     "gif:governance": "npx remotion render GovernanceLag out/governance-lag.gif --image-format=png --every-nth-frame=2",
     "render:delegation": "npx remotion render DelegationGames out/delegation-games.mp4",
     "gif:delegation": "npx remotion render DelegationGames out/delegation-games.gif --image-format=png --every-nth-frame=2",
+    "render:game": "npx remotion render GamePromo out/game-promo.mp4",
+    "gif:game": "npx remotion render GamePromo out/game-promo.gif --image-format=png --every-nth-frame=2",
     "render:socials": "npx remotion render CollusionCascade out/collusion-cascade.mp4 && npx remotion render GovernanceLag out/governance-lag.mp4 && npx remotion render DelegationGames out/delegation-games.mp4",
     "gif:socials": "npx remotion render CollusionCascade out/collusion-cascade.gif --image-format=png --every-nth-frame=2 && npx remotion render GovernanceLag out/governance-lag.gif --image-format=png --every-nth-frame=2 && npx remotion render DelegationGames out/delegation-games.gif --image-format=png --every-nth-frame=2"
   },

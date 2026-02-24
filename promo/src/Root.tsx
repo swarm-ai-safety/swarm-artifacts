@@ -5,6 +5,7 @@ import { HeroImage } from "./HeroImage";
 import { CollusionCascade } from "./scenes/CollusionCascade";
 import { GovernanceLag } from "./scenes/GovernanceLag";
 import { DelegationGames } from "./scenes/DelegationGames";
+import { GamePromo } from "./GamePromo";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -48,6 +49,14 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1080}
+      />
+      <Composition
+        id="GamePromo"
+        component={GamePromo}
+        durationInFrames={1050}
+        fps={30}
+        width={1080}
+        height={1920}
       />
     </>
   );
