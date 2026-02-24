@@ -64,7 +64,8 @@ export const AgentShowcase: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           gap: 36,
-          alignItems: "center",
+          alignItems: "flex-start",
+          paddingLeft: 200,
           zIndex: 1,
         }}
       >
@@ -74,7 +75,7 @@ export const AgentShowcase: React.FC = () => {
             0,
             spring({ frame: frame - delay, fps: 30, config: { damping: 200 } }),
           );
-          const slideX = interpolate(p, [0, 1], [i % 2 === 0 ? -120 : 120, 0]);
+          const slideX = interpolate(p, [0, 1], [-120, 0]);
 
           // Gentle idle float
           const floatY = Math.sin(frame * 0.04 + i * 1.5) * 3;
