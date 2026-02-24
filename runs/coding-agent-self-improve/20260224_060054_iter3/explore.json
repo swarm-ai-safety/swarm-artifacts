@@ -1,0 +1,69 @@
+{
+  "parsed": {
+    "files_examined": [
+      "agent.py",
+      "cli.py",
+      "context.py",
+      "debug.py",
+      "prompts.py",
+      "providers.py",
+      "self_improve.py",
+      "session.py",
+      "sub_agents.py",
+      "test_bash_safety.py",
+      "test_coder_subagent.py",
+      "test_context.py",
+      "test_debug.py",
+      "test_error_isolation.py",
+      "test_fixes.py",
+      "test_file_safety.py",
+      "test_list_directory.py",
+      "test_list_files.py",
+      "test_retry.py",
+      "test_session.py",
+      "test_streaming.py",
+      "test_tokens.py",
+      "tokens.py",
+      "tools.py",
+      "test_math.py",
+      "hello.py",
+      "math_utils.py"
+    ],
+    "subsystems_found": [
+      {
+        "name": "Math Utilities",
+        "files": [
+          "sandbox/math_utils.py",
+          "sandbox/test_math.py"
+        ],
+        "summary": "Contains math utility functions like add, multiply, divide and fibonacci."
+      },
+      {
+        "name": "Greeting Module",
+        "files": [
+          "hello.py"
+        ],
+        "summary": "Provides a basic greeting function that prints 'Hello, world!'"
+      }
+    ],
+    "improvement_opportunities": [
+      {
+        "area": "Security",
+        "file": "./test_bash_safety.py",
+        "description": "Expanding the safe command list and validating it against more sophisticated attack vectors.",
+        "axis": "security"
+      },
+      {
+        "area": "Performance",
+        "file": "./math_utils.py",
+        "description": "'fibonacci()' function uses recursion which is highly inefficient. This could be improved using memoization or iterative approach to reduce time complexity and space utilization.",
+        "axis": "performance"
+      }
+    ]
+  },
+  "status": "completed",
+  "turns_used": 3,
+  "input_tokens": 17238,
+  "output_tokens": 662,
+  "raw_summary": "```json\n{\n  \"files_examined\": [\"agent.py\", \"cli.py\", \"context.py\", \"debug.py\", \"prompts.py\", \"providers.py\", \"self_improve.py\", \"session.py\", \"sub_agents.py\", \"test_bash_safety.py\", \"test_coder_subagent.py\", \"test_context.py\", \"test_debug.py\", \"test_error_isolation.py\", \"test_fixes.py\", \"test_file_safety.py\", \"test_list_directory.py\", \"test_list_files.py\", \"test_retry.py\", \"test_session.py\", \"test_streaming.py\", \"test_tokens.py\", \"tokens.py\", \"tools.py\", \"test_math.py\", \"hello.py\", \"math_utils.py\"],\n  \"subsystems_found\": [\n    {\n      \"name\": \"Math Utilities\",\n      \"files\": [\"sandbox/math_utils.py\", \"sandbox/test_math.py\"],\n      \"summary\": \"Contains math utility functions like add, multiply, divide and fibonacci.\"\n    },\n    {\n      \"name\": \"Greeting Module\",\n      \"files\": [\"hello.py\"],\n      \"summary\": \"Provides a basic greeting function that prints 'Hello, world!'\"\n    }\n  ],\n  \"improvement_opportunities\": [\n    {\n      \"area\": \"Security\",\n      \"file\": \"./test_bash_safety.py\",\n      \"description\": \"Expanding the safe command list and validating it against more sophisticated attack vectors.\",\n      \"axis\": \"security\"\n    },\n    {\n      \"area\": \"Performance\",\n      \"file\": \"./math_utils.py\",\n      \"description\": \"'fibonacci()' function uses recursion which is highly inefficient. This could be improved using memoization or iterative approach to reduce time complexity and space utilization.\",\n      \"axis\": \"performance\"\n    }\n  ]\n}\n```"
+}
