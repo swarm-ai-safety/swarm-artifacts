@@ -1,0 +1,24 @@
+run_id: 20260221_104316_langgraph_governed
+slug: langgraph_governed
+created_utc: '2026-02-21T10:43:16+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: langgraph_governed
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  sweep_csv: sweep_results.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- langgraph
+- governed
+- sweep

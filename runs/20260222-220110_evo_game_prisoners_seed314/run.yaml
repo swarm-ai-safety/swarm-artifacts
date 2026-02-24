@@ -1,0 +1,28 @@
+run_id: 20260222-220110_evo_game_prisoners_seed314
+slug: evo_game_prisoners_seed314
+created_utc: '2026-02-22T22:01:10+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: evo_game_prisoners
+  seeds:
+  - 314
+  epochs_per_run: 10
+  steps_per_epoch: 5
+results:
+  status: completed
+artifacts:
+  epoch_csvs:
+  - csv/evo_game_prisoners_epochs.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- evo-game
+- prisoners-dilemma
+- seed-314
+- single

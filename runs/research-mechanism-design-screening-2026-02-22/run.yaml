@@ -1,0 +1,24 @@
+run_id: research-mechanism-design-screening-2026-02-22
+slug: research_mechanism_design_screening
+created_utc: '2026-02-22T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: mechanism-design-screening
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts: {}
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- research
+- mechanism-design
+- screening
+- study

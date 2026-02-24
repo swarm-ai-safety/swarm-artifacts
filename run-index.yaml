@@ -1,12 +1,11 @@
-generated_utc: '2026-02-24T13:57:18.560215+00:00'
+generated_utc: '2026-02-24T13:59:21.367359+00:00'
 total_runs: 132
 by_type:
   calibration: 2
-  redteam: 12
-  single: 54
-  study: 23
-  sweep: 25
-  unknown: 16
+  redteam: 13
+  single: 61
+  study: 29
+  sweep: 27
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1134,59 +1133,94 @@ runs:
   - claim-trust-boundaries-modify-but-never-deny-handoffs
   - claim-delegation-completion-requires-handoff-budget-above-15
 - id: 20260221_104316_langgraph_governed
-  type: unknown
+  slug: langgraph_governed
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - langgraph
+  - governed
+  - sweep
+  date: '2026-02-21'
+  status: completed
 - id: 20260222-211635_evo_game_prisoners_seed42
-  type: unknown
+  slug: evo_game_prisoners_seed42
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - evo-game
+  - prisoners-dilemma
+  - seed-42
+  - single
+  date: '2026-02-22'
+  status: completed
 - id: 20260222-215017_evo_game_prisoners_seed42
-  type: unknown
+  slug: evo_game_prisoners_seed42
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - evo-game
+  - prisoners-dilemma
+  - seed-42
+  - single
+  date: '2026-02-22'
+  status: completed
 - id: 20260222-215249_evo_game_prisoners_seed123
-  type: unknown
+  slug: evo_game_prisoners_seed123
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - evo-game
+  - prisoners-dilemma
+  - seed-123
+  - single
+  date: '2026-02-22'
+  status: completed
 - id: 20260222-215523_evo_game_prisoners_seed777
-  type: unknown
+  slug: evo_game_prisoners_seed777
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - evo-game
+  - prisoners-dilemma
+  - seed-777
+  - single
+  date: '2026-02-22'
+  status: completed
 - id: 20260222-220110_evo_game_prisoners_seed314
-  type: unknown
+  slug: evo_game_prisoners_seed314
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - evo-game
+  - prisoners-dilemma
+  - seed-314
+  - single
+  date: '2026-02-22'
+  status: completed
 - id: 20260222-220608_evo_game_prisoners_seed999
-  type: unknown
+  slug: evo_game_prisoners_seed999
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - evo-game
+  - prisoners-dilemma
+  - seed-999
+  - single
+  date: '2026-02-22'
+  status: completed
 - id: 20260222_183539_langgraph_governed
-  type: unknown
+  slug: langgraph_governed
+  type: sweep
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - langgraph
+  - governed
+  - sweep
+  date: '2026-02-22'
+  status: completed
 - id: 20260223-001025_evo_game_prisoners_seed42_20ep
-  type: unknown
+  slug: evo_game_prisoners_seed42_20ep
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - evo-game
+  - prisoners-dilemma
+  - seed-42
+  - extended-epochs
+  - single
+  date: '2026-02-23'
+  status: completed
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
@@ -1196,11 +1230,14 @@ runs:
   date: unknown
   status: completed
 - id: coding-agent-self-improve
-  type: unknown
+  slug: coding_agent_self_improve
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - coding-agent
+  - self-improve
+  - study
+  date: '2026-02-24'
+  status: completed
 - id: contract_screening_seed42
   slug: contract_screening_seed42
   type: single
@@ -1227,41 +1264,64 @@ runs:
   - claim-contract-screening-achieves-perfect-type-separation
   - claim-screening-equilibrium-generates-honest-payoff-premium
 - id: redteam
-  type: unknown
+  slug: redteam
+  type: redteam
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - redteam
+  - contract-screening
+  - sybil
+  date: '2026-02-21'
+  status: completed
+  primary_result: "Robustness score 0.70 \u2014 5 of 8 attacks prevented"
 - id: research-decision-theory-multiagent-2026-02-22
-  type: unknown
+  slug: research_decision_theory_multiagent
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - research
+  - decision-theory
+  - multiagent
+  - study
+  date: '2026-02-22'
+  status: completed
 - id: research-mechanism-design-screening-2026-02-22
-  type: unknown
+  slug: research_mechanism_design_screening
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - research
+  - mechanism-design
+  - screening
+  - study
+  date: '2026-02-22'
+  status: completed
 - id: research-multi-agent-governance-2026-02-22
-  type: unknown
+  slug: research_multi_agent_governance
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - research
+  - multi-agent
+  - governance
+  - study
+  date: '2026-02-22'
+  status: completed
 - id: research-phase-transitions-economies-2026-02-22
-  type: unknown
+  slug: research_phase_transitions_economies
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - research
+  - phase-transitions
+  - economies
+  - study
+  date: '2026-02-22'
+  status: completed
 - id: research-sybil-resistance-2026-02-22
-  type: unknown
+  slug: research_sybil_resistance
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - research
+  - sybil-resistance
+  - study
+  date: '2026-02-22'
+  status: completed
 - id: self_optimizer_seed42
   slug: self_optimizer_seed42
   type: single

@@ -1,0 +1,23 @@
+run_id: research-sybil-resistance-2026-02-22
+slug: research_sybil_resistance
+created_utc: '2026-02-22T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: sybil-resistance
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts: {}
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- research
+- sybil-resistance
+- study

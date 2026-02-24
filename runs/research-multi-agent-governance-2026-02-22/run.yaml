@@ -1,0 +1,24 @@
+run_id: research-multi-agent-governance-2026-02-22
+slug: research_multi_agent_governance
+created_utc: '2026-02-22T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: multi-agent-governance
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts: {}
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- research
+- multi-agent
+- governance
+- study

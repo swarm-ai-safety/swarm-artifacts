@@ -1,0 +1,24 @@
+run_id: redteam
+slug: redteam
+created_utc: '2026-02-21T08:45:47+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: redteam
+  scenario_ref: contract_screening
+  seeds:
+  - 0
+results:
+  status: completed
+  primary_result: "Robustness score 0.70 — 5 of 8 attacks prevented"
+artifacts: {}
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- redteam
+- contract-screening
+- sybil

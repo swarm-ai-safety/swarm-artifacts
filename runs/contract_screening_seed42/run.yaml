@@ -20,7 +20,6 @@ experiment:
 results:
   status: completed
 artifacts:
-  summary: contract_screening_events.jsonl
   config: contract_screening.yaml
 links:
   parent_runs: []

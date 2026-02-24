@@ -1,0 +1,24 @@
+run_id: coding-agent-self-improve
+slug: coding_agent_self_improve
+created_utc: '2026-02-24T04:52:51+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: coding-agent-self-improve
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  summary: manifest.json
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- coding-agent
+- self-improve
+- study
