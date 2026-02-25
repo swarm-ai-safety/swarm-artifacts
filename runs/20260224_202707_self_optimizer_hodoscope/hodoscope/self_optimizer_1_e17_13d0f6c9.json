@@ -1,0 +1,245 @@
+{
+  "trajectory_id": "self_optimizer_1_e17_13d0f6c9",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_47fd40ef9329",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_2\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_47fd40ef9329",
+      "content": "{\"accepted\": true, \"p\": 0.553, \"v_hat\": 0.1065, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_2\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_b773165d4159",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_b773165d4159",
+      "content": "{\"accepted\": true, \"p\": 0.5786, \"v_hat\": 0.1584, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_fb1f1190db24",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_fb1f1190db24",
+      "content": "{\"accepted\": true, \"p\": 0.5172, \"v_hat\": 0.0345, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_648bf421c6df",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_648bf421c6df",
+      "content": "{\"accepted\": true, \"p\": 0.5581, \"v_hat\": 0.1167, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_8dafde62f61f",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_8dafde62f61f",
+      "content": "{\"accepted\": true, \"p\": 0.5726, \"v_hat\": 0.1462, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_2fc25187008c",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_1\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_2fc25187008c",
+      "content": "{\"accepted\": false, \"p\": 0.5787, \"v_hat\": 0.1588, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_1\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_3f4dcb5d5d5b",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_2\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_3f4dcb5d5d5b",
+      "content": "{\"accepted\": true, \"p\": 0.7041, \"v_hat\": 0.4333, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_2\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_20b803b6fd27",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_20b803b6fd27",
+      "content": "{\"accepted\": true, \"p\": 0.7528, \"v_hat\": 0.5569, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_fdf95f271af1",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_fdf95f271af1",
+      "content": "{\"accepted\": true, \"p\": 0.7531, \"v_hat\": 0.5575, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_b7fb0938b6ab",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_5\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_b7fb0938b6ab",
+      "content": "{\"accepted\": true, \"p\": 0.5648, \"v_hat\": 0.1303, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_5\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_30386215b171",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_4\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_30386215b171",
+      "content": "{\"accepted\": true, \"p\": 0.5962, \"v_hat\": 0.1948, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_4\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_88d9cb5da43f",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_5\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_88d9cb5da43f",
+      "content": "{\"accepted\": true, \"p\": 0.7024, \"v_hat\": 0.4294, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_5\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "self_optimizer_1",
+    "agent_type": "opportunistic",
+    "avg_p": 0.6193,
+    "n_interactions": 12,
+    "n_accepted": 11,
+    "n_initiated": 10,
+    "acceptance_rate": 0.9167,
+    "epoch": 17,
+    "reputation": 12.377635424666538,
+    "total_payoff": 3.3761518968476913
+  }
+}

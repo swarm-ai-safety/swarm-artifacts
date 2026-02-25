@@ -1,0 +1,245 @@
+{
+  "trajectory_id": "self_optimizer_2_e18_2c49e4a1",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_dd1a7ab0f00a",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_dd1a7ab0f00a",
+      "content": "{\"accepted\": true, \"p\": 0.753, \"v_hat\": 0.5574, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_431078a20b13",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_1\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_431078a20b13",
+      "content": "{\"accepted\": true, \"p\": 0.5811, \"v_hat\": 0.1637, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_1\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_0b1a42a9e798",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_1\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_0b1a42a9e798",
+      "content": "{\"accepted\": true, \"p\": 0.5385, \"v_hat\": 0.0772, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_1\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_c73f26a5282b",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_2\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_c73f26a5282b",
+      "content": "{\"accepted\": true, \"p\": 0.6439, \"v_hat\": 0.2962, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_2\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_b9c07875ff49",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_b9c07875ff49",
+      "content": "{\"accepted\": true, \"p\": 0.5554, \"v_hat\": 0.1112, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_50b5e1e5ce1b",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_50b5e1e5ce1b",
+      "content": "{\"accepted\": true, \"p\": 0.479, \"v_hat\": -0.042, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_6797eba667a4",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_6797eba667a4",
+      "content": "{\"accepted\": true, \"p\": 0.6791, \"v_hat\": 0.3749, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_493d54d33d36",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_493d54d33d36",
+      "content": "{\"accepted\": true, \"p\": 0.6104, \"v_hat\": 0.2245, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_343e729df839",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"honest_2\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_343e729df839",
+      "content": "{\"accepted\": true, \"p\": 0.7862, \"v_hat\": 0.6509, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_2\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_f916e0fff7ad",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"honest_5\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_f916e0fff7ad",
+      "content": "{\"accepted\": true, \"p\": 0.7419, \"v_hat\": 0.5278, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_5\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_6235e0990432",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"honest_1\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_6235e0990432",
+      "content": "{\"accepted\": true, \"p\": 0.7657, \"v_hat\": 0.5921, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_1\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_f795caba7f4f",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"honest_4\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_f795caba7f4f",
+      "content": "{\"accepted\": true, \"p\": 0.821, \"v_hat\": 0.7615, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_4\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "self_optimizer_2",
+    "agent_type": "opportunistic",
+    "avg_p": 0.6629,
+    "n_interactions": 12,
+    "n_accepted": 12,
+    "n_initiated": 7,
+    "acceptance_rate": 1.0,
+    "epoch": 18,
+    "reputation": 10.841212404259363,
+    "total_payoff": 5.9796888979805285
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "trajectory_id": "honest_5_e7_a0f34076",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_800d7a0d0fb1",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_800d7a0d0fb1",
+      "content": "{\"accepted\": true, \"p\": 0.5665, \"v_hat\": 0.1339, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_1de974995ab3",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_2\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_1de974995ab3",
+      "content": "{\"accepted\": true, \"p\": 0.7043, \"v_hat\": 0.4338, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_2\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_f0d72a215b80",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_f0d72a215b80",
+      "content": "{\"accepted\": true, \"p\": 0.5678, \"v_hat\": 0.1365, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_b8ed35201e47",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"self_optimizer_1\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_b8ed35201e47",
+      "content": "{\"accepted\": true, \"p\": 0.6887, \"v_hat\": 0.3969, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_1\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_0de5d77abeb9",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_2\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_0de5d77abeb9",
+      "content": "{\"accepted\": true, \"p\": 0.6513, \"v_hat\": 0.3125, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_2\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "honest_5",
+    "agent_type": "honest",
+    "avg_p": 0.6357,
+    "n_interactions": 5,
+    "n_accepted": 5,
+    "n_initiated": 1,
+    "acceptance_rate": 1.0,
+    "epoch": 7,
+    "reputation": 4.675023101680125,
+    "total_payoff": 0.7897677452426373
+  }
+}

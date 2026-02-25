@@ -1,0 +1,74 @@
+{
+  "trajectory_id": "honest_1_e17_6f5558b6",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_3ea92ef62db8",
+          "type": "function",
+          "function": {
+            "name": "reject",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_1\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_3ea92ef62db8",
+      "content": "{\"accepted\": false, \"p\": 0.5787, \"v_hat\": 0.1588, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_1\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_db54f4147e4c",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"honest_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_db54f4147e4c",
+      "content": "{\"accepted\": true, \"p\": 0.6846, \"v_hat\": 0.3874, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_88b1b31b42bd",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"honest_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_88b1b31b42bd",
+      "content": "{\"accepted\": true, \"p\": 0.7378, \"v_hat\": 0.5174, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"honest_3\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "honest_1",
+    "agent_type": "honest",
+    "avg_p": 0.667,
+    "n_interactions": 3,
+    "n_accepted": 2,
+    "n_initiated": 2,
+    "acceptance_rate": 0.6667,
+    "epoch": 17,
+    "reputation": 4.708532652886548,
+    "total_payoff": 3.4920976746001813
+  }
+}

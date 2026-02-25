@@ -1,0 +1,36 @@
+{
+  "trajectory_id": "honest_2_e14_47e67746",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_d11961649d5c",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"self_optimizer_3\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_d11961649d5c",
+      "content": "{\"accepted\": true, \"p\": 0.7303, \"v_hat\": 0.4981, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "honest_2",
+    "agent_type": "honest",
+    "avg_p": 0.7303,
+    "n_interactions": 1,
+    "n_accepted": 1,
+    "n_initiated": 1,
+    "acceptance_rate": 1.0,
+    "epoch": 14,
+    "reputation": 3.034210526639777,
+    "total_payoff": 2.493199692211466
+  }
+}

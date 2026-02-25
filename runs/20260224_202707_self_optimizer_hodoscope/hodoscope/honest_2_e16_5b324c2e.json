@@ -1,0 +1,55 @@
+{
+  "trajectory_id": "honest_2_e16_5b324c2e",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_e7e44acb6a1b",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"self_optimizer_2\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_e7e44acb6a1b",
+      "content": "{\"accepted\": true, \"p\": 0.7123, \"v_hat\": 0.4533, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_2\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_accb66e240eb",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"self_optimizer_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_accb66e240eb",
+      "content": "{\"accepted\": true, \"p\": 0.5467, \"v_hat\": 0.0936, \"reputation_change\": 0.0, \"governance_cost\": 0.0, \"transfer\": 0.0, \"counterparty\": \"self_optimizer_3\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "honest_2",
+    "agent_type": "honest",
+    "avg_p": 0.6295,
+    "n_interactions": 2,
+    "n_accepted": 2,
+    "n_initiated": 1,
+    "acceptance_rate": 1.0,
+    "epoch": 16,
+    "reputation": 3.034210526639777,
+    "total_payoff": 2.493199692211466
+  }
+}
