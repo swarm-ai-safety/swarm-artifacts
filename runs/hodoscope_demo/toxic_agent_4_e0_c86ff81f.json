@@ -1,0 +1,34 @@
+{
+  "trajectory_id": "toxic_agent_4_e0_c86ff81f",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_6b66fde20bea",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"victim_agent_5\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_6b66fde20bea",
+      "content": "{\"accepted\": false, \"p\": 0.2623, \"v_hat\": -0.4754, \"reputation_change\": -0.1559, \"governance_cost\": 0.0747, \"transfer\": 0.0765, \"counterparty\": \"victim_agent_5\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "toxic_agent_4",
+    "agent_type": "unknown",
+    "avg_p": 0.2623,
+    "n_interactions": 1,
+    "n_accepted": 0,
+    "n_initiated": 1,
+    "acceptance_rate": 0.0,
+    "epoch": 0
+  }
+}

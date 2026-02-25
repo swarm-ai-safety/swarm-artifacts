@@ -1,11 +1,12 @@
-generated_utc: '2026-02-24T13:59:21.367359+00:00'
-total_runs: 132
+generated_utc: '2026-02-25T01:25:48.345715+00:00'
+total_runs: 134
 by_type:
   calibration: 2
   redteam: 13
   single: 61
   study: 29
   sweep: 27
+  unknown: 2
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1221,6 +1222,12 @@ runs:
   - single
   date: '2026-02-23'
   status: completed
+- id: 20260224_083213_langgraph_governed
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
@@ -1263,6 +1270,12 @@ runs:
   claims:
   - claim-contract-screening-achieves-perfect-type-separation
   - claim-screening-equilibrium-generates-honest-payoff-premium
+- id: hodoscope_demo
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: redteam
   slug: redteam
   type: redteam

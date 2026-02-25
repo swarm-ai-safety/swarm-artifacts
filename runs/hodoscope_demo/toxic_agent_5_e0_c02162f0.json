@@ -1,0 +1,53 @@
+{
+  "trajectory_id": "toxic_agent_5_e0_c02162f0",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_eae43006948a",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"victim_agent_6\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_eae43006948a",
+      "content": "{\"accepted\": false, \"p\": 0.3453, \"v_hat\": -0.3093, \"reputation_change\": -0.168, \"governance_cost\": 0.0545, \"transfer\": 0.4498, \"counterparty\": \"victim_agent_6\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_529550c8eb7e",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"reply\", \"counterparty\": \"victim_agent_7\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_529550c8eb7e",
+      "content": "{\"accepted\": false, \"p\": 0.2008, \"v_hat\": -0.5984, \"reputation_change\": -0.1605, \"governance_cost\": 0.0707, \"transfer\": 0.3005, \"counterparty\": \"victim_agent_7\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "toxic_agent_5",
+    "agent_type": "unknown",
+    "avg_p": 0.2731,
+    "n_interactions": 2,
+    "n_accepted": 0,
+    "n_initiated": 2,
+    "acceptance_rate": 0.0,
+    "epoch": 0
+  }
+}

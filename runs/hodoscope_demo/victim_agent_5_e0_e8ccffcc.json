@@ -1,0 +1,34 @@
+{
+  "trajectory_id": "victim_agent_5_e0_e8ccffcc",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_661ed71aa570",
+          "type": "function",
+          "function": {
+            "name": "reject",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"toxic_agent_4\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_661ed71aa570",
+      "content": "{\"accepted\": false, \"p\": 0.2623, \"v_hat\": -0.4754, \"reputation_change\": -0.2679, \"governance_cost\": 0.1734, \"transfer\": 0.0765, \"counterparty\": \"toxic_agent_4\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "victim_agent_5",
+    "agent_type": "unknown",
+    "avg_p": 0.2623,
+    "n_interactions": 1,
+    "n_accepted": 0,
+    "n_initiated": 0,
+    "acceptance_rate": 0.0,
+    "epoch": 0
+  }
+}

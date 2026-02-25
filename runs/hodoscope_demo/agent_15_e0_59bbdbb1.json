@@ -1,0 +1,53 @@
+{
+  "trajectory_id": "agent_15_e0_59bbdbb1",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_5781e7a6ad73",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"vote\", \"counterparty\": \"agent_1\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_5781e7a6ad73",
+      "content": "{\"accepted\": true, \"p\": 0.8599, \"v_hat\": 0.7197, \"reputation_change\": 0.0828, \"governance_cost\": 0.0269, \"transfer\": 0.0784, \"counterparty\": \"agent_1\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_c378a6bd5dff",
+          "type": "function",
+          "function": {
+            "name": "reject",
+            "arguments": "{\"interaction_type\": \"collaboration\", \"counterparty\": \"agent_4\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_c378a6bd5dff",
+      "content": "{\"accepted\": false, \"p\": 0.8825, \"v_hat\": 0.765, \"reputation_change\": 0.1382, \"governance_cost\": 0.019, \"transfer\": 0.0035, \"counterparty\": \"agent_4\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "agent_15",
+    "agent_type": "unknown",
+    "avg_p": 0.8712,
+    "n_interactions": 2,
+    "n_accepted": 1,
+    "n_initiated": 0,
+    "acceptance_rate": 0.5,
+    "epoch": 0
+  }
+}

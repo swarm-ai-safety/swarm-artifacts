@@ -1,0 +1,72 @@
+{
+  "trajectory_id": "agent_19_e0_ff19780d",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_30468c4da747",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"vote\", \"counterparty\": \"agent_3\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_30468c4da747",
+      "content": "{\"accepted\": true, \"p\": 0.8523, \"v_hat\": 0.7046, \"reputation_change\": 0.1664, \"governance_cost\": 0.0374, \"transfer\": 0.028, \"counterparty\": \"agent_3\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_6cc944074df3",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"vote\", \"counterparty\": \"agent_2\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_6cc944074df3",
+      "content": "{\"accepted\": true, \"p\": 0.8215, \"v_hat\": 0.643, \"reputation_change\": 0.1309, \"governance_cost\": 0.0269, \"transfer\": -0.047, \"counterparty\": \"agent_2\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_0b8b6ac7dd5d",
+          "type": "function",
+          "function": {
+            "name": "accept",
+            "arguments": "{\"interaction_type\": \"vote\", \"counterparty\": \"agent_1\", \"role\": \"counterparty\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_0b8b6ac7dd5d",
+      "content": "{\"accepted\": true, \"p\": 0.8263, \"v_hat\": 0.6527, \"reputation_change\": 0.0739, \"governance_cost\": 0.0448, \"transfer\": -0.0102, \"counterparty\": \"agent_1\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "agent_19",
+    "agent_type": "unknown",
+    "avg_p": 0.8334,
+    "n_interactions": 3,
+    "n_accepted": 3,
+    "n_initiated": 0,
+    "acceptance_rate": 1.0,
+    "epoch": 0
+  }
+}

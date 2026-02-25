@@ -1,0 +1,34 @@
+{
+  "trajectory_id": "agent_7_e0_80d9700f",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_c5fe0ce6122b",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"trade\", \"counterparty\": \"agent_12\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_c5fe0ce6122b",
+      "content": "{\"accepted\": false, \"p\": 0.8341, \"v_hat\": 0.6681, \"reputation_change\": 0.1456, \"governance_cost\": 0.0382, \"transfer\": 0.0155, \"counterparty\": \"agent_12\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "agent_7",
+    "agent_type": "unknown",
+    "avg_p": 0.8341,
+    "n_interactions": 1,
+    "n_accepted": 0,
+    "n_initiated": 1,
+    "acceptance_rate": 0.0,
+    "epoch": 0
+  }
+}

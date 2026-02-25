@@ -1,0 +1,34 @@
+{
+  "trajectory_id": "agent_3_e0_f14c2da8",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_58eab6db6ede",
+          "type": "function",
+          "function": {
+            "name": "propose",
+            "arguments": "{\"interaction_type\": \"vote\", \"counterparty\": \"agent_19\", \"role\": \"initiator\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_58eab6db6ede",
+      "content": "{\"accepted\": true, \"p\": 0.8523, \"v_hat\": 0.7046, \"reputation_change\": 0.2686, \"governance_cost\": 0.0323, \"transfer\": 0.028, \"counterparty\": \"agent_19\"}"
+    }
+  ],
+  "metadata": {
+    "agent_id": "agent_3",
+    "agent_type": "unknown",
+    "avg_p": 0.8523,
+    "n_interactions": 1,
+    "n_accepted": 1,
+    "n_initiated": 1,
+    "acceptance_rate": 1.0,
+    "epoch": 0
+  }
+}
