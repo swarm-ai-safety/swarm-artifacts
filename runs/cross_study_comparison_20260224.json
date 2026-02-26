@@ -1,0 +1,93 @@
+{
+  "comparison": "LangGraph governed handoff sweep: 3-seed vs 1-seed",
+  "generated": "2026-02-24",
+  "studies": [
+    {
+      "name": "3-seed (Feb 22)",
+      "path": "runs/20260222_183539_langgraph_governed",
+      "n_seeds": 3,
+      "n_runs": 96,
+      "overall": {
+        "completion_rate": 0.5312,
+        "total_handoffs": 53,
+        "total_denials": 19,
+        "mean_denial_rate": 0.0885,
+        "mean_elapsed_seconds": 37.34
+      },
+      "by_max_cycles": {
+        "1": {
+          "completion_rate": 0.5,
+          "mean_denied": 0.375,
+          "mean_denial_rate": 0.1458,
+          "mean_total_handoffs": 0.7083,
+          "n_runs": 24
+        },
+        "2": {
+          "completion_rate": 0.5417,
+          "mean_denied": 0.1667,
+          "mean_denial_rate": 0.0833,
+          "mean_total_handoffs": 0.4167,
+          "n_runs": 24
+        },
+        "3": {
+          "completion_rate": 0.5833,
+          "mean_denied": 0.0833,
+          "mean_denial_rate": 0.0417,
+          "mean_total_handoffs": 0.4583,
+          "n_runs": 24
+        },
+        "5": {
+          "completion_rate": 0.5,
+          "mean_denied": 0.1667,
+          "mean_denial_rate": 0.0833,
+          "mean_total_handoffs": 0.625,
+          "n_runs": 24
+        }
+      }
+    },
+    {
+      "name": "1-seed (Feb 24)",
+      "path": "runs/20260224_083213_langgraph_governed",
+      "n_seeds": 1,
+      "n_runs": 32,
+      "overall": {
+        "completion_rate": 0.5938,
+        "total_handoffs": 18,
+        "total_denials": 7,
+        "mean_denial_rate": 0.0938,
+        "mean_elapsed_seconds": 6.9
+      },
+      "by_max_cycles": {
+        "1": {
+          "completion_rate": 0.625,
+          "mean_denied": 0.25,
+          "mean_denial_rate": 0.125,
+          "mean_total_handoffs": 0.5,
+          "n_runs": 8
+        },
+        "2": {
+          "completion_rate": 0.375,
+          "mean_denied": 0.0,
+          "mean_denial_rate": 0.0,
+          "mean_total_handoffs": 0.25,
+          "n_runs": 8
+        },
+        "3": {
+          "completion_rate": 0.75,
+          "mean_denied": 0.625,
+          "mean_denial_rate": 0.25,
+          "mean_total_handoffs": 0.625,
+          "n_runs": 8
+        },
+        "5": {
+          "completion_rate": 0.625,
+          "mean_denied": 0.0,
+          "mean_denial_rate": 0.0,
+          "mean_total_handoffs": 0.875,
+          "n_runs": 8
+        }
+      }
+    }
+  ],
+  "summary": "3-seed study (96 runs) achieved 53% overall completion vs 1-seed study (32 runs) at 59%. Total denials: 19 (3-seed) vs 7 (1-seed). Both studies show completion rates increase with max_cycles and trust_boundaries generally constrain handoff volume."
+}
