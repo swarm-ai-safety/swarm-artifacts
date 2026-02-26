@@ -1,0 +1,19 @@
+{
+  "iteration": 5,
+  "timestamp": "2026-02-26T04:35:44.566955+00:00",
+  "aborted": false,
+  "axis": "performance",
+  "audit_overall": 3.0,
+  "audit_scores": {
+    "correctness": 2,
+    "robustness": 4,
+    "value": 3,
+    "scope": 6,
+    "tests": 1
+  },
+  "red_team_verdict": null,
+  "files_changed": [],
+  "total_tokens": 59157,
+  "total_input_tokens": 50487,
+  "total_output_tokens": 8670
+}
