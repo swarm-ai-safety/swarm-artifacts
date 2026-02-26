@@ -1,12 +1,12 @@
-generated_utc: '2026-02-26T02:07:24.758296+00:00'
-total_runs: 135
+generated_utc: '2026-02-26T02:29:32.397831+00:00'
+total_runs: 136
 by_type:
   calibration: 2
   redteam: 13
   single: 61
   study: 29
   sweep: 27
-  unknown: 3
+  unknown: 4
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1222,6 +1222,12 @@ runs:
   - single
   date: '2026-02-23'
   status: completed
+- id: 20260224-220829_mesa_governance_study
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: 20260224_083213_langgraph_governed
   type: unknown
   tags:
