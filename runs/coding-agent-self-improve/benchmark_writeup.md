@@ -1,6 +1,6 @@
 # Local LLM Benchmark: Agentic Self-Improvement Loop
 
-**Date**: 2026-02-23 — 2026-02-25
+**Date**: 2026-02-23 — 2026-02-26
 **Setup**: 6-phase self-improvement loop (`self_improve.py`) running against a coding agent codebase (~20 files, Python). Each phase dispatches a scoped sub-agent via `SubAgentRunner` with phase-specific tools and system prompts. Local models served by Ollama on Apple Silicon.
 
 ## Models Tested
@@ -113,7 +113,7 @@ GLM's reflection was the standout for local models: "the summary is sparse...no 
 
 ## Part 2: Multi-Iteration Runs (qwen2.5:14b)
 
-Two 3-iteration runs tested whether the model can sustain quality, diversify axes, and learn across iterations.
+Two runs tested whether the model can sustain quality, diversify axes, and learn across iterations. Run A did 3 iterations; Run B did 5 (3 initial + 2 continuation).
 
 ### Run A (2026-02-24)
 
@@ -133,45 +133,62 @@ Observations:
 - Iter 3 was the first to actually modify source files (agent.py, cli.py) with UX improvements.
 - Total cost: 189k tokens (~63k avg/iteration), all local/free.
 
-### Run B (2026-02-25)
+### Run B (2026-02-25 — 2026-02-26, 5 iterations)
 
-| | Iter 1 | Iter 2 | Iter 3 |
-|---|:---:|:---:|:---:|
-| **Axis** | architecture | ux_cli | ux_cli |
-| **Audit score** | 4.9 | 2.4 | N/A |
-| **Red-team** | N/A | N/A | partial |
-| **Files changed** | none | none | cli.py |
-| **Tokens** | 25k | 19k | 70k |
+| | Iter 1 | Iter 2 | Iter 3 | Iter 4* | Iter 4 | Iter 5 |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Axis** | architecture | ux_cli | ux_cli | *(aborted)* | observability | performance |
+| **Audit score** | 4.9 | 2.4 | N/A | N/A | 3.0 | 3.0 |
+| **Red-team** | N/A | N/A | partial | N/A | broken | N/A |
+| **Files changed** | none | none | cli.py | none | none | none |
+| **Tokens** | 25k | 19k | 70k | 8k | 55k | 59k |
 
-**Audit score trend: 4.9 → 2.4 → N/A** (declining)
+*Iter 4 first attempt aborted — HYPOTHESIZE produced no parseable JSON. Retried successfully.*
 
-Observations:
-- Axis diversity failed — ux_cli repeated in iters 2 and 3 despite the prompt discouraging repeats.
+**Audit score trend: 4.9 → 2.4 → N/A → 3.0 → 3.0** (crash then flat recovery)
+
+Observations (iters 1-3):
+- Axis diversity failed early — ux_cli repeated in iters 2 and 3 despite the prompt discouraging repeats.
 - Iter 2 scored very poorly (2.4): correctness=1, robustness=1, tests=0. The model attempted to add CLI progress indicators but couldn't find shell scripts to modify.
 - Iter 3 spent 70k tokens (3.5x iter 2) trying to fix a syntax error it introduced, then the red-team found the fix was partial.
 - The explore phase logged glob patterns (`**/*.js`, `**/*.css`) as "files examined" instead of actual filenames, polluting the manifest.
 
+Observations (iters 4-5, continuation):
+- Axis diversity improved — finally hit observability (iter 4) and performance (iter 5), both previously untouched.
+- Audit scores stabilized at 3.0 but never recovered to the iter 1 level (4.9). The model plateaued.
+- Neither iter 4 nor iter 5 actually modified any source files, despite claiming to implement changes. The IMPLEMENT phase ran tools but produced no lasting code changes.
+- Red-team broke iter 4 — found dependency issues and edge input failures in the (non-existent) implementation.
+- Iter 5 audit noted "misalignment between hypothesis and implemented solution" — the model selected a performance hypothesis but implemented a logging utility instead.
+- Reflect phase produced Thai text in seed rationale, indicating language drift in later iterations.
+- Manifest pollution continued: tool names (`list_files`, `list_directory`, `search`) and paths like `/runs/*.json` appeared in "files_examined."
+
 ### Cross-Run Analysis
 
-| Metric | Run A | Run B |
+| Metric | Run A (3 iters) | Run B (5 iters) |
 |--------|:-----:|:-----:|
-| Audit trend | 5.0 → 6.8 → 6.8 (improving) | 4.9 → 2.4 → N/A (declining) |
-| Axis diversity | 3/3 distinct | 2/3 (ux_cli repeated) |
-| Red-team breaks | 1 (iter 1 partial) | 1 (iter 3 partial) |
-| Total tokens | 189k | 114k |
+| Audit trend | 5.0 → 6.8 → 6.8 (improving) | 4.9 → 2.4 → N/A → 3.0 → 3.0 (crash/flat) |
+| Axis diversity | 3/3 distinct | 4/6 distinct (ux_cli×2) |
+| Red-team breaks | 1 (iter 1 partial) | 2 (iter 3 partial, iter 4 broken) |
+| Total tokens | 189k | 236k |
 | Files actually changed | 2 (iter 3) | 1 (iter 3) |
 | Self-inflicted bugs | 0 | 1 (syntax error in iter 2/3) |
+| Aborted iterations | 0 | 1 (iter 4 attempt 1) |
+| Hypothesis-implementation mismatch | 0 | 1 (iter 5: perf hypothesis → logging impl) |
 
-Key finding: **qwen2.5:14b's multi-iteration performance is inconsistent**. Run A showed genuine learning (audit scores rose, axis diversity was perfect, red-team verdicts improved). Run B showed degradation — the model got stuck in a ux_cli rut, introduced a bug, then spent an entire iteration fixing it. The difference appears to be whether the EXPLORE phase produces quality findings that seed diverse hypotheses.
+Key finding: **qwen2.5:14b's multi-iteration performance is inconsistent and does not show a learning curve**. Run A showed genuine improvement over 3 iterations (audit scores rose, axis diversity was perfect). Run B showed degradation then stagnation over 5 iterations — the model crashed in iter 2, partially recovered, but never exceeded its starting score. The difference appears to be whether the EXPLORE phase produces quality findings that seed diverse hypotheses.
 
-### Aggregate Statistics (6 iterations across both runs)
+Additional finding from Run B's 5-iteration trajectory: **the model does not learn from its own audit feedback**. Despite the audit consistently flagging "no tests written" (tests score: 0-1 across all iterations) and "no files changed," subsequent iterations continued to produce phantom implementations with no actual code modifications. The reflect phase proposes reasonable next-iteration seeds, but the implement phase fails to execute on them.
 
-- **Axes touched**: test_coverage(1), security(1), ux_cli(3), architecture(1), performance(0), prompt_engineering(0), observability(0)
-- **Gravitational bias**: ux_cli attracted 50% of iterations — the model gravitates toward "improve the CLI" because it's concrete and familiar.
-- **Avg audit score**: 4.8 (across 4 scored iterations; 2 had N/A)
-- **Red-team break rate**: 2/6 iterations (33%) had partial or broken verdicts
-- **Code modification rate**: 2/6 iterations (33%) actually changed source files
-- **Avg tokens/iteration**: 50k (range: 19k–75k)
+### Aggregate Statistics (8 completed iterations across both runs)
+
+- **Axes touched**: test_coverage(1), security(1), ux_cli(3), architecture(2), performance(1), prompt_engineering(0), observability(1)
+- **Gravitational bias**: ux_cli attracted 37.5% of iterations. prompt_engineering and test_coverage remain under-explored.
+- **Avg audit score**: 3.7 (across 6 scored iterations; 2 had N/A)
+- **Red-team break rate**: 3/8 iterations (37.5%) had partial or broken verdicts
+- **Code modification rate**: 2/8 iterations (25%) actually changed source files
+- **Phantom implementation rate**: 6/8 iterations (75%) claimed changes but modified zero files
+- **Avg tokens/iteration**: 47k (range: 19k–75k)
+- **Aborted iterations**: 1/9 attempts (11%) — HYPOTHESIZE failed to produce parseable JSON
 
 ## Failure Taxonomy
 
@@ -193,6 +210,18 @@ Despite explicit prompting to diversify across 7 axes and a histogram showing pr
 ### 6. Self-Inflicted Regression (qwen2.5:14b, Run B)
 In iter 2, the IMPLEMENT phase introduced a syntax error into cli.py. Iter 3 then spent its entire budget (70k tokens) diagnosing and partially fixing the bug it created. The audit couldn't even score iter 3. This cascading failure pattern — where one bad iteration poisons subsequent ones — is a key risk for autonomous multi-iteration loops.
 
+### 7. Phantom Implementation (qwen2.5:14b, Run B iters 4-5)
+The IMPLEMENT phase runs tools (read_file, search, bash), produces a plausible narrative about what it changed, but modifies zero files. The audit then scores a non-existent implementation. This happened in 6 of 8 total iterations (75%). The model appears to confuse "planning to make a change" with "making the change." This is distinct from hallucinated execution (#4) because the model genuinely runs tools — it just never calls edit_file or write_file.
+
+### 8. Hypothesis-Implementation Drift (qwen2.5:14b, Run B iter 5)
+The HYPOTHESIZE phase selected a "performance optimization" hypothesis. The IMPLEMENT phase then built a logging utility instead. The audit caught this: "misalignment between hypothesis and implemented solution." The model loses track of the selected hypothesis across the phase boundary, substituting a task it finds easier or more familiar.
+
+### 9. Language Drift (qwen2.5:14b, Run B iters 4-5)
+The REFLECT phase produced seed rationale in Thai instead of English. This occurred in later iterations when the model's context was loaded with prior-iteration summaries. Multilingual models (Qwen is trained on Chinese/English/multilingual data) can drift into non-target languages when prompt pressure is low and context is long.
+
+### 10. Manifest Pollution (qwen2.5:14b, Run B)
+The EXPLORE phase logged tool names (`list_files`, `list_directory`, `search`), glob patterns (`**/*.js`, `**/*.css`), and metadata paths (`/runs/*.json`) as "files examined." These invalid entries accumulate in the manifest and corrupt the exploration map for future iterations, since the EXPLORE phase is told to skip already-examined files. This creates a feedback loop where the model thinks it has examined more of the codebase than it actually has.
+
 ## Recommendations
 
 ### For local agentic workloads:
@@ -206,7 +235,10 @@ In iter 2, the IMPLEMENT phase introduced a syntax error into cli.py. Iter 3 the
 - Track tool-call-vs-text confusion as a metric. If a model's "text" response contains `{"name":` patterns, flag it as a tool-call confusion and retry.
 - **Enforce axis diversity structurally**: blacklist the last N axes used, or weight the HYPOTHESIZE selection toward under-explored axes programmatically rather than via prompt.
 - **Add a regression gate**: after IMPLEMENT, if tests fail that passed before, automatically revert and skip to REFLECT. Don't let a broken iteration cascade into the next one.
-- **Validate explore output**: check that "files_examined" entries are actual file paths, not glob patterns or directories. Reject and re-prompt if the format is wrong.
+- **Validate explore output**: check that "files_examined" entries are actual file paths (exist on disk, no globs, no tool names). Reject and re-prompt if the format is wrong.
+- **Verify implementation actually happened**: after IMPLEMENT, diff the working tree. If no files changed, mark the iteration as "phantom" and skip to REFLECT with a note. Don't waste red-team and audit budget scoring a non-existent change.
+- **Pin the hypothesis across phases**: pass the full selected hypothesis JSON verbatim to IMPLEMENT, RED-TEAM, and AUDIT prompts. Currently the hypothesis summary can drift as it passes through the PhaseContext chain.
+- **Force English output**: add "You MUST respond in English only" to all phase system prompts for multilingual models, or validate output language and re-prompt on drift.
 
 ## Raw Data
 
@@ -214,14 +246,18 @@ All phase JSONs, manifests, and iteration summaries are archived in `swarm-artif
 ```
 runs/coding-agent-self-improve/
   manifest.json
-  # Run A (2026-02-24)
+  benchmark_writeup.md
+  # Run A (2026-02-24, 3 iterations)
   20260224_045251_iter1/
   20260224_051315_iter2/
   20260224_060054_iter3/
-  # Run B (2026-02-25)
+  # Run B (2026-02-25 — 2026-02-26, 5 iterations + 1 aborted)
   20260225_003123_iter1/
   20260225_005905_iter2/
   20260225_012204_iter3/
+  20260226_040125_iter4/    # aborted (no hypotheses)
+  20260226_040507_iter4/    # retry, completed
+  20260226_041913_iter5/
 ```
 
 Each iteration directory contains:
