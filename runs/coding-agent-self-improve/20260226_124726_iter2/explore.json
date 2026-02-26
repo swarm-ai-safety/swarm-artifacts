@@ -1,0 +1,8 @@
+{
+  "parsed": {},
+  "status": "budget_exceeded",
+  "turns_used": 5,
+  "input_tokens": 42495,
+  "output_tokens": 625,
+  "raw_summary": "I see that output - let me continue exploring unexamined areas of the codebase."
+}

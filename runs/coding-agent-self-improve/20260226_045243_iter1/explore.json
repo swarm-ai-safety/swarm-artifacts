@@ -1,0 +1,8 @@
+{
+  "parsed": {},
+  "status": "budget_exceeded",
+  "turns_used": 5,
+  "input_tokens": 56797,
+  "output_tokens": 609,
+  "raw_summary": "I'll continue exploring the codebase by examining additional files and test files to get a comprehensive view."
+}

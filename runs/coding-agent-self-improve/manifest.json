@@ -1,89 +1,21 @@
 {
-  "iterations_completed": 5,
-  "files_examined": [
-    "**/*.js",
-    "**/*.css",
-    "**/*.html",
-    "**/*.json",
-    ".git",
-    ".pytest_cache",
-    "__pycache__",
-    "README.md",
-    "agent.py",
-    "cli.py",
-    "context.py",
-    "debug.py",
-    "prompts.py",
-    "providers.py",
-    "requirements.txt",
-    "runs/20260225_012204_iter3/reflect.json",
-    "sandbox/hello.py",
-    "sandbox/math_utils.py",
-    "sandbox/test_math.py",
-    "session.py",
-    "sub_agents.py",
-    "test_bash_safety.py",
-    "self_improve.py",
-    "/runs/*.json",
-    "list_files",
-    "list_directory",
-    "search",
-    "runs/20260225_003123_iter1/explore.json",
-    "runs/benchmark_writeup.md"
-  ],
-  "audit_score_trend": [
-    4.9,
-    2.4,
-    3.0,
-    3.0
-  ],
-  "red_team_breaks": 2,
+  "iterations_completed": 1,
+  "files_examined": [],
+  "audit_score_trend": [],
+  "red_team_breaks": 1,
   "axes_touched": {
     "security": 0,
-    "performance": 1,
-    "architecture": 1,
+    "performance": 0,
+    "architecture": 0,
     "test_coverage": 0,
-    "ux_cli": 2,
+    "ux_cli": 0,
     "prompt_engineering": 0,
     "observability": 1
   },
-  "capability_delta_log": [
-    {
-      "iteration": 2,
-      "axis": "ux_cli",
-      "summary": "No applicable .sh shell scripts found in codebase for adding command line progress indicators."
-    },
-    {
-      "iteration": 3,
-      "axis": "ux_cli",
-      "summary": "Corrected SyntaxError by adding missing closing parenthesis at end of print statements."
-    }
-  ],
-  "test_count_trend": [
-    175
-  ],
+  "capability_delta_log": [],
+  "test_count_trend": [],
   "token_cost_per_iteration": [
-    24901,
-    19004,
-    69970,
-    55263,
-    59157
+    155645
   ],
-  "next_seeds": [
-    {
-      "title": "Enhance CLI Help Section",
-      "axis": "ux_cli",
-      "rationale": "Previous audit scores indicate a need for improvement in user interface, particularly command-line related aspects. An enhanced help section can provide better user experience."
-    },
-    {
-      "title": "Implement Robust Error Handling Framework",
-      "axis": "security",
-      "rationale": "Security has never been explored and robust error handling is crucial not only from a security standpoint but also for overall stability of the project. This can serve as an opportunity to enhance both."
-    },
-    {
-      "title": "Optimize Database Query Operations",
-      "axis": "performance",
-      "rationale": "While the last audit did focus on performance, there is always room for improving database interactions which are a common bottleneck. Optimizing queries and indexing strategies can offer genuine performance gains."
-    }
-  ]
+  "next_seeds": []
 }

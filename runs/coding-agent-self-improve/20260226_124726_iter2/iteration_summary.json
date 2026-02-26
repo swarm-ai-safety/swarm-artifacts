@@ -1,0 +1,13 @@
+{
+  "iteration": 2,
+  "timestamp": "2026-02-26T17:40:17.437278+00:00",
+  "aborted": true,
+  "axis": "unknown",
+  "audit_overall": null,
+  "audit_scores": {},
+  "red_team_verdict": null,
+  "files_changed": [],
+  "total_tokens": 74582,
+  "total_input_tokens": 72379,
+  "total_output_tokens": 2203
+}
