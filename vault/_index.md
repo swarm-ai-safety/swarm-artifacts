@@ -90,6 +90,7 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-static-externality-tax-is-pure-deadweight-welfare-loss]] — Static externality tax reduces welfare without any behavioral or safety improvement (medium confidence)
 - [[claim-mesa-agent-objectives-are-invariant-to-governance-regime]] — Mesa agent archetypes constant across all 110 governance conditions (medium confidence)
 - [[claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate]] — Constant ~0.10 toxicity reduction per 1k welfare across full rho range (medium confidence)
+- [[claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma]] — 9.6% toxicity reduction over 10 epochs, non-monotonic and not sustained (low confidence)
 
 ## Governance Mechanisms
 
@@ -128,7 +129,7 @@ Named vulnerability and attack patterns from red-team evaluations. 8 patterns, 2
 
 One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
-- `vault/experiments/` — 119 experiment notes synthesized from 126 runs
+- `vault/experiments/` — 120 experiment notes synthesized from 133 runs
 
 ## Sweeps
 
