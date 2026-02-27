@@ -1,12 +1,12 @@
-generated_utc: '2026-02-26T20:52:00.479595+00:00'
-total_runs: 136
+generated_utc: '2026-02-27T01:43:55.720566+00:00'
+total_runs: 137
 by_type:
   calibration: 2
   redteam: 13
   single: 61
-  study: 29
-  sweep: 27
-  unknown: 4
+  study: 30
+  sweep: 28
+  unknown: 3
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1223,18 +1223,34 @@ runs:
   date: '2026-02-23'
   status: completed
 - id: 20260224-220829_mesa_governance_study
-  type: unknown
+  slug: mesa_governance_study
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - mesa
+  - governance
+  - externality-internalization
+  - adaptive-acceptance
+  - toxicity-welfare-tradeoff
+  - study
+  - sweep
+  date: '2026-02-24'
+  status: completed
 - id: 20260224_083213_langgraph_governed
+  slug: langgraph_governed
+  type: sweep
+  tags:
+  - langgraph
+  - governed
+  - sweep
+  date: '2026-02-24'
+  status: completed
+- id: 20260224_202707_self_optimizer_hodoscope
   type: unknown
   tags:
   - unmigrated
   date: unknown
   status: unknown
-- id: 20260224_202707_self_optimizer_hodoscope
+- id: 20260226-201109_mesa_adaptive_agents_study
   type: unknown
   tags:
   - unmigrated
