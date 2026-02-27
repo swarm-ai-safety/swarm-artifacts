@@ -111,7 +111,9 @@ The REFLECT phase asks the model to honestly assess the iteration and plan ahead
 
 GLM's reflection was the standout for local models: "the summary is sparse...no actual scores, strengths, or weaknesses are reported. This suggests either an incomplete audit or that no substantive findings were generated...the absence of data is a signal to iterate with more rigor." This is genuine metacognition about its own iteration's shortcomings.
 
-## Part 2: Multi-Iteration Runs (qwen2.5:14b)
+## Part 2: Multi-Iteration Runs
+
+### qwen2.5:14b
 
 Two runs tested whether the model can sustain quality, diversify axes, and learn across iterations. Run A did 3 iterations; Run B did 5 (3 initial + 2 continuation).
 
@@ -179,16 +181,73 @@ Key finding: **qwen2.5:14b's multi-iteration performance is inconsistent and doe
 
 Additional finding from Run B's 5-iteration trajectory: **the model does not learn from its own audit feedback**. Despite the audit consistently flagging "no tests written" (tests score: 0-1 across all iterations) and "no files changed," subsequent iterations continued to produce phantom implementations with no actual code modifications. The reflect phase proposes reasonable next-iteration seeds, but the implement phase fails to execute on them.
 
-### Aggregate Statistics (8 completed iterations across both runs)
+### glm-4.7-flash:q8_0
 
-- **Axes touched**: test_coverage(1), security(1), ux_cli(3), architecture(2), performance(1), prompt_engineering(0), observability(1)
-- **Gravitational bias**: ux_cli attracted 37.5% of iterations. prompt_engineering and test_coverage remain under-explored.
-- **Avg audit score**: 3.7 (across 6 scored iterations; 2 had N/A)
-- **Red-team break rate**: 3/8 iterations (37.5%) had partial or broken verdicts
-- **Code modification rate**: 2/8 iterations (25%) actually changed source files
-- **Phantom implementation rate**: 6/8 iterations (75%) claimed changes but modified zero files
-- **Avg tokens/iteration**: 47k (range: 19k–75k)
-- **Aborted iterations**: 1/9 attempts (11%) — HYPOTHESIZE failed to produce parseable JSON
+One run of 3 requested iterations. Only 1 completed; iterations 2 and 3 both aborted at HYPOTHESIZE due to JSON extraction failure.
+
+### Run C (2026-02-26)
+
+| | Iter 1 | Iter 2 (attempt 1) | Iter 2 (attempt 2) |
+|---|:---:|:---:|:---:|
+| **Axis** | observability | *(aborted)* | *(aborted)* |
+| **Audit score** | N/A | N/A | N/A |
+| **Red-team** | broken | N/A | N/A |
+| **Files changed** | none | none | none |
+| **Tokens** | 155k | 75k | 75k |
+| **Wall time** | ~8 hours | ~5 hours | ~3 hours |
+| **Phase budget exceeded** | 4/6 | 2/2 | 1/2 |
+
+**Audit score trend: N/A** (no audit scores parseable across the entire run)
+
+Phase-level detail for iter 1:
+
+| Phase | Status | Tokens | Turns | Wall time |
+|-------|--------|--------|-------|-----------|
+| EXPLORE | budget_exceeded | 57k | 5 | ~3.1 hours |
+| HYPOTHESIZE | completed | 3.7k | 2 | ~19 min |
+| IMPLEMENT | budget_exceeded | 28k | 9 | ~1.1 hours |
+| RED-TEAM | budget_exceeded | 29k | 7 | ~1.8 hours |
+| AUDIT | budget_exceeded | 36k | 7 | ~1.3 hours |
+| REFLECT | completed | 1.9k | 1 | ~15 min |
+
+Observations:
+- **Catastrophic token burn**: 155k tokens for a single iteration — 3x the qwen2.5:14b average (47k). The EXPLORE phase alone consumed 57k tokens in 5 turns, spending ~3 hours on verbose prose between tool calls.
+- **Strong HYPOTHESIZE when it works**: Iter 1 produced 4 well-structured hypotheses across ux_cli, observability, test_coverage, and performance axes. Clean JSON with value/risk scoring. Selected observability (H2) with coherent rationale.
+- **Excellent REFLECT quality**: Even with empty audit data, the model produced insightful reflection — "the broken state on observability suggests the codebase may have missing or non-functional logging." Proposed 4 next-iteration seeds with confidence levels and conditional reasoning.
+- **JSON extraction is the fatal bottleneck**: Only 2/6 phases in iter 1 produced parseable JSON (HYPOTHESIZE and REFLECT). Both aborted iter 2 attempts failed because HYPOTHESIZE produced no extractable JSON despite spending 31k–74k tokens. The model has the reasoning capability but buries structured output in verbose prose.
+- **Input:output token ratio is extreme**: 147k input vs 8k output in iter 1 (18:1 ratio). The model reads far more than it writes, consuming budget on long tool results and context rather than generation.
+- **Multi-iteration viability: zero**: 2 of 3 iterations aborted. The model cannot reliably produce HYPOTHESIZE JSON, which gates all downstream phases. Without a JSON re-prompt fallback, GLM cannot sustain a multi-iteration loop.
+
+### Cross-Run Analysis (all models)
+
+| Metric | qwen Run A (3 iters) | qwen Run B (5 iters) | GLM Run C (1 iter*) |
+|--------|:-----:|:-----:|:-----:|
+| Audit trend | 5.0 → 6.8 → 6.8 (improving) | 4.9 → 2.4 → N/A → 3.0 → 3.0 (crash/flat) | N/A (unparseable) |
+| Axis diversity | 3/3 distinct | 4/6 distinct (ux_cli×2) | 1/1 (only 1 completed) |
+| Red-team breaks | 1 (iter 1 partial) | 2 (iter 3 partial, iter 4 broken) | 1 (iter 1 broken) |
+| Total tokens | 189k | 236k | 305k |
+| Tokens/completed iter | 63k | 47k | 155k |
+| Wall time | ~30 min | ~2 hours | ~16 hours |
+| Files actually changed | 2 (iter 3) | 1 (iter 3) | 0 |
+| Self-inflicted bugs | 0 | 1 | 0 |
+| Aborted iterations | 0 | 1 | 2 |
+| Abort rate | 0% | 17% | 67% |
+
+*Run C requested 3 iterations but only 1 completed. The other 2 aborted at HYPOTHESIZE.
+
+Key finding: **GLM's cost-per-completed-iteration is 3x qwen's, with lower reliability**. At 155k tokens and ~8 hours per completed iteration (vs 47-63k tokens and ~10 min for qwen), GLM is not viable for iterative loops despite superior reasoning quality in isolated phases. The model's verbose reasoning style and unreliable JSON compliance make it a poor fit for the structured phase pipeline.
+
+### Aggregate Statistics (9 completed iterations across all runs)
+
+- **Axes touched**: test_coverage(1), security(1), ux_cli(3), architecture(2), performance(1), prompt_engineering(0), observability(2)
+- **Gravitational bias**: ux_cli attracted 33% of iterations. prompt_engineering remains completely untouched across all models and runs.
+- **Avg audit score**: 3.7 (across 6 scored iterations; 3 had N/A)
+- **Red-team break rate**: 4/9 iterations (44%) had partial or broken verdicts
+- **Code modification rate**: 2/9 iterations (22%) actually changed source files
+- **Phantom implementation rate**: 7/9 iterations (78%) claimed changes but modified zero files
+- **Avg tokens/iteration**: 65k for qwen (range: 19k–75k), 155k for GLM
+- **Aborted iterations**: 3/12 attempts (25%) — all due to HYPOTHESIZE failing to produce parseable JSON
+- **GLM-specific abort rate**: 2/3 attempts (67%) vs qwen 1/9 (11%)
 
 ## Failure Taxonomy
 
@@ -199,7 +258,7 @@ The model returns a dict that looks like a tool call (`{"name": "bash", "paramet
 The model understands the task and produces good analysis, but ignores the explicit JSON formatting requirement. It writes paragraphs where the prompt asks for fenced ```json blocks. The downstream parser gets nothing, and the loop aborts because it can't extract a hypothesis to implement.
 
 ### 3. Verbose Token Burn (glm-4.7-flash)
-The model writes extensive reasoning between tool calls, consuming its token budget on prose instead of tool use. It hit `budget_exceeded` on 3/6 phases. The analysis is often good but gets truncated. At 30B Q8, each token is also ~3x slower to generate than the 14B models.
+The model writes extensive reasoning between tool calls, consuming its token budget on prose instead of tool use. It hit `budget_exceeded` on 4/6 phases in the multi-iteration run (iter 1). The EXPLORE phase alone consumed 57k tokens in 5 turns — more than an entire qwen iteration. At 30B Q8, each token is also ~3x slower to generate than the 14B models. In the multi-iteration run, this caused ~8 hour wall times per completed iteration.
 
 ### 4. Hallucinated Execution (llama3.1:8b)
 The RED-TEAM phase claimed to run attack scripts and report results, but the "commands_run" were never actually executed. The model fabricated plausible-looking test outputs. This is the most dangerous failure mode: it looks like the phase succeeded.
@@ -222,11 +281,14 @@ The REFLECT phase produced seed rationale in Thai instead of English. This occur
 ### 10. Manifest Pollution (qwen2.5:14b, Run B)
 The EXPLORE phase logged tool names (`list_files`, `list_directory`, `search`), glob patterns (`**/*.js`, `**/*.css`), and metadata paths (`/runs/*.json`) as "files examined." These invalid entries accumulate in the manifest and corrupt the exploration map for future iterations, since the EXPLORE phase is told to skip already-examined files. This creates a feedback loop where the model thinks it has examined more of the codebase than it actually has.
 
+### 11. Chronic HYPOTHESIZE Failure (glm-4.7-flash, Run C)
+The model can produce valid HYPOTHESIZE JSON on its first iteration but fails on subsequent attempts. In Run C, iter 1 HYPOTHESIZE completed in 2 turns with clean JSON, but both iter 2 attempts (spending 31k and 74k tokens respectively) failed to produce any parseable JSON. The EXPLORE phase dumps massive context into the HYPOTHESIZE prompt, and the model responds with verbose analysis instead of the required structured output. This creates a hard ceiling: GLM can do exactly 1 iteration before the accumulated context overwhelms its JSON compliance. The 18:1 input:output token ratio suggests the model is "reading" far more than "writing," losing the structured-output instruction in the noise.
+
 ## Recommendations
 
 ### For local agentic workloads:
 - **qwen2.5:14b** is the clear winner for cost/quality. Clean tool calls, reliable JSON, fast inference. But expect inconsistency across runs — some runs show learning, others show degradation.
-- **glm-4.7-flash** is worth trying if you have the VRAM and patience. Its reasoning is strong but needs a more tolerant JSON parser (e.g., LLM-based extraction fallback).
+- **glm-4.7-flash** is not viable for multi-iteration loops. Despite strong reasoning in isolated phases (excellent reflection, creative hypotheses), it burns 155k tokens per completed iteration, takes ~8 hours wall time, and has a 67% abort rate due to JSON extraction failures. Single-iteration use is possible but impractical at current speeds.
 - **7B models are not viable** for multi-turn agentic loops with tool use. They can do single-turn generation but break down when asked to alternate between tool calls and structured output.
 
 ### For the framework:
@@ -247,17 +309,21 @@ All phase JSONs, manifests, and iteration summaries are archived in `swarm-artif
 runs/coding-agent-self-improve/
   manifest.json
   benchmark_writeup.md
-  # Run A (2026-02-24, 3 iterations)
+  # Run A — qwen2.5:14b (2026-02-24, 3 iterations)
   20260224_045251_iter1/
   20260224_051315_iter2/
   20260224_060054_iter3/
-  # Run B (2026-02-25 — 2026-02-26, 5 iterations + 1 aborted)
+  # Run B — qwen2.5:14b (2026-02-25 — 2026-02-26, 5 iterations + 1 aborted)
   20260225_003123_iter1/
   20260225_005905_iter2/
   20260225_012204_iter3/
   20260226_040125_iter4/    # aborted (no hypotheses)
   20260226_040507_iter4/    # retry, completed
   20260226_041913_iter5/
+  # Run C — glm-4.7-flash:q8_0 (2026-02-26, 1 completed + 2 aborted)
+  20260226_045243_iter1/    # completed, 155k tokens, ~8 hours
+  20260226_124726_iter2/    # aborted (no hypotheses), 75k tokens
+  20260226_174017_iter2/    # aborted retry (no hypotheses), 75k tokens
 ```
 
 Each iteration directory contains:
