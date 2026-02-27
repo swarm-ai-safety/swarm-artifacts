@@ -21,6 +21,9 @@ evidence:
   - run: 20260221-082443_redteam_contract_screening_full
     metric: robustness
     detail: "Contract screening full governance: grade D (0.607), 299.79 total damage, 4/8 attacks successful. Full governance stack still leaves critical sybil vulnerability. N=1 evaluation; inferential statistics not applicable"
+  - run: 20260224-220829_mesa_governance_study
+    metric: welfare
+    detail: "Mesa bridge: adaptive at rho=1.0 destroys 70% welfare (1141→340, d=21.50, Bonferroni p<1e-252) for 34% toxicity reduction. Static at rho=1.0 is pure deadweight (welfare -37%, toxicity unchanged). 5 seeds, 110 total runs"
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -61,8 +64,11 @@ related_claims:
 - claim-tax-phase-transition-hysteresis-predicted-but-untested
 - claim-quadratic-staking-may-solve-sybil-cost-inversion
 - claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations
+- claim-adaptive-acceptance-reduces-toxicity-monotonically-with-externality-internalization
+- claim-static-externality-tax-is-pure-deadweight-welfare-loss
+- claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate
 created: 2026-02-19
-updated: 2026-02-22
+updated: 2026-02-27
 aliases:
 - governance-cost-paradox
 - full-governance-stacks-impose-larger-welfare

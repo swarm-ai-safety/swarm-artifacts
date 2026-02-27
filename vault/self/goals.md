@@ -7,9 +7,9 @@ type: moc
 
 ## Active Threads
 
-- **63 claims** (61 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil domains
-- **Confidence distribution:** 9 high, 20 medium, 34 low (sybil-attacks and collusion-detection-binding synced to medium per body text; new envelope meta-claim at low)
-- **Pipeline queue:** 95/95 completed, 0 pending — all 125 runs processed + 5 research expansions
+- **68 claims** (64 active, 2 weakened, 2 with weakening evidence added) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
+- **Confidence distribution:** 9 high, 24 medium, 35 low
+- **Pipeline queue:** 95/95 completed + 3 new experiment notes this session — 10 new runs processed
 - **8 sweep series** — contract-screening sweep note added
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
@@ -144,6 +144,31 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 - **Gate 2 partially fixed:** Consolidated 69 bulk lifecycle-audit evidence entries into representative summaries across 3 hub claims (governance-cost-paradox, tax-dominates-cb-kernel, tax-phase-transition); improved staking-backfires evidence detail
 - **Schema fix:** Quoted YAML boundary_conditions in claim-tax-welfare-direction-is-scenario-dependent (dict→string)
 - Validation improved from 10/39 pass (25.6%) to 24/39 pass (61.5%) → then 31/39 after confidence downgrades (projected)
+
+## Completed (2026-02-27 session, new run processing)
+
+- **Mesa governance study** — Full pipeline on 20260224-220829_mesa_governance_study:
+  - Created run.yaml, experiment note ([[mesa_governance_study]])
+  - Extracted **4 new claims** (all medium confidence):
+    1. claim-adaptive-acceptance-reduces-toxicity-monotonically-with-externality-internalization (r=-0.90, d=12.22)
+    2. claim-static-externality-tax-is-pure-deadweight-welfare-loss (d=14.94, zero behavioral change)
+    3. claim-mesa-agent-objectives-are-invariant-to-governance-regime (0 variance across 110 runs)
+    4. claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate (~0.10 per 1k welfare)
+  - Updated 3 existing claims with mesa evidence: governance-cost-paradox, tax-welfare-tradeoff, agent-architecture-constrains-behavior
+  - **New domain: mesa** — first mesa-optimization findings in the vault
+
+- **Evolutionary prisoners dilemma** — 5-seed + 20-epoch extended:
+  - Created experiment note ([[evo_game_prisoners]])
+  - Extracted **1 new claim** (low confidence):
+    - claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma (9.6% reduction, non-monotonic, not sustained)
+
+- **LangGraph governed replication** — 128 runs across 2 sweeps:
+  - Created run.yaml for 20260224_083213, experiment note ([[langgraph_governed_replication]])
+  - **Weakened 2 existing claims** with replication evidence:
+    - claim-trust-boundaries-modify-but-never-deny-handoffs — denials DO occur (rate=0.172)
+    - claim-delegation-completion-requires-handoff-budget-above-15 — no monotonic effect in 128-run replication
+
+- **Index updated:** 68 claims, 120 experiment notes
 
 ---
 

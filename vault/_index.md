@@ -86,6 +86,11 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-quadratic-staking-may-solve-sybil-cost-inversion]] — Super-linear staking would impose escalating costs on sybil controllers (low confidence)
 - [[claim-vote-normalization-bandwidth-caps-untested-sybil-mitigations]] — vote_normalization and bandwidth_cap have precedent but zero SWARM testing (low confidence)
 - [[claim-governance-parameters-have-narrow-safe-operating-envelopes]] — Five+ governance parameters show flat safe range then non-linear cliff, suggesting universal structural property (low confidence)
+- [[claim-adaptive-acceptance-reduces-toxicity-monotonically-with-externality-internalization]] — Adaptive acceptance reduces toxicity 34% with r=-0.90 linear dose-response (medium confidence)
+- [[claim-static-externality-tax-is-pure-deadweight-welfare-loss]] — Static externality tax reduces welfare without any behavioral or safety improvement (medium confidence)
+- [[claim-mesa-agent-objectives-are-invariant-to-governance-regime]] — Mesa agent archetypes constant across all 110 governance conditions (medium confidence)
+- [[claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate]] — Constant ~0.10 toxicity reduction per 1k welfare across full rho range (medium confidence)
+- [[claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma]] — 9.6% toxicity reduction over 10 epochs, non-monotonic and not sustained (low confidence)
 
 ## Governance Mechanisms
 
@@ -124,7 +129,7 @@ Named vulnerability and attack patterns from red-team evaluations. 8 patterns, 2
 
 One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
-- `vault/experiments/` — 118 experiment notes synthesized from 125 runs
+- `vault/experiments/` — 120 experiment notes synthesized from 133 runs
 
 ## Sweeps
 
