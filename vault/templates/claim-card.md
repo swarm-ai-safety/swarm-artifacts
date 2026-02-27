@@ -22,7 +22,8 @@ sensitivity:
 supersedes: []
 superseded_by: []
 related_claims:
-  - "claim-id"
+  - claim: "claim-id"
+    relation: supports | contradicts | refines | predicts | requires | extends
 
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -43,6 +44,8 @@ _schema:
       low = suggestive but underpowered or unreplicated.
       contested = conflicting evidence from different runs.
     evidence.supporting: "must have at least one entry with a valid run_id"
+    related_claims: "each entry is either a bare string (legacy) or {claim, relation} object"
+    relation: "supports | contradicts | refines | predicts | requires | extends"
 ---
 
 # prose-as-title stating the claim as a complete proposition

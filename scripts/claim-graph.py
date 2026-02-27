@@ -24,6 +24,8 @@ import yaml
 
 ROOT = Path(__file__).parent.parent
 CLAIMS_DIR = ROOT / "vault" / "claims"
+THEORIES_DIR = ROOT / "vault" / "theories"
+PREDICTIONS_DIR = ROOT / "vault" / "predictions"
 
 # ---------------------------------------------------------------------------
 # Styling maps
@@ -41,6 +43,17 @@ CONFIDENCE_MERMAID = {
     "medium": "#f39c12",
     "low": "#e74c3c",
     "contested": "#9b59b6",
+}
+
+# Edge styles per relation type
+RELATION_STYLES = {
+    "supports":    {"style": "solid",  "color": "green",  "directed": True},
+    "contradicts": {"style": "dashed", "color": "red",    "directed": True},
+    "refines":     {"style": "solid",  "color": "blue",   "directed": True},
+    "predicts":    {"style": "dotted", "color": "orange", "directed": True},
+    "requires":    {"style": "solid",  "color": "gray",   "directed": True},
+    "extends":     {"style": "solid",  "color": "purple", "directed": True},
+    "related":     {"style": "dashed", "color": "",       "directed": False},  # legacy untyped
 }
 
 # ---------------------------------------------------------------------------
@@ -80,6 +93,50 @@ def load_claims() -> dict[str, dict]:
     return claims
 
 
+def load_theories() -> dict[str, dict]:
+    """Load all theory files. Returns {theory_id: frontmatter}."""
+    theories: dict[str, dict] = {}
+    if not THEORIES_DIR.exists():
+        return theories
+    for path in sorted(THEORIES_DIR.glob("*.md")):
+        if path.name == ".gitkeep":
+            continue
+        fm = parse_frontmatter(path)
+        if fm is None:
+            continue
+        theory_id = path.stem
+        fm["_id"] = theory_id
+        theories[theory_id] = fm
+    return theories
+
+
+def load_predictions() -> dict[str, dict]:
+    """Load all prediction files. Returns {prediction_id: frontmatter}."""
+    predictions: dict[str, dict] = {}
+    if not PREDICTIONS_DIR.exists():
+        return predictions
+    for path in sorted(PREDICTIONS_DIR.glob("*.md")):
+        if path.name == ".gitkeep":
+            continue
+        fm = parse_frontmatter(path)
+        if fm is None:
+            continue
+        pred_id = path.stem
+        fm["_id"] = pred_id
+        predictions[pred_id] = fm
+    return predictions
+
+
+def resolve_related_claim(entry) -> tuple[str, str]:
+    """Parse a related_claims entry (bare string or typed object).
+
+    Returns (claim_id, relation_type).
+    """
+    if isinstance(entry, dict):
+        return str(entry.get("claim", "")), entry.get("relation", "related")
+    return str(entry), "related"
+
+
 # ---------------------------------------------------------------------------
 # Graph building
 # ---------------------------------------------------------------------------
@@ -95,17 +152,23 @@ def extract_run_ids(evidence_list: list | None) -> list[str]:
     return ids
 
 
-def build_graph(claims: dict[str, dict], include_runs: bool = False):
-    """Build nodes and edges from parsed claims.
+def build_graph(
+    claims: dict[str, dict],
+    theories: dict[str, dict] | None = None,
+    predictions: dict[str, dict] | None = None,
+    include_runs: bool = False,
+):
+    """Build nodes and edges from parsed claims, theories, and predictions.
 
     Returns (nodes, edges) where:
       nodes = [{id, label, confidence, domain, kind}]
       edges = [{src, dst, style, label, directed}]
     """
+    theories = theories or {}
+    predictions = predictions or {}
     nodes: list[dict] = []
     edges: list[dict] = []
     seen_edges: set[tuple] = set()
-    all_claim_ids = set(claims.keys())
 
     # Collect run->claims mapping for shared-evidence edges
     run_to_claims: dict[str, list[str]] = {}
@@ -124,16 +187,19 @@ def build_graph(claims: dict[str, dict], include_runs: bool = False):
             "kind": "claim",
         })
 
-        # related_claims -> bidirectional dashed
-        for related in fm.get("related_claims", []) or []:
-            related = str(related)
-            key = tuple(sorted([cid, related]))
+        # related_claims -> typed or untyped edges
+        for entry in fm.get("related_claims", []) or []:
+            related, relation = resolve_related_claim(entry)
+            rel_info = RELATION_STYLES.get(relation, RELATION_STYLES["related"])
+            key = (relation, cid, related) if rel_info["directed"] else tuple(sorted([cid, related])) + (relation,)
             if key not in seen_edges:
                 seen_edges.add(key)
                 edges.append({
                     "src": cid, "dst": related,
-                    "style": "dashed", "label": "",
-                    "directed": False,
+                    "style": rel_info["style"],
+                    "label": relation if relation != "related" else "",
+                    "directed": rel_info["directed"],
+                    "color": rel_info.get("color", ""),
                 })
 
         # supersedes -> directed solid (cid supersedes target)
@@ -145,7 +211,7 @@ def build_graph(claims: dict[str, dict], include_runs: bool = False):
                 edges.append({
                     "src": cid, "dst": target,
                     "style": "solid", "label": "supersedes",
-                    "directed": True,
+                    "directed": True, "color": "",
                 })
 
         # superseded_by -> directed solid (source supersedes cid)
@@ -157,7 +223,7 @@ def build_graph(claims: dict[str, dict], include_runs: bool = False):
                 edges.append({
                     "src": source, "dst": cid,
                     "style": "solid", "label": "supersedes",
-                    "directed": True,
+                    "directed": True, "color": "",
                 })
 
         # Collect evidence runs
@@ -167,6 +233,64 @@ def build_graph(claims: dict[str, dict], include_runs: bool = False):
                 run_to_claims.setdefault(run_id, []).append(cid)
             for run_id in extract_run_ids(evidence.get("weakening", [])):
                 run_to_claims.setdefault(run_id, []).append(cid)
+
+    # Theory nodes (diamond shape in DOT, hexagon brackets in Mermaid)
+    for tid, fm in theories.items():
+        status = fm.get("status", "proposed")
+        nodes.append({
+            "id": tid,
+            "label": tid.replace("theory-", ""),
+            "confidence": "",
+            "domain": "theories",
+            "status": status,
+            "kind": "theory",
+        })
+        # Edges from theory to constituent claims
+        for entry in fm.get("constituent_claims", []):
+            claim_id = entry.get("claim") if isinstance(entry, dict) else str(entry)
+            role = entry.get("role", "evidence") if isinstance(entry, dict) else "evidence"
+            if claim_id:
+                edge_key = ("constituent", tid, claim_id)
+                if edge_key not in seen_edges:
+                    seen_edges.add(edge_key)
+                    edges.append({
+                        "src": tid, "dst": claim_id,
+                        "style": "solid", "label": role,
+                        "directed": True, "color": "",
+                    })
+        # Edges to open predictions
+        for pred_id in fm.get("open_predictions", []) or []:
+            edge_key = ("theory_pred", tid, pred_id)
+            if edge_key not in seen_edges:
+                seen_edges.add(edge_key)
+                edges.append({
+                    "src": tid, "dst": pred_id,
+                    "style": "dotted", "label": "predicts",
+                    "directed": True, "color": "orange",
+                })
+
+    # Prediction nodes (hexagon shape)
+    for pid, fm in predictions.items():
+        status = fm.get("status", "open")
+        nodes.append({
+            "id": pid,
+            "label": pid.replace("prediction-", ""),
+            "confidence": "",
+            "domain": "predictions",
+            "status": status,
+            "kind": "prediction",
+        })
+        # Edge from prediction to source claim/theory
+        source = fm.get("source_claim")
+        if source:
+            edge_key = ("source", pid, source)
+            if edge_key not in seen_edges:
+                seen_edges.add(edge_key)
+                edges.append({
+                    "src": pid, "dst": source,
+                    "style": "dotted", "label": "from",
+                    "directed": True, "color": "",
+                })
 
     # Shared evidence edges (same run_id appears in multiple claims)
     for run_id, cids in run_to_claims.items():
@@ -180,7 +304,7 @@ def build_graph(claims: dict[str, dict], include_runs: bool = False):
                         edges.append({
                             "src": unique_cids[i], "dst": unique_cids[j],
                             "style": "dotted", "label": run_id,
-                            "directed": False,
+                            "directed": False, "color": "",
                         })
 
     # Optionally add run nodes
@@ -195,7 +319,7 @@ def build_graph(claims: dict[str, dict], include_runs: bool = False):
                 edges.append({
                     "src": run_id, "dst": cid,
                     "style": "dotted", "label": "evidence",
-                    "directed": True,
+                    "directed": True, "color": "",
                 })
 
     return nodes, edges
@@ -226,6 +350,12 @@ def render_mermaid(nodes: list[dict], edges: list[dict]) -> str:
             label = n["label"]
             if n["kind"] == "run":
                 lines.append(f"        {nid}[/\"{label}\"/]")
+            elif n["kind"] == "theory":
+                # Diamond shape via rhombus syntax
+                lines.append(f"        {nid}{{\"{label}\"}}")
+            elif n["kind"] == "prediction":
+                # Hexagon shape
+                lines.append(f"        {nid}{{{{\"{label}\"}}}}")
             else:
                 lines.append(f"        {nid}[\"{label}\"]")
         lines.append("    end")
@@ -294,6 +424,16 @@ def render_dot(nodes: list[dict], edges: list[dict]) -> str:
                     f'        {nid} [label="{label}", shape=ellipse, '
                     f'fillcolor=lightblue];'
                 )
+            elif n["kind"] == "theory":
+                lines.append(
+                    f'        {nid} [label="{label}", shape=diamond, '
+                    f'fillcolor=lightyellow, fontcolor=black];'
+                )
+            elif n["kind"] == "prediction":
+                lines.append(
+                    f'        {nid} [label="{label}", shape=hexagon, '
+                    f'fillcolor=lightsalmon, fontcolor=black];'
+                )
             else:
                 lines.append(
                     f'        {nid} [label="{label}", fillcolor={color}, '
@@ -320,6 +460,10 @@ def render_dot(nodes: list[dict], edges: list[dict]) -> str:
                 attrs.append("dir=none")
         elif not e["directed"]:
             attrs.append("dir=none")
+        color = e.get("color", "")
+        if color:
+            attrs.append(f'color={color}')
+            attrs.append(f'fontcolor={color}')
         attr_str = f" [{', '.join(attrs)}]" if attrs else ""
         lines.append(f"    {src} -> {dst}{attr_str};")
 
@@ -376,7 +520,14 @@ def main():
         print("No claim files found in", CLAIMS_DIR, file=sys.stderr)
         sys.exit(1)
 
-    nodes, edges = build_graph(claims, include_runs=args.include_runs)
+    theories = load_theories()
+    predictions = load_predictions()
+    nodes, edges = build_graph(
+        claims,
+        theories=theories,
+        predictions=predictions,
+        include_runs=args.include_runs,
+    )
 
     if args.format == "dot":
         output = render_dot(nodes, edges)

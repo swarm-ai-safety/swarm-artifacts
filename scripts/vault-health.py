@@ -106,6 +106,114 @@ def audit_claims() -> dict:
     return result
 
 
+def audit_theories() -> dict:
+    """Audit all theory notes."""
+    theories_dir = VAULT_DIR / "theories"
+    result = {
+        "total": 0,
+        "proposed": 0,
+        "supported": 0,
+        "contested": 0,
+        "superseded": 0,
+        "missing_constituents": [],
+        "stale": 0,
+        "stale_theories": [],
+    }
+
+    if not theories_dir.exists():
+        return result
+
+    today = datetime.now().date()
+    claims_dir = VAULT_DIR / "claims"
+
+    for path in sorted(theories_dir.glob("*.md")):
+        if path.name == ".gitkeep":
+            continue
+        fm = parse_frontmatter(path)
+        if fm is None:
+            continue
+
+        result["total"] += 1
+
+        status = fm.get("status", "unknown")
+        if status in result:
+            result[status] += 1
+
+        # Check constituent claims exist
+        for entry in fm.get("constituent_claims", []):
+            claim_id = entry.get("claim") if isinstance(entry, dict) else str(entry)
+            if claim_id and claims_dir.exists():
+                if not (claims_dir / f"{claim_id}.md").exists():
+                    result["missing_constituents"].append({
+                        "theory": path.name,
+                        "claim": claim_id,
+                    })
+
+        # Staleness
+        updated = fm.get("updated") or fm.get("created")
+        if updated:
+            if isinstance(updated, str):
+                try:
+                    updated = datetime.strptime(updated, "%Y-%m-%d").date()
+                except ValueError:
+                    continue
+            if (today - updated).days > STALE_THRESHOLD_DAYS:
+                result["stale"] += 1
+                result["stale_theories"].append(path.name)
+
+    return result
+
+
+def audit_predictions() -> dict:
+    """Audit all prediction notes."""
+    predictions_dir = VAULT_DIR / "predictions"
+    result = {
+        "total": 0,
+        "open": 0,
+        "confirmed": 0,
+        "refuted": 0,
+        "expired": 0,
+        "missing_sources": [],
+        "open_predictions": [],
+    }
+
+    if not predictions_dir.exists():
+        return result
+
+    claims_dir = VAULT_DIR / "claims"
+    theories_dir = VAULT_DIR / "theories"
+
+    for path in sorted(predictions_dir.glob("*.md")):
+        if path.name == ".gitkeep":
+            continue
+        fm = parse_frontmatter(path)
+        if fm is None:
+            continue
+
+        result["total"] += 1
+
+        status = fm.get("status", "unknown")
+        if status in result:
+            result[status] += 1
+
+        # Track open predictions
+        if status == "open":
+            result["open_predictions"].append(path.name)
+
+        # Check source claim/theory exists
+        source = fm.get("source_claim")
+        if source:
+            claim_exists = claims_dir.exists() and (claims_dir / f"{source}.md").exists()
+            theory_exists = theories_dir.exists() and (theories_dir / f"{source}.md").exists()
+            if not claim_exists and not theory_exists:
+                result["missing_sources"].append({
+                    "prediction": path.name,
+                    "source": source,
+                })
+
+    return result
+
+
 def audit_evidence() -> dict:
     """Check that all evidence run references exist."""
     broken = []
@@ -184,7 +292,7 @@ def audit_index() -> dict:
 
     index_text = index_path.read_text(encoding="utf-8")
 
-    for subdir in ["claims", "experiments", "governance", "topologies", "failures", "methods", "sweeps"]:
+    for subdir in ["claims", "experiments", "governance", "topologies", "failures", "methods", "sweeps", "theories", "predictions"]:
         dir_path = VAULT_DIR / subdir
         if not dir_path.exists():
             continue
@@ -202,6 +310,8 @@ def main():
 
     report = {
         "claims": audit_claims(),
+        "theories": audit_theories(),
+        "predictions": audit_predictions(),
         "evidence": audit_evidence(),
         "wiki_links": audit_wiki_links(),
         "index": audit_index(),
@@ -217,6 +327,29 @@ def main():
         print(f"  Active: {c['active']}  |  Weakened: {c['weakened']}  |  Superseded: {c['superseded']}  |  Retracted: {c['retracted']}")
         print(f"  High: {c['high_confidence']}  |  Medium: {c['medium_confidence']}  |  Low: {c['low_confidence']}  |  Contested: {c['contested']}")
         print(f"  Stale (>{STALE_THRESHOLD_DAYS}d): {c['stale']}")
+
+        # Theories
+        t = report["theories"]
+        if t["total"] > 0:
+            print(f"\n### Theories ({t['total']} total)")
+            print(f"  Proposed: {t['proposed']}  |  Supported: {t['supported']}  |  Contested: {t['contested']}  |  Superseded: {t['superseded']}")
+            print(f"  Stale (>{STALE_THRESHOLD_DAYS}d): {t['stale']}")
+            if t["missing_constituents"]:
+                print(f"  Missing constituent claims: {len(t['missing_constituents'])}")
+                for mc in t["missing_constituents"]:
+                    print(f"    - {mc['theory']}: {mc['claim']}")
+
+        # Predictions
+        p = report["predictions"]
+        if p["total"] > 0:
+            print(f"\n### Predictions ({p['total']} total)")
+            print(f"  Open: {p['open']}  |  Confirmed: {p['confirmed']}  |  Refuted: {p['refuted']}  |  Expired: {p['expired']}")
+            if p["missing_sources"]:
+                print(f"  Missing source claims: {len(p['missing_sources'])}")
+                for ms in p["missing_sources"]:
+                    print(f"    - {ms['prediction']}: {ms['source']}")
+            if p["open_predictions"]:
+                print(f"  Open predictions awaiting testing: {len(p['open_predictions'])}")
 
         broken_refs = report["evidence"]["broken_run_refs"]
         print(f"\n### Evidence integrity")
@@ -237,7 +370,11 @@ def main():
             print(f"    - {note}")
 
         # Exit code
-        total_errors = len(broken_refs) + len(broken_links) + len(orphaned)
+        total_errors = (
+            len(broken_refs) + len(broken_links) + len(orphaned)
+            + len(report["theories"].get("missing_constituents", []))
+            + len(report["predictions"].get("missing_sources", []))
+        )
         if total_errors > 0:
             print(f"\n{total_errors} integrity error(s) found")
             sys.exit(1)

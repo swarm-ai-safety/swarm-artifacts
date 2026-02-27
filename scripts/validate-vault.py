@@ -5,6 +5,8 @@ Validate vault notes against Research OS conventions.
 Usage:
     python scripts/validate-vault.py --claims        # validate claim cards
     python scripts/validate-vault.py --experiments   # validate experiment notes
+    python scripts/validate-vault.py --theories      # validate theory notes
+    python scripts/validate-vault.py --predictions   # validate prediction notes
     python scripts/validate-vault.py --index         # check index consistency
     python scripts/validate-vault.py --all           # validate everything
 """
@@ -122,6 +124,126 @@ def validate_claims() -> list[str]:
     return errors
 
 
+def validate_theories() -> list[str]:
+    """Validate all theory notes in vault/theories/."""
+    errors = []
+    theories_dir = VAULT_DIR / "theories"
+    if not theories_dir.exists():
+        return []  # not an error if no theories yet
+
+    theory_schema = load_schema("theory.schema.yaml")
+    theory_files = sorted(theories_dir.glob("*.md"))
+
+    if not theory_files:
+        return []
+
+    for path in theory_files:
+        if path.name == ".gitkeep":
+            continue
+        fm = parse_frontmatter(path)
+        if fm is None:
+            errors.append(f"{path.name}: missing YAML frontmatter")
+            continue
+
+        # Schema validation
+        if theory_schema:
+            try:
+                jsonschema.validate(fm, theory_schema)
+            except jsonschema.ValidationError as e:
+                errors.append(f"{path.name}: {e.message}")
+
+        # Kernel invariants
+        desc = fm.get("description", "")
+        if len(desc) > 200:
+            errors.append(f"{path.name}: description exceeds 200 chars ({len(desc)})")
+        if desc.endswith("."):
+            errors.append(f"{path.name}: description has trailing period")
+
+        if fm.get("type") != "theory":
+            errors.append(f"{path.name}: type must be 'theory', got '{fm.get('type')}'")
+
+        # Constituent claims must reference existing claim files
+        claims_dir = VAULT_DIR / "claims"
+        for entry in fm.get("constituent_claims", []):
+            claim_id = entry.get("claim") if isinstance(entry, dict) else str(entry)
+            if claim_id and claims_dir.exists():
+                claim_path = claims_dir / f"{claim_id}.md"
+                if not claim_path.exists():
+                    errors.append(f"{path.name}: constituent claim '{claim_id}' does not exist")
+
+        # Topics footer
+        text = path.read_text(encoding="utf-8")
+        if "<!-- topics:" not in text and "Topics:" not in text:
+            errors.append(f"{path.name}: missing topics footer")
+
+    print(f"Validated {len(theory_files)} theory notes, {len(errors)} errors")
+    return errors
+
+
+def validate_predictions() -> list[str]:
+    """Validate all prediction notes in vault/predictions/."""
+    errors = []
+    predictions_dir = VAULT_DIR / "predictions"
+    if not predictions_dir.exists():
+        return []  # not an error if no predictions yet
+
+    prediction_schema = load_schema("prediction.schema.yaml")
+    prediction_files = sorted(predictions_dir.glob("*.md"))
+
+    if not prediction_files:
+        return []
+
+    for path in prediction_files:
+        if path.name == ".gitkeep":
+            continue
+        fm = parse_frontmatter(path)
+        if fm is None:
+            errors.append(f"{path.name}: missing YAML frontmatter")
+            continue
+
+        # Schema validation
+        if prediction_schema:
+            try:
+                jsonschema.validate(fm, prediction_schema)
+            except jsonschema.ValidationError as e:
+                errors.append(f"{path.name}: {e.message}")
+
+        # Kernel invariants
+        desc = fm.get("description", "")
+        if len(desc) > 200:
+            errors.append(f"{path.name}: description exceeds 200 chars ({len(desc)})")
+        if desc.endswith("."):
+            errors.append(f"{path.name}: description has trailing period")
+
+        if fm.get("type") != "prediction":
+            errors.append(f"{path.name}: type must be 'prediction', got '{fm.get('type')}'")
+
+        # Source claim must reference an existing claim or theory
+        source = fm.get("source_claim")
+        if source:
+            claims_dir = VAULT_DIR / "claims"
+            theories_dir = VAULT_DIR / "theories"
+            claim_exists = claims_dir.exists() and (claims_dir / f"{source}.md").exists()
+            theory_exists = theories_dir.exists() and (theories_dir / f"{source}.md").exists()
+            if not claim_exists and not theory_exists:
+                errors.append(f"{path.name}: source_claim '{source}' does not exist as claim or theory")
+
+        # Resolution run reference
+        resolution = fm.get("resolution")
+        if isinstance(resolution, dict):
+            run_id = resolution.get("run")
+            if run_id and not (RUNS_DIR / run_id).exists():
+                errors.append(f"{path.name}: resolution references non-existent run '{run_id}'")
+
+        # Topics footer
+        text = path.read_text(encoding="utf-8")
+        if "<!-- topics:" not in text and "Topics:" not in text:
+            errors.append(f"{path.name}: missing topics footer")
+
+    print(f"Validated {len(prediction_files)} prediction notes, {len(errors)} errors")
+    return errors
+
+
 def validate_experiments() -> list[str]:
     """Validate experiment notes in vault/experiments/."""
     errors = []
@@ -205,11 +327,13 @@ def main():
     parser = argparse.ArgumentParser(description="Validate vault notes")
     parser.add_argument("--claims", action="store_true", help="Validate claim cards")
     parser.add_argument("--experiments", action="store_true", help="Validate experiment notes")
+    parser.add_argument("--theories", action="store_true", help="Validate theory notes")
+    parser.add_argument("--predictions", action="store_true", help="Validate prediction notes")
     parser.add_argument("--index", action="store_true", help="Check index consistency")
     parser.add_argument("--all", action="store_true", help="Validate everything")
     args = parser.parse_args()
 
-    if not any([args.claims, args.experiments, args.index, args.all]):
+    if not any([args.claims, args.experiments, args.theories, args.predictions, args.index, args.all]):
         parser.print_help()
         return
 
@@ -220,6 +344,12 @@ def main():
 
     if args.experiments or args.all:
         all_errors.extend(validate_experiments())
+
+    if args.theories or args.all:
+        all_errors.extend(validate_theories())
+
+    if args.predictions or args.all:
+        all_errors.extend(validate_predictions())
 
     if args.index or args.all:
         all_errors.extend(validate_index())

@@ -1,0 +1,70 @@
+# JSON Schema for prediction note YAML frontmatter
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SWARM Prediction Note
+description: >
+  Schema for the YAML frontmatter of a prediction note in vault/predictions/.
+  Predictions are structured, testable hypotheses tied to claims or theories
+  that can be evaluated against new runs.
+type: object
+
+required:
+  - description
+  - type
+  - status
+  - source_claim
+  - hypothesis
+  - created
+
+properties:
+
+  description:
+    type: string
+    maxLength: 200
+    description: "One-line summary of the prediction. Must add info beyond filename."
+
+  type:
+    type: string
+    const: prediction
+
+  status:
+    type: string
+    enum: [open, confirmed, refuted, expired]
+    description: >
+      open: not yet tested.
+      confirmed: experiment confirmed the prediction.
+      refuted: experiment contradicted the prediction.
+      expired: no longer testable or relevant.
+
+  source_claim:
+    type: string
+    description: "Claim or theory ID that generated this prediction"
+
+  hypothesis:
+    type: string
+    description: "Precise testable statement: if X then Y"
+
+  test_protocol:
+    type: string
+    description: "What experiment would confirm or refute this"
+
+  resolution:
+    type: object
+    properties:
+      run:
+        type: string
+        description: "Run ID that resolved this prediction"
+      outcome:
+        type: string
+        enum: [confirmed, refuted, inconclusive]
+      detail:
+        type: string
+        description: "Effect size, p-value, and interpretation"
+    additionalProperties: false
+
+  created:
+    type: string
+    format: date
+
+  updated:
+    type: string
+    format: date

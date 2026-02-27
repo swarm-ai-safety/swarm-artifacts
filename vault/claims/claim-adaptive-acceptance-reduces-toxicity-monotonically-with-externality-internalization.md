@@ -12,7 +12,7 @@ evidence:
   weakening: []
   boundary_conditions:
   - Mesa bridge scenario only — agents have fixed archetype probabilities (cooperative 0.79, selfish 0.41, exploitative 0.32)
-  - Adaptive threshold formula: 0.5 + 0.3 * rho_a — specific to this acceptance function
+  - "Adaptive threshold formula: 0.5 + 0.3 * rho_a — specific to this acceptance function"
   - 50 timesteps, 5 seeds per condition, 1500 interactions per run
   - Unknown whether the linear relationship holds in scenarios with adaptive agents (non-mesa objectives)
 sensitivity:

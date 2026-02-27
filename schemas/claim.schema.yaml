@@ -116,7 +116,26 @@ properties:
   related_claims:
     type: array
     items:
-      type: string
+      oneOf:
+        - type: string
+          description: "Legacy format: bare claim ID (treated as untyped 'related')"
+        - type: object
+          required: [claim, relation]
+          properties:
+            claim:
+              type: string
+              description: "Target claim ID"
+            relation:
+              type: string
+              enum: [supports, contradicts, refines, predicts, requires, extends]
+              description: >
+                supports: evidence strengthening the linked claim.
+                contradicts: evidence that weakens or conflicts.
+                refines: narrows scope, adds boundary conditions.
+                predicts: testable prediction about the linked claim.
+                requires: logical dependency (assumes the linked claim).
+                extends: builds on top of (generalization, new domain).
+          additionalProperties: false
 
   created:
     type: string

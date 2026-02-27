@@ -156,6 +156,18 @@ Reusable statistical and experimental methods. 7 notes.
 - [[cross-correlation]] — Parameter interaction matrix across sweep/study runs
 - [[empirical-decision-theory-validation]] — Large-scale empirical testing of decision theory predictions in multi-agent simulation
 
+## Theories
+
+Higher-order propositions composing multiple claims into testable frameworks.
+
+- `vault/theories/` — Theory notes (empty, awaiting first theory)
+
+## Predictions
+
+Structured, testable predictions tied to claims or theories.
+
+- `vault/predictions/` — Prediction notes (empty, awaiting first prediction)
+
 ## Templates
 
 Schema-enforced templates for all note types:
@@ -167,6 +179,8 @@ Schema-enforced templates for all note types:
 - `vault/templates/failure-note.md`
 - `vault/templates/sweep-summary.md`
 - `vault/templates/method-note.md`
+- `vault/templates/theory-note.md`
+- `vault/templates/prediction-note.md`
 
 <!-- topics: index, vault, research-os -->
 <!-- vault-to-dolt: auto-synced via post-commit hook -->

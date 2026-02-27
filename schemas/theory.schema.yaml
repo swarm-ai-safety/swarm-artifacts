@@ -1,0 +1,75 @@
+# JSON Schema for theory note YAML frontmatter
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: SWARM Theory Note
+description: >
+  Schema for the YAML frontmatter of a theory note in vault/theories/.
+  Theories compose multiple claims into higher-order propositions with
+  scope, predictions, and falsification criteria.
+type: object
+
+required:
+  - description
+  - type
+  - status
+  - scope
+  - constituent_claims
+  - created
+
+properties:
+
+  description:
+    type: string
+    maxLength: 200
+    description: "One-line summary of the theory. Must add info beyond filename."
+
+  type:
+    type: string
+    const: theory
+
+  status:
+    type: string
+    enum: [proposed, supported, contested, superseded]
+    description: >
+      proposed: initial formulation, not yet tested.
+      supported: constituent claims hold and predictions confirmed.
+      contested: conflicting evidence or failed predictions.
+      superseded: replaced by a more precise theory.
+
+  scope:
+    type: string
+    description: "Domain and conditions under which the theory applies"
+
+  constituent_claims:
+    type: array
+    items:
+      type: object
+      required: [claim, role]
+      properties:
+        claim:
+          type: string
+          description: "Claim ID (stem of the claim file)"
+        role:
+          type: string
+          enum: [premise, prediction, boundary, evidence]
+          description: >
+            premise: foundational claim the theory assumes.
+            prediction: testable consequence of the theory.
+            boundary: defines where the theory stops applying.
+            evidence: empirical support for the theory.
+      additionalProperties: false
+    minItems: 2
+    description: "Claims that compose this theory, each with a role"
+
+  open_predictions:
+    type: array
+    items:
+      type: string
+    description: "Prediction IDs for untested predictions of this theory"
+
+  created:
+    type: string
+    format: date
+
+  updated:
+    type: string
+    format: date
