@@ -1,12 +1,12 @@
-generated_utc: '2026-02-27T01:50:55.951945+00:00'
-total_runs: 137
+generated_utc: '2026-02-27T04:41:04.978578+00:00'
+total_runs: 138
 by_type:
   calibration: 2
   redteam: 13
   single: 61
   study: 30
   sweep: 28
-  unknown: 3
+  unknown: 4
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1251,6 +1251,12 @@ runs:
   date: unknown
   status: unknown
 - id: 20260226-201109_mesa_adaptive_agents_study
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: 20260226_mesa_game_structures_study
   type: unknown
   tags:
   - unmigrated

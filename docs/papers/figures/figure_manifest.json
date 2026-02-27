@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-02-09",
+  "style": "paper",
+  "scenarios": [
+    "Baseline",
+    "Adversarial v1",
+    "Adversarial (opt)",
+    "Adversarial v2",
+    "Adversarial v3",
+    "prisoners_dilemma",
+    "stag_hunt",
+    "hawk_dove"
+  ],
+  "figures": [
+    {
+      "filename": "fig1_scenario_comparison.png",
+      "caption": "Cross-scenario comparison of acceptance rate, toxicity, and welfare"
+    },
+    {
+      "filename": "fig2_collusion_timeline.png",
+      "caption": "Collusion detection scenario: epoch-by-epoch metrics"
+    },
+    {
+      "filename": "fig3_regime_scatter.png",
+      "caption": "Adversarial fraction vs acceptance rate by regime"
+    },
+    {
+      "filename": "fig4_incoherence_scaling.png",
+      "caption": "Incoherence metrics across network sizes"
+    },
+    {
+      "filename": "fig5_welfare_comparison.png",
+      "caption": "Welfare distribution across scenarios"
+    },
+    {
+      "filename": "fig6_network_vs_collusion.png",
+      "caption": "Pairwise comparison: network effects vs collusion detection"
+    },
+    {
+      "filename": "fig7_timeline_overlay.png",
+      "caption": "Welfare and acceptance rate trajectories across adversarial escalation scenarios"
+    },
+    {
+      "filename": "fig8_game_welfare_vs_rho.png",
+      "caption": "Welfare vs externality internalization across three game structures"
+    },
+    {
+      "filename": "fig9_game_toxicity_vs_rho.png",
+      "caption": "Toxicity vs externality internalization across three game structures"
+    },
+    {
+      "filename": "fig10_learning_benefit_by_game.png",
+      "caption": "Learning benefit: welfare recovery percentage by game type and rho"
+    },
+    {
+      "filename": "fig11_pareto_frontier_by_game.png",
+      "caption": "Welfare-toxicity Pareto frontier showing learning regime dominance"
+    },
+    {
+      "filename": "fig12_normalized_welfare_decay.png",
+      "caption": "Normalized welfare decay rate comparison across game structures"
+    }
+  ],
+  "updated_at": "2026-02-26T22:36:35.304904"
+}
