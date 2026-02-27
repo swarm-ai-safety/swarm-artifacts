@@ -1,0 +1,103 @@
+# Hypothesis: Governance effects are topology-dependent
+#
+# 90%+ of SWARM runs use small-world topology (k=4, p=0.15).
+# All governance claims carry implicit "tested in small-world only"
+# boundary condition. Ring topology constrains information flow,
+# scale-free creates hubs that may amplify or dampen governance,
+# random-graph removes clustering. This study tests whether
+# governance findings generalize across topologies.
+#
+# Design: 4x3 factorial.
+#   Factor 1: Topology (small-world, scale-free, random-graph, ring)
+#   Factor 2: Governance level (none, CB-only, full-stack)
+# Measure: welfare, toxicity, governance_grade, collusion_rate,
+#          clustering_coefficient.
+#
+# Falsification: If governance effects are uniform across all
+# topologies (no significant topology x governance interaction).
+
+scenario_id: hypothesis_topology_governance_interaction
+description: "Test governance mechanism effectiveness across 4 network topologies"
+motif: "Topology-dependent governance effects"
+hypothesis: null  # Tests boundary conditions across multiple claims
+
+agents:
+  - type: honest
+    count: 6
+  - type: adversarial
+    count: 2
+  - type: opportunistic
+    count: 2
+
+governance_levels:
+  none:
+    transaction_tax_rate: 0.0
+    circuit_breaker_enabled: false
+    audit_enabled: false
+    collusion_detection_enabled: false
+    staking_enabled: false
+  cb_only:
+    transaction_tax_rate: 0.0
+    circuit_breaker_enabled: true
+    freeze_threshold_toxicity: 0.6
+    freeze_threshold_violations: 3
+    freeze_duration_epochs: 3
+    audit_enabled: false
+    collusion_detection_enabled: false
+    staking_enabled: false
+  full_stack:
+    transaction_tax_rate: 0.03
+    circuit_breaker_enabled: true
+    freeze_threshold_toxicity: 0.6
+    freeze_threshold_violations: 3
+    freeze_duration_epochs: 3
+    audit_enabled: true
+    audit_probability: 0.10
+    collusion_detection_enabled: true
+    collusion_correlation_threshold: 0.6
+    staking_enabled: false
+
+simulation:
+  n_epochs: 20
+  steps_per_epoch: 10
+
+sweep:
+  type: factorial
+  seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080,
+          11, 22, 33, 44, 55, 66, 77, 88, 99, 100]
+  parameters:
+    network.topology:
+      - small_world:    # k=4, p=0.15 (current default)
+          k: 4
+          p: 0.15
+      - scale_free:     # Barabasi-Albert, m=2
+          m: 2
+      - random_graph:   # Erdos-Renyi, p=0.3
+          p: 0.3
+      - ring:           # k=2 ring lattice
+          k: 2
+    governance.level: [none, cb_only, full_stack]
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+analysis:
+  primary_metrics:
+    - welfare: "System-wide total welfare"
+    - toxicity: "Fraction of accepted interactions that are low-quality"
+    - governance_grade: "Redteam-style letter grade (A-F)"
+    - collusion_rate: "Fraction of interactions involving colluding agents"
+    - clustering_coefficient: "Network clustering at epoch end"
+  comparison: two_way_anova_topology_x_governance
+  correction: bonferroni
+  interaction_test: true  # Explicitly test for topology x governance interaction
+  expected_effect: "Scale-free topology amplifies governance effects (hub nodes concentrate enforcement); ring topology weakens governance (limited information propagation)"
+  falsification: "No significant topology x governance interaction on any primary metric"
+
+success_criteria:
+  min_seeds: 20
+  significance_level: 0.05

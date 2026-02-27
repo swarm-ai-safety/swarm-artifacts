@@ -1,0 +1,99 @@
+# Hypothesis: Contract screening type separation degrades at scale
+# and under adaptive adversaries
+#
+# Tests claim-contract-screening-achieves-perfect-type-separation
+# scaling limits. Current evidence: perfect separation (1.0) across
+# 11 seeds at N=10 agents. Rothschild-Stiglitz theory predicts
+# fragility with increasing population (more adversarial variance)
+# and adaptive adversaries who learn to mimic honest types.
+#
+# Design: 3x3 factorial.
+#   Factor 1: Population size (N=10, N=25, N=50)
+#   Factor 2: Adversary sophistication (naive-deceptive, adaptive-mimic,
+#             sybil-deceptive)
+# Measure: type_separation_accuracy, screening_payoff_premium,
+#          welfare, sybil_damage.
+#
+# Falsification: If type separation remains >95% at N=50 with
+# adaptive adversaries (screening scales perfectly).
+
+scenario_id: hypothesis_contract_screening_scaling
+description: "Test contract screening robustness at scale and against adaptive adversaries"
+motif: "Screening equilibrium fragility under stress"
+hypothesis: claim-contract-screening-achieves-perfect-type-separation
+
+agents_compositions:
+  n10:
+    - type: honest
+      count: 6
+    - type: deceptive
+      count: 2
+    - type: opportunistic
+      count: 2
+  n25:
+    - type: honest
+      count: 15
+    - type: deceptive
+      count: 5
+    - type: opportunistic
+      count: 5
+  n50:
+    - type: honest
+      count: 30
+    - type: deceptive
+      count: 10
+    - type: opportunistic
+      count: 10
+
+governance:
+  transaction_tax_rate: 0.03
+  circuit_breaker_enabled: true
+  freeze_threshold_toxicity: 0.6
+  freeze_threshold_violations: 3
+  freeze_duration_epochs: 3
+  screening_mechanism_enabled: true
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 20
+  steps_per_epoch: 10
+
+sweep:
+  type: factorial
+  seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080,
+          11, 22, 33, 44, 55, 66, 77, 88, 99, 100]
+  parameters:
+    agents.population_size: [10, 25, 50]
+    adversary.sophistication:
+      - naive_deceptive       # Fixed deceptive strategy, no learning
+      - adaptive_mimic        # Learns to mimic honest signaling over epochs
+      - sybil_deceptive       # 3 sybil identities + deceptive strategy
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+analysis:
+  primary_metrics:
+    - type_separation_accuracy: "Fraction of agents correctly classified by type"
+    - screening_payoff_premium: "Honest/deceptive payoff ratio"
+    - welfare: "System-wide total welfare"
+    - sybil_damage: "Damage from sybil identities (when applicable)"
+    - infiltration_rate: "Fraction of deceptive agents accepted to honest pools"
+  comparison: two_way_anova_size_x_sophistication
+  correction: bonferroni
+  expected_effect: "Separation degrades at N=50 and with adaptive mimics; sybil interaction is worst case"
+  falsification: "Type separation remains >95% at N=50 with adaptive adversaries"
+
+success_criteria:
+  min_seeds: 20
+  significance_level: 0.05

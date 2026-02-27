@@ -1,0 +1,137 @@
+# Hypothesis: Different attacks require different defenses — no single
+# mechanism is universally adequate
+#
+# The vault documents attack-specific binding constraints (collusion
+# detection for collusion rings, identity verification for sybil)
+# but lacks systematic attack x defense mapping. This study builds
+# a defense adequacy matrix measuring which mechanisms prevent which
+# attacks, enabling principled defense portfolio selection.
+#
+# Design: 5x5 factorial.
+#   Factor 1: Attack type (none, sybil-5-identity, collusion-ring,
+#             threshold-dancing, deceptive-signaling)
+#   Factor 2: Defense mechanism (none, CB-only, collusion-detection-only,
+#             audit-only, full-stack)
+# Measure: attack_success_rate, damage, welfare, defense_cost.
+#
+# Falsification: If full-stack dominates all individual mechanisms
+# against all attack types (no defense-specialization effect).
+
+scenario_id: hypothesis_defense_adequacy_matrix
+description: "Systematic attack x defense matrix to identify mechanism-specific efficacy"
+motif: "Defense portfolio optimization"
+hypothesis: null  # Exploratory: maps defense landscape
+
+agents_compositions:
+  none:
+    - type: honest
+      count: 10
+  sybil:
+    - type: honest
+      count: 6
+    - type: sybil_controller
+      count: 1
+      sybil_identities: 5
+    - type: opportunistic
+      count: 3
+  collusion:
+    - type: honest
+      count: 6
+    - type: adversarial_colluding
+      count: 2
+    - type: opportunistic
+      count: 2
+  threshold_dancing:
+    - type: honest
+      count: 6
+    - type: threshold_dancer
+      count: 2
+    - type: opportunistic
+      count: 2
+  deceptive_signaling:
+    - type: honest
+      count: 6
+    - type: deceptive_signaler
+      count: 2
+    - type: opportunistic
+      count: 2
+
+governance_levels:
+  none:
+    transaction_tax_rate: 0.0
+    circuit_breaker_enabled: false
+    audit_enabled: false
+    collusion_detection_enabled: false
+    staking_enabled: false
+  cb_only:
+    transaction_tax_rate: 0.0
+    circuit_breaker_enabled: true
+    freeze_threshold_toxicity: 0.6
+    freeze_threshold_violations: 3
+    freeze_duration_epochs: 3
+  cd_only:
+    transaction_tax_rate: 0.0
+    collusion_detection_enabled: true
+    collusion_correlation_threshold: 0.6
+    circuit_breaker_enabled: false
+    audit_enabled: false
+  audit_only:
+    transaction_tax_rate: 0.0
+    audit_enabled: true
+    audit_probability: 0.10
+    circuit_breaker_enabled: false
+    collusion_detection_enabled: false
+  full_stack:
+    transaction_tax_rate: 0.03
+    circuit_breaker_enabled: true
+    freeze_threshold_toxicity: 0.6
+    freeze_threshold_violations: 3
+    freeze_duration_epochs: 3
+    audit_enabled: true
+    audit_probability: 0.10
+    collusion_detection_enabled: true
+    collusion_correlation_threshold: 0.6
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 20
+  steps_per_epoch: 10
+
+sweep:
+  type: factorial
+  seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080,
+          11, 22, 33, 44, 55]
+  parameters:
+    adversary.attack_type: [none, sybil_5_identity, collusion_ring, threshold_dancing, deceptive_signaling]
+    governance.level: [none, cb_only, cd_only, audit_only, full_stack]
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+analysis:
+  primary_metrics:
+    - attack_success_rate: "Fraction of attack objectives achieved"
+    - damage: "Total damage from adversarial actions"
+    - welfare: "System-wide total welfare"
+    - defense_cost: "Welfare delta vs same-attack no-defense baseline"
+  derived_metrics:
+    - defense_efficacy: "1 - (damage_with_defense / damage_without_defense) per cell"
+    - cost_effectiveness: "defense_efficacy / defense_cost per cell"
+  comparison: two_way_anova_attack_x_defense
+  correction: bonferroni
+  expected_effect: "CB dominates for threshold-dancing; CD dominates for collusion; no single mechanism dominates all attacks"
+  falsification: "Full-stack dominates all individual mechanisms against all attack types (no defense-specialization effect)"
+
+success_criteria:
+  min_seeds: 15
+  significance_level: 0.05

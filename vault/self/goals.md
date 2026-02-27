@@ -37,11 +37,23 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 
 ## Experimental Priorities
 
+### Replication priorities (existing runs need more seeds)
+
 1. **CB threshold sweep** — freeze threshold (0.3-0.9) x freeze duration (1-20) at fixed tax rates. Resolves claim-cb-null-may-reflect-design-limitation. Flagged by all 3 council reviewers.
 2. **Kernel v4 replication** — expand from 5 to 20-30 seeds per config. Confirms or rejects tax-welfare direction reversal.
-3. **Memori with adversarial agents** — add adversarial/opportunistic LLM agents, extend to 10+ epochs. Tests whether governance null is a design artifact or LLM property.
-4. **Tau_min fine sweep** — 0.60-0.70 in 0.01 increments to locate exact phase transition point.
-5. ~~**2-way ANOVA on collusion_tax_effect**~~ — **COMPLETED**: F=53.3, p<0.0001, eta2=0.41. Super-additive interaction confirmed. Claim upgraded low→medium.
+3. **Tau_min fine sweep** — 0.60-0.70 in 0.01 increments to locate exact phase transition point.
+4. ~~**2-way ANOVA on collusion_tax_effect**~~ — **COMPLETED**: F=53.3, p<0.0001, eta2=0.41. Super-additive interaction confirmed. Claim upgraded low→medium.
+
+### New study proposals (6 studies, 1,455 total runs)
+
+Scenario YAMLs in `scenarios/hypotheses/`, experiment notes in `vault/experiments/`.
+
+1. **Adaptive circuit breaker mechanism study** — 5 CB variants (static, stochastic, CUSUM, adaptive) vs threshold-dancing adversaries. 300 runs. Addresses [[failure-threshold-dancing]] and [[claim-cb-null-may-reflect-design-limitation]]. Highest priority: flagged by all 3 council reviewers.
+2. **Steganographic collusion detection study** — Content-analysis and leniency programs vs 3 collusion strategies (behavioral, steganographic, NL-cartel). 180 runs. Addresses [[claim-steganographic-collusion-unaddressed-by-swarm-detection]] and [[claim-leniency-whistleblowing-is-untested-governance-lever]].
+3. **Topology-governance interaction study** — Governance effects across 4 topologies (small-world, scale-free, random-graph, ring). 240 runs. Tests generalizability of all governance claims beyond small-world default.
+4. **LLM governance sensitivity study** — LLM vs algorithmic agents under governance with adversarial fraction as moderator. 180 runs. Resolves [[claim-memori-agents-show-no-governance-sensitivity]] boundary conditions.
+5. **Defense adequacy matrix study** — Systematic 5x5 attack x defense efficacy mapping. 375 runs. First principled defense portfolio analysis.
+6. **Contract screening scaling study** — Screening at N=25/50 with adaptive mimics and sybil adversaries. 180 runs. Tests [[claim-contract-screening-achieves-perfect-type-separation]] limits.
 
 ## Completed (2026-02-20 session)
 

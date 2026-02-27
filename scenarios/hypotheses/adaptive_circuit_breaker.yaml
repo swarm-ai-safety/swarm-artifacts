@@ -1,0 +1,94 @@
+# Hypothesis: Adaptive circuit breakers defeat threshold dancing
+#
+# Tests claim-cb-null-may-reflect-design-limitation and addresses
+# failure-threshold-dancing (70% evasion success). Current binary
+# CB design allows agents to oscillate just below freeze threshold.
+# Five CB variants tested: static (baseline), stochastic-uniform
+# (randomized threshold), stochastic-gaussian (noisy threshold),
+# CUSUM-cumulative (cumulative harm tracking), adaptive-personal
+# (per-agent learned thresholds).
+#
+# Flagged by all 3 council reviewers. Highest-priority experimental
+# gap in the governance mechanism space.
+#
+# Design: 5x3 factorial.
+#   Factor 1: CB variant (static, stochastic-uniform, stochastic-gaussian,
+#             CUSUM-cumulative, adaptive-personal)
+#   Factor 2: Adversary type (none, threshold-dancer, naive-adversarial)
+# Measure: cumulative_harm, evasion_rate, false_positive_rate, welfare,
+#          detection_latency.
+#
+# Falsification: If no CB variant significantly reduces evasion_rate
+# vs static CB against threshold dancers.
+
+scenario_id: hypothesis_adaptive_circuit_breaker
+description: "Compare 5 circuit breaker designs against threshold-dancing adversaries"
+motif: "Adaptive mechanism design for evasion resistance"
+hypothesis: claim-cb-null-may-reflect-design-limitation
+
+agents:
+  - type: honest
+    count: 6
+  - type: adversarial
+    count: 2
+  - type: opportunistic
+    count: 2
+
+governance:
+  transaction_tax_rate: 0.03
+  circuit_breaker_enabled: true
+  freeze_duration_epochs: 3
+  audit_enabled: true
+  audit_probability: 0.10
+  staking_enabled: false
+  collusion_detection_enabled: false
+
+network:
+  topology: small_world
+  params:
+    k: 4
+    p: 0.15
+  dynamic: false
+
+simulation:
+  n_epochs: 20
+  steps_per_epoch: 10
+
+sweep:
+  type: factorial
+  seeds: [42, 7, 123, 256, 999, 2024, 314, 577, 1337, 8080,
+          11, 22, 33, 44, 55, 66, 77, 88, 99, 100]
+  parameters:
+    governance.circuit_breaker_variant:
+      - static            # Current design: fixed threshold, binary freeze
+      - stochastic_uniform  # Threshold drawn from U[0.4, 0.8] each epoch
+      - stochastic_gaussian # Threshold ~ N(0.6, 0.1), clipped [0.3, 0.9]
+      - cusum_cumulative    # CUSUM: cumulative harm, freeze when sum > H
+      - adaptive_personal   # Per-agent threshold, lowered after each violation
+    adversary.strategy:
+      - none              # No adversarial behavior
+      - threshold_dancer  # Oscillates toxicity just below freeze threshold
+      - naive_adversarial # Constant adversarial behavior, no evasion
+
+payoff:
+  s_plus: 3.0
+  s_minus: 1.5
+  h: 3.0
+  theta: 0.5
+  w_rep: 2.5
+
+analysis:
+  primary_metrics:
+    - cumulative_harm: "Total harm from adversarial actions across all epochs"
+    - evasion_rate: "Fraction of epochs where adversary avoids freeze"
+    - false_positive_rate: "Fraction of honest agents frozen at least once"
+    - welfare: "System-wide total welfare"
+    - detection_latency: "Epochs until first adversary freeze"
+  comparison: two_way_anova_variant_x_adversary
+  correction: bonferroni
+  expected_effect: "CUSUM and adaptive variants reduce evasion_rate >50% vs static against threshold dancers"
+  falsification: "No CB variant reduces evasion_rate significantly vs static CB against threshold dancers"
+
+success_criteria:
+  min_seeds: 20
+  significance_level: 0.05

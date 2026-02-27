@@ -131,6 +131,19 @@ One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
 - `vault/experiments/` — 120 experiment notes synthesized from 133 runs
 
+### Proposed Studies
+
+Six hypothesis-driven studies targeting the highest-impact research gaps. Scenario YAMLs in `scenarios/hypotheses/`.
+
+1. [[proposed-adaptive-circuit-breaker-mechanism-study]] — 5 CB variants vs threshold dancing (300 runs)
+2. [[proposed-steganographic-collusion-detection-study]] — Content-analysis and leniency vs 3 collusion strategies (180 runs)
+3. [[proposed-topology-governance-interaction-study]] — Governance effects across 4 topologies (240 runs)
+4. [[proposed-llm-governance-sensitivity-study]] — LLM vs algorithmic agent governance response (180 runs)
+5. [[proposed-defense-adequacy-matrix-study]] — Systematic attack x defense efficacy mapping (375 runs)
+6. [[proposed-contract-screening-scaling-study]] — Screening at N=25/50 with adaptive adversaries (180 runs)
+
+Total proposed: 1,455 runs across 6 studies.
+
 ## Sweeps
 
 Cross-run aggregations tracking convergence of parameter explorations. 8 sweep series.
