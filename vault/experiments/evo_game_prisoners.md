@@ -3,7 +3,7 @@ description: 5-seed evolutionary prisoners dilemma shows weak toxicity reduction
 type: experiment
 status: completed
 run_id: 20260222-215017_evo_game_prisoners_seed42
-experiment_type: study
+experiment_type: single
 created: '2026-02-27'
 aliases:
 - evo_game_prisoners

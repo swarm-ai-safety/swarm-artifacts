@@ -21,6 +21,9 @@ evidence:
   - run: 20260224-220829_mesa_governance_study
     metric: agent_archetype_probabilities
     detail: "Mesa agent objectives (p_coop=0.791, p_selfish=0.408, p_exploit=0.325) are identically invariant across all 110 runs (2 regimes x 11 rho levels x 5 seeds). Zero variance. Cleanest demonstration of architecture-over-governance"
+  - run: 20260222_183539_langgraph_governed
+    metric: actual_handoffs
+    detail: "128-run LangGraph replication: mean actual handoffs ~0.5 regardless of max_handoffs budget (5-30). Agents either complete with 0 handoffs or fail. Governance parameters not the binding constraint — architectural delegation behavior dominates"
   weakening:
   - run: 20260213-221500_collusion_tax_effect
     metric: welfare
@@ -45,6 +48,9 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-tax-disproportionately-punishes-rlm-agents
 - claim-mesa-agent-objectives-are-invariant-to-governance-regime
+- claim-trust-boundaries-modify-but-never-deny-handoffs
+- claim-delegation-completion-requires-handoff-budget-above-15
+- claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma
 created: 2026-02-21
 updated: 2026-02-27
 aliases:
@@ -73,6 +79,8 @@ Four independent lines of evidence converge on this pattern:
 3. **RLHF training dominates prompts** ([[claim-rlhf-persona-invariant]]): LLM behavior type (adversarial vs cooperative) explains far more variance than model identity or persona prompts. RLHF training "bakes in" behavior that system prompts cannot override.
 
 4. **LLM agents ignore governance** ([[claim-memori-agents-show-no-governance-sensitivity]]): in all-honest LLM populations, tax, circuit breakers, and collusion detection have zero detectable effect on any outcome metric.
+
+5. **LangGraph agents don't use handoffs** ([[langgraph_governed_replication]]): in a 128-run replication, mean actual handoffs is ~0.5 regardless of max_handoffs budget (5-30). Agents either complete with zero handoffs (coordinator handles alone) or fail regardless of budget. The governance parameters being swept are not the binding constraint on delegation outcomes.
 
 The pattern suggests that in populations where agents are architecturally homogeneous and well-aligned, governance mechanisms impose pure overhead ([[claim-governance-cost-paradox]]). The critical boundary is **population composition**: when adversarial agents are present, economic governance (especially tax) has massive effects on RLM agents (d=4.80-6.02), showing that architecture does NOT make agents immune to environmental pressure in mixed populations.
 

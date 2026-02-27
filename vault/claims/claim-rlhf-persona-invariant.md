@@ -32,6 +32,7 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-acausality-depth-does-not-affect-cooperation-outcomes
 - claim-agent-architecture-constrains-behavior-more-than-governance
+- claim-mesa-agent-objectives-are-invariant-to-governance-regime
 created: 2026-02-19
 updated: 2026-02-21
 aliases:

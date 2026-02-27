@@ -29,6 +29,7 @@ related_claims:
 - claim-quality-gate-dominates
 - claim-smarter-agents-earn-less
 - claim-agent-architecture-constrains-behavior-more-than-governance
+- claim-mesa-agent-objectives-are-invariant-to-governance-regime
 created: 2026-02-20
 updated: 2026-02-21
 aliases:

@@ -26,6 +26,7 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-tax-welfare-tradeoff
 - claim-static-externality-tax-is-pure-deadweight-welfare-loss
+- claim-mesa-agent-objectives-are-invariant-to-governance-regime
 created: 2026-02-27
 updated: 2026-02-27
 aliases:

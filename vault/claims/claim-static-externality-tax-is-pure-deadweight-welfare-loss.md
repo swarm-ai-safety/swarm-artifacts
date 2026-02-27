@@ -27,6 +27,7 @@ related_claims:
 - claim-adaptive-acceptance-reduces-toxicity-monotonically-with-externality-internalization
 - claim-mesa-agent-objectives-are-invariant-to-governance-regime
 - claim-full-governance-reduces-welfare-in-concordia
+- claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate
 created: 2026-02-27
 updated: 2026-02-27
 aliases:
