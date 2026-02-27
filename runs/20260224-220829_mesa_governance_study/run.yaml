@@ -1,0 +1,38 @@
+run_id: 20260224-220829_mesa_governance_study
+slug: mesa_governance_study
+created_utc: '2026-02-24T22:08:29+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: mesa_bridge_governance
+  seeds:
+  - 42
+  - 123
+  - 256
+  - 789
+  - 1024
+results:
+  status: completed
+artifacts:
+  sweep_csv: sweep_results.csv
+  summary_json: summary.json
+  plots:
+  - plots/main_metrics.png
+  - plots/archetype_quality.png
+  - plots/tradeoff_frontier.png
+  - plots/governance_efficiency.png
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- mesa
+- governance
+- externality-internalization
+- adaptive-acceptance
+- toxicity-welfare-tradeoff
+- study
+- sweep

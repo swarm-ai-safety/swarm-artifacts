@@ -9,7 +9,10 @@ evidence:
     - run: 20260221_081328_langgraph_governed
       metric: handoff_classification
       detail: "16 configs with trust_boundaries=true: approved_handoffs=0, modified_handoffs=N, denied_handoffs=0, escalated_handoffs=0 in all 16. N=32 total configs (16 with TB=true, 16 with TB=false)"
-  weakening: []
+  weakening:
+    - run: 20260222_183539_langgraph_governed
+      metric: denial_rate
+      detail: "128-run replication (3+1 seeds x 32 configs): trust=True mean denial_rate=0.172 vs trust=False 0.008. Denials DO occur. But completion unaffected: trust=True 56.2% vs trust=False 53.1%"
   boundary_conditions:
     - "LangGraph governed scenario only; other delegation frameworks untested"
     - "Single seed (42); stochastic variation untested"
@@ -25,7 +28,7 @@ related_claims:
   - claim-quality-gate-dominates
   - claim-prompt-level-governance-fails-in-multi-agent-systems
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-02-27
 aliases:
   - trust-boundaries-modify-but-never-deny-handoffs
 cssclasses:

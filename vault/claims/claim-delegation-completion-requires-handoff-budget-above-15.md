@@ -9,7 +9,10 @@ evidence:
     - run: 20260221_081328_langgraph_governed
       metric: task_completed
       detail: "max_handoffs=5: 12.5% completion (1/8). max_handoffs=10: 12.5% (1/8). max_handoffs=15: 50% (4/8). max_handoffs=30: 62.5% (5/8). N=32 configs, 8 per handoff level. Chi-square for handoff effect: chi2=7.11, df=3, p=0.068 (marginal, BH-corrected)"
-  weakening: []
+  weakening:
+    - run: 20260222_183539_langgraph_governed
+      metric: task_completed
+      detail: "128-run replication: max_handoffs=5 59.4%, =10 50.0%, =15 62.5%, =30 46.9%. No monotonic effect. Overall 54.7% completion. Handoff budget is not the binding constraint in multi-seed replication"
   boundary_conditions:
     - "LangGraph governed scenario only; single seed (42)"
     - "4 agent roles (coordinator, researcher, writer, reviewer)"
@@ -26,7 +29,7 @@ related_claims:
   - claim-agent-architecture-constrains-behavior-more-than-governance
   - claim-prompt-level-governance-fails-in-multi-agent-systems
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-02-27
 aliases:
   - delegation-completion-requires-handoff-budget-above-15
 cssclasses:
