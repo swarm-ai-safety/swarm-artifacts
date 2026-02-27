@@ -27,6 +27,9 @@ evidence:
   - run: 20260210-223119_kernel_market_v2
     metric: welfare
     detail: "Tax 0% vs 15%: welfare 14.06→7.99, d=1.19, p=0.000566, Bonferroni-significant. 80 runs, 10 seeds per config, kernel market v2 scenario. 1/42 tests survives correction"
+  - run: 20260224-220829_mesa_governance_study
+    metric: welfare
+    detail: "Mesa bridge: both regimes show monotonic welfare decline with rho. Static d=14.94, adaptive d=21.50 (rho=0 vs rho=1). Adaptive additional welfare cost buys toxicity reduction; static cost is pure deadweight. 5 seeds, 110 total runs, Bonferroni-corrected"
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -58,8 +61,10 @@ related_claims:
 - claim-memori-agents-show-no-governance-sensitivity
 - claim-governance-cost-paradox
 - claim-tax-phase-transition
+- claim-static-externality-tax-is-pure-deadweight-welfare-loss
+- claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate
 created: 2026-02-13
-updated: 2026-02-21
+updated: 2026-02-27
 aliases:
 - tax-welfare-tradeoff
 - transaction-tax-above-5-significantly-reduces

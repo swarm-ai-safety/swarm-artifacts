@@ -18,6 +18,9 @@ evidence:
   - run: 20260217_memori_study
     metric: all
     detail: "0/12 governance tests significant in LLM memori agents: tax, CB, CD all null. Largest d=0.55 (p=0.14). All-honest LLM population, 2 epochs, N=5 seeds"
+  - run: 20260224-220829_mesa_governance_study
+    metric: agent_archetype_probabilities
+    detail: "Mesa agent objectives (p_coop=0.791, p_selfish=0.408, p_exploit=0.325) are identically invariant across all 110 runs (2 regimes x 11 rho levels x 5 seeds). Zero variance. Cleanest demonstration of architecture-over-governance"
   weakening:
   - run: 20260213-221500_collusion_tax_effect
     metric: welfare
@@ -41,8 +44,9 @@ related_claims:
 - claim-memori-agents-show-no-governance-sensitivity
 - claim-governance-cost-paradox
 - claim-tax-disproportionately-punishes-rlm-agents
+- claim-mesa-agent-objectives-are-invariant-to-governance-regime
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-02-27
 aliases:
 - agent-architecture-constrains-behavior-more-than-governance
 cssclasses:
