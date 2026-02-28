@@ -1,7 +1,7 @@
 ---
 description: One claim rated "high" confidence draws from a single run, violating the replication criterion
 type: observation
-status: active
+status: resolved
 created: 2026-02-21
 source: /rethink phase 0 drift check
 ---
