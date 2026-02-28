@@ -9,7 +9,7 @@ created: 2026-02-20
 
 # Extract task: 20260213-234651_phylogeny_demo_seed7
 
-Run: [[runs/20260213-234651_phylogeny_demo_seed7]]
+Run: runs/20260213-234651_phylogeny_demo_seed7
 
 ## Run metadata
 

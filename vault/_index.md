@@ -91,6 +91,11 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-mesa-agent-objectives-are-invariant-to-governance-regime]] — Mesa agent archetypes constant across all 110 governance conditions (medium confidence)
 - [[claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate]] — Constant ~0.10 toxicity reduction per 1k welfare across full rho range (medium confidence)
 - [[claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma]] — 9.6% toxicity reduction over 10 epochs, non-monotonic and not sustained (low confidence)
+- [[claim-rlm-agents-exploit-governance-lag-via-strategic-depth-not-evasion]] — RLM agents outperform honest by 38% via partner selection, not governance evasion (medium confidence, single-run)
+- [[claim-ldt-agents-dominate-all-agent-types-in-mixed-populations]] — LDT agents earn 3x honest, 9.3x adversarial in heterogeneous populations (medium confidence, single-run)
+- [[claim-adaptive-learning-narrows-quality-gap-by-converting-selfish-agents]] — Adaptive learning reduces quality gap 27% by raising selfish cooperation probability (medium confidence)
+- [[claim-game-structure-determines-optimal-governance-regime]] — Stag hunt 2-3x more governance-efficient than prisoner's dilemma (medium confidence)
+- [[claim-resource-drain-is-binding-vulnerability-in-contract-screening]] — Resource drain succeeds with critical damage despite full governance stack (low confidence)
 
 ## Governance Mechanisms
 

@@ -9,7 +9,7 @@ created: 2026-02-20
 
 # Extract task: 20260214-113750_kernel_v4_code_sweep
 
-Run: [[runs/20260214-113750_kernel_v4_code_sweep]]
+Run: runs/20260214-113750_kernel_v4_code_sweep
 
 ## Run metadata
 

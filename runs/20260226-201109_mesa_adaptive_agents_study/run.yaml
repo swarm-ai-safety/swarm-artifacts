@@ -1,0 +1,42 @@
+run_id: 20260226-201109_mesa_adaptive_agents_study
+slug: mesa_adaptive_agents_study
+created_utc: '2026-02-26T20:11:09+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  summary: summary.json
+  sweep_csv: sweep_results.csv
+  plots:
+  - path: plots/archetype_quality.png
+    description: ''
+  - path: plots/effect_sizes.png
+    description: ''
+  - path: plots/governance_efficiency.png
+    description: ''
+  - path: plots/learning_dynamics.png
+    description: ''
+  - path: plots/main_metrics.png
+    description: ''
+  - path: plots/tradeoff_frontier.png
+    description: ''
+  - path: plots/welfare_boxplots.png
+    description: ''
+  - path: plots/welfare_recovery.png
+    description: ''
+  scripts:
+  - plots/generate.py
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- study

@@ -9,7 +9,16 @@ evidence:
   - run: 20260224-220829_mesa_governance_study
     metric: toxicity_welfare_efficiency
     detail: "Marginal efficiency (toxicity reduction per 1k welfare): rho=0.3 → 0.11, rho=0.7 → 0.09, rho=1.0 → 0.10. Near-constant across the full range. Total: 0.080 toxicity reduction for 801 welfare cost. 5 seeds per condition, 11 rho levels"
-  weakening: []
+  - run: 20260226-201109_mesa_adaptive_agents_study
+    metric: toxicity_welfare_efficiency
+    detail: "Adaptive regime replicates constant marginal rate: rho 0→0.5 reduces toxicity 0.024 for 234 welfare cost (0.10/1k), rho 0→1.0 reduces toxicity 0.080 for 801 cost (0.10/1k). But adaptive_learning regime shows DIFFERENT curve: higher welfare at high rho (807 vs 340 at rho=1.0), suggesting constant rate is regime-specific"
+  - run: 20260226_mesa_game_structures_study
+    metric: welfare_by_game
+    detail: "Game structure modulates tradeoff: stag hunt 2-3x more efficient than PD at same rho. Hawk-dove most governance-resistant. Constant marginal rate holds within each game but absolute efficiency varies by game structure"
+  weakening:
+  - run: 20260226-201109_mesa_adaptive_agents_study
+    metric: welfare
+    detail: "Adaptive learning regime breaks the constant marginal rate — at rho=1.0, adaptive_learning preserves 807 welfare vs adaptive 340, showing that governance regimes that change agent behavior escape the linear tradeoff"
   boundary_conditions:
   - Mesa bridge scenario with fixed agent archetypes and adaptive acceptance threshold (0.5 + 0.3 * rho_a)
   - Constant efficiency implies a linear tradeoff frontier — no sweet spot, no diminishing returns
@@ -27,6 +36,8 @@ related_claims:
 - claim-tax-welfare-tradeoff
 - claim-static-externality-tax-is-pure-deadweight-welfare-loss
 - claim-mesa-agent-objectives-are-invariant-to-governance-regime
+- claim-adaptive-learning-narrows-quality-gap-by-converting-selfish-agents
+- claim-game-structure-determines-optimal-governance-regime
 created: 2026-02-27
 updated: 2026-02-27
 aliases:

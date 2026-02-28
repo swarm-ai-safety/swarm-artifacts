@@ -9,7 +9,7 @@ created: 2026-02-20
 
 # Extract task: 20260213-202050_baseline_governance_v2
 
-Run: [[runs/20260213-202050_baseline_governance_v2]]
+Run: runs/20260213-202050_baseline_governance_v2
 
 ## Run metadata
 

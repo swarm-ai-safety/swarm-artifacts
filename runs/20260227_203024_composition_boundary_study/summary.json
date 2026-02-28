@@ -1,0 +1,572 @@
+{
+  "adversarial_sweep": {
+    "none": {
+      "fraction_stats": {
+        "0.0": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 1.0,
+          "toxicity_mean": 0.2478405078746213,
+          "quality_gap_mean": 0.0,
+          "welfare_mean": 15.964920225426273,
+          "n_runs": 20
+        },
+        "0.05": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9349355490577207,
+          "toxicity_mean": 0.2811754093055562,
+          "quality_gap_mean": 0.0810206199582606,
+          "welfare_mean": 15.204192491689351,
+          "n_runs": 20
+        },
+        "0.1": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.8682233852381523,
+          "toxicity_mean": 0.3264572985257896,
+          "quality_gap_mean": 0.12360100895364108,
+          "welfare_mean": 13.249643713639543,
+          "n_runs": 20
+        },
+        "0.15": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.05,
+          "acceptance_mean": 0.8427591306829629,
+          "toxicity_mean": 0.3465304403959269,
+          "quality_gap_mean": 0.1351717424107762,
+          "welfare_mean": 12.586791248591155,
+          "n_runs": 20
+        },
+        "0.2": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.05,
+          "acceptance_mean": 0.7954252230260531,
+          "toxicity_mean": 0.34703517925527944,
+          "quality_gap_mean": 0.16437632797898383,
+          "welfare_mean": 11.491578259540319,
+          "n_runs": 20
+        },
+        "0.25": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.1,
+          "acceptance_mean": 0.7519872638605561,
+          "toxicity_mean": 0.35689793895839456,
+          "quality_gap_mean": 0.15974050099775686,
+          "welfare_mean": 11.179565533713696,
+          "n_runs": 20
+        },
+        "0.3": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.1,
+          "acceptance_mean": 0.7325259761539283,
+          "toxicity_mean": 0.3620282696220284,
+          "quality_gap_mean": 0.1566757469453663,
+          "welfare_mean": 11.161803016819452,
+          "n_runs": 20
+        },
+        "0.375": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.1,
+          "acceptance_mean": 0.6477464229795324,
+          "toxicity_mean": 0.39089428147201993,
+          "quality_gap_mean": 0.14378339393911904,
+          "welfare_mean": 8.780072082880634,
+          "n_runs": 20
+        },
+        "0.5": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.35,
+          "acceptance_mean": 0.5246845171916413,
+          "toxicity_mean": 0.42512234485093225,
+          "quality_gap_mean": 0.12405018539008868,
+          "welfare_mean": 6.399159487909795,
+          "n_runs": 20
+        }
+      },
+      "critical_fraction": null
+    },
+    "basic": {
+      "fraction_stats": {
+        "0.0": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 1.0,
+          "toxicity_mean": 0.24578833668821018,
+          "quality_gap_mean": 0.0,
+          "welfare_mean": 15.936712890071195,
+          "n_runs": 20
+        },
+        "0.05": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9374897885185998,
+          "toxicity_mean": 0.278144082178421,
+          "quality_gap_mean": 0.08982696865592975,
+          "welfare_mean": 13.9875002468229,
+          "n_runs": 20
+        },
+        "0.1": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.05,
+          "acceptance_mean": 0.878359782457078,
+          "toxicity_mean": 0.3334020211908175,
+          "quality_gap_mean": 0.11040075916376872,
+          "welfare_mean": 12.622658685525495,
+          "n_runs": 20
+        },
+        "0.15": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.1,
+          "acceptance_mean": 0.8407954494763228,
+          "toxicity_mean": 0.344977363296012,
+          "quality_gap_mean": 0.1360844851170877,
+          "welfare_mean": 11.664398404455513,
+          "n_runs": 20
+        },
+        "0.2": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.1,
+          "acceptance_mean": 0.8033795196771006,
+          "toxicity_mean": 0.3477589547808243,
+          "quality_gap_mean": 0.16367277790045603,
+          "welfare_mean": 11.141239295100853,
+          "n_runs": 20
+        },
+        "0.25": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.1,
+          "acceptance_mean": 0.7456348264348873,
+          "toxicity_mean": 0.3548052824928781,
+          "quality_gap_mean": 0.16412489705266223,
+          "welfare_mean": 10.76956573890362,
+          "n_runs": 20
+        },
+        "0.3": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.1,
+          "acceptance_mean": 0.7392145418577544,
+          "toxicity_mean": 0.36017848166515554,
+          "quality_gap_mean": 0.15056930777220912,
+          "welfare_mean": 9.94247111469193,
+          "n_runs": 20
+        },
+        "0.375": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.15,
+          "acceptance_mean": 0.6764273509527793,
+          "toxicity_mean": 0.38849885461938666,
+          "quality_gap_mean": 0.14451649579900544,
+          "welfare_mean": 8.660197184081484,
+          "n_runs": 20
+        },
+        "0.5": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.4,
+          "acceptance_mean": 0.5022053112566127,
+          "toxicity_mean": 0.4182408487123581,
+          "quality_gap_mean": 0.1336700122856431,
+          "welfare_mean": 5.735816994004695,
+          "n_runs": 20
+        }
+      },
+      "critical_fraction": null
+    },
+    "moderate": {
+      "fraction_stats": {
+        "0.0": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 1.0,
+          "toxicity_mean": 0.25138869303524525,
+          "quality_gap_mean": 0.0,
+          "welfare_mean": 15.037490927253973,
+          "n_runs": 20
+        },
+        "0.05": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9928201614124481,
+          "toxicity_mean": 0.2616757370632569,
+          "quality_gap_mean": 0.01987047606728371,
+          "welfare_mean": 14.46091313008839,
+          "n_runs": 20
+        },
+        "0.1": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9748754841958673,
+          "toxicity_mean": 0.2733465398281672,
+          "quality_gap_mean": 0.05922795914967276,
+          "welfare_mean": 12.693802825304086,
+          "n_runs": 20
+        },
+        "0.15": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9598379536986539,
+          "toxicity_mean": 0.28118276512534635,
+          "quality_gap_mean": 0.07122909368243371,
+          "welfare_mean": 12.95423754089569,
+          "n_runs": 20
+        },
+        "0.2": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9412654445872566,
+          "toxicity_mean": 0.2763524279110041,
+          "quality_gap_mean": 0.08104834482087916,
+          "welfare_mean": 12.092908294605403,
+          "n_runs": 20
+        },
+        "0.25": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9265438452920955,
+          "toxicity_mean": 0.28650759303881007,
+          "quality_gap_mean": 0.08782245369471557,
+          "welfare_mean": 11.38359331441043,
+          "n_runs": 20
+        },
+        "0.3": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9373814649763318,
+          "toxicity_mean": 0.3026442596638769,
+          "quality_gap_mean": 0.07686430533339211,
+          "welfare_mean": 11.575013078871155,
+          "n_runs": 20
+        },
+        "0.375": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.05,
+          "acceptance_mean": 0.8551101655938153,
+          "toxicity_mean": 0.2833846408654549,
+          "quality_gap_mean": 0.09148009881108392,
+          "welfare_mean": 10.176511890708246,
+          "n_runs": 20
+        },
+        "0.5": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.05,
+          "acceptance_mean": 0.7633091405474546,
+          "toxicity_mean": 0.31131560748496817,
+          "quality_gap_mean": 0.12710500997154364,
+          "welfare_mean": 7.516263684019232,
+          "n_runs": 20
+        }
+      },
+      "critical_fraction": null
+    },
+    "full": {
+      "fraction_stats": {
+        "0.0": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 1.0,
+          "toxicity_mean": 0.28821078985676607,
+          "quality_gap_mean": 0.0,
+          "welfare_mean": 12.060387712193974,
+          "n_runs": 20
+        },
+        "0.05": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9802183422166418,
+          "toxicity_mean": 0.2976562070685552,
+          "quality_gap_mean": 0.020428300297181522,
+          "welfare_mean": 10.8004527702001,
+          "n_runs": 20
+        },
+        "0.1": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9514762582969626,
+          "toxicity_mean": 0.3153019300200096,
+          "quality_gap_mean": 0.03253428715729119,
+          "welfare_mean": 9.635018348291501,
+          "n_runs": 20
+        },
+        "0.15": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9307753882273117,
+          "toxicity_mean": 0.314872932739724,
+          "quality_gap_mean": 0.05288951716774126,
+          "welfare_mean": 9.453751032897376,
+          "n_runs": 20
+        },
+        "0.2": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.9258106757273333,
+          "toxicity_mean": 0.32060935198920965,
+          "quality_gap_mean": 0.05892303242311149,
+          "welfare_mean": 8.927352487992623,
+          "n_runs": 20
+        },
+        "0.25": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.893174311126808,
+          "toxicity_mean": 0.3258360877255718,
+          "quality_gap_mean": 0.07027990702471955,
+          "welfare_mean": 8.14229703886239,
+          "n_runs": 20
+        },
+        "0.3": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.05,
+          "acceptance_mean": 0.868439093656346,
+          "toxicity_mean": 0.3272633321286338,
+          "quality_gap_mean": 0.06157354631440224,
+          "welfare_mean": 8.2678659023594,
+          "n_runs": 20
+        },
+        "0.375": {
+          "regime_mode": "cooperative",
+          "collapse_rate": 0.0,
+          "acceptance_mean": 0.8232535176979822,
+          "toxicity_mean": 0.32037533659553924,
+          "quality_gap_mean": 0.09100863623539002,
+          "welfare_mean": 6.601454332160111,
+          "n_runs": 20
+        },
+        "0.5": {
+          "regime_mode": "contested",
+          "collapse_rate": 0.05,
+          "acceptance_mean": 0.701254258575817,
+          "toxicity_mean": 0.31916527270181394,
+          "quality_gap_mean": 0.08773998361080756,
+          "welfare_mean": 5.015728917615467,
+          "n_runs": 20
+        }
+      },
+      "critical_fraction": null
+    }
+  },
+  "profile_sweep": {
+    "pure_honest": {
+      "none": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.24938573467529546,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 22.71118429029055
+      },
+      "basic": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.2505353902681479,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 19.364566283808035
+      },
+      "moderate": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.25137820867749616,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 18.787225675827077
+      },
+      "full": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.28840722803234337,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 16.210473732901796
+      }
+    },
+    "pure_adversarial": {
+      "none": {
+        "regime_mode": "collapse",
+        "acceptance_mean": 0.0,
+        "toxicity_mean": 0.0,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 0.0
+      },
+      "basic": {
+        "regime_mode": "collapse",
+        "acceptance_mean": 0.0,
+        "toxicity_mean": 0.0,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 0.0
+      },
+      "moderate": {
+        "regime_mode": "collapse",
+        "acceptance_mean": 0.0,
+        "toxicity_mean": 0.0,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 0.0
+      },
+      "full": {
+        "regime_mode": "collapse",
+        "acceptance_mean": 0.0,
+        "toxicity_mean": 0.0,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 0.0
+      }
+    },
+    "honest_opportunistic_70_30": {
+      "none": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.9904191616766467,
+        "toxicity_mean": 0.2957385195718462,
+        "quality_gap_mean": 0.01637408520841766,
+        "welfare_mean": 21.93472529855176
+      },
+      "basic": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.2974055420894097,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 21.109460122086436
+      },
+      "moderate": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.9958620689655172,
+        "toxicity_mean": 0.29889332311417915,
+        "quality_gap_mean": 0.004504012236590785,
+        "welfare_mean": 20.19355924200019
+      },
+      "full": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.9347954071744615,
+        "toxicity_mean": 0.3170362745242194,
+        "quality_gap_mean": 0.029716323879511602,
+        "welfare_mean": 11.332705072555019
+      }
+    },
+    "honest_deceptive_80_20": {
+      "none": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.9942857142857143,
+        "toxicity_mean": 0.2621256207043323,
+        "quality_gap_mean": -0.005411579748835057,
+        "welfare_mean": 18.167180456815206
+      },
+      "basic": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.2583398467609359,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 16.824137535585173
+      },
+      "moderate": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.2603813588414074,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 17.7294025735857
+      },
+      "full": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 1.0,
+        "toxicity_mean": 0.28730717482145546,
+        "quality_gap_mean": 0.0,
+        "welfare_mean": 10.892185497689502
+      }
+    },
+    "realistic_mix": {
+      "none": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.8853687683474917,
+        "toxicity_mean": 0.33438781812943674,
+        "quality_gap_mean": 0.12923739169293677,
+        "welfare_mean": 17.702074210665923
+      },
+      "basic": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.905968165815441,
+        "toxicity_mean": 0.3401881623953461,
+        "quality_gap_mean": 0.12464848948067171,
+        "welfare_mean": 16.010045221742224
+      },
+      "moderate": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.9636423403808558,
+        "toxicity_mean": 0.3122068280242213,
+        "quality_gap_mean": 0.07072415446442373,
+        "welfare_mean": 16.07086311295554
+      },
+      "full": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.954105473702225,
+        "toxicity_mean": 0.3527075199690828,
+        "quality_gap_mean": 0.047589151352894314,
+        "welfare_mean": 11.06913168766897
+      }
+    },
+    "high_threat": {
+      "none": {
+        "regime_mode": "contested",
+        "acceptance_mean": 0.618938038023242,
+        "toxicity_mean": 0.40818609748053564,
+        "quality_gap_mean": 0.17098321227591554,
+        "welfare_mean": 9.731776194215756
+      },
+      "basic": {
+        "regime_mode": "contested",
+        "acceptance_mean": 0.6121474258549654,
+        "toxicity_mean": 0.414614936686175,
+        "quality_gap_mean": 0.16442120210523148,
+        "welfare_mean": 8.673903325336926
+      },
+      "moderate": {
+        "regime_mode": "cooperative",
+        "acceptance_mean": 0.8294929713332676,
+        "toxicity_mean": 0.3464323345836354,
+        "quality_gap_mean": 0.14386379311930303,
+        "welfare_mean": 8.986086138605843
+      },
+      "full": {
+        "regime_mode": "contested",
+        "acceptance_mean": 0.7674665096921636,
+        "toxicity_mean": 0.3776124082540323,
+        "quality_gap_mean": 0.07617708394437063,
+        "welfare_mean": 5.5389548343517045
+      }
+    }
+  },
+  "parameters": {
+    "population_sizes": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "seeds": [
+      42,
+      123,
+      456,
+      789,
+      1001
+    ],
+    "n_epochs": 20,
+    "steps_per_epoch": 10,
+    "adversarial_fractions": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.375,
+      0.5
+    ],
+    "governance_configs": [
+      "none",
+      "basic",
+      "moderate",
+      "full"
+    ],
+    "profile_mixtures": [
+      "pure_honest",
+      "pure_adversarial",
+      "honest_opportunistic_70_30",
+      "honest_deceptive_80_20",
+      "realistic_mix",
+      "high_threat"
+    ]
+  }
+}

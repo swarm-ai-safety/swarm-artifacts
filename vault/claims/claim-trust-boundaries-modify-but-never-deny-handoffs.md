@@ -13,9 +13,15 @@ evidence:
     - run: 20260222_183539_langgraph_governed
       metric: denial_rate
       detail: "128-run replication (3+1 seeds x 32 configs): trust=True mean denial_rate=0.172 vs trust=False 0.008. Denials DO occur. But completion unaffected: trust=True 56.2% vs trust=False 53.1%"
+    - run: 20260224_083213_langgraph_governed
+      metric: denial_rate
+      detail: "44-config sweep (seed 42): trust=True configs show denials in some configs (e.g., max_handoffs=15: denial_rate=1.0). Error-prone at low handoff budgets. Confirms denials DO occur under trust boundaries, further weakening the modify-all hypothesis"
+    - run: 20260221_104316_langgraph_governed
+      metric: handoff_classification
+      detail: "96-config sweep (3 seeds x 32 configs): mixed modification patterns. Trust boundaries show 0.25 denial rate at some configs. Confirms the original modify-all finding was seed-dependent"
   boundary_conditions:
     - "LangGraph governed scenario only; other delegation frameworks untested"
-    - "Single seed (42); stochastic variation untested"
+    - "Multi-seed replication shows denials DO occur — original modify-all finding is weakened"
     - "Task type: research report generation; adversarial or safety-critical tasks untested"
 sensitivity:
   topology: "not applicable (delegation chains, not network topology)"

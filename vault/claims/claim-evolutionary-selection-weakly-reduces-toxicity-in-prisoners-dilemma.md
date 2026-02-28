@@ -9,6 +9,21 @@ evidence:
   - run: 20260222-215017_evo_game_prisoners_seed42
     metric: toxicity_rate
     detail: "5-seed mean toxicity: epoch 0 = 0.291±0.021, epoch 9 = 0.263±0.019. 9.6% reduction. Non-monotonic: peaks at 0.355 (epoch 1) before declining. N=5 seeds, 10 agents, 10 epochs"
+  - run: 20260222-211635_evo_game_prisoners_seed42
+    metric: toxicity_rate
+    detail: "Initial seed 42 run: 10 epochs, 10 agents, toxicity trajectory consistent with 5-seed aggregate"
+  - run: 20260222-215249_evo_game_prisoners_seed123
+    metric: toxicity_rate
+    detail: "Seed 123: confirms non-monotonic toxicity pattern in 10-epoch run"
+  - run: 20260222-215523_evo_game_prisoners_seed777
+    metric: toxicity_rate
+    detail: "Seed 777: confirms non-monotonic toxicity pattern in 10-epoch run"
+  - run: 20260222-220110_evo_game_prisoners_seed314
+    metric: toxicity_rate
+    detail: "Seed 314: confirms non-monotonic toxicity pattern in 10-epoch run"
+  - run: 20260222-220608_evo_game_prisoners_seed999
+    metric: toxicity_rate
+    detail: "Seed 999: confirms non-monotonic toxicity pattern in 10-epoch run"
   weakening:
   - run: 20260223-001025_evo_game_prisoners_seed42_20ep
     metric: toxicity_rate

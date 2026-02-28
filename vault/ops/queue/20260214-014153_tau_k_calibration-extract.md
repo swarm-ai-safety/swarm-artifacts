@@ -9,7 +9,7 @@ created: 2026-02-20
 
 # Extract task: 20260214-014153_tau_k_calibration
 
-Run: [[runs/20260214-014153_tau_k_calibration]]
+Run: runs/20260214-014153_tau_k_calibration
 
 ## Run metadata
 

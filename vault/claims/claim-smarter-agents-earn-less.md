@@ -16,12 +16,18 @@ evidence:
   - run: 20260210-225330_rlm_memory_as_power_seed42
     metric: payoff
     detail: 'Memory asymmetry effect exists (r=+0.67) but tiny: 3.2% payoff spread'
+  - run: 20260210-215826_analysis_rlm_recursive_collusion
+    metric: payoff
+    detail: "Replication with 10 seeds: Pearson r(depth, payoff)=-0.75, p=2e-06, Bonferroni-sig. Depth 1→3→5 yields 219.66→213.64→211.35. Honest earns 2.8x more (592.98). 9/10 tests survive Bonferroni, 10/10 Holm"
+  - run: 20260210-215826_analysis_rlm_memory_as_power
+    metric: payoff
+    detail: "Replication with 10 seeds: Pearson r(mem_budget, payoff)=+0.67, p=5e-05, Bonferroni-sig. Memory 200→50→10 yields 253.38→249.06→245.44. Modest 3.2% spread. Honest earns 2.3x more (563.11). 9/11 Bonferroni, 11/11 Holm"
   weakening: []
   boundary_conditions:
   - Algorithmic level-k reasoners, not LLM-powered agents
   - Soft governance ecosystems only
   - Tested with RLM depth 1-5
-  - 30 seeds, 26 statistical tests, 3 experiments
+  - 30+ seeds, 26+ statistical tests, 5 experiments (including analysis replications)
   - LLM memori agents show zero behavioral differentiation under governance pressure — depth penalty may not apply to LLM architectures
 sensitivity:
   governance_type: untested with hard governance
@@ -39,8 +45,9 @@ related_claims:
 - claim-ldt-agents-provide-welfare-stability-at-intermediate-composition
 - claim-deceptive-agents-dominate-moltbook-payoff-hierarchy
 - claim-agent-architecture-constrains-behavior-more-than-governance
+- claim-rlm-agents-exploit-governance-lag-via-strategic-depth-not-evasion
 created: 2026-02-10
-updated: 2026-02-21
+updated: 2026-02-27
 aliases:
 - smarter-agents-earn-less
 - deeper-recursive-reasoning-rlm-depth-negatively

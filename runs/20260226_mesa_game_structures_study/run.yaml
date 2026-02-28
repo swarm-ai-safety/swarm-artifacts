@@ -1,0 +1,23 @@
+run_id: 20260226_mesa_game_structures_study
+slug: mesa_game_structures_study
+created_utc: '2026-02-26T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  summary: summary.json
+  sweep_csv: sweep_results.csv
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- study

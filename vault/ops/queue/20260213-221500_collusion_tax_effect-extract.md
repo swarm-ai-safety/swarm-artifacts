@@ -9,7 +9,7 @@ created: 2026-02-20
 
 # Extract task: 20260213-221500_collusion_tax_effect
 
-Run: [[runs/20260213-221500_collusion_tax_effect]]
+Run: runs/20260213-221500_collusion_tax_effect
 
 ## Run metadata
 

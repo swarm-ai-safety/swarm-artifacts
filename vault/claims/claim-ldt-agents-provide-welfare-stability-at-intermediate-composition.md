@@ -21,6 +21,9 @@ evidence:
   - run: research-decision-theory-multiagent-2026-02-22
     source_type: research
     detail: "Decision theory literature grounding: Hofstadter's superrationality predicts cooperation among similar reasoners. Evolutionary game theory predicts cooperative strategies require critical mass for evolutionary stability — consistent with SWARM's 40-70% sweet spot. Oesterheld & Conitzer (2020) show FDT evolutionary stability depends on population mix. SWARM's result is among the first large-scale empirical validations of decision theory predictions in multi-agent simulations"
+  - run: 20260211-004234_analysis_ldt_cooperation
+    metric: payoff
+    detail: "Heterogeneous population test: LDT (3 agents) earn 31.36 vs honest 10.28 (d=6.54, Bonferroni-sig), opportunistic 13.36 (d=4.21), adversarial 3.38 (d=10.24). 10 seeds. LDT at 43% composition dominates all types. Consistent with 40-70% sweet spot"
   weakening: []
   boundary_conditions:
   - "ldt_cooperation scenario only; untested in governance-heavy or adversarial contexts"
@@ -37,8 +40,9 @@ related_claims:
 - claim-acausality-depth-does-not-affect-cooperation-outcomes
 - claim-smarter-agents-earn-less
 - claim-deceptive-agents-dominate-moltbook-payoff-hierarchy
+- claim-ldt-agents-dominate-all-agent-types-in-mixed-populations
 created: 2026-02-21
-updated: 2026-02-22
+updated: 2026-02-27
 aliases:
 - ldt-agents-provide-welfare-stability-at-intermediate-composition
 cssclasses:

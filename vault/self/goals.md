@@ -7,22 +7,25 @@ type: moc
 
 ## Active Threads
 
-- **68 claims** (64 active, 2 weakened, 2 with weakening evidence added) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
-- **Confidence distribution:** 9 high, 24 medium, 35 low
-- **Pipeline queue:** 95/95 completed + 3 new experiment notes this session — 10 new runs processed
+- **73 claims** (71 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
+- **Confidence distribution:** 9 high, 28 medium, 36 low (2 claims downgraded high→medium this session: ldt-agents-dominate, rlm-governance-lag)
+- **Pipeline queue:** 138/138 completed — fully drained, 0 pending
 - **8 sweep series** — contract-screening sweep note added
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
   2. Governance interaction universality — **rejected**: contradictory evidence (orthogonality finding vs interaction claims). Not a universal pattern.
   3. Architecture-over-environment — **synthesized** as [[claim-agent-architecture-constrains-behavior-more-than-governance]] (medium confidence)
 - **8 failure patterns** — cross-linked to redteam claims but not yet formally validated via `/validate`
-- **7 sweep series** — sweep notes updated with new runs and claim references
 - **Scenario-dependence boundary** — kernel v4 and memori studies challenge universality of baseline governance findings; replication with larger N is the top experimental priority
+- **Schema upgrades deployed** — typed claim edges (6 relation types), theory notes, prediction registry. All backward-compatible.
+- **2 methodology directives** — single-run confidence cap (recurring drift fix), remember-during-extraction (structural gap fix)
 
 ## Pending Processing
 
 - **Gate 2 statistical rigor** — Remaining low-confidence claims without formal stats are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
 - **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
+- **First theory note** — 73 claims are sufficient to compose 2-3 theories (governance cost universality, tax phase transition theory, architecture-over-governance). Awaiting human judgment.
+- **First prediction notes** — Several claims contain implicit predictions to formalize (hysteresis at tax transition, convergence time peak, quadratic staking effectiveness)
 
 ## Replication Priority List
 
@@ -169,6 +172,24 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
     - claim-delegation-completion-requires-handoff-budget-above-15 — no monotonic effect in 128-run replication
 
 - **Index updated:** 68 claims, 120 experiment notes
+
+## Completed (2026-02-27 session, schema upgrades + full pipeline drain)
+
+- **3 schema upgrades deployed:**
+  1. Typed edges in related_claims — 6 relation types (supports, contradicts, refines, predicts, requires, extends), backward-compatible with bare strings
+  2. Theory notes — vault/theories/ with schema, template, validator, graph nodes
+  3. Prediction registry — vault/predictions/ with schema, template, validator, graph nodes
+- **Scripts updated:** validate-vault.py (+theories, +predictions), claim-graph.py (typed edges, diamond/hexagon nodes), vault-health.py (+theory/prediction audits)
+- **Backfilled 4 runs** missing run.yaml: mesa_game_structures_study, mesa_adaptive_agents_study, self_optimizer_hodoscope, hodoscope_demo
+- **Seeded 43 runs** into pipeline queue (15 RLM seeds, 7 evo game, 3 LangGraph, 5 research, 3 mesa, 6 misc)
+- **Pipeline fully drained:** 138/138 completed. 5 new claims created, 9 existing claims enriched.
+- **Rethink session:**
+  - Downgraded 2 claims high→medium (ldt-agents-dominate, rlm-governance-lag) — single-run, unreplicated
+  - Created directive-remember-during-extraction (structural gap: 0 observations across 138 tasks)
+  - Created directive-single-run-confidence-cap (recurring drift pattern, 3rd occurrence)
+  - Archived obs-rethink-session-2026-02-21
+- **Wiki-link fixes:** 53 queue extract files + 1 claim broken link repaired
+- **Goals updated:** 73 claims, confidence distribution recalibrated, new pending items (first theory, first predictions)
 
 ---
 

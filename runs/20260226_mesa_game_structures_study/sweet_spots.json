@@ -1,0 +1,50 @@
+{
+  "prisoners_dilemma_adaptive": {
+    "game_type": "prisoners_dilemma",
+    "regime": "adaptive",
+    "optimal_rho": 0.0,
+    "welfare": 1141.1526735358482,
+    "toxicity": 0.23647105854622333,
+    "acceptance_rate": 0.5896
+  },
+  "prisoners_dilemma_adaptive_learning": {
+    "game_type": "prisoners_dilemma",
+    "regime": "adaptive_learning",
+    "optimal_rho": 1.0,
+    "welfare": 807.034789721638,
+    "toxicity": 0.14651309067033141,
+    "acceptance_rate": 0.4244
+  },
+  "stag_hunt_adaptive": {
+    "game_type": "stag_hunt",
+    "regime": "adaptive",
+    "optimal_rho": 0.0,
+    "welfare": 2596.1290103037754,
+    "toxicity": 0.23647105854622333,
+    "acceptance_rate": 0.5896
+  },
+  "stag_hunt_adaptive_learning": {
+    "game_type": "stag_hunt",
+    "regime": "adaptive_learning",
+    "optimal_rho": 1.0,
+    "welfare": 2033.6182686938055,
+    "toxicity": 0.14651309067033141,
+    "acceptance_rate": 0.4244
+  },
+  "hawk_dove_adaptive": {
+    "game_type": "hawk_dove",
+    "regime": "adaptive",
+    "optimal_rho": 0.0,
+    "welfare": 594.3447857918251,
+    "toxicity": 0.23647105854622333,
+    "acceptance_rate": 0.5896
+  },
+  "hawk_dove_adaptive_learning": {
+    "game_type": "hawk_dove",
+    "regime": "adaptive_learning",
+    "optimal_rho": 1.0,
+    "welfare": 348.88522663813103,
+    "toxicity": 0.14651309067033141,
+    "acceptance_rate": 0.4244
+  }
+}

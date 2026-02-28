@@ -9,7 +9,7 @@ created: 2026-02-20
 
 # Extract task: 20260217_memori_study
 
-Run: [[runs/20260217_memori_study]]
+Run: runs/20260217_memori_study
 
 ## Run metadata
 

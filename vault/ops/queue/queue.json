@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS \u2014 synthesis pipeline queue",
-  "next_claim_start": 55,
+  "next_claim_start": 270,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
@@ -1717,6 +1717,907 @@
         "claim-contract-screening-achieves-perfect-type-separation",
         "claim-screening-equilibrium-generates-honest-payoff-premium"
       ]
+    },
+    {
+      "id": "extract-20260210-211721_rlm_recursive_collusion_seed42",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-211721_rlm_recursive_collusion_seed42/",
+      "file": "20260210-211721_rlm_recursive_collusion_seed42-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 55,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-211753_rlm_recursive_collusion_seed7",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-211753_rlm_recursive_collusion_seed7/",
+      "file": "20260210-211753_rlm_recursive_collusion_seed7-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 60,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-211757_rlm_recursive_collusion_seed123",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-211757_rlm_recursive_collusion_seed123/",
+      "file": "20260210-211757_rlm_recursive_collusion_seed123-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 65,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-211800_rlm_recursive_collusion_seed256",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-211800_rlm_recursive_collusion_seed256/",
+      "file": "20260210-211800_rlm_recursive_collusion_seed256-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 70,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-211803_rlm_recursive_collusion_seed999",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-211803_rlm_recursive_collusion_seed999/",
+      "file": "20260210-211803_rlm_recursive_collusion_seed999-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 75,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-211851_rlm_memory_as_power_seed42",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-211851_rlm_memory_as_power_seed42/",
+      "file": "20260210-211851_rlm_memory_as_power_seed42-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 80,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-211958_rlm_memory_as_power_seed7",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-211958_rlm_memory_as_power_seed7/",
+      "file": "20260210-211958_rlm_memory_as_power_seed7-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 85,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212001_rlm_memory_as_power_seed123",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212001_rlm_memory_as_power_seed123/",
+      "file": "20260210-212001_rlm_memory_as_power_seed123-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 90,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212004_rlm_memory_as_power_seed256",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212004_rlm_memory_as_power_seed256/",
+      "file": "20260210-212004_rlm_memory_as_power_seed256-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 95,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212007_rlm_memory_as_power_seed999",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212007_rlm_memory_as_power_seed999/",
+      "file": "20260210-212007_rlm_memory_as_power_seed999-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 100,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212010_rlm_memory_as_power_seed2024",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212010_rlm_memory_as_power_seed2024/",
+      "file": "20260210-212010_rlm_memory_as_power_seed2024-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 105,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212013_rlm_memory_as_power_seed314",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212013_rlm_memory_as_power_seed314/",
+      "file": "20260210-212013_rlm_memory_as_power_seed314-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 110,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212016_rlm_memory_as_power_seed577",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212016_rlm_memory_as_power_seed577/",
+      "file": "20260210-212016_rlm_memory_as_power_seed577-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 115,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212019_rlm_memory_as_power_seed1337",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212019_rlm_memory_as_power_seed1337/",
+      "file": "20260210-212019_rlm_memory_as_power_seed1337-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 120,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-212022_rlm_memory_as_power_seed8080",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-212022_rlm_memory_as_power_seed8080/",
+      "file": "20260210-212022_rlm_memory_as_power_seed8080-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 125,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-215826_analysis_rlm_governance_lag",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-215826_analysis_rlm_governance_lag/",
+      "file": "20260210-215826_analysis_rlm_governance_lag-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 130,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [
+        "claim-rlm-agents-exploit-governance-lag-via-strategic-depth-not-evasion"
+      ],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-215826_analysis_rlm_memory_as_power",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-215826_analysis_rlm_memory_as_power/",
+      "file": "20260210-215826_analysis_rlm_memory_as_power-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 135,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260210-215826_analysis_rlm_recursive_collusion",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260210-215826_analysis_rlm_recursive_collusion/",
+      "file": "20260210-215826_analysis_rlm_recursive_collusion-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 140,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-smarter-agents-earn-less"
+      ]
+    },
+    {
+      "id": "extract-20260211-004234_analysis_ldt_cooperation",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260211-004234_analysis_ldt_cooperation/",
+      "file": "20260211-004234_analysis_ldt_cooperation-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 145,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [
+        "claim-ldt-agents-dominate-all-agent-types-in-mixed-populations"
+      ],
+      "enrichments_applied": [
+        "claim-ldt-agents-provide-welfare-stability-at-intermediate-composition"
+      ]
+    },
+    {
+      "id": "extract-20260221_104316_langgraph_governed",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260221_104316_langgraph_governed/",
+      "file": "20260221_104316_langgraph_governed-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 150,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-trust-boundaries-modify-but-never-deny-handoffs"
+      ]
+    },
+    {
+      "id": "extract-20260222-211635_evo_game_prisoners_seed42",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260222-211635_evo_game_prisoners_seed42/",
+      "file": "20260222-211635_evo_game_prisoners_seed42-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 155,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma"
+      ]
+    },
+    {
+      "id": "extract-20260222-215017_evo_game_prisoners_seed42",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260222-215017_evo_game_prisoners_seed42/",
+      "file": "20260222-215017_evo_game_prisoners_seed42-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 160,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma"
+      ]
+    },
+    {
+      "id": "extract-20260222-215249_evo_game_prisoners_seed123",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260222-215249_evo_game_prisoners_seed123/",
+      "file": "20260222-215249_evo_game_prisoners_seed123-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 165,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma"
+      ]
+    },
+    {
+      "id": "extract-20260222-215523_evo_game_prisoners_seed777",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260222-215523_evo_game_prisoners_seed777/",
+      "file": "20260222-215523_evo_game_prisoners_seed777-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 170,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma"
+      ]
+    },
+    {
+      "id": "extract-20260222-220110_evo_game_prisoners_seed314",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260222-220110_evo_game_prisoners_seed314/",
+      "file": "20260222-220110_evo_game_prisoners_seed314-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 175,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma"
+      ]
+    },
+    {
+      "id": "extract-20260222-220608_evo_game_prisoners_seed999",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260222-220608_evo_game_prisoners_seed999/",
+      "file": "20260222-220608_evo_game_prisoners_seed999-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 180,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma"
+      ]
+    },
+    {
+      "id": "extract-20260222_183539_langgraph_governed",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260222_183539_langgraph_governed/",
+      "file": "20260222_183539_langgraph_governed-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 185,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-trust-boundaries-modify-but-never-deny-handoffs"
+      ]
+    },
+    {
+      "id": "extract-20260223-001025_evo_game_prisoners_seed42_20ep",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260223-001025_evo_game_prisoners_seed42_20ep/",
+      "file": "20260223-001025_evo_game_prisoners_seed42_20ep-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 190,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma"
+      ]
+    },
+    {
+      "id": "extract-20260224-220829_mesa_governance_study",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260224-220829_mesa_governance_study/",
+      "file": "20260224-220829_mesa_governance_study-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 195,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate"
+      ]
+    },
+    {
+      "id": "extract-20260224_083213_langgraph_governed",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260224_083213_langgraph_governed/",
+      "file": "20260224_083213_langgraph_governed-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 200,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-trust-boundaries-modify-but-never-deny-handoffs"
+      ]
+    },
+    {
+      "id": "extract-20260224_202707_self_optimizer_hodoscope",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260224_202707_self_optimizer_hodoscope/",
+      "file": "20260224_202707_self_optimizer_hodoscope-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 205,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": []
+    },
+    {
+      "id": "extract-20260226-201109_mesa_adaptive_agents_study",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260226-201109_mesa_adaptive_agents_study/",
+      "file": "20260226-201109_mesa_adaptive_agents_study-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 210,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [
+        "claim-adaptive-learning-narrows-quality-gap-by-converting-selfish-agents"
+      ],
+      "enrichments_applied": [
+        "claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate"
+      ]
+    },
+    {
+      "id": "extract-20260226_mesa_game_structures_study",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260226_mesa_game_structures_study/",
+      "file": "20260226_mesa_game_structures_study-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 215,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [
+        "claim-game-structure-determines-optimal-governance-regime"
+      ],
+      "enrichments_applied": [
+        "claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate"
+      ]
+    },
+    {
+      "id": "extract-agent_tree_demo",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/agent_tree_demo/",
+      "file": "agent_tree_demo-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 220,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": []
+    },
+    {
+      "id": "extract-coding-agent-self-improve",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/coding-agent-self-improve/",
+      "file": "coding-agent-self-improve-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 225,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": []
+    },
+    {
+      "id": "extract-hodoscope_demo",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/hodoscope_demo/",
+      "file": "hodoscope_demo-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 230,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": []
+    },
+    {
+      "id": "extract-redteam",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/redteam/",
+      "file": "redteam-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 235,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [
+        "claim-resource-drain-is-binding-vulnerability-in-contract-screening"
+      ],
+      "enrichments_applied": []
+    },
+    {
+      "id": "extract-research-decision-theory-multiagent-2026-02-22",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/research-decision-theory-multiagent-2026-02-22/",
+      "file": "research-decision-theory-multiagent-2026-02-22-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 240,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-ldt-agents-provide-welfare-stability-at-intermediate-composition"
+      ]
+    },
+    {
+      "id": "extract-research-mechanism-design-screening-2026-02-22",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/research-mechanism-design-screening-2026-02-22/",
+      "file": "research-mechanism-design-screening-2026-02-22-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 245,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-contract-screening-achieves-perfect-type-separation"
+      ]
+    },
+    {
+      "id": "extract-research-multi-agent-governance-2026-02-22",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/research-multi-agent-governance-2026-02-22/",
+      "file": "research-multi-agent-governance-2026-02-22-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 250,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-prompt-level-governance-fails-in-multi-agent-systems"
+      ]
+    },
+    {
+      "id": "extract-research-phase-transitions-economies-2026-02-22",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/research-phase-transitions-economies-2026-02-22/",
+      "file": "research-phase-transitions-economies-2026-02-22-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 255,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-tax-phase-transition"
+      ]
+    },
+    {
+      "id": "extract-research-sybil-resistance-2026-02-22",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/research-sybil-resistance-2026-02-22/",
+      "file": "research-sybil-resistance-2026-02-22-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 260,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": [
+        "claim-sybil-attacks-resist-full-governance-stack"
+      ]
+    },
+    {
+      "id": "extract-swarm_collate",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/swarm_collate/",
+      "file": "swarm_collate-extract.md",
+      "created": "2026-02-28T01:31:54Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "next_claim_start": 265,
+      "completed": "2026-02-27T00:00:00Z",
+      "claims_created": [],
+      "enrichments_applied": []
     }
   ],
   "maintenance_conditions": {
