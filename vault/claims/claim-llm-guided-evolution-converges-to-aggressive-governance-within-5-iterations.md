@@ -3,7 +3,7 @@ description: LLM-mutated evolutionary search reaches 80% of final fitness by ite
 type: claim
 status: active
 confidence: medium
-domain: governance-calibration
+domain: calibration
 evidence:
   supporting:
   - run: 20260227_222203_evolve_baseline

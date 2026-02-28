@@ -43,8 +43,10 @@ superseded_by: []
 related_claims:
 - claim-agent-architecture-constrains-behavior-more-than-governance
 - claim-mesa-agent-objectives-are-invariant-to-governance-regime
+- claim-llm-guided-evolution-converges-to-aggressive-governance-within-5-iterations
+- claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes
 created: 2026-02-27
-updated: 2026-02-27
+updated: 2026-02-28
 aliases:
 - evo-selection-toxicity
 cssclasses:

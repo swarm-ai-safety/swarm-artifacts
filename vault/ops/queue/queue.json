@@ -2748,6 +2748,78 @@
         "claim-governance-parameters-have-narrow-safe-operating-envelopes"
       ],
       "completed": "2026-02-28T00:00:00Z"
+    },
+    {
+      "id": "extract-20260228_093125_evolve_baseline",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260228_093125_evolve_baseline/",
+      "file": "20260228_093125_evolve_baseline-extract.md",
+      "created": "2026-02-28T00:00:00Z",
+      "completed": "2026-02-28T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [
+        "claim-llm-guided-evolution-converges-to-aggressive-governance-within-5-iterations",
+        "claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes"
+      ],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma",
+        "claim-tax-welfare-tradeoff"
+      ]
+    },
+    {
+      "id": "extract-20260227_222203_evolve_baseline",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260227_222203_evolve_baseline/",
+      "file": "20260227_222203_evolve_baseline-extract.md",
+      "created": "2026-02-28T00:00:00Z",
+      "completed": "2026-02-28T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [
+        "claim-llm-guided-evolution-converges-to-aggressive-governance-within-5-iterations",
+        "claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes"
+      ],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma",
+        "claim-tax-welfare-tradeoff"
+      ]
+    },
+    {
+      "id": "extract-20260227_222439_evolve_baseline",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260227_222439_evolve_baseline/",
+      "file": "20260227_222439_evolve_baseline-extract.md",
+      "created": "2026-02-28T00:00:00Z",
+      "completed": "2026-02-28T00:00:00Z",
+      "current_phase": "validate",
+      "completed_phases": [
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
+      ],
+      "claims_created": [
+        "claim-llm-guided-evolution-converges-to-aggressive-governance-within-5-iterations",
+        "claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes"
+      ],
+      "enrichments_applied": [
+        "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma",
+        "claim-tax-welfare-tradeoff"
+      ]
     }
   ],
   "maintenance_conditions": {

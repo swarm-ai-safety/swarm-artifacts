@@ -62,6 +62,7 @@ related_claims:
 - claim-governance-cost-paradox
 - claim-tax-phase-transition
 - claim-static-externality-tax-is-pure-deadweight-welfare-loss
+- claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes
 - claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate
 created: 2026-02-13
 updated: 2026-02-27

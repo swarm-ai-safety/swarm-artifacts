@@ -3,7 +3,7 @@ description: Evolved governance parameters consistently maximize audit+penalty s
 type: claim
 status: active
 confidence: low
-domain: governance-calibration
+domain: calibration
 evidence:
   supporting:
   - run: 20260228_093125_evolve_baseline
