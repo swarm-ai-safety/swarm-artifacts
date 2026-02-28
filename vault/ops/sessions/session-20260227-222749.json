@@ -1,0 +1,30 @@
+{
+  "session_id": "20260227-222749",
+  "end_time": "2026-02-28T03:27:49.677179Z",
+  "notes_created": [],
+  "notes_modified": [
+    "vault/experiments/20260222-211635_evo_game_prisoners_seed42.md",
+    "vault/experiments/20260222-215017_evo_game_prisoners_seed42.md",
+    "vault/experiments/20260222-215249_evo_game_prisoners_seed123.md",
+    "vault/experiments/20260222-215523_evo_game_prisoners_seed777.md",
+    "vault/experiments/20260222-220110_evo_game_prisoners_seed314.md",
+    "vault/experiments/20260222-220608_evo_game_prisoners_seed999.md",
+    "vault/experiments/20260222_183539_langgraph_governed.md",
+    "vault/experiments/20260223-001025_evo_game_prisoners_seed42_20ep.md",
+    "vault/experiments/20260224-220829_mesa_governance_study.md",
+    "vault/experiments/20260224_083213_langgraph_governed.md",
+    "vault/experiments/20260224_202707_self_optimizer_hodoscope.md",
+    "vault/experiments/20260226-201109_mesa_adaptive_agents_study.md",
+    "vault/experiments/20260226_mesa_game_structures_study.md",
+    "vault/experiments/20260227_203024_composition_boundary_study.md",
+    "vault/experiments/coding-agent-self-improve.md",
+    "vault/experiments/hodoscope_demo.md",
+    "vault/experiments/redteam.md",
+    "vault/experiments/research-decision-theory-multiagent-2026-02-22.md",
+    "vault/experiments/research-mechanism-design-screening-2026-02-22.md",
+    "vault/experiments/research-multi-agent-governance-2026-02-22.md",
+    "vault/experiments/research-phase-transitions-economies-2026-02-22.md",
+    "vault/experiments/research-sybil-resistance-2026-02-22.md",
+    "vault/ops/queue/20260227_203024_composition_boundary_study-extract.md"
+  ]
+}
