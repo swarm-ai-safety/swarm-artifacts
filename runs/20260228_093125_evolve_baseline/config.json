@@ -1,0 +1,19 @@
+{
+  "scenario_id": "baseline",
+  "n_iterations": 50,
+  "num_parents_per_iteration": 3,
+  "eval_epochs": 5,
+  "eval_steps": 5,
+  "final_eval_epochs": 10,
+  "final_eval_steps": 10,
+  "fitness_weights": {
+    "low_toxicity": 0.35,
+    "welfare": 0.3,
+    "quality_gap": 0.2,
+    "payoff_gap": 0.15
+  },
+  "seed_base": 42,
+  "use_llm_mutator": true,
+  "llm_model": "claude-sonnet-4-20250514",
+  "initial_params": {}
+}

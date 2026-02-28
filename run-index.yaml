@@ -1,11 +1,12 @@
-generated_utc: '2026-02-28T03:26:27.644943+00:00'
-total_runs: 139
+generated_utc: '2026-02-28T14:46:42.470425+00:00'
+total_runs: 142
 by_type:
   calibration: 2
   redteam: 13
   single: 63
   study: 33
   sweep: 28
+  unknown: 3
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1272,6 +1273,29 @@ runs:
   - study
   date: '2026-02-27'
   status: completed
+  claims:
+  - claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial
+  - claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate
+  - claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier
+  - claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance
+- id: 20260227_222203_evolve_baseline
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: 20260227_222439_evolve_baseline
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
+- id: 20260228_093125_evolve_baseline
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single

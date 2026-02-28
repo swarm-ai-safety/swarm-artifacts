@@ -1,0 +1,17 @@
+{
+  "params": {
+    "governance.audit_penalty_multiplier": 9.5,
+    "governance.audit_probability": 0.9,
+    "governance.stake_slash_rate": 0.8,
+    "governance.freeze_threshold_toxicity": 0.06,
+    "governance.freeze_threshold_violations": 2,
+    "governance.freeze_duration_epochs": 9,
+    "payoff.s_minus": 2.0,
+    "payoff.s_plus": 9.5,
+    "payoff.w_rep": 8.5,
+    "governance.transaction_tax_rate": 0.18,
+    "governance.min_stake_to_participate": 5.0,
+    "governance.bandwidth_cap": 25
+  },
+  "id": "c8bac296-0e1f-44a9-be80-17b479a6b9a9"
+}

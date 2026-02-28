@@ -1,0 +1,23 @@
+{
+  "score": 0.6928358148060181,
+  "avg_toxicity": 0.30618338626851965,
+  "avg_welfare": 30.116272092139173,
+  "avg_quality_gap": 0.0,
+  "payoff_gap": 77.98145443070439,
+  "n_frozen_agents": 0,
+  "is_viable": true,
+  "params": {
+    "governance.audit_penalty_multiplier": 9.5,
+    "governance.audit_probability": 0.9,
+    "governance.stake_slash_rate": 0.8,
+    "governance.freeze_threshold_toxicity": 0.06,
+    "governance.freeze_threshold_violations": 2,
+    "governance.freeze_duration_epochs": 9,
+    "payoff.s_minus": 2.0,
+    "payoff.s_plus": 9.5,
+    "payoff.w_rep": 8.5,
+    "governance.transaction_tax_rate": 0.18,
+    "governance.min_stake_to_participate": 5.0,
+    "governance.bandwidth_cap": 25
+  }
+}

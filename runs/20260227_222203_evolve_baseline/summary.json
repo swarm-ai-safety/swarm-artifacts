@@ -1,0 +1,24 @@
+{
+  "best_score": 0.6932651294558435,
+  "best_params": {
+    "governance.audit_probability": 0.6,
+    "governance.audit_penalty_multiplier": 6.0,
+    "governance.freeze_threshold_toxicity": 0.1,
+    "governance.transaction_tax_rate": 0.15,
+    "governance.stake_slash_rate": 0.4,
+    "payoff.s_plus": 9.0,
+    "payoff.s_minus": 4.0,
+    "payoff.h": 5.0,
+    "payoff.theta": 0.2,
+    "payoff.w_rep": 7.0,
+    "governance.freeze_duration_epochs": 4
+  },
+  "n_iterations": 5,
+  "n_evaluations": 91,
+  "final_metrics": {
+    "avg_toxicity": 0.30495677298330437,
+    "avg_welfare": 25.219054936854207,
+    "avg_quality_gap": 0.0,
+    "payoff_gap": 72.49855841251552
+  }
+}

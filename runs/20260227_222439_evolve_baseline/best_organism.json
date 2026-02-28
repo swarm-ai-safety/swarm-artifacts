@@ -1,0 +1,18 @@
+{
+  "params": {
+    "governance.transaction_tax_rate": 0.1,
+    "governance.transaction_tax_split": 0.9,
+    "governance.audit_probability": 0.6,
+    "governance.stake_slash_rate": 0.5,
+    "payoff.s_plus": 10.0,
+    "payoff.h": 6.0,
+    "payoff.rho_a": 0.6,
+    "payoff.theta": 0.8,
+    "governance.freeze_threshold_toxicity": 0.25,
+    "governance.freeze_duration_epochs": 4,
+    "governance.freeze_threshold_violations": 2,
+    "governance.audit_penalty_multiplier": 4.0,
+    "payoff.w_rep": 3.0
+  },
+  "id": "d34ea932-dcac-4649-885e-720f7ce65d57"
+}
