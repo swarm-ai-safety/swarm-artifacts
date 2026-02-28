@@ -24,6 +24,9 @@ evidence:
   - run: 20260224-220829_mesa_governance_study
     metric: welfare
     detail: "Mesa bridge: adaptive at rho=1.0 destroys 70% welfare (1141→340, d=21.50, Bonferroni p<1e-252) for 34% toxicity reduction. Static at rho=1.0 is pure deadweight (welfare -37%, toxicity unchanged). 5 seeds, 110 total runs"
+  - run: 20260227_203024_composition_boundary_study
+    metric: welfare
+    detail: "Full vs moderate governance comparison: full welfare 12.06 vs moderate 15.04 at 0% adversarial (20% penalty). Full provides identical regime protection to moderate (both cooperative through 37.5% adv). Full toxicity at baseline HIGHER than moderate (0.288 vs 0.251). 720 runs in adversarial sweep, 5 seeds x 4 pop sizes per cell. Moderate governance Pareto-dominates full across entire adversarial spectrum"
   weakening:
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
@@ -67,8 +70,11 @@ related_claims:
 - claim-adaptive-acceptance-reduces-toxicity-monotonically-with-externality-internalization
 - claim-static-externality-tax-is-pure-deadweight-welfare-loss
 - claim-adaptive-governance-trades-welfare-for-toxicity-at-constant-marginal-rate
+- claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial
+- claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate
+- claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier
 created: 2026-02-19
-updated: 2026-02-27
+updated: 2026-02-28
 aliases:
 - governance-cost-paradox
 - full-governance-stacks-impose-larger-welfare
@@ -107,6 +113,12 @@ The Concordia finding (see [[claim-full-governance-reduces-welfare-in-concordia]
 - Would structural defenses (vote normalization, bandwidth caps) change the cost-benefit calculus by actually preventing sybil attacks?
 
 ## Update history
+
+**2026-02-28** — backward-pass update (composition boundary study):
+- Added supporting evidence from [[20260227_203024_composition_boundary_study]]: direct controlled comparison of full vs moderate governance across 720 adversarial sweep runs. Full governance imposes 20% welfare penalty (12.06 vs 15.04) relative to moderate at 0% adversarial, while providing identical regime protection (both cooperative through 37.5%). Full governance produces HIGHER baseline toxicity (0.288) than moderate (0.251). Moderate governance Pareto-dominates full across the entire adversarial spectrum.
+- Added related claims: claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial, claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate, claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier.
+- This is the strongest evidence yet for the cost paradox: not only does full governance cost more than it saves, but a cheaper alternative (moderate) achieves identical safety with 20% higher welfare.
+- Confidence unchanged at **medium**: 5-scenario replication now, but formal effect sizes for full-vs-moderate comparison not computed.
 
 **2026-02-20** — backward-pass update:
 - Added weakening evidence from [[20260214-113750_kernel_v4_code_sweep]]: welfare increases with tax in kernel v4 code scenario, contradicting universal governance cost. Underpowered (N=5 seeds).

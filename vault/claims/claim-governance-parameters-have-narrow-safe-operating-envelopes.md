@@ -22,7 +22,10 @@ evidence:
     metric: welfare
     detail: "Reputation decay: full persistence (1.0) + zero stake maximizes welfare. Decay rate 0.85 catches farming in 6 epochs but sacrifices welfare. N=3 seeds per config"
     source_type: synthesis
-  weakening: []
+  weakening:
+  - run: 20260227_203024_composition_boundary_study
+    metric: regime
+    detail: "Adversarial composition shows GRADUAL degradation rather than cliff effect: no critical fraction reached up to 50% adversarial in any governance config. Regime transitions from cooperative to contested smoothly. Welfare declines approximately linearly with adversarial fraction. This contrasts with the cliff pattern seen in governance parameters. 720 runs, 5 seeds per cell"
   boundary_conditions:
   - Pattern observed across 5+ governance parameters in baseline, calibration, and tax effect scenarios
   - Each parameter tested independently — joint envelope not characterized
@@ -44,7 +47,9 @@ related_claims:
 - claim-reputation-decay-rate-improves-welfare
 - claim-governance-cost-paradox
 - claim-tax-welfare-direction-is-scenario-dependent
+- claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial
 created: 2026-02-22
+updated: 2026-02-28
 cssclasses:
 - claim
 - claim-low

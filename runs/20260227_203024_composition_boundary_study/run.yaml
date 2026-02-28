@@ -38,7 +38,11 @@ artifacts:
 links:
   parent_runs: []
   child_runs: []
-  claims: []
+  claims:
+  - claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial
+  - claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate
+  - claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier
+  - claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance
 tags:
 - composition
 - study

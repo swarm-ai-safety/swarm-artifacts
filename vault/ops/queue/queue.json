@@ -358,7 +358,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -373,7 +376,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -388,7 +394,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -421,7 +430,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -457,7 +469,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -491,7 +506,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -525,7 +543,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -540,7 +561,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -555,7 +579,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -570,7 +597,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -585,7 +615,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -600,7 +633,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -654,7 +690,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -688,7 +727,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -703,7 +745,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -775,7 +820,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -827,7 +875,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -842,7 +893,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -895,7 +949,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -910,7 +967,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -925,7 +985,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1016,7 +1079,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1031,7 +1097,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1046,7 +1115,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1080,7 +1152,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1095,7 +1170,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1110,7 +1188,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1144,7 +1225,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1159,7 +1243,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1174,7 +1261,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1189,7 +1279,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1396,7 +1489,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1411,7 +1507,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -1446,7 +1545,10 @@
       "created": "2026-02-20T00:00:00Z",
       "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "completed": "2026-02-21T00:00:00Z",
       "claims_created": [],
@@ -2622,14 +2724,17 @@
     {
       "id": "extract-20260227_203024_composition_boundary_study",
       "type": "extract",
-      "status": "in_progress",
+      "status": "completed",
       "target": "runs/20260227_203024_composition_boundary_study/",
       "file": "20260227_203024_composition_boundary_study-extract.md",
       "created": "2026-02-28T03:25:37Z",
-      "current_phase": "extract",
+      "current_phase": "validate",
       "completed_phases": [
         "seed",
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "next_claim_start": 270,
       "claims_created": [
@@ -2637,7 +2742,12 @@
         "claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate",
         "claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier",
         "claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance"
-      ]
+      ],
+      "enrichments_applied": [
+        "claim-governance-cost-paradox",
+        "claim-governance-parameters-have-narrow-safe-operating-envelopes"
+      ],
+      "completed": "2026-02-28T00:00:00Z"
     }
   ],
   "maintenance_conditions": {

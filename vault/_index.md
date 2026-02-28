@@ -96,6 +96,10 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-adaptive-learning-narrows-quality-gap-by-converting-selfish-agents]] — Adaptive learning reduces quality gap 27% by raising selfish cooperation probability (medium confidence)
 - [[claim-game-structure-determines-optimal-governance-regime]] — Stag hunt 2-3x more governance-efficient than prisoner's dilemma (medium confidence)
 - [[claim-resource-drain-is-binding-vulnerability-in-contract-screening]] — Resource drain succeeds with critical damage despite full governance stack (low confidence)
+- [[claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial]] — Moderate governance extends cooperative regime to 50% adversarial, 2.5x over none/basic (medium confidence)
+- [[claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate]] — Full governance costs 20% welfare vs moderate with no additional safety (medium confidence)
+- [[claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier]] — Moderate governance Pareto-dominates welfare-toxicity frontier at high adversarial fractions (medium confidence)
+- [[claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance]] — Realistic mixed populations achieve near-pure-honest outcomes under moderate governance (low confidence)
 
 ## Governance Mechanisms
 
