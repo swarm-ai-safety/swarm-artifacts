@@ -1,0 +1,26 @@
+run_id: hodoscope_demo
+slug: hodoscope_demo
+created_utc: unknown
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: single
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  plots:
+  - path: trajectory_quality.png
+    description: ''
+  - path: trajectory_tsne.png
+    description: ''
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- untagged
