@@ -1,0 +1,44 @@
+run_id: 20260227_203024_composition_boundary_study
+slug: 203024_composition_boundary_study
+created_utc: '2026-02-27T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: study
+  scenario_ref: unknown
+  seeds:
+  - 0
+results:
+  status: completed
+artifacts:
+  summary: summary.json
+  sweep_csv: csv/profile_sweep.csv
+  plots:
+  - path: plots/acceptance_vs_adversarial.png
+    description: ''
+  - path: plots/population_size_effect.png
+    description: ''
+  - path: plots/profile_comparison.png
+    description: ''
+  - path: plots/quality_gap_vs_adversarial.png
+    description: ''
+  - path: plots/regime_heatmap.png
+    description: ''
+  - path: plots/toxicity_vs_adversarial.png
+    description: ''
+  - path: plots/welfare_toxicity_tradeoff.png
+    description: ''
+  - path: plots/welfare_vs_adversarial.png
+    description: ''
+  scripts:
+  - generate_plots.py
+  - run_study.py
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
+tags:
+- composition
+- study

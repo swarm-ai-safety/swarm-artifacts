@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS \u2014 synthesis pipeline queue",
-  "next_claim_start": 270,
+  "next_claim_start": 275,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
@@ -2618,6 +2618,17 @@
       "completed": "2026-02-27T00:00:00Z",
       "claims_created": [],
       "enrichments_applied": []
+    },
+    {
+      "id": "extract-20260227_203024_composition_boundary_study",
+      "type": "extract",
+      "status": "pending",
+      "target": "runs/20260227_203024_composition_boundary_study/",
+      "file": "20260227_203024_composition_boundary_study-extract.md",
+      "created": "2026-02-28T03:25:37Z",
+      "current_phase": "extract",
+      "completed_phases": [],
+      "next_claim_start": 270
     }
   ],
   "maintenance_conditions": {

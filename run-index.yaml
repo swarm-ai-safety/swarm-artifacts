@@ -1,12 +1,11 @@
-generated_utc: '2026-02-28T03:22:47.460992+00:00'
+generated_utc: '2026-02-28T03:26:27.644943+00:00'
 total_runs: 139
 by_type:
   calibration: 2
   redteam: 13
   single: 63
-  study: 32
+  study: 33
   sweep: 28
-  unknown: 1
 runs:
 - id: 20260208-214018_baseline_seed42
   slug: baseline_seed42
@@ -1266,11 +1265,13 @@ runs:
   date: '2026-02-26'
   status: completed
 - id: 20260227_203024_composition_boundary_study
-  type: unknown
+  slug: 203024_composition_boundary_study
+  type: study
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - composition
+  - study
+  date: '2026-02-27'
+  status: completed
 - id: agent_tree_demo
   slug: agent_tree_demo
   type: single
