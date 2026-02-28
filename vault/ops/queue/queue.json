@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "description": "SWARM Research OS \u2014 synthesis pipeline queue",
-  "next_claim_start": 275,
+  "next_claim_start": 279,
   "tasks": [
     {
       "id": "extract-20260213-173805_baseline_governance",
@@ -2622,13 +2622,22 @@
     {
       "id": "extract-20260227_203024_composition_boundary_study",
       "type": "extract",
-      "status": "pending",
+      "status": "in_progress",
       "target": "runs/20260227_203024_composition_boundary_study/",
       "file": "20260227_203024_composition_boundary_study-extract.md",
       "created": "2026-02-28T03:25:37Z",
       "current_phase": "extract",
-      "completed_phases": [],
-      "next_claim_start": 270
+      "completed_phases": [
+        "seed",
+        "extract"
+      ],
+      "next_claim_start": 270,
+      "claims_created": [
+        "claim-moderate-governance-extends-cooperative-regime-to-50pct-adversarial",
+        "claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate",
+        "claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier",
+        "claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance"
+      ]
     }
   ],
   "maintenance_conditions": {
