@@ -5,12 +5,6 @@ status: open
 source_claim: "theory-tax-phase-transition"
 hypothesis: "If per-round welfare is recorded at each tax level (0%, 2.5%, 5%, 7.5%, 10%, 12.5%, 15%), convergence time (rounds to reach ±5% of final welfare) will peak at 5-7.5% tax, 2-5x longer than at 0% or 15%"
 test_protocol: "Run single-run baseline governance at 7 tax rates with per-round welfare logging. 30 seeds per rate, 8 agents, small-world topology, 50 epochs minimum. Measure convergence time as epochs to reach ±5% of terminal welfare. Also measure autocorrelation at lag 1 of per-epoch welfare. Both should peak at 5-7.5%."
-
-resolution:
-  run: ""
-  outcome: ""
-  detail: ""
-
 created: 2026-02-28
 
 _schema:

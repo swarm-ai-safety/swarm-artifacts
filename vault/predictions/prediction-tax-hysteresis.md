@@ -5,12 +5,6 @@ status: open
 source_claim: "theory-tax-phase-transition"
 hypothesis: "If tax is raised from 0% to 15% and then reduced back to 0% within a single simulation, welfare at 5% during ramp-down will be significantly lower than welfare at 5% during ramp-up (d>=0.5, Bonferroni-corrected)"
 test_protocol: "Run tax ramp-up/ramp-down experiment: 0%→5%→10%→15%→10%→5%→0%, holding each level for 10 epochs. 30 seeds, baseline governance scenario, 8 agents, small-world topology. Compare welfare at matched tax rates between ascending and descending phases. Key metric: welfare difference at 5% ascending vs 5% descending. Statistical test: paired t-test with Bonferroni correction across 7 comparison points."
-
-resolution:
-  run: ""
-  outcome: ""
-  detail: ""
-
 created: 2026-02-28
 
 _schema:

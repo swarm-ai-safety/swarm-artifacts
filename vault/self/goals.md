@@ -7,9 +7,11 @@ type: moc
 
 ## Active Threads
 
-- **73 claims** (71 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
-- **Confidence distribution:** 9 high, 28 medium, 36 low (2 claims downgraded high→medium this session: ldt-agents-dominate, rlm-governance-lag)
-- **Pipeline queue:** 138/138 completed — fully drained, 0 pending
+- **79 claims** (77 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
+- **Confidence distribution:** 9 high, 33 medium, 38 low (stable since 2026-02-27 rethink)
+- **3 theories** (all proposed): governance-cost-universality, tax-phase-transition, architecture-over-governance
+- **6 predictions** (all open): tax-hysteresis, critical-slowing-down, governance-diminishing-returns, diversity-threshold, topology-shifts-critical-tax, architecture-specific-tax-sensitivity
+- **Pipeline queue:** 142/142 completed — fully drained, 0 pending
 - **8 sweep series** — contract-screening sweep note added
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
@@ -25,7 +27,7 @@ type: moc
 - **Gate 2 statistical rigor** — Remaining low-confidence claims without formal stats are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
 - **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
 - ~~**First theory note**~~ — **COMPLETED**: 3 theory notes composed (governance-cost-universality, tax-phase-transition, architecture-over-governance). All proposed status with constituent claims, scope, predictions, and falsification criteria.
-- **First prediction notes** — Several claims contain implicit predictions to formalize (hysteresis at tax transition, convergence time peak, quadratic staking effectiveness)
+- ~~**First prediction notes**~~ — **COMPLETED**: 6 prediction notes formalized (tax-hysteresis, critical-slowing-down, governance-diminishing-returns, diversity-threshold, topology-shifts-critical-tax, architecture-specific-tax-sensitivity). All open, awaiting experiments.
 
 ## Replication Priority List
 

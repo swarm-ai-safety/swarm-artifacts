@@ -177,9 +177,14 @@ Higher-order propositions composing multiple claims into testable frameworks. 3 
 
 ## Predictions
 
-Structured, testable predictions tied to claims or theories.
+Structured, testable predictions tied to claims or theories. 6 predictions, all open.
 
-- `vault/predictions/` — Prediction notes (empty, awaiting first prediction)
+- [[prediction-tax-hysteresis]] — Tax ramp-up through 5-10% transition followed by ramp-down should show irreversible welfare loss (open)
+- [[prediction-critical-slowing-down]] — Convergence time to steady-state welfare should peak in the 5-10% tax band (open)
+- [[prediction-governance-diminishing-returns]] — Marginal welfare cost per unit safety gain accelerates beyond moderate governance (open)
+- [[prediction-diversity-threshold]] — Below 10-20% adversarial fraction, governance effects are null; above, significant (open)
+- [[prediction-topology-shifts-critical-tax]] — Complete graphs eliminate the tax phase transition; rings sharpen it (open)
+- [[prediction-architecture-specific-tax-sensitivity]] — In mixed populations, tax effect sizes differ by architecture: RLM > RLHF > LDT (open)
 
 ## Templates
 

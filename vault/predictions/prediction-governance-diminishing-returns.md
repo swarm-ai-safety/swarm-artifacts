@@ -5,12 +5,6 @@ status: open
 source_claim: "theory-governance-cost-universality"
 hypothesis: "If governance intensity is defined as (number of active mechanisms x mean parameter strength) and plotted against welfare cost, the curve will be convex with an inflection point near moderate governance, beyond which marginal cost per unit safety gain accelerates"
 test_protocol: "Systematically vary governance intensity from 0 (ungoverned) through individual mechanisms to full stack. 5+ intensity levels, 20 seeds each, baseline governance scenario. Plot welfare cost (ungoverned minus governed welfare) vs safety gain (ungoverned minus governed toxicity). Fit convex curve and locate inflection point."
-
-resolution:
-  run: ""
-  outcome: ""
-  detail: ""
-
 created: 2026-02-28
 
 _schema:

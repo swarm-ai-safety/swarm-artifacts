@@ -5,12 +5,6 @@ status: open
 source_claim: "theory-tax-phase-transition"
 hypothesis: "If the tax phase transition is driven by network cascade dynamics, then (a) complete graphs should show no transition (all interactions equally affected), (b) ring topology should show a sharper transition at a lower critical tax rate, and (c) scale-free topology should show heterogeneous response with hubs transitioning last"
 test_protocol: "Run baseline governance tax sweep (0-15%) on 4 topologies: small-world (control), complete, ring, scale-free. 20 seeds x 7 tax rates x 4 topologies = 560 runs. Compare S-curve shape and critical tax rate across topologies."
-
-resolution:
-  run: ""
-  outcome: ""
-  detail: ""
-
 created: 2026-02-28
 
 _schema:

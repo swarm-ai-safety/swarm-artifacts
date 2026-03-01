@@ -5,12 +5,6 @@ status: open
 source_claim: "theory-architecture-over-governance"
 hypothesis: "If populations are composed of honest+adversarial agents with adversarial fraction swept 0-50%, there exists a critical minority fraction (estimated 10-20%) below which governance has no detectable effect (d<0.2 on all metrics) and above which governance effects are significant (d>0.5)"
 test_protocol: "Sweep adversarial fraction at 0%, 5%, 10%, 15%, 20%, 25%, 50% with moderate governance on/off at each level. 20 seeds per cell (280 total runs). Baseline governance scenario, 8 agents, small-world. Measure governance effect size (d) at each adversarial fraction. Fit logistic curve to d vs adversarial fraction and locate the transition point."
-
-resolution:
-  run: ""
-  outcome: ""
-  detail: ""
-
 created: 2026-02-28
 
 _schema:

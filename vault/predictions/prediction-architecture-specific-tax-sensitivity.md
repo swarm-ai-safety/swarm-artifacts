@@ -5,12 +5,6 @@ status: open
 source_claim: "theory-architecture-over-governance"
 hypothesis: "If architecture determines governance sensitivity, then in a mixed population under uniform tax, RLM agents should show the largest payoff decline (d>1.0), RLHF agents intermediate (d=0.3-0.8), and LDT agents the smallest (d<0.3), measured as within-type payoff change from 0% to 10% tax"
 test_protocol: "Run mixed population (equal thirds: RLM + RLHF + LDT) at 0% and 10% tax. 20 seeds per condition. Compare within-type payoff Cohen's d across architectures. One-way ANOVA on architecture x tax interaction."
-
-resolution:
-  run: ""
-  outcome: ""
-  detail: ""
-
 created: 2026-02-28
 
 _schema:
