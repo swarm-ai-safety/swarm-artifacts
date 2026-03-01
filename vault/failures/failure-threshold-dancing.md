@@ -21,7 +21,7 @@ tags:
 - adaptive-adversary
 - governance-evasion
 created: 2026-02-19
-updated: 2026-02-19
+updated: 2026-03-01
 ---
 
 # Adversaries can evade circuit breakers by learning freeze thresholds and maintaining toxicity just below detection levels
@@ -62,8 +62,12 @@ Key findings:
 
 - **Stochastic thresholds**: Randomize the freeze threshold each epoch within a range, making it unpredictable. The adversary cannot learn a fixed target.
 - **Cumulative harm tracking**: Trigger circuit breaker based on rolling cumulative harm, not just instantaneous toxicity. An agent that maintains 0.49 toxicity for 20 epochs is more dangerous than one that spikes to 0.6 once.
-- **Adaptive thresholds**: Lower the freeze threshold for agents with sustained near-threshold behavior. If an agent consistently operates in the 0.4-0.49 range, reduce their personal threshold.
+- **Adaptive EWMA thresholds**: Lower the freeze threshold for agents with sustained near-threshold behavior using exponentially weighted moving averages. theta_i(t) = lambda * toxicity_i(t) + (1-lambda) * theta_i(t-1), with lambda=0.25 (Shukla 2025, arXiv:2509.00115). If an agent consistently operates in the 0.4-0.49 range, the adaptive threshold tightens for that agent specifically. This approach reduces false positive rates from 4.5% to 0.9% in monitoring systems and should eliminate threshold dancing by shrinking the operating margin. See [[claim-adaptive-cb-thresholds-should-dominate-static]] for full analysis. Proposed test: 3 lambda values x 10 seeds = 30 runs.
 - **Higher audit probability**: Increasing audit_probability from 0.25 to 0.5+ would reduce the windows available for sub-threshold exploitation.
+
+## Decisive experiment
+
+A secondary sweep (80 runs) tests threshold dancing resilience directly: `freeze_threshold_toxicity` (0.3, 0.5, 0.7, 0.9) x `adversary_type` (standard, threshold_dancer) x `audit_probability` (0.1, 0.25), with freeze_duration=3, violations=3, tax=0.05, 5 seeds. See `runs/research-cb-threshold-sweep-design-20260301.md` Section 6.2. The prediction per [[claim-optimal-cb-threshold-predicted-in-03-05-range]] is that dancing fails below threshold 0.5 because the operating margin becomes too narrow.
 
 ## Open questions
 
@@ -71,5 +75,6 @@ Key findings:
 - Can cumulative harm tracking be formalized as a CUSUM (cumulative sum control chart) mechanism?
 - How does threshold dancing interact with [[failure-collusion-ring-mutual-boosting]] when multiple threshold dancers coordinate?
 - Does the [[20260214-014153_tau_k_calibration]] provide insights on optimal threshold dynamics?
+- What is the critical freeze threshold below which dancing is infeasible? (Predicted: ~0.5, to be tested in secondary sweep)
 
 <!-- topics: evasion, circuit-breaker, threshold, redteam, adaptive-adversary, governance-evasion -->

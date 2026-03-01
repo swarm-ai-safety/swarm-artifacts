@@ -56,8 +56,10 @@ related_claims:
 - claim-freeze-duration-and-violation-threshold-interact-on-welfare
 - claim-reputation-decay-rate-improves-welfare
 - claim-full-governance-reduces-welfare-in-concordia
+- claim-optimal-cb-threshold-predicted-in-03-05-range
+- claim-adaptive-cb-thresholds-should-dominate-static
 created: 2026-02-11
-updated: 2026-02-21
+updated: 2026-03-01
 aliases:
 - circuit-breakers-dominate
 - circuit-breakers-alone-outperform-full-governance
@@ -105,6 +107,7 @@ Staking *backfires*: requiring collateral hurts honest agents (who haven't accum
 3. Is there a governance analogue in human institutions?
 4. Does CB dominance depend on threshold calibration? The null results in baseline governance v2 and kernel v4 used binary on/off — see [[claim-cb-null-may-reflect-design-limitation]].
 5. Is the non-monotonic CB x tax interaction in kernel v4 ([[claim-cb-tax-interaction-non-monotonic-in-kernel-v4]]) real or noise from underpowered design?
+6. Does CB dominance require threshold calibration in the 0.3-0.5 range? See [[claim-optimal-cb-threshold-predicted-in-03-05-range]] — the 1,440-run threshold sweep will test this directly.
 
 ## Paper
 

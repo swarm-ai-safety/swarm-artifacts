@@ -8,7 +8,7 @@ type: moc
 ## Active Threads
 
 - **79 claims** (77 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
-- **Confidence distribution:** 9 high, 33 medium, 38 low (stable since 2026-02-27 rethink)
+- **Confidence distribution:** 9 high, 32 medium, 38 low (stable since 2026-02-27 rethink)
 - **3 theories** (all proposed): governance-cost-universality, tax-phase-transition, architecture-over-governance
 - **6 predictions** (all open): tax-hysteresis, critical-slowing-down, governance-diminishing-returns, diversity-threshold, topology-shifts-critical-tax, architecture-specific-tax-sensitivity
 - **Pipeline queue:** 142/142 completed — fully drained, 0 pending

@@ -46,8 +46,10 @@ related_claims:
 - claim-tax-and-penalty-effects-are-orthogonal
 - claim-optimal-tax-range-0-to-5pct
 - claim-freeze-duration-and-violation-threshold-interact-on-welfare
+- claim-optimal-cb-threshold-predicted-in-03-05-range
+- claim-adaptive-cb-thresholds-should-dominate-static
 created: 2026-02-20
-updated: 2026-02-21
+updated: 2026-03-01
 aliases:
 - cb-null-may-reflect-design-limitation
 cssclasses:
@@ -76,11 +78,22 @@ If CB is effective when properly calibrated, [[claim-governance-cost-paradox]] m
 
 ## Recommended next experiment
 
-- Sweep CB freeze threshold (0.3, 0.5, 0.7, 0.9) x CB freeze duration (1, 5, 10, 20 rounds) at fixed tax rates (0%, 5%, 10%)
-- Test whether CB effect size increases with threshold optimization
-- If confirmed, update [[claim-tax-dominates-cb-kernel]] with boundary condition
-- The threshold sweep would simultaneously address [[failure-threshold-dancing]]: varying freeze thresholds tests both CB effectiveness and adversarial evasion resilience
-- If CB threshold variation reveals significant effects, [[claim-tax-and-penalty-effects-are-orthogonal]] should be extended to test 3-way orthogonality (tax x penalty x CB threshold)
+**Primary sweep (refined 2026-03-01):** 4x4x3x3 full factorial = 1,440 runs
+
+| Parameter | Levels | Values | Rationale |
+|-----------|--------|--------|-----------|
+| `freeze_threshold_toxicity` | 4 | 0.3, 0.5, 0.7, 0.9 | Spans aggressive to lenient; default 0.6 falls between levels 2-3 |
+| `freeze_threshold_violations` | 4 | 1, 3, 5, 8 | Tests single-strike through tolerant |
+| `freeze_duration_epochs` | 3 | 1, 3, 5 | Validated range from prior sweep |
+| `transaction_tax_rate` | 3 | 0.0, 0.05, 0.10 | Tests CB x tax interaction |
+
+10 seeds per configuration. Analysis: 3-way ANOVA (Type II SS) with BH correction. Power: detects d >= 0.5 at 80% power. See `runs/research-cb-threshold-sweep-design-20260301.md` for full design rationale including game-theoretic foundations and ROC tradeoff analysis.
+
+**Directional prediction:** [[claim-optimal-cb-threshold-predicted-in-03-05-range]] predicts the 0.3-0.5 range will maximize welfare, based on synthesis of repeated game punishment calibration theory and existing threshold dancing data.
+
+**Secondary sweep:** threshold dancing resistance across 4 threshold levels x 2 adversary types x 2 audit probabilities = 80 runs. Addresses [[failure-threshold-dancing]] directly.
+
+**Exploratory:** adaptive EWMA thresholds vs best static threshold. See [[claim-adaptive-cb-thresholds-should-dominate-static]].
 
 ---
 
