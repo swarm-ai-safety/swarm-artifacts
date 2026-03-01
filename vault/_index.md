@@ -169,9 +169,11 @@ Reusable statistical and experimental methods. 7 notes.
 
 ## Theories
 
-Higher-order propositions composing multiple claims into testable frameworks.
+Higher-order propositions composing multiple claims into testable frameworks. 3 theories.
 
-- `vault/theories/` — Theory notes (empty, awaiting first theory)
+- [[theory-governance-cost-universality]] — Governance imposes net welfare costs exceeding safety benefits; moderate governance Pareto-dominates full stacks (proposed)
+- [[theory-tax-phase-transition]] — S-curve welfare response to tax parallels first-order phase transitions with critical threshold at 5-10% (proposed)
+- [[theory-architecture-over-governance]] — Agent training architecture constrains behavior more than governance in homogeneous populations (proposed)
 
 ## Predictions
 

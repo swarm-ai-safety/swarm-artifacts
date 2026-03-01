@@ -24,7 +24,7 @@ type: moc
 
 - **Gate 2 statistical rigor** — Remaining low-confidence claims without formal stats are inherently underpowered (single-seed redteams, 3-seed sweeps). Cannot be fixed without re-running experiments with more seeds. Appropriately rated low.
 - **Boundary condition gaps** — memory-promotion-gate needs adversarial fraction; collusion-wealth-destruction needs boundary conditions verified against run config (14 agents GTB gridworld vs 12 agents default topology discrepancy)
-- **First theory note** — 73 claims are sufficient to compose 2-3 theories (governance cost universality, tax phase transition theory, architecture-over-governance). Awaiting human judgment.
+- ~~**First theory note**~~ — **COMPLETED**: 3 theory notes composed (governance-cost-universality, tax-phase-transition, architecture-over-governance). All proposed status with constituent claims, scope, predictions, and falsification criteria.
 - **First prediction notes** — Several claims contain implicit predictions to formalize (hysteresis at tax transition, convergence time peak, quadratic staking effectiveness)
 
 ## Replication Priority List
