@@ -13,6 +13,9 @@ evidence:
   - run: 20260210-235049_kernel_market_audit_rate
     metric: welfare
     detail: Audit-only underperforms circuit breaker across all audit rates
+  - run: 20260301_cb_threshold_sweep
+    metric: welfare
+    detail: "CB at threshold 0.5 matches CB-off welfare (d=0.037, p=0.62, N=360 each). CB dominance requires calibration at activation boundary — threshold 0.5 imposes zero net welfare cost while freezing adversaries. 1440 runs, 10 seeds"
   weakening:
   - run: 20260213-202050_baseline_governance_v2
     metric: welfare
@@ -58,6 +61,9 @@ related_claims:
 - claim-full-governance-reduces-welfare-in-concordia
 - claim-optimal-cb-threshold-predicted-in-03-05-range
 - claim-adaptive-cb-thresholds-should-dominate-static
+- claim-cb-threshold-05-maximizes-welfare-in-small-world-topology
+- claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05
+- claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing
 created: 2026-02-11
 updated: 2026-03-01
 aliases:

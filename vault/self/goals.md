@@ -7,11 +7,11 @@ type: moc
 
 ## Active Threads
 
-- **81 claims** (79 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
-- **Confidence distribution:** 9 high, 32 medium, 40 low (2 new low claims from CB threshold research)
+- **84 claims** (82 active, 2 weakened) across governance, memory, agent-behavior, collusion, calibration, methodology, redteam, LDT, market, sybil, mesa, evolutionary-game domains
+- **Confidence distribution:** 10 high, 34 medium, 40 low (3 new claims from CB threshold sweep, 1 upgrade low->medium)
 - **3 theories** (all proposed): governance-cost-universality, tax-phase-transition, architecture-over-governance
 - **6 predictions** (all open): tax-hysteresis, critical-slowing-down, governance-diminishing-returns, diversity-threshold, topology-shifts-critical-tax, architecture-specific-tax-sensitivity
-- **Pipeline queue:** 142/142 completed — fully drained, 0 pending
+- **Pipeline queue:** 143/143 completed — fully drained, 0 pending
 - **8 sweep series** — contract-screening sweep note added
 - **3 emergent meta-patterns** — evaluated and dispositioned:
   1. Safe operating envelope universality — **deferred**: tax evidence medium, tau/write-cap low (N=5 seeds). Needs 30+ seed memory calibration.
@@ -42,7 +42,7 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
 
 ## Experimental Priorities
 
-1. **CB threshold sweep** — freeze threshold (0.3-0.9) x freeze duration (1-20) at fixed tax rates. Resolves claim-cb-null-may-reflect-design-limitation. Flagged by all 3 council reviewers.
+1. ~~**CB threshold sweep**~~ — **COMPLETED**: 1440-run 4x4x3x3 factorial. Threshold 0.5 maximizes welfare (d=0.77 vs 0.3, Bonferroni-sig). CB only activates at <=0.5. 3 new claims, 6 enrichments, 1 confidence upgrade.
 2. **Kernel v4 replication** — expand from 5 to 20-30 seeds per config. Confirms or rejects tax-welfare direction reversal.
 3. **Memori with adversarial agents** — add adversarial/opportunistic LLM agents, extend to 10+ epochs. Tests whether governance null is a design artifact or LLM property.
 4. **Tau_min fine sweep** — 0.60-0.70 in 0.01 increments to locate exact phase transition point.
@@ -174,6 +174,20 @@ Low-confidence claims most likely to upgrade with additional seeds (ranked by im
     - claim-delegation-completion-requires-handoff-budget-above-15 — no monotonic effect in 128-run replication
 
 - **Index updated:** 68 claims, 120 experiment notes
+
+## Completed (2026-03-01 session, CB threshold sweep pipeline)
+
+- **20260301_cb_threshold_sweep** — Full pipeline on 1,440-run 4x4x3x3 factorial sweep:
+  - Created run.yaml, experiment note ([[20260301_cb_threshold_sweep]])
+  - Extracted **3 new claims**:
+    1. claim-cb-threshold-05-maximizes-welfare-in-small-world-topology (medium) — threshold 0.5 optimal
+    2. claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05 (high) — CB never fires above 0.5
+    3. claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing (medium) — 0.3 causes 7% honest penalty
+  - Enriched **6 existing claims**: cb-null-may-reflect-design-limitation (confirmed), optimal-cb-threshold-predicted (upgraded low->medium), circuit-breakers-dominate, tax-dominates-cb-kernel (weakened), freeze-duration-interaction (replicated), tax-cb-interact-quality-gap (weakened)
+  - Updated governance-dashboard with CB threshold resolution tension
+  - Updated circuit-breaker governance note with calibration section
+  - All 9 claims pass 6-gate validation
+  - **Key finding**: CB null effect in prior studies was a design artifact — default threshold 0.6 sits above the activation boundary at 0.5
 
 ## Completed (2026-02-27 session, schema upgrades + full pipeline drain)
 

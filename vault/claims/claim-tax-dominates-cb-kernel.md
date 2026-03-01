@@ -16,6 +16,9 @@ evidence:
     metric: welfare
     detail: 'Tax dominance replicates at scale in v2: d=0.51-1.18, welfare and honest_payoff, N=700, 100 seeds, Bonferroni-corrected'
   weakening:
+  - run: 20260301_cb_threshold_sweep
+    metric: welfare
+    detail: "When CB threshold is varied (not binary on/off), CB main effect eta2=0.106 EXCEEDS tax main effect eta2=0.077. F(3,1436)=56.87 for threshold vs F(2,1437)=59.76 for tax. Tax dominance over CB is an artifact of binary CB design. N=1440, 10 seeds"
   - run: 20260214-113750_kernel_v4_code_sweep
     metric: welfare
     detail: "CB x tax interaction non-monotonic: CB helps at 5% tax (+2.42) but harms at 0% (-2.02), 10% (-2.15), 15% (-7.65). CB null main effect may mask conditional effectiveness. N=5 seeds"
@@ -39,6 +42,8 @@ related_claims:
 - claim-cb-null-may-reflect-design-limitation
 - claim-cb-tax-interaction-non-monotonic-in-kernel-v4
 - claim-tax-welfare-direction-is-scenario-dependent
+- claim-cb-threshold-05-maximizes-welfare-in-small-world-topology
+- claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05
 created: 2026-02-19
 updated: '2026-02-20'
 aliases:

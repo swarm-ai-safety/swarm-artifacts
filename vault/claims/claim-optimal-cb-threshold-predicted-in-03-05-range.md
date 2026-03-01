@@ -2,7 +2,7 @@
 description: Game-theoretic punishment calibration and ROC tradeoff analysis predict 0.3-0.5 as the welfare-maximizing freeze threshold range
 type: claim
 status: active
-confidence: low
+confidence: medium
 domain: governance
 evidence:
   supporting:
@@ -15,10 +15,16 @@ evidence:
   - run: 20260208-215009_sweep_freeze_duration
     metric: welfare
     detail: "Duration sweep shows CB parameters matter when varied — violation threshold 3 outperforms 8, consistent with tighter thresholds improving welfare"
+  - run: 20260301_cb_threshold_sweep
+    metric: welfare
+    detail: "PARTIALLY CONFIRMED: Threshold 0.5 maximizes welfare (372.3), Bonferroni-sig over 0.3 (348.2, d=0.77) and 0.7 (364.2, d=0.34). N=360 per group, 10 seeds x 36 configs. 0.5 is optimal, not a range"
   weakening:
   - run: 20260213-202050_baseline_governance_v2
     metric: welfare
     detail: "CB null at d=0.008, N=700 under default 0.6 threshold — but 0.6 is above the predicted optimal range"
+  - run: 20260301_cb_threshold_sweep
+    metric: welfare
+    detail: "Threshold 0.3 HARMS welfare (d=-0.77 vs 0.5, Bonferroni-sig). The predicted 0.3-0.5 range is too broad — 0.3 enters the false-positive regime with 7% honest payoff penalty"
   boundary_conditions:
   - Prediction based on theoretical synthesis, not direct SWARM sweep
   - Assumes 8-agent small-world topology with 25% adversarial fraction
@@ -38,13 +44,16 @@ related_claims:
 - claim-audit-threshold-interaction-enables-dancing
 - claim-freeze-duration-and-violation-threshold-interact-on-welfare
 - claim-adaptive-cb-thresholds-should-dominate-static
+- claim-cb-threshold-05-maximizes-welfare-in-small-world-topology
+- claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05
+- claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing
 created: 2026-03-01
 updated: 2026-03-01
 aliases:
 - optimal-cb-threshold-predicted-in-03-05-range
 cssclasses:
 - claim
-- claim-low
+- claim-medium
 tags:
 - governance
 - circuit-breaker

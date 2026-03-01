@@ -2829,13 +2829,27 @@
       "file": "20260301_cb_threshold_sweep-extract.md",
       "created": "2026-03-01T00:00:00Z",
       "completed": "2026-03-01T00:00:00Z",
-      "current_phase": "extract",
+      "current_phase": "validate",
       "completed_phases": [
-        "extract"
+        "extract",
+        "cross-link",
+        "update",
+        "validate"
       ],
       "next_claim_start": 279,
-      "claims_created": [],
-      "enrichments_applied": []
+      "claims_created": [
+        "claim-cb-threshold-05-maximizes-welfare-in-small-world-topology",
+        "claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05",
+        "claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing"
+      ],
+      "enrichments_applied": [
+        "claim-cb-null-may-reflect-design-limitation",
+        "claim-optimal-cb-threshold-predicted-in-03-05-range",
+        "claim-circuit-breakers-dominate",
+        "claim-tax-dominates-cb-kernel",
+        "claim-freeze-duration-and-violation-threshold-interact-on-welfare",
+        "claim-tax-cb-interact-on-quality-gap"
+      ]
     }
   ],
   "maintenance_conditions": {

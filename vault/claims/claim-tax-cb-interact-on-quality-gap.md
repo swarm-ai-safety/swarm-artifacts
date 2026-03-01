@@ -16,10 +16,14 @@ evidence:
   - run: 20260213-202050_baseline_governance_v2
     metric: quality_gap
     detail: "Formal 2-way ANOVA (Type II SS): tax x CB interaction on quality_gap F=2.065, p=0.055, partial eta2=0.018. Marginal — does NOT reach significance at alpha=0.05. N=700, 7 tax x 2 CB x 50 seeds"
+  - run: 20260301_cb_threshold_sweep
+    metric: toxicity_rate
+    detail: "Toxicity FLAT across CB thresholds: F(3,1436)=1.42, eta2=0.003. Quality gap interaction from v2 does not replicate as a toxicity x CB interaction in the threshold sweep. N=1440, 10 seeds"
   boundary_conditions:
   - 8 agents, small-world topology, 7 tax levels x 2 CB levels, 50 seeds
   - CB tested as binary on/off only; threshold variation not explored
   - Interaction detected in council review but formal 2-way ANOVA not reported
+  - "20260301_cb_threshold_sweep (1440 runs): toxicity invariant to threshold, weakening the quality gap interaction finding"
 sensitivity:
   topology: small-world k=4 p=0.15; interaction may differ under other topologies
   agent_count: 8 agents; interaction may strengthen with more agents

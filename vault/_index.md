@@ -102,8 +102,11 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate]] — Full governance costs 20% welfare vs moderate with no additional safety (medium confidence)
 - [[claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier]] — Moderate governance Pareto-dominates welfare-toxicity frontier at high adversarial fractions (medium confidence)
 - [[claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance]] — Realistic mixed populations achieve near-pure-honest outcomes under moderate governance (low confidence)
-- [[claim-optimal-cb-threshold-predicted-in-03-05-range]] — Game-theoretic and ROC analysis predicts optimal freeze threshold at 0.3-0.5 (low confidence)
+- [[claim-optimal-cb-threshold-predicted-in-03-05-range]] — Game-theoretic and ROC analysis predicts optimal freeze threshold at 0.3-0.5, partially confirmed by 1440-run sweep (medium confidence)
 - [[claim-adaptive-cb-thresholds-should-dominate-static]] — EWMA-based adaptive thresholds predicted to dominate static via false positive reduction (low confidence)
+- [[claim-cb-threshold-05-maximizes-welfare-in-small-world-topology]] — Freeze threshold 0.5 maximizes welfare among CB-active conditions, d=0.77 vs 0.3 (medium confidence)
+- [[claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05]] — CB fires only at thresholds 0.3-0.5; never activates at 0.7-0.9 across 1440 runs (high confidence)
+- [[claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing]] — Threshold 0.3 causes 7% honest payoff penalty through false-positive freezing (medium confidence)
 
 ## Governance Mechanisms
 
@@ -142,7 +145,7 @@ Named vulnerability and attack patterns from red-team evaluations. 8 patterns, 2
 
 One note per run, auto-generated from run.yaml by the synthesis pipeline.
 
-- `vault/experiments/` — 120 experiment notes synthesized from 133 runs
+- `vault/experiments/` — 121 experiment notes synthesized from 134 runs
 
 ## Sweeps
 

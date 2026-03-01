@@ -12,6 +12,9 @@ evidence:
   - run: 20260208-215009_sweep_freeze_duration
     metric: toxicity_rate
     detail: "Tighter violation threshold (3 vs 8): toxicity 0.227 vs 0.261 (-13%). Replicated across all 3 seeds"
+  - run: 20260301_cb_threshold_sweep
+    metric: welfare
+    detail: "Duration effect REPLICATED with threshold-dependence: at threshold=0.3, dur=1 vs dur=5 delta=-19.4 (longer hurts). At threshold=0.5, dur=1 vs dur=5 delta=+7.9 (longer helps). N=120 per cell, 10 seeds, 12 violation x tax configs per threshold-duration pair"
   weakening:
   - run: 20260208-215009_sweep_freeze_duration
     metric: welfare
@@ -34,8 +37,11 @@ related_claims:
 - claim-audit-threshold-interaction-enables-dancing
 - claim-optimal-tax-range-0-to-5pct
 - claim-reputation-decay-rate-improves-welfare
+- claim-cb-threshold-05-maximizes-welfare-in-small-world-topology
+- claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05
+- claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing
 created: 2026-02-21
-updated: 2026-02-21
+updated: 2026-03-01
 aliases:
 - freeze-duration-and-violation-threshold-interact-on-welfare
 cssclasses:

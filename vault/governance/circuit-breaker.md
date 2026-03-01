@@ -59,6 +59,15 @@ The freeze duration sweep (Feb 8) explored the `freeze_duration_epochs` paramete
 - [[claim-tax-cb-interact-on-quality-gap]] — tax x CB interaction significant on quality gap (range=0.77) but not on aggregate welfare. CB modulates distributional effects of taxation.
 - [[claim-cb-null-may-reflect-design-limitation]] — the binary on/off design may mask threshold-dependent effects. All three council reviewers flagged CB recalibration as top experimental priority.
 
+## Threshold calibration (2026-03-01)
+
+The [[20260301_cb_threshold_sweep]] (1,440 runs, 4x4x3x3 factorial) established the optimal threshold calibration:
+
+- **Activation boundary**: CB only fires at thresholds <= 0.5. At 0.7 and 0.9, zero agents are frozen across 720 runs. The default threshold of 0.6 sits above this boundary, meaning many prior studies used functionally-inert CB settings. See [[claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05]].
+- **Optimal threshold**: 0.5 maximizes welfare (d=0.77 vs 0.3, Bonferroni-sig). CB at 0.5 matches CB-off welfare, meaning it imposes zero net cost while actively freezing adversaries. See [[claim-cb-threshold-05-maximizes-welfare-in-small-world-topology]].
+- **False-positive harm**: Threshold 0.3 is too aggressive — honest agents incur a 7% payoff penalty from false-positive freezing. See [[claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing]].
+- **Recommended configuration**: freeze_threshold_toxicity=0.5, freeze_threshold_violations=3, freeze_duration_epochs=3-5.
+
 ## Known failure modes
 
 - **Threshold dancing**: adversaries learning to stay just below `freeze_threshold_toxicity`. Untested — this is the primary open question. See [[failure-threshold-dancing]].

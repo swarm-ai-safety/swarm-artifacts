@@ -28,10 +28,17 @@ evidence:
   - run: 20260208-215009_sweep_freeze_duration
     metric: welfare
     detail: "Freeze duration sweep shows CB parameters DO matter when varied: 5 vs 1 epoch freeze gives 17% welfare improvement. Binary on/off misses this"
+  - run: 20260301_cb_threshold_sweep
+    metric: n_frozen
+    detail: "CONFIRMED: CB fires only at thresholds <=0.5 (mean_frozen=1.46-1.63), never at 0.7-0.9 (0/720 runs). Default threshold 0.6 sits above activation boundary. 1440 runs, 10 seeds, 144 configs"
+  - run: 20260301_cb_threshold_sweep
+    metric: welfare
+    detail: "1-way ANOVA F(3,1436)=56.87, eta2=0.106, p<0.0001. CB threshold explains 10.6% of welfare variance when varied (vs ~0% in binary on/off designs)"
   boundary_conditions:
   - "CB tested as binary on/off in 8-agent small-world (v1 N=80, v2 N=700), 8-agent kernel v4 (N=40), 5-agent memori (N=10), 10-agent contract screening"
   - "Always default CB thresholds — no threshold variation tested except freeze_duration sweep"
-  - All 3 council reviewers flagged CB recalibration as top priority
+  - "All 3 council reviewers flagged CB recalibration as top priority"
+  - "RESOLVED: 1440-run threshold sweep confirms CB null was design artifact — default 0.6 above activation boundary at 0.5"
 sensitivity:
   topology: n/a (methodology note)
   agent_count: n/a
@@ -48,6 +55,9 @@ related_claims:
 - claim-freeze-duration-and-violation-threshold-interact-on-welfare
 - claim-optimal-cb-threshold-predicted-in-03-05-range
 - claim-adaptive-cb-thresholds-should-dominate-static
+- claim-cb-threshold-05-maximizes-welfare-in-small-world-topology
+- claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05
+- claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing
 created: 2026-02-20
 updated: 2026-03-01
 aliases:
