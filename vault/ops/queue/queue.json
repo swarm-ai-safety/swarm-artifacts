@@ -2820,6 +2820,22 @@
         "claim-evolutionary-selection-weakly-reduces-toxicity-in-prisoners-dilemma",
         "claim-tax-welfare-tradeoff"
       ]
+    },
+    {
+      "id": "extract-20260301_cb_threshold_sweep",
+      "type": "extract",
+      "status": "completed",
+      "target": "runs/20260301_cb_threshold_sweep/",
+      "file": "20260301_cb_threshold_sweep-extract.md",
+      "created": "2026-03-01T00:00:00Z",
+      "completed": "2026-03-01T00:00:00Z",
+      "current_phase": "extract",
+      "completed_phases": [
+        "extract"
+      ],
+      "next_claim_start": 279,
+      "claims_created": [],
+      "enrichments_applied": []
     }
   ],
   "maintenance_conditions": {
