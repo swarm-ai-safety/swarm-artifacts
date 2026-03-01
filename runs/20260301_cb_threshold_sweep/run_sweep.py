@@ -10,14 +10,17 @@ maximizes welfare (claim-optimal-cb-threshold-predicted-in-03-05-range).
 """
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
 
+os.environ.setdefault("MPLBACKEND", "Agg")
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from swarm.analysis import SweepConfig, SweepParameter, SweepRunner
-from swarm.scenarios import load_scenario
+from swarm.analysis import SweepConfig, SweepParameter, SweepRunner  # noqa: E402
+from swarm.scenarios import load_scenario  # noqa: E402
 
 RUN_DIR = Path(__file__).resolve().parent
 SCENARIO = (

@@ -1,0 +1,59 @@
+run_id: 20260301_cb_threshold_sweep
+slug: cb_threshold_sweep
+created_utc: '2026-03-01T00:00:00+00:00'
+provenance:
+  swarm_version: unknown
+  git_sha: unknown
+  git_dirty: false
+experiment:
+  type: sweep
+  scenario_ref: hypotheses/cb_threshold_sweep
+  seeds:
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  hypothesis: >
+    Circuit breaker null effect in prior studies reflects insufficient threshold
+    variation. A 4x4x3x3 factorial sweep of freeze_threshold_toxicity (0.3-0.9),
+    freeze_threshold_violations (1-8), freeze_duration_epochs (1-5), and
+    transaction_tax_rate (0.0-0.10) will reveal threshold-dependent CB effects.
+    Directional prediction: threshold 0.3-0.5 maximizes welfare.
+  parameters:
+    governance.freeze_threshold_toxicity:
+    - 0.3
+    - 0.5
+    - 0.7
+    - 0.9
+    governance.freeze_threshold_violations:
+    - 1
+    - 3
+    - 5
+    - 8
+    governance.freeze_duration_epochs:
+    - 1
+    - 3
+    - 5
+    governance.transaction_tax_rate:
+    - 0.0
+    - 0.05
+    - 0.10
+results:
+  status: completed
+  total_runs: 1440
+  param_combinations: 144
+  seeds_per_config: 10
+artifacts:
+  sweep_csv: sweep_results.csv
+  summary_json: summary.json
+  run_script: run_sweep.py
+links:
+  parent_runs: []
+  child_runs: []
+  claims: []
