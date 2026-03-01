@@ -102,6 +102,8 @@ Active findings from SWARM experiments, each linked to run evidence.
 - [[claim-full-governance-welfare-penalty-exceeds-safety-gain-over-moderate]] — Full governance costs 20% welfare vs moderate with no additional safety (medium confidence)
 - [[claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier]] — Moderate governance Pareto-dominates welfare-toxicity frontier at high adversarial fractions (medium confidence)
 - [[claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance]] — Realistic mixed populations achieve near-pure-honest outcomes under moderate governance (low confidence)
+- [[claim-optimal-cb-threshold-predicted-in-03-05-range]] — Game-theoretic and ROC analysis predicts optimal freeze threshold at 0.3-0.5 (low confidence)
+- [[claim-adaptive-cb-thresholds-should-dominate-static]] — EWMA-based adaptive thresholds predicted to dominate static via false positive reduction (low confidence)
 
 ## Governance Mechanisms
 
