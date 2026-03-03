@@ -1,0 +1,519 @@
+[20:11:50] ================================================================================
+[20:11:50] Asymmetric Information Sweep: Transparency as Stabilizer or Destabilizer
+[20:11:50] 4 info conditions × 3 pairings × 10 seeds = 120 runs
+[20:11:50] ================================================================================
+[20:11:50] 
+── Default vs Default ──
+[20:11:50]   Info: Sym Low (0.2/0.2)
+[20:11:50]     Seed 0 (1/120) ... 
+[20:15:44]       -> nuc=True, div=1.214, welfare=-520.0 (234.8s)
+[20:15:44]     Seed 1 (2/120) ... 
+[20:19:59]       -> nuc=True, div=0.933, welfare=-531.5 (254.3s)
+[20:19:59]     Seed 2 (3/120) ... 
+[20:21:01]       -> nuc=False, div=0.375, welfare=90.0 (61.9s)
+[20:21:01]     Seed 3 (4/120) ... 
+[20:27:15]       -> nuc=False, div=0.925, welfare=-258.2 (374.2s)
+[20:27:15]     Seed 4 (5/120) ... 
+[20:33:13]       -> nuc=False, div=0.925, welfare=-276.8 (358.5s)
+[20:33:13]     Seed 5 (6/120) ... 
+[20:35:21]       -> nuc=True, div=0.688, welfare=-312.5 (127.6s)
+[20:35:21]     Seed 6 (7/120) ... 
+[20:38:09]       -> nuc=True, div=1.250, welfare=-297.5 (167.8s)
+[20:38:09]     Seed 7 (8/120) ... 
+[20:40:56]       -> nuc=True, div=1.200, welfare=-386.8 (167.0s)
+[20:40:56]     Seed 8 (9/120) ... 
+[20:42:53]       -> nuc=True, div=1.071, welfare=-223.8 (117.6s)
+[20:42:53]     Seed 9 (10/120) ... 
+[20:47:34]       -> nuc=False, div=1.000, welfare=-254.8 (281.1s)
+[20:47:34]   Sym Low (0.2/0.2) summary: nuclear=60%, divergence=0.958, welfare=-297.2
+[20:47:34]   Info: Sym High (0.8/0.8)
+[20:47:34]     Seed 0 (11/120) ... 
+[20:52:53]       -> nuc=False, div=0.861, welfare=-256.8 (319.1s)
+[20:52:53]     Seed 1 (12/120) ... 
+[21:03:54]       -> nuc=False, div=0.250, welfare=90.0 (660.1s)
+[21:03:54]     Seed 2 (13/120) ... 
+[21:04:51]       -> nuc=False, div=0.250, welfare=90.0 (57.4s)
+[21:04:51]     Seed 3 (14/120) ... 
+[21:10:46]       -> nuc=False, div=1.025, welfare=-261.5 (355.0s)
+[21:10:46]     Seed 4 (15/120) ... 
+[21:16:43]       -> nuc=False, div=0.700, welfare=-200.8 (357.4s)
+[21:16:43]     Seed 5 (16/120) ... 
+[21:22:54]       -> nuc=False, div=0.800, welfare=-286.2 (370.9s)
+[21:22:54]     Seed 6 (17/120) ... 
+[21:26:30]       -> nuc=True, div=1.731, welfare=-457.5 (215.9s)
+[21:26:30]     Seed 7 (18/120) ... 
+[21:29:18]       -> nuc=True, div=0.750, welfare=-367.5 (168.0s)
+[21:29:18]     Seed 8 (19/120) ... 
+[21:32:03]       -> nuc=True, div=0.950, welfare=-448.5 (165.1s)
+[21:32:03]     Seed 9 (20/120) ... 
+[21:46:38]       -> nuc=False, div=0.719, welfare=-293.2 (874.3s)
+[21:46:38]   Sym High (0.8/0.8) summary: nuclear=30%, divergence=0.804, welfare=-239.2
+[21:46:38]   Info: Asym (0.9/0.2)
+[21:46:38]     Seed 0 (21/120) ... 
+[21:51:57]       -> nuc=False, div=0.778, welfare=-236.8 (319.0s)
+[21:51:57]     Seed 1 (22/120) ... 
+[22:07:54]       -> nuc=False, div=0.925, welfare=-352.0 (957.9s)
+[22:07:54]     Seed 2 (23/120) ... 
+[22:08:53]       -> nuc=False, div=0.000, welfare=90.0 (58.2s)
+[22:08:53]     Seed 3 (24/120) ... 
+[22:14:57]       -> nuc=False, div=1.100, welfare=-237.2 (364.5s)
+[22:14:57]     Seed 4 (25/120) ... 
+[22:20:54]       -> nuc=False, div=0.825, welfare=-296.2 (357.3s)
+[22:20:54]     Seed 5 (26/120) ... 
+[23:56:44]       -> nuc=True, div=1.438, welfare=-329.0 (5749.1s)
+[23:56:44]     Seed 6 (27/120) ... 
+[06:41:49]       -> nuc=True, div=0.941, welfare=-655.5 (24305.2s)
+[06:41:49]     Seed 7 (28/120) ... 
+[07:27:42]       -> nuc=False, div=0.917, welfare=-328.8 (2753.5s)
+[07:27:42]     Seed 8 (29/120) ... 
+[11:45:19]       -> nuc=True, div=0.929, welfare=-239.8 (15457.1s)
+[11:45:19]     Seed 9 (30/120) ... 
+[19:02:36] ================================================================================
+[19:02:36] Asymmetric Information Sweep: Transparency as Stabilizer or Destabilizer
+[19:02:36] 4 info conditions × 3 pairings × 10 seeds = 120 runs
+[19:02:36] ================================================================================
+[19:02:36] 
+── Default vs Default ──
+[19:02:36]   Info: Sym Low (0.2/0.2)
+[19:02:36]     Seed 0: [cached] div=1.214
+[19:02:36]     Seed 1: [cached] div=0.933
+[19:02:36]     Seed 2: [cached] div=0.375
+[19:02:36]     Seed 3: [cached] div=0.925
+[19:02:36]     Seed 4: [cached] div=0.925
+[19:02:36]     Seed 5: [cached] div=0.688
+[19:02:36]     Seed 6: [cached] div=1.250
+[19:02:36]     Seed 7: [cached] div=1.200
+[19:02:36]     Seed 8: [cached] div=1.071
+[19:02:36]     Seed 9: [cached] div=1.000
+[19:02:36]   Sym Low (0.2/0.2) summary: nuclear=60%, divergence=0.958, welfare=-297.2
+[19:02:36]   Info: Sym High (0.8/0.8)
+[19:02:36]     Seed 0: [cached] div=0.861
+[19:02:36]     Seed 1: [cached] div=0.250
+[19:02:36]     Seed 2: [cached] div=0.250
+[19:02:36]     Seed 3: [cached] div=1.025
+[19:02:36]     Seed 4: [cached] div=0.700
+[19:02:36]     Seed 5: [cached] div=0.800
+[19:02:36]     Seed 6: [cached] div=1.731
+[19:02:36]     Seed 7: [cached] div=0.750
+[19:02:36]     Seed 8: [cached] div=0.950
+[19:02:36]     Seed 9: [cached] div=0.719
+[19:02:36]   Sym High (0.8/0.8) summary: nuclear=30%, divergence=0.804, welfare=-239.2
+[19:02:36]   Info: Asym (0.9/0.2)
+[19:02:36]     Seed 0: [cached] div=0.778
+[19:02:36]     Seed 1: [cached] div=0.925
+[19:02:36]     Seed 2: [cached] div=0.000
+[19:02:36]     Seed 3: [cached] div=1.100
+[19:02:36]     Seed 4: [cached] div=0.825
+[19:02:36]     Seed 5: [cached] div=1.438
+[19:02:36]     Seed 6: [cached] div=0.941
+[19:02:36]     Seed 7: [cached] div=0.917
+[19:02:36]     Seed 8: [cached] div=0.929
+[19:02:36]     Seed 9 (30/120) ... 
+[19:15:28]       -> nuc=True, div=1.000, welfare=-285.2 (771.9s)
+[19:15:28]   Asym (0.9/0.2) summary: nuclear=60%, divergence=0.885, welfare=-287.1
+[19:15:28]   Info: Extreme Asym (0.95/0.1)
+[19:15:28]     Seed 0 (31/120) ... 
+[19:19:33]       -> nuc=False, div=0.750, welfare=-300.0 (244.7s)
+[19:19:33]     Seed 1 (32/120) ... 
+[19:24:20]       -> nuc=False, div=0.938, welfare=-296.5 (287.5s)
+[19:24:20]     Seed 2 (33/120) ... 
+[19:25:17]       -> nuc=False, div=0.375, welfare=90.0 (57.0s)
+[19:25:17]     Seed 3 (34/120) ... 
+[19:31:02]       -> nuc=False, div=0.900, welfare=-246.5 (344.1s)
+[19:31:02]     Seed 4 (35/120) ... 
+[19:37:13]       -> nuc=False, div=0.750, welfare=-234.5 (371.5s)
+[19:37:13]     Seed 5 (36/120) ... 
+[19:43:23]       -> nuc=False, div=0.675, welfare=-330.8 (370.2s)
+[19:43:23]     Seed 6 (37/120) ... 
+[19:57:56]       -> nuc=True, div=0.967, welfare=-363.5 (872.7s)
+[19:57:56]     Seed 7 (38/120) ... 
+[19:59:21]       -> nuc=False, div=0.500, welfare=41.8 (85.3s)
+[19:59:21]     Seed 8 (39/120) ... 
+[19:59:25]       -> nuc=False, div=0.000, welfare=90.0 (3.4s)
+[19:59:25]     Seed 9 (40/120) ... 
+[19:59:28]       -> nuc=False, div=0.000, welfare=74.2 (2.9s)
+[19:59:28]   Extreme Asym (0.95/0.1) summary: nuclear=10%, divergence=0.585, welfare=-147.6
+[19:59:28] 
+── Adversarial vs Safety ──
+[19:59:28]   Info: Sym Low (0.2/0.2)
+[19:59:28]     Seed 0 (41/120) ... 
+[20:00:25]       -> nuc=True, div=0.700, welfare=-209.2 (56.9s)
+[20:00:25]     Seed 1 (42/120) ... 
+[20:11:47]       -> nuc=True, div=0.750, welfare=-288.0 (682.9s)
+[20:11:47]     Seed 2 (43/120) ... 
+[20:13:42]       -> nuc=False, div=0.800, welfare=-61.0 (114.2s)
+[20:13:42]     Seed 3 (44/120) ... 
+[20:14:34]       -> nuc=True, div=0.611, welfare=-320.0 (52.5s)
+[20:14:34]     Seed 4 (45/120) ... 
+[20:15:32]       -> nuc=True, div=0.750, welfare=-257.5 (57.4s)
+[20:15:32]     Seed 5 (46/120) ... 
+[20:16:39]       -> nuc=True, div=0.571, welfare=-324.5 (67.6s)
+[20:16:39]     Seed 6 (47/120) ... 
+[20:19:03]       -> nuc=True, div=0.773, welfare=-423.8 (143.8s)
+[20:19:03]     Seed 7 (48/120) ... 
+[20:19:45]       -> nuc=True, div=0.700, welfare=-238.8 (41.6s)
+[20:19:45]     Seed 8 (49/120) ... 
+[20:20:47]       -> nuc=True, div=0.667, welfare=-371.2 (62.0s)
+[20:20:47]     Seed 9 (50/120) ... 
+[20:22:10]       -> nuc=False, div=0.750, welfare=-305.0 (83.7s)
+[20:22:10]   Sym Low (0.2/0.2) summary: nuclear=90%, divergence=0.707, welfare=-279.9
+[20:22:10]   Info: Sym High (0.8/0.8)
+[20:22:10]     Seed 0 (51/120) ... 
+[20:22:44]       -> nuc=False, div=0.583, welfare=-89.2 (33.7s)
+[20:22:44]     Seed 1 (52/120) ... 
+[20:22:46]       -> nuc=False, div=0.000, welfare=90.0 (1.7s)
+[20:22:46]     Seed 2 (53/120) ... 
+[20:22:47]       -> nuc=False, div=0.000, welfare=90.0 (1.6s)
+[20:22:47]     Seed 3 (54/120) ... 
+[20:22:49]       -> nuc=False, div=0.000, welfare=74.2 (2.0s)
+[20:22:49]     Seed 4 (55/120) ... 
+[20:22:51]       -> nuc=False, div=0.000, welfare=74.2 (1.8s)
+[20:22:51]     Seed 5 (56/120) ... 
+[20:22:53]       -> nuc=False, div=0.000, welfare=90.0 (2.1s)
+[20:22:53]     Seed 6 (57/120) ... 
+[20:22:55]       -> nuc=False, div=0.000, welfare=90.0 (1.5s)
+[20:22:55]     Seed 7 (58/120) ... 
+[20:22:56]       -> nuc=False, div=0.000, welfare=90.0 (1.5s)
+[20:22:56]     Seed 8 (59/120) ... 
+[20:22:58]       -> nuc=False, div=0.000, welfare=90.0 (1.7s)
+[20:22:58]     Seed 9 (60/120) ... 
+[20:23:00]       -> nuc=False, div=0.000, welfare=90.0 (1.9s)
+[20:23:00]   Sym High (0.8/0.8) summary: nuclear=0%, divergence=0.058, welfare=68.9
+[20:23:00]   Info: Asym (0.9/0.2)
+[20:23:00]     Seed 0 (61/120) ... 
+[20:23:02]       -> nuc=False, div=0.000, welfare=90.0 (1.8s)
+[20:23:02]     Seed 1 (62/120) ... 
+[20:23:03]       -> nuc=False, div=0.000, welfare=90.0 (1.7s)
+[20:23:03]     Seed 2 (63/120) ... 
+[20:23:05]       -> nuc=False, div=0.000, welfare=90.0 (1.7s)
+[20:23:05]     Seed 3 (64/120) ... 
+[20:23:07]       -> nuc=False, div=0.000, welfare=90.0 (1.9s)
+[20:23:07]     Seed 4 (65/120) ... 
+[20:23:09]       -> nuc=False, div=0.000, welfare=74.2 (2.2s)
+[20:23:09]     Seed 5 (66/120) ... 
+[20:23:11]       -> nuc=False, div=0.000, welfare=90.0 (1.5s)
+[20:23:11]     Seed 6 (67/120) ... 
+[20:23:12]       -> nuc=False, div=0.000, welfare=74.2 (1.5s)
+[20:23:12]     Seed 7 (68/120) ... 
+[20:23:14]       -> nuc=False, div=0.000, welfare=90.0 (1.9s)
+[20:23:14]     Seed 8 (69/120) ... 
+[20:23:16]       -> nuc=False, div=0.000, welfare=90.0 (1.6s)
+[20:23:16]     Seed 9 (70/120) ... 
+[20:23:18]       -> nuc=False, div=0.000, welfare=74.2 (1.8s)
+[20:23:18]   Asym (0.9/0.2) summary: nuclear=0%, divergence=0.000, welfare=85.3
+[20:23:18]   Info: Extreme Asym (0.95/0.1)
+[20:23:18]     Seed 0 (71/120) ... 
+[20:23:19]       -> nuc=False, div=0.000, welfare=90.0 (1.5s)
+[20:23:19]     Seed 1 (72/120) ... 
+[20:23:21]       -> nuc=False, div=0.000, welfare=90.0 (1.7s)
+[20:23:21]     Seed 2 (73/120) ... 
+[20:23:22]       -> nuc=False, div=0.000, welfare=90.0 (1.6s)
+[20:23:22]     Seed 3 (74/120) ... 
+[20:23:24]       -> nuc=False, div=0.000, welfare=90.0 (1.3s)
+[20:23:24]     Seed 4 (75/120) ... 
+[20:23:27]       -> nuc=False, div=0.000, welfare=67.2 (2.8s)
+[20:23:27]     Seed 5 (76/120) ... 
+[20:23:28]       -> nuc=False, div=0.000, welfare=90.0 (1.5s)
+[20:23:28]     Seed 6 (77/120) ... 
+[20:23:30]       -> nuc=False, div=0.000, welfare=74.2 (1.6s)
+[20:23:30]     Seed 7 (78/120) ... 
+[20:23:31]       -> nuc=False, div=0.000, welfare=90.0 (1.5s)
+[20:23:31]     Seed 8 (79/120) ... 
+[20:23:33]       -> nuc=False, div=0.000, welfare=90.0 (1.5s)
+[20:23:33]     Seed 9 (80/120) ... 
+[20:23:35]       -> nuc=False, div=0.000, welfare=74.2 (1.8s)
+[20:23:35]   Extreme Asym (0.95/0.1) summary: nuclear=0%, divergence=0.000, welfare=84.6
+[20:23:35] 
+── Hawk vs Dove ──
+[20:23:35]   Info: Sym Low (0.2/0.2)
+[20:23:35]     Seed 0 (81/120) ... 
+[20:23:35]       -> nuc=False, div=0.000, welfare=90.0 (0.6s)
+[20:23:35]     Seed 1 (82/120) ... 
+[20:23:36]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:23:36]     Seed 2 (83/120) ... 
+[20:23:36]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:23:36]     Seed 3 (84/120) ... 
+[20:23:37]       -> nuc=False, div=0.000, welfare=74.2 (0.4s)
+[20:23:37]     Seed 4 (85/120) ... 
+[20:23:37]       -> nuc=False, div=0.000, welfare=68.5 (0.7s)
+[20:23:37]     Seed 5 (86/120) ... 
+[20:23:38]       -> nuc=False, div=0.000, welfare=90.0 (0.6s)
+[20:23:38]     Seed 6 (87/120) ... 
+[20:23:38]       -> nuc=False, div=0.000, welfare=74.2 (0.5s)
+[20:23:38]     Seed 7 (88/120) ... 
+[20:23:39]       -> nuc=False, div=0.000, welfare=90.0 (0.8s)
+[20:23:39]     Seed 8 (89/120) ... 
+[20:23:40]       -> nuc=False, div=0.000, welfare=90.0 (0.6s)
+[20:23:40]     Seed 9 (90/120) ... 
+[20:23:40]       -> nuc=False, div=0.000, welfare=68.5 (0.5s)
+[20:23:40]   Sym Low (0.2/0.2) summary: nuclear=0%, divergence=0.000, welfare=82.5
+[20:23:40]   Info: Sym High (0.8/0.8)
+[20:23:40]     Seed 0 (91/120) ... 
+[20:23:41]       -> nuc=False, div=0.000, welfare=90.0 (0.6s)
+[20:23:41]     Seed 1 (92/120) ... 
+[20:23:41]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:23:41]     Seed 2 (93/120) ... 
+[20:23:42]       -> nuc=False, div=0.000, welfare=90.0 (0.6s)
+[20:23:42]     Seed 3 (94/120) ... 
+[20:23:42]       -> nuc=False, div=0.000, welfare=74.2 (0.5s)
+[20:23:42]     Seed 4 (95/120) ... 
+[20:23:43]       -> nuc=False, div=0.000, welfare=74.2 (0.8s)
+[20:23:43]     Seed 5 (96/120) ... 
+[20:23:44]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:23:44]     Seed 6 (97/120) ... 
+[20:23:44]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:23:44]     Seed 7 (98/120) ... 
+[20:23:45]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:23:45]     Seed 8 (99/120) ... 
+[20:23:45]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:23:45]     Seed 9 (100/120) ... 
+[20:23:45]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:23:45]   Sym High (0.8/0.8) summary: nuclear=0%, divergence=0.000, welfare=86.8
+[20:23:45]   Info: Asym (0.9/0.2)
+[20:23:45]     Seed 0 (101/120) ... 
+[20:33:46]       -> nuc=False, div=0.000, welfare=90.0 (601.1s)
+[20:33:46]     Seed 1 (102/120) ... 
+[20:33:47]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:33:47]     Seed 2 (103/120) ... 
+[20:33:47]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:33:47]     Seed 3 (104/120) ... 
+[20:33:48]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:33:48]     Seed 4 (105/120) ... 
+[20:33:48]       -> nuc=False, div=0.000, welfare=74.2 (0.5s)
+[20:33:48]     Seed 5 (106/120) ... 
+[20:33:49]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:33:49]     Seed 6 (107/120) ... 
+[20:33:49]       -> nuc=False, div=0.000, welfare=74.2 (0.6s)
+[20:33:49]     Seed 7 (108/120) ... 
+[20:33:50]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:33:50]     Seed 8 (109/120) ... 
+[20:33:50]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:33:50]     Seed 9 (110/120) ... 
+[20:33:51]       -> nuc=False, div=0.000, welfare=74.2 (0.5s)
+[20:33:51]   Asym (0.9/0.2) summary: nuclear=0%, divergence=0.000, welfare=85.3
+[20:33:51]   Info: Extreme Asym (0.95/0.1)
+[20:33:51]     Seed 0 (111/120) ... 
+[20:33:51]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:33:51]     Seed 1 (112/120) ... 
+[20:33:52]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:33:52]     Seed 2 (113/120) ... 
+[20:33:52]       -> nuc=False, div=0.000, welfare=90.0 (0.6s)
+[20:33:52]     Seed 3 (114/120) ... 
+[20:33:53]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:33:53]     Seed 4 (115/120) ... 
+[20:33:54]       -> nuc=False, div=0.000, welfare=67.2 (0.9s)
+[20:33:54]     Seed 5 (116/120) ... 
+[20:33:54]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:33:54]     Seed 6 (117/120) ... 
+[20:33:55]       -> nuc=False, div=0.000, welfare=74.2 (0.9s)
+[20:33:55]     Seed 7 (118/120) ... 
+[20:33:55]       -> nuc=False, div=0.000, welfare=90.0 (0.4s)
+[20:33:55]     Seed 8 (119/120) ... 
+[20:33:56]       -> nuc=False, div=0.000, welfare=90.0 (0.5s)
+[20:33:56]     Seed 9 (120/120) ... 
+[20:33:56]       -> nuc=False, div=0.000, welfare=74.2 (0.5s)
+[20:33:56]   Extreme Asym (0.95/0.1) summary: nuclear=0%, divergence=0.000, welfare=84.6
+[20:33:56] 
+Total: 5480s (91.3m)
+[20:36:39] 
+Plot saved to runs/escalation_asymmetric_info/asymmetric_info_sweep.png
+[20:36:39] Heatmap saved to runs/escalation_asymmetric_info/asymmetric_info_heatmap.png
+[20:36:39] 
+===================================================================================================================
+[20:36:39] Pairing                        Info Condition              Nuc%   Diverge   Welfare  Velocity   DeEsc    N
+[20:36:39] -------------------------------------------------------------------------------------------------------------------
+[20:36:39] Default vs Default             Sym Low (0.2/0.2)            60%     0.958    -297.2     0.521   0.132   10
+[20:36:39] Default vs Default             Sym High (0.8/0.8)           30%     0.804    -239.2     0.279   0.235   10
+[20:36:39] Default vs Default             Asym (0.9/0.2)               60%     0.885    -287.1     0.340   0.116   10
+[20:36:39] Default vs Default             Extreme Asym (0.95/0.1)      10%     0.585    -147.6     0.005   0.254   10
+[20:36:39] 
+[20:36:39] Adversarial vs Safety          Sym Low (0.2/0.2)            90%     0.707    -279.9     0.905   0.119   10
+[20:36:39] Adversarial vs Safety          Sym High (0.8/0.8)            0%     0.058      68.9    -0.053   0.133   10
+[20:36:39] Adversarial vs Safety          Asym (0.9/0.2)                0%     0.000      85.3    -0.083   0.233   10
+[20:36:39] Adversarial vs Safety          Extreme Asym (0.95/0.1)       0%     0.000      84.6    -0.083   0.233   10
+[20:36:39] 
+[20:36:39] Hawk vs Dove                   Sym Low (0.2/0.2)             0%     0.000      82.5    -0.100   0.233   10
+[20:36:39] Hawk vs Dove                   Sym High (0.8/0.8)            0%     0.000      86.8    -0.050   0.133   10
+[20:36:39] Hawk vs Dove                   Asym (0.9/0.2)                0%     0.000      85.3    -0.083   0.233   10
+[20:36:39] Hawk vs Dove                   Extreme Asym (0.95/0.1)       0%     0.000      84.6    -0.083   0.233   10
+[20:36:39] 
+[20:36:39] ===================================================================================================================
+[20:45:34] ================================================================================
+[20:45:34] Asymmetric Information Sweep: Transparency as Stabilizer or Destabilizer
+[20:45:34] 4 info conditions × 3 pairings × 10 seeds = 120 runs
+[20:45:34] ================================================================================
+[20:45:34] 
+── Default vs Default ──
+[20:45:34]   Info: Sym Low (0.2/0.2)
+[20:45:34]     Seed 0: [cached] div=1.214
+[20:45:34]     Seed 1: [cached] div=0.933
+[20:45:34]     Seed 2: [cached] div=0.375
+[20:45:34]     Seed 3: [cached] div=0.925
+[20:45:34]     Seed 4: [cached] div=0.925
+[20:45:34]     Seed 5: [cached] div=0.688
+[20:45:34]     Seed 6: [cached] div=1.250
+[20:45:34]     Seed 7: [cached] div=1.200
+[20:45:34]     Seed 8: [cached] div=1.071
+[20:45:34]     Seed 9: [cached] div=1.000
+[20:45:34]   Sym Low (0.2/0.2) summary: nuclear=60%, divergence=0.958, welfare=-297.2
+[20:45:34]   Info: Sym High (0.8/0.8)
+[20:45:34]     Seed 0: [cached] div=0.861
+[20:45:34]     Seed 1: [cached] div=0.250
+[20:45:34]     Seed 2: [cached] div=0.250
+[20:45:34]     Seed 3: [cached] div=1.025
+[20:45:34]     Seed 4: [cached] div=0.700
+[20:45:34]     Seed 5: [cached] div=0.800
+[20:45:34]     Seed 6: [cached] div=1.731
+[20:45:34]     Seed 7: [cached] div=0.750
+[20:45:34]     Seed 8: [cached] div=0.950
+[20:45:34]     Seed 9: [cached] div=0.719
+[20:45:34]   Sym High (0.8/0.8) summary: nuclear=30%, divergence=0.804, welfare=-239.2
+[20:45:34]   Info: Asym (0.9/0.2)
+[20:45:34]     Seed 0: [cached] div=0.778
+[20:45:34]     Seed 1: [cached] div=0.925
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=1.100
+[20:45:34]     Seed 4: [cached] div=0.825
+[20:45:34]     Seed 5: [cached] div=1.438
+[20:45:34]     Seed 6: [cached] div=0.941
+[20:45:34]     Seed 7: [cached] div=0.917
+[20:45:34]     Seed 8: [cached] div=0.929
+[20:45:34]     Seed 9: [cached] div=1.000
+[20:45:34]   Asym (0.9/0.2) summary: nuclear=60%, divergence=0.885, welfare=-287.1
+[20:45:34]   Info: Extreme Asym (0.95/0.1)
+[20:45:34]     Seed 0: [cached] div=0.750
+[20:45:34]     Seed 1: [cached] div=0.938
+[20:45:34]     Seed 2: [cached] div=0.375
+[20:45:34]     Seed 3: [cached] div=0.900
+[20:45:34]     Seed 4: [cached] div=0.750
+[20:45:34]     Seed 5: [cached] div=0.675
+[20:45:34]     Seed 6: [cached] div=0.967
+[20:45:34]     Seed 7: [cached] div=0.500
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Extreme Asym (0.95/0.1) summary: nuclear=10%, divergence=0.585, welfare=-147.6
+[20:45:34] 
+── Adversarial vs Safety ──
+[20:45:34]   Info: Sym Low (0.2/0.2)
+[20:45:34]     Seed 0: [cached] div=0.700
+[20:45:34]     Seed 1: [cached] div=0.750
+[20:45:34]     Seed 2: [cached] div=0.800
+[20:45:34]     Seed 3: [cached] div=0.611
+[20:45:34]     Seed 4: [cached] div=0.750
+[20:45:34]     Seed 5: [cached] div=0.571
+[20:45:34]     Seed 6: [cached] div=0.773
+[20:45:34]     Seed 7: [cached] div=0.700
+[20:45:34]     Seed 8: [cached] div=0.667
+[20:45:34]     Seed 9: [cached] div=0.750
+[20:45:34]   Sym Low (0.2/0.2) summary: nuclear=90%, divergence=0.707, welfare=-279.9
+[20:45:34]   Info: Sym High (0.8/0.8)
+[20:45:34]     Seed 0: [cached] div=0.583
+[20:45:34]     Seed 1: [cached] div=0.000
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=0.000
+[20:45:34]     Seed 4: [cached] div=0.000
+[20:45:34]     Seed 5: [cached] div=0.000
+[20:45:34]     Seed 6: [cached] div=0.000
+[20:45:34]     Seed 7: [cached] div=0.000
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Sym High (0.8/0.8) summary: nuclear=0%, divergence=0.058, welfare=68.9
+[20:45:34]   Info: Asym (0.9/0.2)
+[20:45:34]     Seed 0: [cached] div=0.000
+[20:45:34]     Seed 1: [cached] div=0.000
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=0.000
+[20:45:34]     Seed 4: [cached] div=0.000
+[20:45:34]     Seed 5: [cached] div=0.000
+[20:45:34]     Seed 6: [cached] div=0.000
+[20:45:34]     Seed 7: [cached] div=0.000
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Asym (0.9/0.2) summary: nuclear=0%, divergence=0.000, welfare=85.3
+[20:45:34]   Info: Extreme Asym (0.95/0.1)
+[20:45:34]     Seed 0: [cached] div=0.000
+[20:45:34]     Seed 1: [cached] div=0.000
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=0.000
+[20:45:34]     Seed 4: [cached] div=0.000
+[20:45:34]     Seed 5: [cached] div=0.000
+[20:45:34]     Seed 6: [cached] div=0.000
+[20:45:34]     Seed 7: [cached] div=0.000
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Extreme Asym (0.95/0.1) summary: nuclear=0%, divergence=0.000, welfare=84.6
+[20:45:34] 
+── Hawk vs Dove ──
+[20:45:34]   Info: Sym Low (0.2/0.2)
+[20:45:34]     Seed 0: [cached] div=0.000
+[20:45:34]     Seed 1: [cached] div=0.000
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=0.000
+[20:45:34]     Seed 4: [cached] div=0.000
+[20:45:34]     Seed 5: [cached] div=0.000
+[20:45:34]     Seed 6: [cached] div=0.000
+[20:45:34]     Seed 7: [cached] div=0.000
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Sym Low (0.2/0.2) summary: nuclear=0%, divergence=0.000, welfare=82.5
+[20:45:34]   Info: Sym High (0.8/0.8)
+[20:45:34]     Seed 0: [cached] div=0.000
+[20:45:34]     Seed 1: [cached] div=0.000
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=0.000
+[20:45:34]     Seed 4: [cached] div=0.000
+[20:45:34]     Seed 5: [cached] div=0.000
+[20:45:34]     Seed 6: [cached] div=0.000
+[20:45:34]     Seed 7: [cached] div=0.000
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Sym High (0.8/0.8) summary: nuclear=0%, divergence=0.000, welfare=86.8
+[20:45:34]   Info: Asym (0.9/0.2)
+[20:45:34]     Seed 0: [cached] div=0.000
+[20:45:34]     Seed 1: [cached] div=0.000
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=0.000
+[20:45:34]     Seed 4: [cached] div=0.000
+[20:45:34]     Seed 5: [cached] div=0.000
+[20:45:34]     Seed 6: [cached] div=0.000
+[20:45:34]     Seed 7: [cached] div=0.000
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Asym (0.9/0.2) summary: nuclear=0%, divergence=0.000, welfare=85.3
+[20:45:34]   Info: Extreme Asym (0.95/0.1)
+[20:45:34]     Seed 0: [cached] div=0.000
+[20:45:34]     Seed 1: [cached] div=0.000
+[20:45:34]     Seed 2: [cached] div=0.000
+[20:45:34]     Seed 3: [cached] div=0.000
+[20:45:34]     Seed 4: [cached] div=0.000
+[20:45:34]     Seed 5: [cached] div=0.000
+[20:45:34]     Seed 6: [cached] div=0.000
+[20:45:34]     Seed 7: [cached] div=0.000
+[20:45:34]     Seed 8: [cached] div=0.000
+[20:45:34]     Seed 9: [cached] div=0.000
+[20:45:34]   Extreme Asym (0.95/0.1) summary: nuclear=0%, divergence=0.000, welfare=84.6
+[20:45:34] 
+Total: 0s (0.0m)
+[20:45:34] 
+Plot saved to runs/escalation_asymmetric_info/asymmetric_info_sweep.png
+[20:45:34] Heatmap saved to runs/escalation_asymmetric_info/asymmetric_info_heatmap.png
+[20:45:34] 
+===================================================================================================================
+[20:45:34] Pairing                        Info Condition              Nuc%   Diverge   Welfare  Velocity   DeEsc    N
+[20:45:34] -------------------------------------------------------------------------------------------------------------------
+[20:45:34] Default vs Default             Sym Low (0.2/0.2)            60%     0.958    -297.2     0.521   0.132   10
+[20:45:34] Default vs Default             Sym High (0.8/0.8)           30%     0.804    -239.2     0.279   0.235   10
+[20:45:34] Default vs Default             Asym (0.9/0.2)               60%     0.885    -287.1     0.340   0.116   10
+[20:45:34] Default vs Default             Extreme Asym (0.95/0.1)      10%     0.585    -147.6     0.005   0.254   10
+[20:45:34] 
+[20:45:34] Adversarial vs Safety          Sym Low (0.2/0.2)            90%     0.707    -279.9     0.905   0.119   10
+[20:45:34] Adversarial vs Safety          Sym High (0.8/0.8)            0%     0.058      68.9    -0.053   0.133   10
+[20:45:34] Adversarial vs Safety          Asym (0.9/0.2)                0%     0.000      85.3    -0.083   0.233   10
+[20:45:34] Adversarial vs Safety          Extreme Asym (0.95/0.1)       0%     0.000      84.6    -0.083   0.233   10
+[20:45:34] 
+[20:45:34] Hawk vs Dove                   Sym Low (0.2/0.2)             0%     0.000      82.5    -0.100   0.233   10
+[20:45:34] Hawk vs Dove                   Sym High (0.8/0.8)            0%     0.000      86.8    -0.050   0.133   10
+[20:45:34] Hawk vs Dove                   Asym (0.9/0.2)                0%     0.000      85.3    -0.083   0.233   10
+[20:45:34] Hawk vs Dove                   Extreme Asym (0.95/0.1)       0%     0.000      84.6    -0.083   0.233   10
+[20:45:34] 
+[20:45:34] ===================================================================================================================
