@@ -1,5 +1,9 @@
 run_id: 20260301_cb_threshold_sweep
 slug: cb_threshold_sweep
+tags:
+- sweep
+- circuit-breaker
+- threshold
 created_utc: '2026-03-01T00:00:00+00:00'
 provenance:
   swarm_version: unknown

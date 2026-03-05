@@ -1,0 +1,85 @@
+{
+  "experiment": "frontier_trace",
+  "timestamp": "20260304_232813",
+  "n_seeds": 20,
+  "n_agents": 10,
+  "task_types": [
+    "routing",
+    "coordination",
+    "allocation",
+    "long_horizon"
+  ],
+  "n_configs": 7,
+  "governance_configs": [
+    {
+      "id": "tight",
+      "audit_rate": 1.0,
+      "circuit_breaker_enabled": true,
+      "circuit_breaker_sensitivity": 0.8,
+      "min_stake": 8.0,
+      "bandwidth_cap": 20,
+      "confirmation_gates": 3,
+      "adversarial_fraction": 0.2
+    },
+    {
+      "id": "tight-moderate",
+      "audit_rate": 0.8,
+      "circuit_breaker_enabled": true,
+      "circuit_breaker_sensitivity": 0.6,
+      "min_stake": 6.0,
+      "bandwidth_cap": 35,
+      "confirmation_gates": 2,
+      "adversarial_fraction": 0.2
+    },
+    {
+      "id": "moderate",
+      "audit_rate": 0.5,
+      "circuit_breaker_enabled": true,
+      "circuit_breaker_sensitivity": 0.4,
+      "min_stake": 4.0,
+      "bandwidth_cap": 50,
+      "confirmation_gates": 1,
+      "adversarial_fraction": 0.2
+    },
+    {
+      "id": "moderate-light",
+      "audit_rate": 0.3,
+      "circuit_breaker_enabled": false,
+      "circuit_breaker_sensitivity": 0.0,
+      "min_stake": 2.0,
+      "bandwidth_cap": 70,
+      "confirmation_gates": 1,
+      "adversarial_fraction": 0.2
+    },
+    {
+      "id": "light",
+      "audit_rate": 0.15,
+      "circuit_breaker_enabled": false,
+      "circuit_breaker_sensitivity": 0.0,
+      "min_stake": 1.0,
+      "bandwidth_cap": 85,
+      "confirmation_gates": 0,
+      "adversarial_fraction": 0.2
+    },
+    {
+      "id": "loose",
+      "audit_rate": 0.05,
+      "circuit_breaker_enabled": false,
+      "circuit_breaker_sensitivity": 0.0,
+      "min_stake": 0.0,
+      "bandwidth_cap": 100,
+      "confirmation_gates": 0,
+      "adversarial_fraction": 0.2
+    },
+    {
+      "id": "oracle",
+      "audit_rate": 0.0,
+      "circuit_breaker_enabled": false,
+      "circuit_breaker_sensitivity": 0.0,
+      "min_stake": 0.0,
+      "bandwidth_cap": 100,
+      "confirmation_gates": 0,
+      "adversarial_fraction": 0.0
+    }
+  ]
+}

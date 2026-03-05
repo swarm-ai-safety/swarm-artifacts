@@ -1,11 +1,11 @@
-generated_utc: '2026-02-28T18:37:27.241886+00:00'
-total_runs: 142
+generated_utc: '2026-03-05T12:16:26.059417+00:00'
+total_runs: 146
 by_type:
   calibration: 2
   redteam: 13
-  single: 63
+  single: 66
   study: 33
-  sweep: 28
+  sweep: 29
   unknown: 3
 runs:
 - id: 20260208-214018_baseline_seed42
@@ -1279,18 +1279,64 @@ runs:
   - claim-moderate-governance-pareto-dominates-welfare-toxicity-frontier
   - claim-realistic-mixed-profiles-are-governance-responsive-under-moderate-governance
 - id: 20260227_222203_evolve_baseline
-  type: unknown
+  slug: 222203_evolve_baseline
+  type: single
   tags:
-  - unmigrated
-  date: unknown
-  status: unknown
+  - baseline
+  - evolutionary-optimization
+  - llm-mutator
+  - governance-calibration
+  date: '2026-02-27'
+  status: completed
+  claims:
+  - claim-llm-guided-evolution-converges-to-aggressive-governance-within-5-iterations
+  - claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes
 - id: 20260227_222439_evolve_baseline
+  slug: 222439_evolve_baseline
+  type: single
+  tags:
+  - baseline
+  - evolutionary-optimization
+  - llm-mutator
+  - governance-calibration
+  date: '2026-02-27'
+  status: completed
+  claims:
+  - claim-llm-guided-evolution-converges-to-aggressive-governance-within-5-iterations
+  - claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes
+- id: 20260228_093125_evolve_baseline
+  slug: 093125_evolve_baseline
+  type: single
+  tags:
+  - baseline
+  - evolutionary-optimization
+  - llm-mutator
+  - governance-calibration
+  date: '2026-02-28'
+  status: completed
+  claims:
+  - claim-llm-guided-evolution-converges-to-aggressive-governance-within-5-iterations
+  - claim-evolutionary-governance-optimization-favors-high-audit-high-penalty-regimes
+- id: 20260301_cb_threshold_sweep
+  slug: cb_threshold_sweep
+  type: sweep
+  tags:
+  - sweep
+  - circuit-breaker
+  - threshold
+  date: '2026-03-01'
+  status: completed
+  claims:
+  - claim-cb-threshold-05-maximizes-welfare-in-small-world-topology
+  - claim-circuit-breaker-activation-has-sharp-threshold-boundary-at-toxicity-05
+  - claim-aggressive-cb-threshold-harms-honest-agents-through-false-positive-freezing
+- id: 20260304_232817_screening
   type: unknown
   tags:
   - unmigrated
   date: unknown
   status: unknown
-- id: 20260228_093125_evolve_baseline
+- id: 20260304_232823_screening
   type: unknown
   tags:
   - unmigrated
@@ -1338,6 +1384,12 @@ runs:
   claims:
   - claim-contract-screening-achieves-perfect-type-separation
   - claim-screening-equilibrium-generates-honest-payoff-premium
+- id: frontier_all_20260304_232812
+  type: unknown
+  tags:
+  - unmigrated
+  date: unknown
+  status: unknown
 - id: hodoscope_demo
   slug: hodoscope_demo
   type: single
