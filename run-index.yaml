@@ -1420,3 +1420,26 @@ runs:
   - untagged
   date: unknown
   status: completed
+- id: 20260304_212912_frontier_trace
+  slug: frontier_trace
+  type: sweep
+  tags:
+  - pareto-frontier
+  - governance-sweep
+  - benchmark
+  - routing
+  - coordination
+  - allocation
+  - long-horizon
+  date: '2026-03-04'
+  status: completed
+- id: 20260304_213700_screening
+  slug: screening_frontier
+  type: sweep
+  tags:
+  - screening-protocol
+  - pareto-frontier
+  - governance-sweep
+  - benchmark
+  date: '2026-03-04'
+  status: completed

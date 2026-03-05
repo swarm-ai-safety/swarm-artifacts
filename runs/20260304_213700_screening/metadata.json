@@ -1,0 +1,10 @@
+{
+  "experiment": "screening_frontier_shift",
+  "timestamp": "20260304_213700",
+  "task_types": [
+    "routing",
+    "coordination",
+    "allocation",
+    "long_horizon"
+  ]
+}
