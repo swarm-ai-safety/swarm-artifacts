@@ -6,6 +6,7 @@ import { CollusionCascade } from "./scenes/CollusionCascade";
 import { GovernanceLag } from "./scenes/GovernanceLag";
 import { DelegationGames } from "./scenes/DelegationGames";
 import { GamePromo } from "./GamePromo";
+import { ContributingGuide } from "./ContributingGuide";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -57,6 +58,14 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
+      />
+      <Composition
+        id="ContributingGuide"
+        component={ContributingGuide}
+        durationInFrames={1290}
+        fps={30}
+        width={1920}
+        height={1080}
       />
     </>
   );
